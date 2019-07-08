@@ -1,11 +1,11 @@
 :root {
   --primary: #ff3c00;
-  --primary-transparency: rgba(255, 60, 0, 1);
+  --primary-transparency: rgba(255, 60, 0, 0.5);
   --dark: #303030;
   --dark-trans: rgba(48, 48, 48, 0.8);
   --light: #fff;
   --background: #e8e8e8;
-  --shadow: 0 1px 5px rgba(255, 49, 18, 0.8);
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
 /* Core */
@@ -21,7 +21,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background-image: url(img/0screenshot00.jpg);
+  background-image: url(img/7screenshot00.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -60,7 +60,8 @@ header {
 .nav-bar {
   display: flex;
   flex-direction: row;
-  background-color: var(--primary);
+  margin-top: 10px;
+  margin-right: 25px;
 }
 
 .nav-btn {
@@ -68,8 +69,8 @@ header {
 }
 
 .nav-btn:hover {
-  color: var(--dark);
-  border-bottom: 5px solid var(--dark);
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
 /* Intro */
 
@@ -79,14 +80,32 @@ header {
   flex-wrap: wrap;
   padding: 100px 200px;
   text-align: center;
-  background-color: var(--dark-trans);
   border-radius: 20px;
   margin: 50px 0px;
-  box-shadow: var(--shadow);
+  /* background-color: var(--primary-transparency); 
+   box-shadow: var(--shadow); */
 }
 
 .intro h1 {
   font-size: 4em;
+}
+
+.scroll {
+  color: var(--light);
+  display: block;
+  margin: 0px auto;
+  margin-bottom: 100px;
+  width: 5%;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform:translateY(20px);
+  }
 }
 
 /* History */
