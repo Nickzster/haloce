@@ -1,8 +1,12 @@
+/* 
+Styles - Main Website
+*/
+
 :root {
   --primary: #0055ff;
   --primary-transparency: rgba(0, 85, 255, 0.8);
   --dark: #303030;
-  --dark-trans: rgba(48, 48, 48, 0.8);
+  --dark-trans: rgba(48, 48, 48, 0.4);
   --light: #fff;
   --background: #e8e8e8;
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
@@ -21,22 +25,62 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background-image: url(../images/spv3_5_full.jpg);
+  background-image: url(../images/tsce-2.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   line-height: 1.4;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
 /* Temp h1 */
-h1 {
-  background-color: var(--primary);
+.welcome h1 {
   color: var(--light);
-  font-size: 2em;
-  padding: 50px;
-  border-radius: 50px;
+  font-size: 3em;
+  padding: 20px;
+  background-color: var(--dark-trans);
+  border-radius: 10px;
   text-align: center;
+  margin: 40px 500px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-right: 25px;
+}
+
+.nav-btn {
+  padding: 10px;
+}
+
+.nav-btn:hover {
+  border-bottom: 2px solid var(--primary);
 }
 
 .container {
   margin: 50px 200px;
+}
+
+.icon {
+  width: 60%;
+  margin-left: 30px;
 }
