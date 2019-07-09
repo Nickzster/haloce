@@ -23,7 +23,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background-image: url(img/3screenshot00.jpg);
+  background-image: url(img/9screenshot00.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -117,30 +117,38 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+.history p {
+  text-align: left;
+}
+
 .background {
   background-color: var(--primary);
   margin: 0;
   padding: 0;
   padding-top: 1px;
-  border-top-left-radius: 50px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
+  background-image: url(img/s9_up_3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   font-size: 1.5em;
   padding: 25px;
   background-color: var(--dark);
-
   box-shadow: var(--shadow);
 }
 
 .footer {
   text-align: center;
   padding: 20px;
-  margin-top: 80px;
   background-color: var(--dark);
+}
+
+.links li {
+  margin: 10px 0px;
 }
 
 @media (max-width: 700px) {
