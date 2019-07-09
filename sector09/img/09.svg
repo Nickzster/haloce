@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="140" height="158" viewBox="0 0 140 158">
+<svg xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" width="140" height="158" viewBox="0 0 140 158">
   <defs>
     <filter id="_09" x="0" y="0" width="140" height="158" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
@@ -9,6 +10,8 @@
     </filter>
   </defs>
   <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#_09)">
-    <text id="_09-2" data-name="09" transform="translate(10 7)" fill="#ff1a00" stroke="#000" stroke-width="1" font-size="100" font-family="SegoeUI, Segoe UI"><tspan x="6.094" y="108">09</tspan></text>
+    <text id="_09-2" data-name="09" transform="translate(10 7)" fill="#e05f02" stroke="#000" stroke-width="1" font-size="100" font-family="SegoeUI, Segoe UI">
+      <tspan x="6.094" y="108">09</tspan>
+    </text>
   </g>
 </svg>

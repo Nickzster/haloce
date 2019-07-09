@@ -1,6 +1,6 @@
 :root {
-  --primary: #ff3c00;
-  --primary-transparency: rgba(255, 60, 0, 0.5);
+  --primary: #e05f02;
+  --primary-transparency: rgba(224, 95, 2, 0.8);
   --dark: #303030;
   --dark-trans: rgba(48, 48, 48, 0.8);
   --light: #fff;
@@ -14,6 +14,8 @@ html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--light);
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -21,7 +23,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background-image: url(img/7screenshot00.jpg);
+  background-image: url(img/3screenshot00.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -47,13 +49,18 @@ header {
   justify-content: space-between;
 }
 
+.title {
+  text-align: center;
+  margin: 30px 0px;
+}
+
 .logo {
   width: 80px;
   padding-left: 25px;
 }
 
 .container {
-  margin: 10px 10px;
+  margin: 10px 150px;
 }
 
 /* Header */
@@ -75,13 +82,8 @@ header {
 /* Intro */
 
 .intro {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding: 100px 200px;
   text-align: center;
-  border-radius: 20px;
-  margin: 50px 0px;
+  margin: 220px 0px;
   /* background-color: var(--primary-transparency); 
    box-shadow: var(--shadow); */
 }
@@ -94,17 +96,17 @@ header {
   color: var(--light);
   display: block;
   margin: 0px auto;
-  margin-bottom: 100px;
+  margin-bottom: 250px;
   width: 5%;
   animation: bounce 1s infinite alternate;
 }
 
 @keyframes bounce {
-  0%{
+  0% {
     transform: translateY(0px);
   }
-  100%{
-    transform:translateY(20px);
+  100% {
+    transform: translateY(20px);
   }
 }
 
@@ -115,12 +117,44 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+.background {
+  background-color: var(--primary);
+  margin: 0;
+  padding: 0;
+  padding-top: 1px;
+  border-top-left-radius: 50px;
+}
+
 .card {
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-  padding: 10px;
-  background-color: var(--primary-transparency);
-  margin: 10px;
+  font-size: 1.5em;
+  padding: 25px;
+  background-color: var(--dark);
+
   box-shadow: var(--shadow);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 80px;
+  background-color: var(--dark);
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin: 10px 20px;
+  }
+
+  .intro h1 {
+    font-size: 2em;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .scroll {
+    width: 10%;
+  }
 }
