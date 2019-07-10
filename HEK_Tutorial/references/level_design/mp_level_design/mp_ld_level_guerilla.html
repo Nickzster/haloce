@@ -1,0 +1,599 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Multiplayer Level Design Level Data Manipulation in Guerilla</title>
+<base target="_self">
+</head>
+
+<body background="file:///D:/GameDev/HaloDev/Halo%20End%20User%20Editing%20Kit/Halo%20PC%20Editing%20Reference/images/background.gif" bgcolor="#000000" text="#C0C0C0" link="#3FA2FF" vlink="#0066CC" alink="#FFFFFF">
+
+<table cellpadding="0" cellspacing="0" border="0" width="869">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <font face="Arial" size="2">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></font></td>
+		<td bgcolor="black" width="748"> <b><font face="Arial" color="#3FA2FF">
+        Level Data Manipulation in Guerilla</font></b></td>
+		<td width="101"><font face="Arial" size="2">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></font></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber1" height="28">
+  <tr>
+    <td width="100%" height="1">
+    <p align="left" style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following section provides a tutorial on 
+    using Guerilla and information on this tool and what it is used for in 
+    relation to Multiplayer Levels.&nbsp; </font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="870">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="643"> 
+        <b><font face="Arial" size="2">Introduction to </font></b> 
+        <span class="body">  
+		<b><font face="Arial" size="2">G</font></b></span><b><font face="Arial" size="2">uerilla
+        </font></b></td>
+		<td width="207"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber1" height="64">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p><span style="font-size: 10.0pt">
+    <font face="Arial">Guerilla is a tool that has a graphical interface that is used to edit
+    </font></span><font face="Arial"><strong>
+    <span style="font-size: 10.0pt; font-weight: normal">the properties and 
+    tag resource references in the </span></strong><span style="font-size: 10.0pt">
+    Halo data “tags”.&nbsp; Every data tag in the game can be opened and viewed 
+    in Guerilla.&nbsp; Not all the data and attributes are allowed to be edited 
+    (some are locked to prevent accidental modification that would result in 
+    errors). </span></font></p>
+    <p><font face="Arial" size="2">Guerilla is a very straightforward program.&nbsp; 
+    Tags are opened in individual windows that can be arranged or resized as 
+    needed.&nbsp; </font></p>
+    <p><font face="Arial" size="2">To find out more information about a 
+    particular field or setting, hover the mouse cursor over the field.&nbsp; A 
+    description label will appear giving some insight into what the value, 
+    reference field, or attribute does.&nbsp; Description or help labels do not 
+    exist for all settings, fields, and attributes.</font></p>
+    <p><font face="Arial" size="2">Tags can be loaded normally by going to <b>
+    File -&gt; Open</b> or tags can be &quot;dragged and dropped&quot; onto Guerilla to open 
+    them.</font></p>
+    <p></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="644"> 
+        <span class="body">  
+		<b><font face="Arial" size="2">Setting Level Attributes Using G</font></b></span><b><font face="Arial" size="2">uerilla
+        </font></b></td>
+		<td width="188"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber1" height="64">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p><font face="Arial" size="2">Now that the level has been successfully 
+    compiled and the tutorial.scenario and tutorial.scenario_structure_bsp files 
+    have been created, these data tags can be opened in Guerilla and have 
+    certain attributes set that will affect the properties and behavior of the 
+    game level.</font></p>
+    <p><font face="Arial" size="2">The majority of work done to the 
+    tutorial.scenario and tutorial.scenario_structure_bsp data tags are done 
+    using Sapien, however there are certain attributes that cannot be accessed 
+    using Sapien and instead must be modified using Guerilla.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The following tutorials and examples will 
+    demonstrate the uses for Guerilla in relation to the .scenario and .scenario_structure_bsp 
+    data tags.&nbsp; Guerilla will be used to set the sky model to use for the 
+    level, the relative North direction, and the type of level (single player or 
+    multiplayer).</font></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="68%" id="AutoNumber48" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">The setting of certain attributes for the 
+    .scenario tag using Guerilla:</font></p>
+    <p>
+    <font face="Arial" size="2">Go to the main Halo 
+    directory.&nbsp; In the root directory is where all the Halo tools exist, 
+    there should be a program file called guerilla.exe.</font></p>
+    <p>
+    <font face="Arial" size="2">1) Run Guerilla and open the tutorial.scenario 
+    tag. </font></p>
+    <p>
+    <font face="Arial" size="2">A window displaying all the tag information for 
+    the tutorial.scenario tag should now appear.</font></p>
+    <p><font face="Arial" size="2">2) Since the tutorial level is an outdoor 
+    level, a sky model must be referenced in order for a sky to render properly 
+    in the game.&nbsp; In addition, the .sky tag contains information that will 
+    be used by radiosity to light the level.&nbsp; To reference a sky model 
+    follow the procedures below:</font></p>
+    <p><font face="Arial" size="2">a) At the top of the tag information there is 
+    a section called &quot;Skies&quot;.&nbsp; </font></p>
+    <p><font face="Arial" size="2">b) Click the <b>Add</b> button.&nbsp; A sky 
+    reference has now been added but the specific reference must be defined.</font></p>
+    <p><font face="Arial" size="2">c) In the sky field reference a file by 
+    clicking on the &quot;...&quot; button.&nbsp; A file Open dialog window will appear.</font></p>
+    <p><font face="Arial" size="2">d) The majority of skies that can be used are 
+    found under the main tags directory under the &quot;sky&quot; subdirectory.&nbsp;
+    </font></p>
+    <p><font face="Arial" size="2">Go to this directory.&nbsp; There should be 
+    several subdirectories, several .skies have been included in the Halo 
+    Editing Kit.</font></p>
+    <p><font face="Arial" size="2">For the tutorial level, the 
+    sky_timberland.sky will be used.&nbsp; Enter the sky_timberland 
+    subdirectory.</font></p>
+    <p><font face="Arial" size="2">e) Select the data tag sky_timberland.sky.
+    </font></p>
+    <p><font face="Arial" size="2">f) Hit Open. </font></p>
+    <p><font face="Arial" size="2">The tag sky\sky_timberland\sky_timberland 
+    should now appear in the &quot;sky&quot; field.</font></p>
+    <p><font face="Arial" size="2">To view the sky_timberland.sky tag and its 
+    associated values click on the Open button located to the right of the &quot;sky&quot; 
+    field.</font></p>
+    <p><font face="Arial" size="2">If the level requires different settings than 
+    what exist in the .sky tag do NOT modify the existing .sky tag if it is used 
+    by other levels or those levels will be affected as well.&nbsp; The proper 
+    procedure is to great a new custom .sky tag.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures and shows the final results of the above actions.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">3) The level must be defined as a multiplayer 
+    level.&nbsp; To set the level up as a multiplayer level go to the &quot;type&quot; 
+    pulldown menu under the Skies section and select &quot;multiplayer&quot;. </font></p>
+    <p><font face="Arial" size="2">Setting the level as multiplayer is important 
+    since this tells Tool and the game what resources should be included during 
+    the .map cache file creation process.</font></p>
+    <p><font face="Arial" size="2">4) Next, the relative North for the level 
+    will be set.&nbsp; This setting affects the direction that the compass on 
+    the Assault Rifle points to.&nbsp; </font></p>
+    <p><font face="Arial" size="2">Under the section Child Scenarios, enter the 
+    angle value 90 in the &quot;local north&quot; field.&nbsp; The tutorial level is 
+    rotated 90 degrees, thus putting the intended North end of the level at this 
+    same angle.</font></p>
+    <p><font face="Arial" size="2">The second image  further explains the above 
+    procedures and shows the final results of the above actions.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">5) The default weapons and equipment for the 
+    player will now be defined.&nbsp; The default or starting weapons can be 
+    defined specifically for this level for each different game type.</font></p>
+    <p><font face="Arial" size="2">a) Find the section &quot;Starting Equipment&quot;.&nbsp; 
+    This section is located about halfway down the tag data.</font></p>
+    <p><font face="Arial" size="2">b) Three different profiles will be added. 
+    Click on the <b>Add</b> button 3 times.</font></p>
+    <p><font face="Arial" size="2">c) Using the pull down menu select the &quot;0. 
+    scenario_starting_equipment&quot; settings.</font></p>
+    <p><font face="Arial" size="2">Set the following settings for Capture the 
+    Flag (CTF).</font></p>
+    <p><font face="Arial" size="2">d) For the &quot;type 0&quot; field use the pull down 
+    to select &quot;ctf&quot;.&nbsp; This setting tells the game that when CTF game 
+    variants are run to use the item collections defined below.</font></p>
+    <p><font face="Arial" size="2">For CTF, the default weapons will be the 
+    Pistol, Assault Rifle and Frag grenades. The player will spawn with these 
+    weapons every time the game first starts or when they are eliminated and 
+    respawn.</font></p>
+    <p><font face="Arial" size="2">e) In the &quot;item collection 1&quot; field hit the 
+    &quot;...&quot; button.&nbsp; An <b>Open</b> file window will now appear.</font></p>
+    <p><font face="Arial" size="2">f) Go to the &quot;item collections&quot; tag directory 
+    and then choose the &quot;single weapons&quot; tags subdirectory.</font></p>
+    <p><font face="Arial" size="2">g) Select the &quot;assault rifle.item_collection&quot; 
+    tag file.</font></p>
+    <p><font face="Arial" size="2">h) Click on <b>Open</b>.</font></p>
+    <p><font face="Arial" size="2">i) In the &quot;item collection 2&quot; field follow 
+    the same procedures but select and add the &quot;pistol.item_collection&quot;.</font></p>
+    <p><font face="Arial" size="2">The player WILL spawn with standard Frag 
+    grenades in this game mode, so the grenade check boxes will not be touched 
+    (these are located under the &quot;flags&quot; section at the top of the &quot;Starting 
+    Equipment&quot; section).</font></p>
+    <p><font face="Arial" size="2">Item collections (.item_collection data tags) 
+    contain single weapons and items or combinations of weapons and items that 
+    can be referenced in order to place weapons and items (such as powerups) in 
+    a level. </font></p>
+    <p><font face="Arial" size="2">The third image further explains the above 
+    procedures and shows the final results of the above actions.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">6) The next settings for default weapons will 
+    be made for ALL game types or game variants except those for CTF and Race 
+    modes.&nbsp; </font></p>
+    <p><font face="Arial" size="2">Games that run these game modes will have the 
+    player spawn with just the Pistol and Frag grenades.</font></p>
+    <p><font face="Arial" size="2">a) Using the pull down menu select the &quot;1. 
+    scenario_starting_equipment&quot; settings.</font></p>
+    <p><font face="Arial" size="2">b) For the &quot;type 0&quot; field use the pull down 
+    menu to select &quot;all except race &amp; ctf&quot;. This setting tells the game to use 
+    the item collection settings below for all game types other than CTF and 
+    Race modes.&nbsp; The Slayer, Oddball and King of the Hill modes will use 
+    the item collection settings defined below.</font></p>
+    <p><font face="Arial" size="2">c) In the &quot;item collection 1&quot; field hit the 
+    &quot;...&quot; button.&nbsp; An <b>Open</b> file window will now appear.</font></p>
+    <p><font face="Arial" size="2">d) Go to the &quot;item collections&quot; tag directory 
+    and then choose the &quot;single weapons&quot; tags subdirectory.</font></p>
+    <p><font face="Arial" size="2">e) Select the &quot;pistol.item_collection&quot; file.</font></p>
+    <p><font face="Arial" size="2">f) Click on <b>Open</b>.</font></p>
+    <p><font face="Arial" size="2">The player WILL spawn with standard Frag 
+    grenades in these game modes, so the grenade check boxes will not be touched 
+    (these are located under the &quot;flags&quot; section at the top of the &quot;Starting 
+    Equipment&quot; section).</font></p>
+    <p><font face="Arial" size="2">The fourth image further explains the above 
+    procedures and shows the final results of the above actions.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">7) The next settings for default weapons will 
+    be made for game types that are based on Race mode.</font></p>
+    <p><font face="Arial" size="2">Games that run the Race game modes will have 
+    the player spawn with just the Plasma Pistol and NO grenades of any type.</font></p>
+    <p><font face="Arial" size="2">a) Using the pull down menu select the &quot;2. 
+    scenario_starting_equipment&quot; settings.</font></p>
+    <p><font face="Arial" size="2">b) For the &quot;type 0&quot; field use the pull down 
+    to select &quot;race&quot;. This setting tells the game to use the item collection 
+    settings below for all game types that use Race mode. </font></p>
+    <p><font face="Arial" size="2">c) In the &quot;item collection 1&quot; field hit the 
+    &quot;...&quot; button.&nbsp; An <b>Open</b> file window will now appear.</font></p>
+    <p><font face="Arial" size="2">d) Go to the &quot;item collections&quot; tag directory 
+    and then choose the &quot;single weapons&quot; tags directory.</font></p>
+    <p><font face="Arial" size="2">e) Select the &quot;plasma pistol.item_collection&quot; 
+    file.</font></p>
+    <p><font face="Arial" size="2">f) Click on <b>Open</b>.</font></p>
+    <p><font face="Arial" size="2">g) The player will spawn with NO grenades in 
+    this game mode.</font></p>
+    <p><font face="Arial" size="2">Under the &quot;flags&quot; section at the top of the 
+    &quot;Starting Equipment&quot; section check the &quot;no grenades&quot; option box.</font></p>
+    <p><font face="Arial" size="2">Once the above procedures have been 
+    completed, save the tutorial.scenario tag.&nbsp; This can be done by going to <b>File -&gt; Save</b>.</font></p>
+    <p><font face="Arial" size="2">The fifth image or last image further explains the above 
+    procedures and shows the final results of the above actions.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">As objects are added in Sapien, additional 
+    data will be added to the .scenario tag.&nbsp; This data can be viewed using 
+    Guerilla.&nbsp; Using Guerilla in this manner can help track down errors or 
+    view resources used in the level.&nbsp; </font></p>
+    <p>&nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/level_guerilla_01_large.gif" target="_blank">
+    <img border="0" src="images/level_guerilla_01_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/level_guerilla_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/level_guerilla_02_large.gif" target="_blank">
+    <img border="0" src="images/level_guerilla_02_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/level_guerilla_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/level_guerilla_04_large.gif" target="_blank">
+    <img border="0" src="images/level_guerilla_04_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/level_guerilla_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/level_guerilla_05_large.gif" target="_blank">
+    <img border="0" src="images/level_guerilla_05_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/level_guerilla_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/level_guerilla_06_large.gif" target="_blank">
+    <img border="0" src="images/level_guerilla_06_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/level_guerilla_06_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber49" height="64">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p><font face="Arial" size="2">For the tutorial level, no 
+    modifications to the tutorial.scenario_structure_bsp using Guerilla are necessary.&nbsp; 
+    However, there are some fields that are commonly used that will be quickly 
+    discussed in the section below.</font></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="68%" id="AutoNumber50" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">Taking a look at the .scenario_structure_bsp 
+    data tag.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">1) In Guerilla and open the 
+    tutorial.scenario_structure_bsp 
+    tag. </font></p>
+    <p>
+    <font face="Arial" size="2">A window displaying all the tag information for 
+    the tutorial.scenario_structure_bsp tag should now appear.</font></p>
+    <p>
+    <font face="Arial" size="2">2) At the top of the file is an entry for &quot;lightmaps&quot;.&nbsp; 
+    Since radiosity has not been run on the level, this field will be blank.&nbsp; 
+    When radiosity for the level is run, the resulting lightmap .bitmap for the 
+    level will automatically be entered in this field.</font></p>
+    <p>
+    <font face="Arial" size="2">3) Below the &quot;lightmaps&quot; field are two fields 
+    relating to vehicles.</font></p>
+    <p>
+    <font face="Arial" size="2">The &quot;vehicle floor&quot; value limits the 
+    distance 
+    in the negative Z-Axis that a vehicle can travel.&nbsp; When the vehicle 
+    hits this distance, it will stop or collide with this invisible plane.&nbsp; 
+    The player and other objects can still pass through this plane.</font></p>
+    <p>
+    <font face="Arial" size="2">The &quot;vehicle ceiling&quot; value limits the 
+    distance 
+    in the positive Z-Axis that a vehicle can travel.&nbsp; When the vehicle 
+    hits this distance, it will stop or collide with this invisible plane.&nbsp; 
+    The player and other objects can still pass through this plane.</font></p>
+    <p>
+    <font face="Arial" size="2">Both of these fields are very useful in 
+    constraining vehicles and preventing them from breaking the game play of a 
+    level.&nbsp; The &quot;vehicle ceiling&quot; value is especially useful in containing 
+    flying vehicles such as the Banshee.&nbsp; This is how the Banshee is 
+    contained in Z-Axis in multiplayer levels, such as Death Island and Gehphyrophobia. </font></p>
+    <p>
+    <font face="Arial" size="2">To constrain vehicles in the horizontal or XY 
+    plane, player or vehicle clipping techniques such as those covered in the 
+    tutorial sections should be used.&nbsp; Note that player and vehicle 
+    clipping techniques can also be used to constrain the travel of vehicles in 
+    the Z-Axis also.</font></p>
+    <p>
+    <font face="Arial" size="2">Since the tutorial level is so small and no 
+    flying vehicles will be included in it, these values are being left at their 
+    default values.</font></p>
+    <p>
+    <font face="Arial" size="2">4) Below the vehicle ceiling and floor fields 
+    are a set of values used to control various ambient lighting effects and 
+    attributes in the level.</font></p>
+    <p><font face="Arial" size="2">The image to the right further explains the 
+    above information.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">In addition, the data in the scenario_structure_bsp can be 
+    viewed using Guerilla.&nbsp; Using Guerilla in this manner can help track 
+    down errors or view resources used in the level.&nbsp; </font></p>
+    <p>&nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/level_guerilla_03_large.gif" target="_blank">
+    <img border="0" src="images/level_guerilla_03_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/level_guerilla_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="642"> <b><font face="Arial">Conclusion to 
+        Level Manipulation in Guerilla</font></b></td>
+		<td width="190"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber11" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The level data tags have been manipulated such 
+    that they are now ready to be lit using radiosity and loaded into Sapien.</font><p><font face="Arial" size="2">Completed versions 
+    or example versions of the level tags that are created in the tutorial sections can be 
+    found under the &quot;Halo\tags\levels\test\tutorial_examples&quot; directory.&nbsp; 
+    The compiled and modified tags have been provided as a reference to aid in the learning 
+    process.</font></p>
+    <p><font face="Arial" size="2">Once the user has successfully completed the 
+    above tutorials and examples they can proceed to the next section </font>
+    <b>
+    <a href="mp_ld_level_radiosity.html">
+    <font face="Arial" size="2" color="#3FA2FF">Radiosity (Lighting)</font></a></b><font face="Arial" size="2">.</font></p>
+    <p>&nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<ul>
+  <li>
+
+<p style="margin-top: 0; margin-bottom: 0; line-height:200%" align="left">
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <a href="mp_ld_level_radiosity.html">
+    <u>Continue to the Next Section - Radiosity (Lighting)</u></a></b></font></p>
+
+  </li>
+  <li>
+  <p style="line-height: 200%; margin-top: 0; margin-bottom: 0"><font face="Arial"><b><a href="../../../main/main.html">Return to Main Page</a></b></font></li>
+</ul>
+
+</body>
+
+</html>

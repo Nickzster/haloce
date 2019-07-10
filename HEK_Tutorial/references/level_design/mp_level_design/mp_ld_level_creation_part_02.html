@@ -1,0 +1,3674 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Multiplayer Level Design Level Creation</title>
+</head>
+
+<body stylesrc="../../../main/main.html" background="file:///D:/GameDev/HaloDev/Halo%20End%20User%20Editing%20Kit/Halo%20PC%20Editing%20Reference/images/background.gif" bgcolor="#000000" text="#C0C0C0" link="#3FA2FF" vlink="#0066CC" alink="#FFFFFF">
+
+<table cellpadding="0" cellspacing="0" border="0" width="869">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <font face="Arial" size="2">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></font></td>
+		<td bgcolor="black" width="748"> <b><font face="Arial" color="#3FA2FF">
+        Level Creation - Part 2</font></b></td>
+		<td width="101"><font face="Arial" size="2">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></font></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber1" height="70">
+  <tr>
+    <td width="100%" height="43">
+    <p align="left" style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following section is a continuation of <u>
+    <b><a href="mp_ld_level_creation_part_01.html">Level Creation - Part 1</a></b></u> 
+    and provides more detailed information on creating Multiplayer levels and 
+    environments and includes tutorials and examples.&nbsp; Topics covered in 
+    the tutorials and examples include more information on the Sealed World 
+    Rules, the additional creation of level geometry including structures, 
+    streams, and terrain features, a discussion on water and how it exists and 
+    behaves in Halo, additional applications of smoothing groups, the creation 
+    and placement of items such as light fixtures and ladders, the placement of 
+    visibility portals for rendering, an explanation of player 
+    clipping\containment techniques, and miscellaneous and general tips and 
+    suggestions.</font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="868">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="718"> <b><font face="Arial" size="2">Getting 
+        Started</font></b></td>
+		<td width="130"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber1" height="44">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">This section assumes that the end user has 
+    successfully completed and understands </font>
+    <font color="#3FA2FF" size="2" face="Arial">
+    <b>
+    <a href="mp_ld_level_creation_part_01.html">Level Creation -&nbsp; Part 1</a> </b></font><font face="Arial" size="2">
+    and any additional reference sections.&nbsp; </font>
+    <p><font face="Arial" size="2">The following tutorials, examples, and images 
+    will be using the file &quot;tutorial.max&quot; which was created in the tutorials and 
+    examples in </font>
+    <font color="#3FA2FF" size="2" face="Arial">
+    <b>
+    <a href="mp_ld_level_creation_part_01.html">Level Creation -&nbsp; Part 1</a></b></font><font face="Arial" size="2">.&nbsp; </font>
+    </p>
+    <p>&nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="868">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="718"> <b><font face="Arial" size="2">
+        Modifying the Level</font></b></td>
+		<td width="130"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber1" height="44">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The following tutorials, examples, and images 
+    will help demonstrate additional features for Halo levels through the 
+    modification of the level geometry.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Terrain Modification</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber3" height="39">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following steps and example images will 
+    demonstrate the modification of the surfaces that compose the floor of the 
+    level to create some simple hills that will act as a border for the level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber3" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Modification of the level floor to create some 
+    simple terrain and surrounding hills:</font><p>
+    <font face="Arial" size="2">1) Open 3ds Max and load the tutorial.max file 
+    from the Halo\data\levels\test\tutorial\models directory and select the 
+    level (object named &quot;level&quot;).</font></p>
+    <p><font face="Arial" size="2">2) Select <b>Modify</b>.</font></p>
+    <p><font face="Arial" size="2">3) Under <b>Selection</b> choose <b>Face</b> 
+    mode.</font></p>
+    <p><font face="Arial" size="2">4) Select the 2 faces that compose the bottom 
+    or floor of the box which is currently the level (its easier to select these 
+    faces when <b>Ignore Backfacing</b> is selected under <b>Selection</b>, 
+    see the 3ds Max User Reference under Help for more information).</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">5)&nbsp; The selected faces are now going to 
+    be Tessellated so that there are more polygons or faces to work with in 
+    order to create terrain.&nbsp; To subdivide or tessellate the selected faces 
+    do the following:</font></p>
+    <p><font face="Arial" size="2">a) In the <b>Weld </b>area<b> </b>under <b>
+    Edit Geometry, </b>enter 0.0 in the <b>Edge</b> tension value field.</font></p>
+    <p><font face="Arial" size="2">b) In the <b>Weld </b>area<b> </b>under <b>
+    Edit Geometry,</b> click the <b>Tessellate</b> button 4 times.</font></p>
+    <p><font face="Arial" size="2">The second image further explains the above 
+    procedures and shows the final result of the tessellation procedure.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">6) The Tessellation procedure will invalidate 
+    the assigned texture coordinates or texture mapping.&nbsp; To help serve as 
+    a guideline for the modification of the faces, the polygons or faces will be 
+    reassigned texture coordinates.&nbsp; </font></p>
+    <p><font face="Arial" size="2">a) With the faces that compose the floor 
+    selected, select <b>UVW Map</b> from the <b>Modifier List</b> pull-down 
+    menu.</font></p>
+    <p><font face="Arial" size="2">b) Select the <b>Top</b> view.</font></p>
+    <p><font face="Arial" size="2">c) In the <b>Alignment</b> area under <b>
+    Parameters</b>, click on the <b>View Align</b> button.</font></p>
+    <p><font face="Arial" size="2">d) In the <b>Alignment</b> area under <b>
+    Parameters</b>, click on the <b>Fit</b> button.</font></p>
+    <p><font face="Arial" size="2">The third image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">The polygons around the edges of the level 
+    (where the terrain meets the sky) are going to be modified such that they 
+    create hills around the edge of the tutorial level.&nbsp; There are many 
+    methods to achieve this including moving the vertices or moving the faces 
+    either individually or in groups.&nbsp; The final result will be that the 
+    surround hills will be approximately 128 units high. One such technique for 
+    making the hills are listed in the procedures below.</font></p>
+    <p><font face="Arial" size="2">7) To edit the polygons and vertices that 
+    compose the terrain, the selected object need to be converted to a mesh 
+    again. </font></p>
+    <p><font face="Arial" size="2">a) With the level selected, select <b>Edit Mesh</b> from from the <b>
+    Modifier List</b> pull-down menu.</font></p>
+    <p><font face="Arial" size="2">b) Choose the polygons around the edges of 
+    the level such that at the &quot;North&quot; and &quot;South&quot; borders the polygons selected 
+    are 1 &quot;row&quot; deep and that the &quot;East&quot; and &quot;West&quot; borders are 2 &quot;rows&quot; deep.&nbsp;
+    </font></p>
+    <p><font face="Arial" size="2">The fourth image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">To create the hills and smooth the faces out 
+    follow the procedures below:</font></p>
+    <p><font face="Arial" size="2">8) With the border faces still selected, move 
+    the faces up 128 units in the Z-axis.</font></p>
+    <p><font face="Arial" size="2">The fifth image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">9) Select faces or vertices and move them to 
+    give the bordering hills some variation. Edges were turned and vertices were 
+    manually tweaked to smooth out the surround hill geometry. </font></p>
+    <p><font face="Arial" size="2">Turning edges is just basically taking two 
+    faces (in this case 2 triangles) and reconnecting or turning the edge such 
+    that its orientation is changed.&nbsp; The triangle count is preserved as 
+    well as the non-turned edges, but the selected edge of the triangle now 
+    connects to different vertices than the original configuration.&nbsp; The 
+    turn edge functionality (<b>Turn</b>) can be found under <b>Edit Geometry</b> 
+    when <b>Edge</b> mode is selected while the object is set as an Editable 
+    Mesh (<b>Edit Mesh</b>).</font></p>
+    <p><font face="Arial" size="2">See the <b>User Reference</b> in 3ds Max 
+    under <b>Help</b> for more information on moving faces, vertices, and 
+    turning edges.</font></p>
+    <p><font face="Arial" size="2">The sixth image or last image further 
+    explains the above procedures and shows the final results.</font></p>
+    <p>&nbsp;</td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/terrain_tessellate_01_large.gif" target="_blank">
+    <img border="0" src="images/terrain_tessellate_01_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_tessellate_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/terrain_tessellate_02_large.gif" target="_blank">
+    <img border="0" src="images/terrain_tessellate_02_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_tessellate_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/terrain_tessellate_03_large.gif" target="_blank">
+    <img border="0" src="images/terrain_tessellate_03_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_tessellate_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/terrain_tessellate_04_large.gif" target="_blank">
+    <img border="0" src="images/terrain_tessellate_04_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_tessellate_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/terrain_tessellate_05_large.gif" target="_blank">
+    <img border="0" src="images/terrain_tessellate_05_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_tessellate_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_tessellate_06_large.gif">
+    <img border="0" src="images/terrain_tessellate_06_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_tessellate_06_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber4" height="39">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following steps and example images will 
+    demonstrate the modification of the surfaces that compose the floor of the 
+    level to create simple outdoor terrain.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber5" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Modification of the ground mesh to vary the 
+    existing terrain:</font><p><font face="Arial" size="2">1) To create a small 
+    hill in the middle of the level do the following:</font></p>
+    <p><font face="Arial" size="2">a) Select the level (object named &quot;level&quot;).</font></p>
+    <p><font face="Arial" size="2">b) Select <b>Modify</b>.</font></p>
+    <p><font face="Arial" size="2">c) Under <b>Selection</b> choose <b>Face</b> 
+    mode.</font></p>
+    <p><font face="Arial" size="2">2) Select the 8 faces that are in the middle of 
+    the level.</font></p>
+    <p><font size="2" face="Arial">3) Move these faces up to create a small 
+    hill.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">4) To smooth and round the hill do the 
+    following:</font></p>
+    <p><font face="Arial" size="2">a) Under <b>Selection</b> select <b>Vertex</b> 
+    mode.</font></p>
+    <p><font face="Arial" size="2">b) Select the vertex in the middle of the hill.</font></p>
+    <p><font face="Arial" size="2">c) Move the vertex up in the Z-Axis to help round the hill.</font></p>
+    <p><font face="Arial" size="2">The second image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">5) Move the faces and vertices and turn the 
+    edges to smooth out the hill and to make it follow the dirt paths outlined 
+    in the texture.</font></p>
+    <p><font face="Arial" size="2">The third image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Arial">Depending on how the terrain is modified it 
+    may be necessary to adjust or reassign the texture coordinates.&nbsp; Follow 
+    the previous procedures for UVW Mapping or projection texture mapping the 
+    ground.</font></p>
+    <p><font face="Arial" size="2">6) Rough up the surrounding ground by 
+    creating a small rolling hill on the &quot;West&quot; border of the level.&nbsp; Do 
+    not modify the &quot;East&quot; border or area of the level for right now.</font></p>
+    <p><font face="Arial" size="2">7) Smooth the transition between the ground 
+    and bordering hills by moving vertices and faces and turning edges.&nbsp; 
+    Again, avoid modifying the area on the &quot;East&quot; border of the level.</font></p>
+    <p><font face="Arial" size="2">The fourth image or last image further 
+    explains the above procedures and shows the final results.</font></p>
+    <p>&nbsp;</td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/terrain_modify_01_large.gif" target="_blank">
+    <img border="0" src="images/terrain_modify_01_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_modify_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/terrain_modify_02_large.gif" target="_blank">
+    <img border="0" src="images/terrain_modify_02_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_modify_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/terrain_modify_03_large.gif" target="_blank">
+    <img border="0" src="images/terrain_modify_03_small.gif" width="250" height="198"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_modify_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/terrain_modify_04_large.gif" target="_blank">
+    <img border="0" src="images/terrain_modify_04_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_modify_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber6" height="29">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following steps and example images will 
+    demonstrate the modification of the terrain to create a stream bed.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber7" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Modification of the ground mesh to create a 
+    stream bed.</font><p><font face="Arial" size="2">1) To create a stream bed 
+    on the &quot;East&quot; border of the level do the following:</font></p>
+    <p><font face="Arial" size="2">a) Select the level (object named &quot;level&quot;).</font></p>
+    <p><font face="Arial" size="2">b) Select <b>Modify</b>.</font></p>
+    <p><font face="Arial" size="2">c) Under <b>Selection</b> choose <b>Face</b> 
+    mode.</font></p>
+    <p><font face="Arial" size="2">2) Select the faces on the &quot;East&quot; side of the 
+    level such that they encompass the part of the ground texture that 
+    represents the stream bed.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Arial">3) To create the stream bed, more polygons 
+    and vertices are needed.&nbsp; To get a higher resolution mesh, the selected 
+    faces are going to be subdivided or tessellated as was done with the 
+    original terrain mesh.&nbsp; Follow the procedures below to tessellate the 
+    selected polygons.</font></p>
+    <p><font face="Arial" size="2">a) In the <b>Weld </b>area<b> </b>under <b>
+    Edit Geometry, </b>in the <b>Edge</b> tension value field enter 0.</font></p>
+    <p><font face="Arial" size="2">b) In the <b>Weld </b>area<b> </b>under <b>
+    Edit Geometry,</b> click the <b>Tessellate</b> button once.</font></p>
+    <p><font face="Arial" size="2">The second image further explains the above 
+    procedures and shows the final results of the tessellation procedure.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Arial">4) Turn the edges that border the outline of 
+    the stream on the texture such that the edges follow the stream bed. </font></p>
+    <p><font face="Arial" size="2">5)&nbsp;Create the stream bed by moving the 
+    vertices in the middle of the stream down.&nbsp; To do this, follow the 
+    procedures below.</font></p>
+    <p><font face="Arial" size="2">a) Under <b>Selection</b> select <b>Vertex</b> 
+    mode.</font></p>
+    <p><font face="Arial" size="2">b) Select the vertices that run approximately 
+    up the middle of the stream bed outlined in the terrain texture and move the 
+    vertices down in the Z-axis.</font></p>
+    <p><font face="Arial" size="2">6) Move the faces and vertices and turn the 
+    edges to smooth out the banks that border the stream and to make it follow the 
+    stream bed as outlined 
+    in the texture. </font></p>
+    <p><font face="Arial" size="2">In addition, the position in the Z-axis of 
+    the vertices that run up the middle of the stream bed were varied.</font></p>
+    <p><font face="Arial" size="2">7) Finally, the faces around the stream as 
+    well as the vertices and faces that intersect the ground and border hills 
+    were modified to smooth out and vary the terrain features.</font></p>
+    <p><font size="2" face="Arial">Depending on how the terrain is modified it 
+    may be necessary to adjust or reassign the texture coordinates.&nbsp; Follow 
+    the previous procedures for UVW Mapping or projection texture mapping the 
+    ground.</font></p>
+    <p><font face="Arial" size="2">The third image or last image further 
+    explains the above procedures and shows the final results of the above 
+    procedures.</font></p>
+    <p>&nbsp;</td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/terrain_streambed_01_large.gif" target="_blank">
+    <img border="0" src="images/terrain_streambed_01_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_streambed_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/terrain_streambed_02_large.gif" target="_blank">
+    <img border="0" src="images/terrain_streambed_02_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_streambed_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/terrain_streambed_03_large.gif" target="_blank">
+    <img border="0" src="images/terrain_streambed_03_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/terrain_streambed_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Creation of a Simple Stream</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber8" height="35">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following steps and example images will 
+    demonstrate the creation of geometry that will be used to add a stream to the existing level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber9" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Creation of the stream geometry:</font><p>
+    <font face="Arial" size="2">1) To create the surface of the stream do the 
+    following:</font></p>
+    <p>
+    <font face="Arial" size="2">a) Deselect the level (object &quot;level&quot;) and 
+    select <b>Create</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">b) Make sure that <b>Standard Primitives</b> is 
+    selected in the pull down menu.</font></p>
+    <p>
+    <font face="Arial" size="2">c) Under <b>Object Type</b>, click on the <b>
+    Plane</b> button.</font></p>
+    <p>
+    <font face="Arial" size="2">d) In the <b>Parameters</b> area, set the<b> 
+    Length Segs</b> value to 8 and the <b>Width Segs</b> value to 1.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p><font face="Arial" size="2">2)&nbsp;Create the plane such that it roughly 
+    covers the area of the stream bed.</font></p>
+    <p><font face="Arial" size="2">3) The stream is going to be made a separate 
+    object from the object &quot;level&quot;.&nbsp; </font></p>
+    <p><font face="Arial" size="2">Under <b>Name and Color</b>, name this object 
+    &quot;stream&quot;, the object color was also set to blue, this is not necessary but 
+    makes it easier to distinguish this object.</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">The plane of polygons will now be manipulated 
+    so that it fits the stream bed.&nbsp; </font></p>
+    <p><font face="Arial" size="2">4) Follow the procedures below to modify the 
+    plane so that it makes a stream.</font></p>
+    <p><font face="Arial" size="2">a) Select <b>Modify</b>.</font></p>
+    <p><font face="Arial" size="2">b) The plane needs to be converted to a 
+    mesh so that it can be manipulated. Select <b>Edit Mesh</b> from from the <b>
+    Modifier List</b> pull-down menu.</font></p>
+    <p><font face="Arial" size="2">c) Under <b>Selection</b> select <b>Face</b> 
+    mode.</font></p>
+    <p><font face="Arial" size="2">d) Select all the faces for the stream.</font></p>
+    <p><font face="Arial" size="2">e) Move the selected faces down in the Z-axis 
+    to form the surface of the water.&nbsp; The plane of polygons should be 
+    slightly below the lowest edge or bank of the stream bed.</font></p>
+    <p>
+    <font face="Arial" size="2">The third image further explains the above 
+    procedures and shows the final result of the performed procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">5)&nbsp; Edit the vertices to make the 
+    polygons that compose the object &quot;stream&quot; conform to the shape of the stream 
+    making sure that all edges extend into or past the geometry that composes 
+    the stream bed. </font></p>
+    <p><font face="Arial" size="2">6) The stream is going to be setup such that 
+    it &quot;flows&quot; from North to South. </font></p>
+    <p><font face="Arial" size="2">Notice how the edges of the polygons are 
+    positioned such that they are either parallel to the flow direction or 
+    perpendicular to the flow direction of the stream.&nbsp; This will make the 
+    texture mapping or application of texture coordinates for the stream shader 
+    (that will be scrolling to simulate the water moving) easier.</font></p>
+    <p>
+    <font face="Arial" size="2">The fourth image or final image further explains the above 
+    procedures and shows the final result.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/stream_01_large.gif" target="_blank">
+    <img border="0" src="images/stream_01_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/stream_02_large.gif" target="_blank">
+    <img border="0" src="images/stream_02_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/stream_03_large.gif" target="_blank">
+    <img border="0" src="images/stream_03_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/stream_04_large.gif" target="_blank">
+    <img border="0" src="images/stream_04_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber10" height="44">
+  <tr>
+    <td width="100%" height="10" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following steps and example images will 
+    demonstrate the creation and application of the Multi/Sub-Object material 
+    group and Sub-Material needed to complete the stream.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber3" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Creation of the stream <b>Material Group\Multi/Sub-Object</b>:</font><p>
+    <font face="Arial" size="2">1) In 3ds Max select the stream object.&nbsp; Open the
+    <b>Material Editor</b>.</font></p>
+    <p><font face="Arial" size="2">2) Select an empty <b>Material Group</b>.<b>&nbsp;
+    </b>This Material Group is currently set to a <b>Standard</b> Material.</font></p>
+    <p><font face="Arial" size="2">3) Click on the <b>Standard</b> button to 
+    bring up the <b>Material/Map Browser</b>.</font></p>
+    <p><font face="Arial" size="2">4) In the <b>Material/Map Browser</b> click 
+    on <b>Multi/Sub-Object</b>.</font></p>
+    <p><font face="Arial" size="2">5) Click on <b>OK</b>.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">6) This <b>Multi\Sub-Object</b> is going to 
+    be called &quot;stream&quot;.&nbsp; Type this name into the <b>
+    Multi\Sub-Object </b>description window.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The name does not matter since it is not 
+    exported, the<b> Multi\Sub-Objects </b>are being used to organize and apply 
+    like groups of materials to objects being created for the level.&nbsp; This 
+    will be demonstrated repeatedly in the tutorials and examples.</font></p>
+    <p><font face="Arial" size="2">7) Now apply the <b>Multi\Sub-Object</b> to 
+    the stream object.&nbsp; Since the &quot;stream&quot; object is selected, click on <b>Assign Material to 
+    Selection</b>.&nbsp; This <b>Multi\Sub-Object </b>has now been assigned to 
+    the &quot;stream&quot; object.&nbsp; The <b>Sub-Materials for this Multi\Sub-Object </b>can now be 
+    applied to the object using the materials associated <b>ID</b> number.</font></p>
+    <p><font face="Arial" size="2">8) Just for organization, the extra <b>
+    Sub-Materials</b> were deleted by selecting the <b>Sub-Materia</b>l to 
+    delete and clicking on <b>Delete</b> until the desired number of <b>
+    Sub-Materials</b> remained, in this case, 1 <b>Sub-Material</b>.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">The single <b>Sub-Material </b>is now going to 
+    be named the name of the shader which will be applied to the surfaces and 
+    appear in the game.</font></p>
+    <p><font face="Arial" size="2">9) To name or label<b> Sub-Material ID 1 </b>
+    do the following:</font></p>
+    <p><font face="Arial" size="2">a) Click on the <b>Sub-Material</b> button to 
+    go from displaying the <b>Multi/Sub-Object Basic Parameters</b> window in 
+    the <b>Material Editor</b> to displaying the <b>Shader Basic Parameters</b>,
+    <b>Blinn Basic Parameters</b>, <b>Extended Parameters</b>, <b>SuperSampling</b>,
+    <b>Maps, Dynamic Properties</b> and <b>Viewport Manager</b>.</font></p>
+    <p><font face="Arial" size="2">The second image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">b) Enter the name &quot;example_tutorial_stream&quot; into the name or 
+    label field.</font></p>
+    <p><font face="Arial" size="2">10)&nbsp;To display a texture or image for 
+    this material when applied to a surface do the following:</font></p>
+    <p><font face="Arial" size="2">a) Under <b>Blinn Basic Parameters</b>, click 
+    on the small box to the right of the <b>Diffuse</b> color setting.&nbsp; 
+    This will display the <b>Material/Map Browser</b>.</font></p>
+    <p><font face="Arial" size="2">b) Click on <b>Bitmap</b>.</font></p>
+    <p><font face="Arial" size="2">c) Click on <b>OK</b> and the <b>Select Bitmap Image File</b> window 
+    will now be displayed.</font></p>
+    <p><font face="Arial" size="2">The third image further 
+    explains the above procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">11) To select an image to display for the 
+    material do the following:</font></p>
+    <p><font face="Arial" size="2">a) In the <b>Select Bitmap Image File </b>go 
+    to the bitmaps directory under Halo\data\levels\test\tutorial_examples.</font></p>
+    <p><font face="Arial" size="2">This directory SHOULD exist if the Halo 
+    Editing Kit was installed and set up properly following the instructions 
+    under <b>Halo Editing Kit Installation</b> in the&nbsp;<font color="#3FA2FF"><b><a href="../../general/creating_a_dev_environment.html"><font color="#3FA2FF">Creating a Development Environment</font></a></b></font> section under <b>General Reference</b>.</font></p>
+    <p><font face="Arial" size="2">The files in the tutorial_examples level 
+    represent the final result of the tutorial and example process and is 
+    provided as a reference to aid in the learning process.</font></p>
+    <p><font face="Arial" size="2">b) Under the bitmaps directory there should 
+    be several .tif image files.&nbsp; Select the example_tutorial_stream.tif 
+    file.</font></p>
+    <p><font face="Arial" size="2">As was mentioned previously, the resources 
+    under the tutorial_examples directory represent the end result of all the 
+    examples and tutorials contained within the Halo PC Editing Reference.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The Halo End User Editing Kit provides many 
+    resources including a wide range of tags as well as image resources (.tif 
+    files) that can be used in the creation of Halo multiplayer levels.&nbsp;
+    </font></p>
+    <p><font face="Arial" size="2">The files provided also exist as examples and 
+    learning aids for those wishing to create their own custom game resources 
+    whose creation and modification may not be covered currently in the Halo PC 
+    Editing Reference.</font></p>
+    <p><font size="2" face="Arial">For now, the completed or provided example resources will 
+    be used for the following examples for the sake of simplicity.</font></p>
+    <p><font face="Arial" size="2">c) Click on <b>Open</b>.</font></p>
+    <p><font face="Arial" size="2">The fourth image further 
+    explains the above procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">To return to the previous options in the <b>
+    Material Editor</b> window<b> </b>click on the <b>Go to Parent</b> button.</font></p>
+    <p><font face="Arial" size="2">12) In the <b>Material Editor</b>, enable the 
+    display of the material by clicking on the <b>Show Map in Viewport</b> 
+    button.</font></p>
+    <p><font face="Arial" size="2">13) The Sub-Materials should be displayed on 
+    the Material Sample.</font></p>
+    <p><font size="2" face="Arial">The stream geometry that has been created 
+    does not currently follow the Sealed World Rules, it has open edges.&nbsp; 
+    This will be solved by adding a Special Shader Symbol to the 
+    material name.</font></p>
+    <p><font face="Arial" size="2">14) In the name or label field add a &quot;!&quot; 
+    character to the end of the name &quot;example_tutorial_stream&quot;.</font></p>
+    <p><font face="Arial" size="2">The name of the Sub-Material should now be &quot;example_tutorial_stream!&quot;.</font></p>
+    <p><font face="Arial" size="2">The </font>
+        <span class="body">  
+        <font face="Arial" size="2"><b>
+        Shader Symbols </b>table located in the General Reference section </font>
+ </span> 						
+    <font face="Arial"><b>
+    <a href="../../general/materials_overview.html">
+<font size="2" color="#3FA2FF">Materials Overview</font></a><font size="2" color="#3FA2FF">
+    </font></b></font><font face="Arial" size="2">shows that the &quot;!&quot; symbol 
+    tells Tool that when this surface is compiled into the level data tag do 
+    NOT associate any collision information with it.&nbsp; </font></p>
+    <p><font face="Arial" size="2">This surface is now RENDER ONLY.&nbsp; 
+    Because of this, it can have open edges and now satisfies the Sealed World 
+    Rules. </font></p>
+    <p><font face="Arial" size="2">15) To return to the <b>Multi/Sub-Object 
+    Basic Parameters </b>click on the <b>Go to Parent</b> button.</font></p>
+    <p><font face="Arial" size="2">16) Close the Material Editor window.</font></p>
+    <p><font face="Arial" size="2">The fifth image or last image further 
+    explains the above procedures.</font></p>
+    <p>&nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/stream_material_01_large.gif" target="_blank">
+    <img border="0" src="images/stream_material_01_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_material_01_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/stream_material_02_large.gif" target="_blank">
+    <img border="0" src="images/stream_material_02_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_material_02_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a target="_blank" href="images/stream_material_03_large.gif">
+    <img border="0" src="images/stream_material_03_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_material_03_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/stream_material_04_large.gif" target="_blank">
+    <img border="0" src="images/stream_material_04_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_material_04_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/stream_material_05_large.gif" target="_blank">
+    <img border="0" src="images/stream_material_05_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_material_05_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber12" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">With a material having been created and assigned 
+    to the faces that compose the stream object, the faces must have mapping 
+    coordinates created for them.&nbsp; These mapping coordinates or &quot;texture 
+    mapping&quot; will allow the base maps or textures that are in the form of a 
+    .bitmap data tag and are referenced in the shader data 
+    tag to properly display for the specific faces.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber8" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will 
+    demonstrate using Unwrap UVW to apply texture or mapping coordinates to the 
+    faces that compose the stream geometry.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber3" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">Application of texture coordinates to the faces 
+    that compose the stream geometry:</font><p>
+    <font face="Arial" size="2">1) Select the stream.</font></p>
+    <p><font face="Arial" size="2">2) Select <b>Modify</b>. </font></p>
+    <p><font face="Arial" size="2">3) Under <b>Selection</b>, select <b>Face</b> 
+    mode.</font></p>
+    <p><font face="Arial" size="2">4) Select all the faces that compose the 
+    stream geometry.</font></p>
+    <p><font face="Arial" size="2">5) Using the <b>Modifier List</b> pull-down 
+    menu select <b>Unwrap UVW</b>.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Arial">Apply the texture coordinates to make the 
+    texture for the stream follow the shape of the geometry.&nbsp; </font></p>
+    <p><font face="Arial" size="2">6) Click on the <b>Edit</b> button under <b>
+    Parameters</b>.&nbsp; This will display the <b>Edit UVWs</b> window.</font></p>
+    <p><font face="Arial" size="2">7) In the <b>Edit UVWs</b> window click on 
+    the <b>Show Options</b> button at the bottom to show additional properties.</font></p>
+    <p><font face="Arial" size="2">8) In the <b>Edit UVWs</b> window under 
+    <b>Bitmap Options</b> enter in the Width field 64 and enter in the Height field 
+    512.&nbsp;  </font></p>
+    <p><font face="Arial" size="2">The example_tutorial_stream.tif texture should now display 
+    properly.</font></p>
+    <p><font face="Arial" size="2">The second image further explains the above 
+    procedures.</font><p>&nbsp;<p><font face="Arial" size="2">9) Select <b>Move</b> mode 
+    in the <b>Edit UVWs</b> window.</font><p><font face="Arial" size="2">10) Map 
+    the stream texture to the faces of the stream geometry by moving the 
+    vertices.</font><p><font face="Arial" size="2">11) Once this is done, close the <b>Edit UVWs </b>
+    window.</font><p><font face="Arial" size="2">The third image further 
+    explains the above procedures and shows the final result.</font><p>
+    &nbsp;<p>
+    <font face="Arial" size="2">12) To make the stream part of the level, it 
+    must be linked or attached to the reference frame. </font><p>
+    <font face="Arial" size="2">a) Select the stream object.</font><p>
+    <font face="Arial" size="2">b) Click on <b>Select and Link</b>.</font><p>
+    <font face="Arial" size="2">c) Click on <b>Select by Name</b>, this will 
+    display the <b>Select Parent</b> window.</font><p>
+    <font face="Arial" size="2">d) In the <b>Select Parent</b> window select 
+    &quot;frame&quot;.</font><p>
+    <font face="Arial" size="2">e) Click on <b>Link</b>.</font><p><font face="Arial" size="2">The fourth image or last image further explains the above 
+    procedures.</font><p>&nbsp;</td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/stream_texture_mapping_01_large.gif" target="_blank">
+    <img border="0" src="images/stream_texture_mapping_01_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_texture_mapping_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/stream_texture_mapping_02_large.gif" target="_blank">
+    <img border="0" src="images/stream_texture_mapping_02_small.gif" width="258" height="200"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_texture_mapping_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/stream_texture_mapping_03_large.gif" target="_blank">
+    <img border="0" src="images/stream_texture_mapping_03_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_texture_mapping_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/stream_texture_mapping_04_large.gif" target="_blank">
+    <img border="0" src="images/stream_texture_mapping_04_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/stream_texture_mapping_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber46" height="119">
+  <tr>
+    <td width="100%" height="78" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The stream now has a material and mapping 
+    coordinates applied to it that 
+    once viewed in game will scroll and give the appearance of running water.&nbsp;
+    </font>
+    <p><font size="2" face="Arial">For additional water effects the stream bed 
+    will have a different material applied to it than the currently applied 
+    terrain material. Such additional water effects 
+    include: the sound of water splashing when the player runs through the water 
+    or stream bed, the water particle effects when the player runs through the 
+    stream or stream bed, and the explosion effects and particle effects that 
+    occur when such an event occurs in the stream.</font><p>
+    <font face="Arial" size="2">It should be noted that the steam in the 
+    examples and tutorials is the simplest case of creating or &quot;simulating&quot; 
+    water.&nbsp; Before continuing, a short discussion on water and water 
+    volumes and how they exist and behave in Halo is in order.</font><p>&nbsp;<p>
+    <b><font face="Arial" size="2">Water and Water Volumes in Halo</font></b><p>
+    <font face="Arial" size="2">Water in Halo is very simple, almost to the 
+    point where water does not truly exist (at least in the sense that most 
+    people that have edited or created water in other games are used to).&nbsp; 
+    This is understandable since there are no specifically designed underwater 
+    missions or environments in Halo.&nbsp; In the case of streams, the water is 
+    shallow and the player cannot get under the surfaces of the water and be 
+    completely immersed.&nbsp; Couple these facts with the game play mechanic 
+    that the player in the role of the Master Chief has a self contained suit of 
+    armor and has no fear of drowning, there was no need for complicated 
+    underwater player behaviors, physics, and effects. </font>
+    <p><font face="Arial" size="2">The majority of water encountered is in the 
+    form of simple streams.&nbsp; This kind of &quot;water&quot; has 2 parts: a stream 
+    surface with a shader whose settings simulate a water surface (small waves, 
+    flowing water, etc...) and the terrain underneath which has specific 
+    settings so that when objects interact with the terrain water effects occur 
+    (particles, sprites, sounds, etc...) giving the appearance that the stream 
+    itself is water.&nbsp; It is this kind of water that is demonstrated in the 
+    tutorial below.</font><p><font face="Arial" size="2">There is one instance 
+    in the game where a large volume of water exists that the player can 
+    interact with or go &quot;completely under water&quot;, this occurs for the island 
+    level in single player Halo, Silent Cartographer and in its multiplayer 
+    derivative, Death Island. </font>
+    <p><font face="Arial" size="2">In this instance, the water is still very 
+    simple.&nbsp; Just like the stream example, there are the water surfaces 
+    that have the water shader effects and the terrain or surfaces underneath 
+    that are setup to simulate water with the effects that occur when objects 
+    interact with these surfaces.&nbsp; In the case of the water surfaces, these 
+    are defined with a .shader_transparent_water where as the streams use .shader_transparent_chicago 
+    or shader_transparent_chicago_extended shader tags.&nbsp; The water is made 
+    to have no collision using the &quot;!&quot; Render Only Shader Symbol just as with 
+    the stream example below.</font><p><font face="Arial" size="2">The 
+    combination of the .shader_transparent_water and water fog volumes described 
+    below determine additional game behaviors such as the ability of vehicles to 
+    travel over the water (Ghosts will eventually stop and sink).</font><p>
+    <font face="Arial" size="2">For large volumes of water, a water fog volume 
+    is created.&nbsp; This is done by adding the fog plane Shader Symbol &quot;$&quot; to 
+    the material names for the water surfaces, or a similar plane is created 
+    with another fog plane defined shader assigned to the surfaces of the plane.&nbsp; 
+    The volume is defined to be a water fog volume by enabling the &quot;is water&quot; 
+    flag located in the .fog tag.&nbsp; </font>
+    <p><font face="Arial" size="2">Fog planes or volumes (suchs as those seen 
+    throughout the game and in the chasm in the multiplayer level Gephyrophobia) 
+    as well as water fog volumes are all created in a similar manner.&nbsp;
+    </font>
+    <p><font face="Arial" size="2">Make a plane that covers the entire area and 
+    extends past the level borders (this plane does not have to follow the 
+    Sealed World Rules), face the normals for the faces of the plane upwards, 
+    apply a material with the fog plane symbol or use the +unused special 
+    material (this material has no collision nor will it draw) with the fog 
+    plane symbol (to create the material +unused$).&nbsp; In Sapien, create a 
+    fog reference (a .fog tag that contains fog color and density as well as 
+    other properties) for the &quot;fog palette&quot; and then enter the volume and set 
+    the .fog palette entry to be applied to this volume.&nbsp; </font>
+    <p>&nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber47" height="38">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will 
+    discuss the implementation of materials to achieve water effects.&nbsp; The 
+    faces that compose the stream bed will be assigned a material that will give 
+    the stream the appearance of being water when the player and other game 
+    objects interact with it.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber48" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Creation and application of the stream bed material:</font><p>
+    <font face="Arial" size="2">The stream bed material will be identical to the 
+    surrounding terrain material except for the fact that its physics material 
+    settings for the shader will be set to &quot;water&quot; instead of &quot;dirt&quot;, this can 
+    be observed in the provided example shader files previously mentioned.</font></p>
+    <p><font face="Arial" size="2">This new material will be added as a new 
+    Sub-Material to the &quot;tutorial terrain\sky&quot; <b>Multi/Sub-Object</b>.</font></p>
+    <p><font face="Arial" size="2">1) Open the <b>Material Editor</b> and select 
+    the &quot;tutorial terrain\sky&quot; <b>Multi/Sub-Object</b>.</font></p>
+    <p><font face="Arial" size="2">2) Add a third <b>Sub-Material</b> by 
+    clicking on <b>Add</b>.</font></p>
+    <p><font face="Arial" size="2">3) Set up this new <b>Sub-Material</b> 
+    exactly like <b>Sub-Material ID</b> 2 (example_tutorial_ground) except name 
+    this <b>Sub-Material</b> &quot;example_tutorial_streambed&quot;</font></p>
+    <p><font face="Arial" size="2">4) Close the <b>Material Editor</b>.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">The new example_tutorial_streambed <b>Sub-Material</b> will now be applied to the stream bed.&nbsp; Follow the 
+    procedures below.</font></p>
+    <p><font face="Arial" size="2">5) Select the level.</font></p>
+    <p><font face="Arial" size="2">6) Select the <b>Modify</b> tab.</font></p>
+    <p><font face="Arial" size="2">7) Select <b>Face</b> mode.</font></p>
+    <p><font face="Arial" size="2">8) Select the stream bed faces, this includes 
+    all faces under the stream surface as well as those faces that partially 
+    intersect the stream surface.</font></p>
+    <p><font size="2" face="Arial">9) Set the faces to <b>Material ID</b> 3.&nbsp; 
+    Leave the <b>Smoothing Group</b> still set to 2 since we want the lighting 
+    for the terrain and stream bed to be blended together.</font></p>
+    <p><font face="Arial" size="2">The second image or last image further explains the above 
+    procedures.</font><p>&nbsp;</td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/streambed_01_large.gif" target="_blank">
+    <img border="0" src="images/streambed_01_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="mages/streambed_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/streambed_02_large.gif" target="_blank">
+    <img border="0" src="images/streambed_02_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/streambed_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Creation of&nbsp; a Simple Base Structure</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber13" height="93">
+  <tr>
+    <td width="100%" height="52" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The following procedures and examples will show 
+    the construction of a simple base structure.&nbsp;  </font>
+    <p>
+    <font face="Arial" size="2">Eventually, the structure will 
+    be &quot;mirrored&quot; or copied to create a second opposing base structure, this 
+    will be covered in subsequent tutorials along with the creation of <b>
+    Multi/Sub-Object</b> material groups and the application of the 
+    Sub-Materials and texture coordinates to the faces of the base structure.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber14" height="29">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will 
+    demonstrate the creation of a simple base structure.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber9" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Creation of the base structure geometry:</font><p>
+    <font face="Arial" size="2">When creating a level, particularly indoor 
+    environments and\or buildings or structures, it is always helpful to have a 
+    scale reference.&nbsp; The dimensions of various game elements of Halo, 
+    including the player dimensions, are available for reference in the
+<font color="#3FA2FF"><b>
+    <u>
+    <a href="../../general/halo_player_stats.html"><font color="#3FA2FF">
+    Halo Player Statistics</font></a></u></b><a href="../../general/halo_player_stats.html">.&nbsp; </a></font>
+    </font></p>
+    <p>
+    <font face="Arial" size="2">Another technique is to use a reference model.&nbsp; 
+    The Halo Editing Kit includes a simple reference model for the player (the 
+    Master Chief) and a vehicle (the Warthog).&nbsp; The following procedures will 
+    demonstrate how to merge or import a reference model for use as scale 
+    reference for the creation of the base structure geometry.</font></p>
+    <p>
+    <font face="Arial" size="2">1) In 3ds Max go to <b>File</b> and select <b>
+    Merge</b>.&nbsp; This will open the <b>Merge File</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">2) In the <b>Merge File</b> window go to the 
+    master_chief directory under the Halo\data\characters\reference directory 
+    structure.</font></p>
+    <p>
+    <font face="Arial" size="2">3) In this directory there will be a 
+    master_chief.max file, select this file.</font></p>
+    <p>
+    <font face="Arial" size="2">4) Click on <b>Open</b>. The <b>Merge</b> window 
+    will now appear.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">5) In the <b>Merge</b> window, select the Master 
+    Chief object in the list.</font></p>
+    <p>
+    <font face="Arial" size="2">6) Click on <b>OK</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">The Master Chief reference model will now appear 
+    in the level and can be moved and rotated as necessary.&nbsp; For this 
+    tutorial, the reference model will be moved to the southern dirt patch of 
+    the level where the base structure will be constructed.</font></p>
+    <p>
+    <font face="Arial" size="2">Note that the model may appear below the terrain 
+    but will be selected, move the model up to make it visible.</font></p>
+    <p>
+    <font face="Arial" size="2">The reference model will NEVER be linked to the 
+    reference frame and only exists as a reference tool.&nbsp; Since the model 
+    is not linked to the frame, it will never be part of the level and will 
+    never be exported. Therefore, the model can be kept in the .max file and 
+    does not have to be deleted each time the level is exported to a .jms.</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font size="2" face="Arial">7) To create the core geometry of the base 
+    structure follow the procedures below.</font></p>
+    <p>
+    <font face="Arial" size="2">a) Select <b>Create</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">b) Select <b>Box</b> and create a box that has 
+    the following dimensions:&nbsp; Length: 280.0 Width 96.0 Height 96.0 and 
+    that has Length Segs: 2 Width Segs: 1 and Height Segs: 1.</font></p>
+    <p><font face="Arial" size="2">c) Position and align the box such that it is 
+    roughly in the center of the dirt spot but slightly more towards the center 
+    of the level.</font></p>
+    <p>
+    <font face="Arial" size="2">The third image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">The box will now be manipulated to create a 
+    ramp and simple hallway.</font></p>
+    <p><font face="Arial" size="2">8) To make the front ramp to the base do the 
+    following:</font></p>
+    <p><font face="Arial" size="2">a) Convert the box to a mesh (<b>Edit Mesh</b>).</font></p>
+    <p><font face="Arial" size="2">b) Make the first segment of the box into a 
+    ramp by welding (<b>Vertex Mode </b>and<b> Weld</b>) the top 2 vertices to 
+    the bottom 2 vertices.</font></p>
+    <p>
+    <font face="Arial" size="2">The fourth image further explains the above 
+    procedures and shows the final result of the above procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">9) To create the simple hallway  the side faces of the back segment for 
+    both 
+    sides are deleted as well as the bottom faces for the two segments.</font></p>
+    <p>
+    <font face="Arial" size="2">The fifth image further explains the above 
+    procedures and shows the final result of the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p><font size="2" face="Arial">10)&nbsp; Extend the hallway by extruding the 
+    side edges (<b>Edge</b> <b>Mode</b>, Select the Edges, and Shift-Drag)</font></p>
+    <p><font face="Arial" size="2">11) The ramp was slightly extended also by 
+    just selecting the front vertices and moving them forward.</font></p>
+    <p>
+    <font face="Arial" size="2">The sixth image further explains the above 
+    procedures and shows the final result of the above procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Arial">12)&nbsp; The faces that form the top of the 
+    base were hidden to make the construction of the internal hallway and 
+    features easier.</font></p>
+    <p><font face="Arial" size="2">Vertices were then created and aligned to 
+    form the beginning of the doorways for the hallway.&nbsp; The top vertices 
+    were scaled inwards to add a slight taper to the door way once it is 
+    completed.</font></p>
+    <p><font size="2" face="Arial">Note that the Master Chief reference model 
+    was moved to help determine how big the hallway and entrances\exits should 
+    be.</font></p>
+    <p>
+    <font face="Arial" size="2">The seventh image further explains the above 
+    procedures and shows the final result of the above procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Arial">13) Using the newly created and existing 
+    vertices, polygons or faces were created to make the sides of the bases with 
+    the hallway doorways cutout.</font></p>
+    <p><font size="2" face="Arial">14) The floor and ceiling for the hallway 
+    were also created by creating polygons or faces using the newly created 
+    vertices.</font></p>
+    <p><font face="Arial" size="2">The normals for the visible collideable faces 
+    must point in the proper direction.</font></p>
+    <p>
+    <font face="Arial" size="2">The eighth image further explains the above 
+    procedures and shows the final result of the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">15) The faces that compose the hallway ceiling 
+    were hidden to make the viewing and construction of the hallway walls 
+    easier.</font></p>
+    <p>
+    <font face="Arial" size="2">The hallway walls were created by creating 
+    polygons or faces using the existing vertices.</font></p>
+    <p>
+    <font face="Arial" size="2">The ninth image further explains the above 
+    procedures and shows the final result of the above procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Arial">16) All of the faces were unhidden and the 
+    base was named &quot;blue base&quot; by entering this name into the object name field.</font></p>
+    <p>
+    <font face="Arial" size="2">The tenth image or final image further explains the above 
+    procedures and shows the final result.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/merge_reference_model_01_large.gif" target="_blank">
+    <img border="0" src="images/merge_reference_model_01_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/merge_reference_model_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/merge_reference_model_02_large.gif" target="_blank">
+    <img border="0" src="images/merge_reference_model_02_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/merge_reference_model_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/base_construction_01_large.gif" target="_blank">
+    <img border="0" src="images/base_construction_01_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_construction_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/base_construction_02_large.gif" target="_blank">
+    <img border="0" src="images/base_construction_02_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_construction_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/base_construction_03_large.gif" target="_blank">
+    <img border="0" src="images/base_construction_03_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_construction_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/base_construction_04_large.gif" target="_blank">
+    <img border="0" src="images/base_construction_04_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_construction_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/base_construction_05_large.gif" target="_blank">
+    <img border="0" src="images/base_construction_05_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_construction_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/base_construction_06_large.gif" target="_blank">
+    <img border="0" src="images/base_construction_06_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_construction_06_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/base_construction_07_large.gif" target="_blank">
+    <img border="0" src="images/base_construction_07_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_construction_07_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/base_construction_08_large.gif" target="_blank">
+    <img border="0" src="images/base_construction_08_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_construction_08_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber15" height="29">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will 
+    demonstrate the modification of the base structure and the addition of 
+    ladders.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber16" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Creation of ladder guides and ladder faces:</font><p>
+    <br>
+    <font size="2" face="Arial">When adding ladders to a level, it is always 
+    good to provide some geometry that helps &quot;guide&quot; the player while getting on 
+    or off the ladder and that helps keep the player from falling off or 
+    shifting on the ladder as the player travels along the ladder face.</font></p>
+    <p>
+    <font face="Arial" size="2">1) Two ladder guides or grooves are created on 
+    the back side or &quot;South&quot; side of the base structure.</font></p>
+    <p>
+    <font face="Arial" size="2">2) The guides or grooves will provide an inset for 
+    the ladder faces or polygons to be placed. </font></p>
+    <p>
+    <font face="Arial" size="2">Since the ladder faces must be offset from the 
+    back face of the grooves and cannot be created using the front vertices 
+    additional vertices and faces are created midway on the sides of the inset 
+    grooves.&nbsp; The reason for this is because if the ladder faces were 
+    created using the front vertices multiple edges would be created.&nbsp; 
+    Multiple edges are invalid due to the fact that they break the Sealed World 
+    Rules.</font></p>
+    <p>
+    <font face="Arial" size="2">3) The edges at the start of the ladder guides 
+    or grooves are beveled or angled to help guide the player onto the ladder as 
+    the player approaches the ladder faces from any angle.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the above 
+    procedures and shows the final results of the geometry modifications.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">4) The faces that will be become the actual 
+    ladders are added using the middle vertices set into the grooves created for 
+    the ladders. </font></p>
+    <p>
+    <font face="Arial" size="2">The second image or last image further explains the above 
+    procedures and shows the final results of the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a target="_blank" href="images/ladder_construction_01_large.gif">
+    <img border="0" src="images/ladder_construction_01_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/ladder_construction_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/ladder_construction_02_large.gif" target="_blank">
+    <img border="0" src="images/ladder_construction_02_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/ladder_construction_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber17" height="29">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will 
+    demonstrate the modification of the base structure for the inclusion of a 
+    teleporter gateway</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber18" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Creation of a teleporter gateway:</font><p>
+    <br>
+    <font size="2" face="Arial">When adding teleporters to a level, it is always 
+    good to provide some geometry that helps &quot;guide&quot; the player on entering or 
+    exiting a teleporter.&nbsp; This teleporter guide or gateway is also useful 
+    in visually indicating to the player the existence of the teleporter as well 
+    as the area they must enter in order to trigger the teleporter.</font></p>
+    <p>
+    <font face="Arial" size="2">1) A doorway or gateway for the teleporter is 
+    created on 
+    the back side or &quot;South&quot; side of the base structure.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the above 
+    procedures and shows the final results of the geometry modifications.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">2) The visible teleporter &quot;field&quot; is added by 
+    creating faces that fit the opening but are NOT attached to the base meshes 
+    (the vertices and associated edges do not align but the edges are flush with 
+    the surrounding surfaces or faces).&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">The faces are then inset.&nbsp; The faces 
+    created form a curved surface for aesthetic purposes.</font></p>
+    <p>
+    <font face="Arial" size="2">These faces will be made render only later when 
+    materials are applied just as the 
+    stream faces were and therefore these faces may have open edges since they 
+    will be non-solid (no collision).</font></p>
+    <p>
+    <font face="Arial" size="2">The netgame flags required to make the 
+    teleporter work will be placed using Sapien and will be demonstrated in the
+    <font color="#3FA2FF">
+    <b>
+    <a href="mp_ld_level_population.html">Population</a> </b></font>section.</font></p>
+    <p>
+    <font face="Arial" size="2">The second image or last image further explains the above 
+    procedures and shows the final results of the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/teleporter_construction_01_large.gif" target="_blank">
+    <img border="0" src="images/teleporter_construction_01_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/teleporter_construction_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/teleporter_construction_02_large.gif" target="_blank">
+    <img border="0" src="images/teleporter_construction_02_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/teleporter_construction_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber19" height="29">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will 
+    demonstrate the addition of lights to the base hallway.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber20" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Addition of lights to the base hallway:</font><p>
+    <font face="Arial" size="2">The tunnel for the base will need some basic 
+    lighting.&nbsp; Lighting and radiosity will be covered more in depth in the
+    </font>
+    <b>
+    <a href="mp_ld_level_radiosity.html">
+    <font face="Arial" size="2" color="#3FA2FF">Radiosity (Lighting)</font></a><font face="Arial" size="2" color="#3FA2FF"> </font></b>
+    <font face="Arial" size="2">section.</font></p>
+    <p><font face="Arial" size="2">1) Two lights were added to the tunnel by 
+    creating 2 faces for each light and then moving these faces slightly off the 
+    surface of the tunnel ceiling (this prevents z-buffering render anomalies 
+    and Tool compilation errors).&nbsp; </font></p>
+    <p><font face="Arial" size="2">Note that these lights currently do not 
+    follow the Sealed World Rules since they have open edges. As was 
+    demonstrated with the creation of the stream in the level, these faces will 
+    be made &quot;render only&quot; and will have no collision once the appropriate 
+    material is applied to the faces.&nbsp; These faces will then comply with the Sealed World 
+    Rules.</font></p>
+    <p><font face="Arial" size="2">In this case, the light faces WILL be visible 
+    AND cast light for use in radiosity.&nbsp; As will be covered in the </font>
+    <b>
+    <a href="mp_ld_level_radiosity.html">
+    <font face="Arial" size="2" color="#3FA2FF">Radiosity (Lighting)</font></a><font face="Arial" size="2" color="#3FA2FF"> </font></b>
+    <font face="Arial" size="2">section, faces can emit light and not render, or 
+    render and not emit light, or both.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The Master Chief reference model was moved or 
+    hidden in the example image.</font></p>
+    <p>
+    <font face="Arial" size="2">The  image to the right further explains the above 
+    procedures and shows the final results for the procedures outlined above.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/base_details_01_large.gif" target="_blank">
+    <img border="0" src="images/base_details_01_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_details_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Separation of the Level into Separate Mesh Objects</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber21" height="54">
+  <tr>
+    <td width="100%" height="26" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">Before creating the <b>Multi/Sub-Object</b> 
+    material group for the base structure created above and applying the 
+    materials, texture coordinates, and smoothing groups to the base structure 
+    faces, the structure must be made part of the level and satisfy the Sealed 
+    World Rules.</font><p><font face="Arial" size="2">There are several ways to 
+    build a level.&nbsp; It is perfectly valid to make the entire level a single 
+    mesh that satisfies the Sealed World Rules.&nbsp; It is also perfectly valid 
+    to create a single <b>Multi/Sub-Object</b> that contains all the 
+    Sub-Materials for the level and apply it to this single large mesh.</font></p>
+    <p><font face="Arial" size="2">Since there are so many parts to a level and 
+    a level can become quite large and cumbersome to work with, it is very 
+    advantageous to separate the level into several objects.&nbsp; These objects 
+    can then have their own individual <b>Multi/Sub-Object </b>material group.&nbsp; 
+    This separation of mesh parts and material groups greatly helps in the 
+    organization of the level and greatly decreases the cumbersome nature of 
+    dealing with a single large mesh when creating something as complicated as a 
+    game environment.&nbsp; </font></p>
+    <p><font face="Arial" size="2">It is the latter approach that will be 
+    followed and demonstrated in the proceeding tutorials and examples.</font></p>
+    <p><font face="Arial" size="2">When the level data is exported using 
+    Blitzkrieg, only the vertices and subsequent face data (material type\name, 
+    smoothing group, texture coordinates, etc...) are exported.&nbsp; Therefore, 
+    objects that meshes are separated into only exist in 3ds Max.&nbsp; Because 
+    of this, as long as the vertices and related edges match exactly between the 
+    mesh objects (satisfying the Sealed World Rules), the exported data will 
+    reflect this.&nbsp; The level will export and compile properly.</font></p>
+    <p>
+    <font size="2" face="Arial">The following procedures and example images will 
+    demonstrate the merging of the base with the level terrain to create 
+    polygons to seal the world and to match the relevant vertices and associated 
+    edges.&nbsp; The faces that compose the base will then be detached from the 
+    level mesh to create a separate object that will have a separate 
+    Multi/Sub-Object material group.&nbsp; The base object will then be linked 
+    to the reference frame.&nbsp; </font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber21" height="46">
+  <tr>
+    <td width="100%" height="18" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will 
+    demonstrate the merging of the base with the level terrain to satisfy the 
+    Sealed World Rules.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber22" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">Merging the base structure with the level 
+    object:</font></p>
+    <p>
+    <font face="Arial" size="2">1) Select the level (object named &quot;level&quot;).</font></p>
+    <p>
+    <font face="Arial" size="2">2) Under <b>Edit Geometry</b> click on <b>Attach</b> 
+    to activate attach mode.</font></p>
+    <p>
+    <font face="Arial" size="2">3) Now click on the base object (object named 
+    &quot;blue base&quot;).</font></p>
+    <p>
+    <font size="2" face="Arial">The base has now been merged and is a part of 
+    the level geometry.</font></p>
+    <p>
+    <font face="Arial" size="2">The base may change color or have a texture 
+    or textures suddenly applied to it, this does not matter since it will have materials 
+    and texture coordinates properly assigned to it later.&nbsp; This is the 
+    result of merging the faces of the base (which have a default material id 
+    number associated with them) with an object that already has a material assigned to 
+    it.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the above 
+    procedures and shows the final results of the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">4) Toggle Attach mode off by clicking on <b>
+    Attach</b> again. </font></p>
+    <p>
+    <font face="Arial" size="2">5) Select all the faces or vertices that compose 
+    the base structure and then move the base down in the Z-Axis so that it is 
+    flush or even with the terrain underneath it.</font></p>
+    <p>
+    <font face="Arial" size="2">6) Delete the ground faces that are adjacent or 
+    around the base.</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the above 
+    procedures and shows the final results of the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">7) Create polygons to fill in the hole around 
+    the base and attach the base geometry to the surrounding terrain geometry.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">Make sure to fill in the holes and gaps in the 
+    ladder guides (the area behind the ladder faces).</font></p>
+    <p>
+    <font face="Arial" size="2">8) Assign these newly created faces to <b>
+    Material ID</b> 2 and <b>Smoothing Group</b> 2.</font></p>
+    <p>
+    <font face="Arial" size="2">9) Select all the faces that create the terrain 
+    and apply a <b>UVW Map</b> (Top down projection texture mapping) to fix the 
+    texture coordinates (as demonstrated before).</font></p>
+    <p>
+    <font face="Arial" size="2">The third image or last image further explains the above 
+    procedures and shows the final results of the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/base_attachment_01_large.gif" target="_blank">
+    <img border="0" src="images/base_attachment_01_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_attachment_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_attachment_02_large.gif" target="_blank">
+    <img border="0" src="images/base_attachment_02_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_attachment_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_attachment_03_large.gif" target="_blank">
+    <img border="0" src="images/base_attachment_03_small.gif" width="250" height="198"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_attachment_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber23" height="46">
+  <tr>
+    <td width="100%" height="18" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will 
+    demonstrate&nbsp; the 
+    separation of the base into a separate object that will eventually be linked to the 
+    reference frame.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber24" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">Separating the base structure from the level 
+    object:</font></p>
+    <p>
+    <font face="Arial" size="2">1) Select the level.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Enter Face mode and select all the faces that 
+    compose the base structure.</font></p>
+    <p>
+    <font face="Arial" size="2">3) Under <b>Edit Geometry</b> click on <b>Detach</b>.&nbsp; 
+    The <b>Detach</b> dialog window will appear.</font></p>
+    <p>
+    <font face="Arial" size="2">4) In the <b>Detach </b>dialog window enter 
+    &quot;blue base&quot; in the <b>Detach as:</b> entry field, this will detach the faces to a 
+    separate object called &quot;blue base&quot;.</font></p>
+    <p>
+    <font face="Arial" size="2">5) Click on <b>OK</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">The  image to the right further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/base_detachment_01_large.gif" target="_blank">
+    <img border="0" src="images/base_detachment_01_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_detachment_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Application of Materials to the Base</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber25" height="27">
+  <tr>
+    <td width="100%" height="3" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">Now that the blue base has been separated into a 
+    separate object, a separate Multi/Sub-Object material group will be created.</font><p>
+    <font size="2" face="Arial">The following steps and example images will 
+    demonstrate the creation of the Multi/Sub-Object material 
+    group and Sub-Materials needed to complete the base structure.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber26" height="1">
+  <tr>
+    <td width="51%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Creation of the base structure <b>Material Group\Multi/Sub-Object</b>:</font><p>
+    <font face="Arial" size="2">1) In 3ds Max select the blue base object.&nbsp; Open the
+    <b>Material Editor</b>.</font></p>
+    <p><font face="Arial" size="2">2) Select an empty <b>Material Group</b>.<b>&nbsp;
+    </b>This Material Group is currently set to a <b>Standard</b> Material.</font></p>
+    <p><font face="Arial" size="2">3) Click on the <b>Standard</b> button to 
+    bring up the <b>Material/Map Browser</b>.</font></p>
+    <p><font face="Arial" size="2">4) In the <b>Material/Map Browser</b> click 
+    on <b>Multi/Sub-Object</b>.</font></p>
+    <p><font face="Arial" size="2">5) Click on <b>OK</b>.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">6) This <b>Multi\Sub-Object</b> is going to 
+    be called &quot;base structures&quot;.&nbsp; Type this name into the <b>
+    Multi\Sub-Object </b>description window.&nbsp; </font></p>
+    <p><font face="Arial" size="2">7) Now apply the <b>Multi\Sub-Object</b> to 
+    the blue base object.&nbsp; Since the &quot;blue base&quot; object is selected, click on <b>Assign Material to 
+    Selection</b>.&nbsp; This <b>Multi\Sub-Object </b>has now been assigned to 
+    the &quot;blue base&quot; object.&nbsp; The <b>Sub-Materials for this Multi\Sub-Object </b>can now be 
+    applied to the object using the materials associated <b>ID</b> number.</font></p>
+    <p><font face="Arial" size="2">8) Just for organization, the extra <b>
+    Sub-Materials</b> were deleted by selecting the <b>Sub-Materia</b>l to 
+    delete and clicking on <b>Delete</b> until the desired number of <b>
+    Sub-Materials</b> remained, in this case, 8 <b>Sub-Materials</b>.</font></p>
+    <p><font face="Arial" size="2">9) The Sub-Materials are now going to be 
+    named and linked to images (Diffuse maps).&nbsp; Since this has been 
+    demonstrated before, the Sub-Material properties will be listed in the table 
+    below.</font></p>
+    <p><font face="Arial" size="2">Note: The .tif file reference is the image to 
+    be linked to in <b>Diffuse Map</b> settings.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The directory containing these images is the same as the 
+    previous examples: Halo\data\levels\test\tutorial_examples\bitmaps</font></p>
+    <p><font face="Arial" size="2">Make sure that in the the <b>Material Editor</b>, 
+    to enable the 
+    display of the materials by clicking on the <b>Show Map in Viewport</b> 
+    button for each Sub-Material.</font></p>
+    <p>&nbsp;</p>
+    <table border="2" cellspacing="0" width="100%" id="AutoNumber27" style="border-collapse: collapse" cellpadding="0" height="292" bordercolor="#C0C0C0">
+      <tr>
+        <td width="12%" height="32">
+        <p align="center"><b><font face="Arial" size="2">&nbsp;ID </font></b>
+        </td>
+        <td width="49%" height="32">
+        <p align="center"><b><font face="Arial" size="2">Name</font></b></td>
+        <td width="39%" height="32">
+        <p align="center"><font face="Arial" size="2"><b>Diffuse Map (.tif file)</b></font></td>
+      </tr>
+      <tr>
+        <td width="12%" align="center" height="19">&nbsp;</td>
+        <td width="49%" align="center" height="19">&nbsp;</td>
+        <td width="39%" align="center" height="19">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="12%" align="center" height="25"><font face="Arial" size="2">1</font></td>
+        <td width="49%" align="center" height="25"><font face="Arial" size="2">
+        example_tutorial_metal</font></td>
+        <td width="39%" align="center" height="25"><font face="Arial" size="2">
+        example_tutorial_metal.tif</font></td>
+      </tr>
+      <tr>
+        <td width="12%" align="center" height="25"><font face="Arial" size="2">2</font></td>
+        <td width="49%" align="center" height="25"><font face="Arial" size="2">
+        example_tutorial_panels</font></td>
+        <td width="39%" align="center" height="25"><font face="Arial" size="2">
+        example_tutorial_panels.tif</font></td>
+      </tr>
+      <tr>
+        <td width="12%" align="center" height="25"><font face="Arial" size="2">3</font></td>
+        <td width="49%" align="center" height="25"><font face="Arial" size="2">
+        example_tutorial_metal_floor</font></td>
+        <td width="39%" align="center" height="25"><font face="Arial" size="2">
+        example_tutorial_metal_floor.tif</font></td>
+      </tr>
+      <tr>
+        <td width="12%" align="center" height="32"><font face="Arial" size="2">4</font></td>
+        <td width="49%" align="center" height="32"><font face="Arial" size="2">
+        example_tutorial_plate_floor</font></td>
+        <td width="39%" align="center" height="32"><font face="Arial" size="2">
+        example_tutorial_plate_floor.tif</font></td>
+      </tr>
+      <tr>
+        <td width="12%" align="center" height="24"><font face="Arial" size="2">5</font></td>
+        <td width="49%" align="center" height="24"><font face="Arial" size="2">
+        example_tutorial_ladder%^</font></td>
+        <td width="39%" align="center" height="24"><font face="Arial" size="2">
+        example_tutorial_ladder.tif</font></td>
+      </tr>
+      <tr>
+        <td width="12%" align="center" height="24"><font face="Arial" size="2">6</font></td>
+        <td width="49%" align="center" height="24"><font face="Arial" size="2">
+        example_tutorial_lights_blue!</font></td>
+        <td width="39%" align="center" height="24"><font face="Arial" size="2">
+        example_tutorial_lights_blue.tif</font></td>
+      </tr>
+      <tr>
+        <td width="12%" align="center" height="31"><font face="Arial" size="2">7</font></td>
+        <td width="49%" align="center" height="31"><font face="Arial" size="2">
+        example_tutorial_lights_red!</font></td>
+        <td width="39%" align="center" height="31"><font face="Arial" size="2">
+        example_tutorial_lights_red.tif</font></td>
+      </tr>
+      <tr>
+        <td width="12%" align="center" height="46"><font face="Arial" size="2">8</font></td>
+        <td width="49%" align="center" height="46"><font face="Arial" size="2">
+        example_tutorial_teleporter!</font></td>
+        <td width="39%" align="center" height="46"><font face="Arial" size="2">
+        None (Diffuse color set to green)</font></td>
+      </tr>
+    </table>
+    <p><font face="Arial" size="2">Note that the Shader Symbols have been 
+    included.&nbsp; The Sub-Material example_tutorial_ladder%^ demonstrates that 
+    materials can have multiple Shader Symbols applied.&nbsp; In this case the 
+    ladder material has been made viewable from both sides or two-sided using 
+    the % symbol and has been made a ladder or climbable by the player using the 
+    ^ symbol.</font></p>
+    <p><font face="Arial" size="2">The .tif files listed above were included 
+    with the Halo PC End User Editing Kit.</font></p>
+    <p><font face="Arial" size="2">As before, the completed or provided example resources 
+    will be used for the following examples for the sake of simplicity. </font></p>
+    <p><font face="Arial" size="2">Once all the Sub-Materials have been created, 
+    named, and linked to their reference images, close the <b>Material Editor</b> window.</font></p>
+    <p><font face="Arial" size="2">The second image or last image further explains the above 
+    procedures and shows the results in the <b>Material Editor</b>.</font></p>
+    <p>&nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_material_01_large.gif" target="_blank">
+    <img border="0" src="images/base_material_01_small.gif" width="200" height="155"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_material_01_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_material_02_large.gif" target="_blank">
+    <img border="0" src="images/base_material_02_small.gif" width="200" height="156"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_material_02_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber28" height="44">
+  <tr>
+    <td width="100%" height="10" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">Now that the blue base has been separated into a 
+    separate object and a separate Multi/Sub-Object material group has been created, 
+    the Sub-Materials as well as texture mapping coordinates will be applied.&nbsp; </font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber29" height="44">
+  <tr>
+    <td width="100%" height="10" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following steps and example images will 
+    demonstrate application of the Sub-Materials needed to complete the base structure.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber30" height="1">
+  <tr>
+    <td width="51%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">Application of Materials and Texture Coordinates 
+    to the base and base surfaces:</font><p>
+    <font face="Arial" size="2">The following table describes the areas of the 
+    base and what material is applied to them.</font></p>
+    <table border="2" cellspacing="0" width="100%" id="AutoNumber31" style="border-collapse: collapse" cellpadding="0" height="538" bordercolor="#C0C0C0">
+      <tr>
+        <td width="47%" height="32">
+        <p align="center"><b><font face="Arial" size="2">Base Area</font></b></td>
+        <td width="21%" height="32">
+        <p align="center"><b><font face="Arial" size="2">Material Applied</font></b></td>
+        <td width="20%" height="32">
+        <p align="center"><b><font face="Arial" size="2">ID</font></b></td>
+      </tr>
+      <tr>
+        <td width="47%" align="center" height="19">&nbsp;</td>
+        <td width="21%" align="center" height="19">&nbsp;</td>
+        <td width="20%" align="center" height="19">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="47%" align="center" height="61"><font face="Arial" size="2">
+        All the faces that compose the teleporter gateway at the rear of the 
+        base</font></td>
+        <td width="21%" align="center" height="61"><font face="Arial" size="2">
+        example_tutorial_metal</font></td>
+        <td width="20%" align="center" height="61"><font face="Arial" size="2">1</font></td>
+      </tr>
+      <tr>
+        <td width="47%" align="center" height="102"><font face="Arial" size="2">
+        Faces that compose the tunnel ceiling</font></td>
+        <td width="21%" align="center" height="102"><font face="Arial" size="2">
+        example_tutorial_metal</font></td>
+        <td width="20%" align="center" height="102"><font face="Arial" size="2">
+        1</font></td>
+      </tr>
+      <tr>
+        <td width="47%" align="center" height="102"><font face="Arial" size="2">
+        Faces that compose the side walls of the tunnel</font></td>
+        <td width="21%" align="center" height="102"><font face="Arial" size="2">
+        example_tutorial_metal</font></td>
+        <td width="20%" align="center" height="102"><font face="Arial" size="2">
+        1</font></td>
+      </tr>
+      <tr>
+        <td width="47%" align="center" height="102"><font face="Arial" size="2">
+        All the faces that compose the sides of the base (front, right, left and 
+        back faces including the ladder guide grooves.</font></td>
+        <td width="21%" align="center" height="102"><font face="Arial" size="2">
+        example_tutorial_panels</font></td>
+        <td width="20%" align="center" height="102"><font face="Arial" size="2">
+        2</font></td>
+      </tr>
+      <tr>
+        <td width="47%" align="center" height="45"><font face="Arial" size="2">
+        Tunnel floor faces</font></td>
+        <td width="21%" align="center" height="45"><font face="Arial" size="2">
+        example_tutorial_metal_floor</font></td>
+        <td width="20%" align="center" height="45"><font face="Arial" size="2">3</font></td>
+      </tr>
+      <tr>
+        <td width="47%" align="center" height="52"><font face="Arial" size="2">
+        Top faces of the base and ramp</font></td>
+        <td width="21%" align="center" height="52"><font face="Arial" size="2">
+        example_tutorial_plate_floor</font></td>
+        <td width="20%" align="center" height="52"><font face="Arial" size="2">4</font></td>
+      </tr>
+      <tr>
+        <td width="47%" align="center" height="49"><font face="Arial" size="2">
+        Ladder faces located at the rear of the base</font></td>
+        <td width="21%" align="center" height="49"><font face="Arial" size="2">
+        example_tutorial_ladder%^</font></td>
+        <td width="20%" align="center" height="49"><font face="Arial" size="2">5</font></td>
+      </tr>
+      <tr>
+        <td width="47%" align="center" height="39"><font face="Arial" size="2">
+        Base lights located in the tunnel</font></td>
+        <td width="21%" align="center" height="39"><font face="Arial" size="2">
+        example_tutorial_lights_blue!</font></td>
+        <td width="20%" align="center" height="39"><font face="Arial" size="2">6</font></td>
+      </tr>
+      <tr>
+        <td width="47%" align="center" height="51"><font size="2" face="Arial">
+        Not applied to any surfaces for this base</font></td>
+        <td width="21%" align="center" height="51"><font face="Arial" size="2">
+        example_tutorial_lights_red!</font></td>
+        <td width="20%" align="center" height="51"><font face="Arial" size="2">7</font></td>
+      </tr>
+      <tr>
+        <td width="47%" align="center" height="79"><font face="Arial" size="2">
+        Faces for the teleporter shield located at the rear of the base</font></td>
+        <td width="21%" align="center" height="79"><font face="Arial" size="2">
+        example_tutorial_teleporter!</font></td>
+        <td width="20%" align="center" height="79"><font face="Arial" size="2">8</font></td>
+      </tr>
+    </table>
+    <p><font size="2" face="Arial">Once the material is applied, the faces have 
+    texture coordinates assigned.&nbsp; The texture coordinates or texture 
+    mapping is applied to the surfaces using a combination of&nbsp;projection 
+    mapping (<b>UVW Map</b>) and UVW Unwrapping and mapping (<b>Unwrap UVW</b>).
+    </font></p>
+    <p><font face="Arial" size="2">The images to the right further explain the 
+    above procedures and several images have been provided showing the base from 
+    several angles to show the final base material application and texture 
+    alignment. </font></p>
+    <p>&nbsp;</p>
+    </td>
+    <td width="52%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_texturing_01_large.gif" target="_blank">
+    <img border="0" src="images/base_texturing_01_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_texturing_01_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/base_texturing_02_large.gif" target="_blank">
+    <img border="0" src="images/base_texturing_02_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_texturing_02_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/base_texturing_03_large.gif" target="_blank">
+    <img border="0" src="images/base_texturing_03_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_texturing_03_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    <p align="center">
+    <a href="images/base_texturing_04_large.gif" target="_blank">
+    <img border="0" src="images/base_texturing_04_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_texturing_04_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber32" height="44">
+  <tr>
+    <td width="100%" height="10" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">Now that the blue base has had Sub-Materials as well as texture mapping coordinates 
+    applied to the surfaces that compose the base, smoothing 
+    groups will be applied.&nbsp; </font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber33" height="44">
+  <tr>
+    <td width="100%" height="10" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following steps and example images will 
+    demonstrate the application of smoothing groups to the surfaces of the base.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="59%" id="AutoNumber34" height="1">
+  <tr>
+    <td width="103%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">Assigning smoothing groups to the base surfaces:</font><p>
+    <font face="Arial" size="2">All the faces of the base structure were 
+    selected and all the smoothing groups were cleared (<b>Clear All</b> under
+    <b>Smoothing Groups</b> while in <b>Face</b> mode.)</font></p>
+    <p><font face="Arial" size="2">Smoothing groups were then applied to the 
+    surfaces of the base.&nbsp; There are many ways to apply Smoothing Groups to 
+    all the faces geometry.&nbsp; The Smoothing Groups below were applied 
+    manually.</font></p>
+    <p>
+    <font face="Arial" size="2">The following table describes the areas of the 
+    base and what Smoothing Group is applied to these surfaces.</font></p>
+    <table border="2" cellspacing="0" width="95%" id="AutoNumber35" style="border-collapse: collapse" cellpadding="0" height="151" bordercolor="#C0C0C0">
+      <tr>
+        <td width="72%" height="41">
+        <p align="center"><b><font face="Arial" size="2">Base Area\Surfaces</font></b></td>
+        <td width="21%" height="41">
+        <p align="center"><b><font face="Arial" size="2">Smoothing Group ID</font></b></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="26">&nbsp;</td>
+        <td width="21%" align="center" height="26">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="48"><font size="2" face="Arial">
+        Faces that compose the front of the teleporter gateway</font></td>
+        <td width="21%" align="center" height="48"><font size="2" face="Arial">8</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="41"><font face="Arial" size="2">
+        Faces that compose the back of the teleporter gateway</font></td>
+        <td width="21%" align="center" height="41"><font size="2" face="Arial">8</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="37"><font face="Arial" size="2">
+        Faces that compose the inset sides of the teleporter gateway</font></td>
+        <td width="21%" align="center" height="37"><font size="2" face="Arial">9</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="42"><font face="Arial" size="2">
+        Faces that compose the tunnel ceiling</font></td>
+        <td width="21%" align="center" height="42"><font size="2" face="Arial">6</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="43"><font face="Arial" size="2">
+        Faces that compose the inset floor of the teleporter gateway</font></td>
+        <td width="21%" align="center" height="43"><font size="2" face="Arial">2</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="43"><font face="Arial" size="2">
+        Faces that compose the inset ceiling of the teleporter gateway</font></td>
+        <td width="21%" align="center" height="43"><font size="2" face="Arial">
+        11</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="45"><font face="Arial" size="2">
+        The external faces on the top of the teleporter gateway</font></td>
+        <td width="21%" align="center" height="45"><font size="2" face="Arial">
+        10</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="45"><font face="Arial" size="2">
+        The external faces that compose the sides of the teleporter gateway</font></td>
+        <td width="21%" align="center" height="45"><font size="2" face="Arial">
+        12</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="46"><font face="Arial" size="2">
+        Faces that compose the side walls of the tunnel</font></td>
+        <td width="21%" align="center" height="46"><font size="2" face="Arial">7</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="52"><font size="2" face="Arial">
+        Faces that compose the sides of the inset grooves for the ladders</font></td>
+        <td width="21%" align="center" height="52"><font size="2" face="Arial">4</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="52"><font face="Arial" size="2">
+        Faces that compose the sides of the base with the tunnel doorways</font></td>
+        <td width="21%" align="center" height="52"><font size="2" face="Arial">4</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="41"><font face="Arial" size="2">
+        Faces that compose the sides of the ramps</font></td>
+        <td width="21%" align="center" height="41"><font size="2" face="Arial">4</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="45"><font face="Arial" size="2">
+        Faces that compose the front faces of the base</font></td>
+        <td width="21%" align="center" height="45"><font size="2" face="Arial">5</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="42"><font face="Arial" size="2">
+        Faces that compose the walls on the rear of the base</font></td>
+        <td width="21%" align="center" height="42"><font size="2" face="Arial">
+        13</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="38"><font face="Arial" size="2">
+        Tunnel floor surfaces</font></td>
+        <td width="21%" align="center" height="38"><font size="2" face="Arial">3</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="39"><font face="Arial" size="2">
+        Top surfaces of base and ramp</font></td>
+        <td width="21%" align="center" height="39"><font size="2" face="Arial">3</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="49"><font face="Arial" size="2">
+        Ladder surfaces located at the rear of the base</font></td>
+        <td width="21%" align="center" height="49"><font face="Arial" size="2">
+        None</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="32"><font face="Arial" size="2">
+        Base lights located in the tunnel</font></td>
+        <td width="21%" align="center" height="32"><font size="2" face="Arial">
+        None</font></td>
+      </tr>
+      <tr>
+        <td width="72%" align="center" height="43"><font face="Arial" size="2">
+        Faces for the teleporter shield located at the rear of the base</font></td>
+        <td width="21%" align="center" height="43"><font size="2" face="Arial">
+        None</font></td>
+      </tr>
+    </table>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Creating the Opposing&nbsp; Base Structure</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber13" height="76">
+  <tr>
+    <td width="100%" height="35" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Now that the blue base structure has been 
+    completed, it can be copied and used to construct a second base structure on 
+    the opposite end of the level.</font><p>
+    <font face="Arial" size="2">The following procedures will demonstrate the 
+    structure being &quot;mirrored&quot; or copied and rotated 180 degrees to create a 
+    second opposing base structure.&nbsp; Both base structures will then be 
+    attached as to the reference frame.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber24" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">Copying and mirroring the base structure:</font></p>
+    <p>
+    <font face="Arial" size="2">1) Select the blue base.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Clone</b> the object (Ctrl V).&nbsp; This 
+    will bring up the <b>Clone Options</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Make sure that Copy is selected under <b>
+    Object</b>. Under <b>Name</b> enter the name &quot;red base&quot;. </font></p>
+    <p>
+    <font face="Arial" size="2">3) Click on <b>OK</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font size="2" face="Arial">As mentioned before, constructing the level such 
+    that it is centered on the origin can help in the creation of the level, 
+    especially when having to duplicate or mirror geometry such as base 
+    structures.</font></p>
+    <p>
+    <font size="2" face="Arial">In the procedures below, the red base objects <b>
+    Pivot</b> point will be moved to the origin of the level (X: 0.0 Y: 0.0 Z: 
+    0.0) and the newly copied or created &quot;red base&quot; will be rotated about this 
+    point.&nbsp; </font></p>
+    <p>
+    <font size="2" face="Arial">Using this technique also insures that 
+    structures are equally distanced from features in the level, thus making the 
+    level more balanced with respect to game play for the player or for teams.</font></p>
+    <p>
+    <font size="2" face="Arial">4) With the red base object still selected go to 
+    the <b>Hiearchy</b> tab.</font></p>
+    <p>
+    <font size="2" face="Arial">5) Under the <b>Adjust Pivot</b> section, click 
+    on <b>Affect Pivot Only</b>.&nbsp; The pivot point for the base object will 
+    appear.</font></p>
+    <p>
+    <font face="Arial" size="2">6) Move the pivot point to the origin of the 
+    level (X: 0.0 Y: 0.0 Z: 0.0).</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">7) With the red base object still selected, go 
+    to the <b>Modify</b> tab.</font></p>
+    <p>
+    <font face="Arial" size="2">8) Rotate 
+    the base 180 degrees around the Z-Axis.&nbsp;The easiest way to do this is 
+    to follow the procedures below:</font></p>
+    <p>
+    <font size="2" face="Arial">a) Enter <b>
+    Rotate</b> mode by clicking on the <b>Rotate</b> mode button. </font></p>
+    <p>
+    <font face="Arial" size="2">b) Right Click on the <b>Rotate</b> mode button 
+    to bring up the <b>Rotate Transform Type-In</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">c) Enter 180 into the <b>Z:</b> field under <b>
+    Absolute: World</b> and hit enter.</font></p>
+    <p>
+    <font face="Arial" size="2">The object will be rotated around the pivot 
+    point and will now appear on the opposite side of the level the same 
+    distance from the origin that the blue base object is.</font></p>
+    <p>
+    <font face="Arial" size="2">The third image or last image further explains the above 
+    procedures and shows the final results of the base rotation.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/base_mirroring_01_large.gif" target="_blank">
+    <img border="0" src="images/base_mirroring_01_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_mirroring_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_mirroring_02_large.gif" target="_blank">
+    <img border="0" src="images/base_mirroring_02_small.gif" width="250" height="192"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_mirroring_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_mirroring_03_large.gif" target="_blank">
+    <img border="0" src="images/base_mirroring_03_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_mirroring_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber36" height="76">
+  <tr>
+    <td width="100%" height="35" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Now that the red base has been rotated, it must 
+    be attached to the level and the holes in the mesh patched by adding 
+    polygons and matching vertices and edges to satisfy the Sealed World Rules.&nbsp; 
+    The base will then be detached from the level mesh into its own object again 
+    and will have some minor material adjustments made.&nbsp; Finally, both 
+    bases will then be attached to the reference frame.</font><p>
+    <font face="Arial" size="2">The following procedures will demonstrate the 
+    red base structure being attached to the level mesh, the level mesh and 
+    structure being modified to satisfy the Sealed World Rules, the faces that 
+    construct the red base being detached into a separate object, the 
+    modification of materials to distinguish the base structure, and the linking 
+    of both bases to the reference frame. </font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber37" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Completing the red base structure:</font></p>
+    <p>
+    <font face="Arial" size="2">1) Select the level object. </font></p>
+    <p>
+    <font face="Arial" size="2">2) Under <b>Edit Geometry</b>, enter Attach mode 
+    by clicking on <b>Attach</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">3) The Attach Options window will appear, select
+    <b>Do Not Modify Mat IDs or Material</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">The base will temporarily have the <b>&quot;</b>tutorial 
+    terrain\sky<b>&quot; </b>material applied to it since this is the material for 
+    the &quot;level&quot; object. As a result, the textures or materials on the faces of 
+    the base will appear incorrect.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">This is fine since the &quot;<b>Do Not Modify Mat IDs 
+    or Material</b>&quot; option was selected and this will keep the material 
+    assignments for the base correct.&nbsp; When the faces for the base are 
+    selected and detached to form the separate red base object again, the &quot;base 
+    structures&quot; Multi/Sub-Object will be applied and the base will have the 
+    correct materials again.&nbsp; No additional work will be needed.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font size="2" face="Arial">4) As demonstrated in the previous tutorial, 
+    remove the faces around the base.</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the above 
+    procedure and shows the final results of the procedure.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font size="2" face="Arial">5)&nbsp;Create polygons to attach the base 
+    structure to the terrain mesh.&nbsp; Once completed, fix the texture 
+    coordinates for the terrain in the same manner demonstrated when doing this same 
+    procedure for the blue base.</font></p>
+    <p>
+    <font face="Arial" size="2">The third image further explains the above 
+    procedures as well as shows the end result of the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">6) Select all the faces that compose the base 
+    structure.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">7) Under <b>Edit Geometry</b>, click on <b>
+    Detach</b>. The <b>Detach</b> dialog window will appear.</font></p>
+    <p>
+    <font size="2" face="Arial">8) In the <b>Detach</b> dialog window enter &quot;red 
+    base&quot; in the <b>Detach</b> <b>as:</b> field.</font></p>
+    <p>
+    <font face="Arial" size="2">9) Click on <b>OK</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">The fourth image further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">10) Select the red base object.&nbsp; Open the
+    <b>Material Editor</b>, select the &quot;base structures&quot; <b>Multi/Sub-Object</b>.&nbsp;
+    </font></p>
+    <p>
+    <font face="Arial" size="2">11) Click on <b>Assign Material to Selection</b>.
+    </font></p>
+    <p>
+    <font face="Arial" size="2">12) Close the <b>Material Editor</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">The fifth image further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">The base should now appear with the correct 
+    materials assigned and appearing on the faces of the structure.</font></p>
+    <p>
+    <font face="Arial" size="2">13) To help distinguish this as the red base, 
+    the blue lights in the base hallway or tunnel will be turned into red lights 
+    by following the procedures below:</font></p>
+    <p>
+    <font face="Arial" size="2">a) Select the faces that compose the hallway 
+    lights. </font></p>
+    <p>
+    <font face="Arial" size="2">b) Apply Material ID 7 to these faces.</font></p>
+    <p>
+    <font face="Arial" size="2">c) Adjust the texture coordinates (<b>Unwrap UVW</b>).</font></p>
+    <p>
+    <font face="Arial" size="2">The sixth image further explains the above 
+    procedures as well as shows the final results for the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font size="2" face="Arial">14) Finally, attach the bases to the reference 
+    frame by doing the following:</font></p>
+    <p>
+    <font size="2" face="Arial">a) Select both the red base and blue base 
+    objects.&nbsp; </font></p>
+    <p>
+    <font size="2" face="Arial">b) Click on <b>Select and Link</b>.</font></p>
+    <p>
+    <font size="2" face="Arial">c) Click on <b>Select by Name</b>.&nbsp; The <b>
+    Select Parent </b>window will appear.</font></p>
+    <p>
+    <font size="2" face="Arial">d) Select &quot;frame&quot; from the list.</font></p>
+    <p>
+    <font size="2" face="Arial">e) Click on <b>Link</b>.</font></p>
+    <p>
+    <font size="2" face="Arial">Both levels will now be a part of the level 
+    since they are linked to the frame. </font></p>
+    <p>
+    <font size="2" face="Arial">Since the vertices and corresponding edges for 
+    each base matches the terrain mesh, the Sealed World Rules are satisfied.</font></p>
+    <p>
+    <font size="2" face="Arial">The seventh and final image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/base_mirroring_04_large.gif" target="_blank">
+    <img border="0" src="images/base_mirroring_04_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_mirroring_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_mirroring_05_large.gif" target="_blank">
+    <img border="0" src="images/base_mirroring_05_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_mirroring_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_mirroring_06_large.gif" target="_blank">
+    <img border="0" src="images/base_mirroring_06_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_mirroring_06_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_mirroring_07_large.gif" target="_blank">
+    <img border="0" src="images/base_mirroring_07_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_mirroring_07_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_mirroring_08_large.gif" target="_blank">
+    <img border="0" src="images/base_mirroring_08_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_mirroring_08_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_mirroring_09_large.gif" target="_blank">
+    <img border="0" src="images/base_mirroring_09_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_mirroring_09_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/base_mirroring_10_large.gif" target="_blank">
+    <img border="0" src="images/base_mirroring_10_small.gif" width="250" height="198"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/base_mirroring_10_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Player Clipping Techniques</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber38" height="83">
+  <tr>
+    <td width="100%" height="42" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">It is sometimes necessary to create additional 
+    collision geometry in the level that prohibits the ability of the player to 
+    reach certain areas of the level or to help smooth the movement of the 
+    player around certain geometry.&nbsp; This technique is sometimes referred 
+    to as &quot;player clipping&quot;.&nbsp; Geometry that is not rendered, but only 
+    affects the player and vehicles is added to the existing geometry of the 
+    level.</font><p><font face="Arial" size="2">Restricting access to certain 
+    areas of the level such as the tops of canyon walls, roofs of structures, 
+    pillars, etc... can be crucial in creating a good game play experience.&nbsp; 
+    The player must not be allowed to exploit the game environment and break the 
+    game mechanics.&nbsp; A good example are the Capture the Flag (CTF) game 
+    modes in Halo, if a player has the flag and can take it to an unexpected 
+    area where it is easily defended or they cannot be reached, this breaks the 
+    game.&nbsp; Fortunately, Halo does have mechanisms to help when objectives 
+    such as the flag or oddball get into odd areas, these items will eventually 
+    respawn or reset after a specific amount of time.</font></p>
+    <p><font face="Arial" size="2">Restricting the player is also often used to 
+    keep the player from seeing &quot;behind the scenes&quot; of the level by preventing 
+    the player from seeing past the edges or over the tops of the core geometry 
+    of the level, typically where the level geometry for the terrain mesh 
+    intersects with the faces used to render the sky model or sky box.</font></p>
+    <p><font face="Arial" size="2">The following tutorials will discuss the 
+    uses of and demonstrate the creation of the player clipping material and the implementation of player containment or player 
+    clipping.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber39" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">Creating the &quot;player clipping&quot; material.</font></p>
+    <p>
+    <font face="Arial" size="2">The first step is to create a special material 
+    or shader that will not allow the player or vehicles to pass it but still 
+    allows objects and projectiles to pass.</font></p>
+    <p>
+    <font face="Arial" size="2">1) As demonstrated before, a new <b>
+    Multi/Sub-Object</b> will be created.&nbsp; Open the<b> Material Editor</b> 
+    and select an empty <b>Multi/Sub-Object</b> material group.&nbsp; This Material Group is currently set to a <b>Standard</b> Material.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Click on the <b>Standard</b> button to 
+    bring up the <b>Material/Map Browser</b>.</font></p>
+    <p><font face="Arial" size="2">3) In the <b>Material/Map Browser</b> click 
+    on <b>Multi/Sub-Object</b>.</font></p>
+    <p><font face="Arial" size="2">4) Click on <b>OK</b>.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">5) This <b>Multi\Sub-Object</b> is going to 
+    be called &quot;player clip&quot;.&nbsp; Type this name into the <b>
+    Multi\Sub-Object </b>description window.&nbsp; </font></p>
+    <p><font face="Arial" size="2">6) Just for organization, the extra <b>
+    Sub-Materials</b> were deleted by selecting the <b>Sub-Materia</b>l to 
+    delete and clicking on <b>Delete</b> until the desired number of <b>
+    Sub-Materials</b> remained, in this case, 1 <b>Sub-Material</b>.</font></p>
+    <p><font face="Arial" size="2">7) The Sub-Material is now going to be named 
+    and linked to images.&nbsp; To name or label<b> Sub-Material ID 1 </b>
+    follow the procedures below.</font></p>
+    <p><font face="Arial" size="2">Click on the <b>Sub-Material</b> button to 
+    go from displaying the <b>Multi/Sub-Object Basic Parameters</b> window in 
+    the <b>Material Editor</b> to displaying the <b>Shader Basic Parameters</b>,
+    <b>Blinn Basic Parameters</b>, <b>Extended Parameters</b>, <b>SuperSampling</b>,
+    <b>Maps, Dynamic Properties</b> and <b>Viewport Manager</b>.</font></p>
+    <p><font face="Arial" size="2">The second image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">8) Enter the name &quot;example_tutorial_playerclip*&quot; into the name or 
+    label field.</font></p>
+    <p><font face="Arial" size="2">Notice the &quot;*&quot; Shader Symbol which denotes 
+    that this material will be treated by Tool and the game as collideable 
+    only, it will not render in the game.</font></p>
+    <p><font face="Arial" size="2">9)&nbsp; To display a texture or image for 
+    this material when applied to a surface do the following:</font></p>
+    <p><font face="Arial" size="2">a) Under <b>Blinn Basic Parameters</b>, click 
+    on the small box to the right of the <b>Diffuse</b> color setting.&nbsp; 
+    This will display the <b>Material/Map Browser</b>.</font></p>
+    <p><font face="Arial" size="2">b) Click on <b>Bitmap</b>.</font></p>
+    <p><font face="Arial" size="2">c) Click on <b>OK</b> and the <b>Select Bitmap Image File</b> window 
+    will now be displayed.</font></p>
+    <p><font face="Arial" size="2">The third image further 
+    explains the above procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">10) To select an image to display for the 
+    material do the following:</font></p>
+    <p><font face="Arial" size="2">a) In the <b>Select Bitmap Image File </b>go 
+    to the bitmaps&nbsp; directory under Halo\data\levels\test\tutorial_examples.</font></p>
+    <p><font face="Arial" size="2">b) Under the bitmaps directory there should 
+    be several .tif image files.&nbsp; Select the example_tutorial_playerclip.tif 
+    file.</font></p>
+    <p><font face="Arial" size="2">This image is used as a guide to see the 
+    player clipping surfaces in 3ds Max and will never appear in the game.&nbsp; 
+    Any image can be used.</font></p>
+    <p><font face="Arial" size="2">As was mentioned previously, the resources 
+    under the tutorial_examples directory represent the end result of all the 
+    examples and tutorials contained within the Halo PC Editing Reference.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The Halo End User Editing Kit provides many 
+    resources including a wide range of tags as well as image resources (.tif 
+    files) that can be used in the creation of Halo multiplayer levels.&nbsp;
+    </font></p>
+    <p><font face="Arial" size="2">The files provided also exist as examples and 
+    learning aids for those wishing to create their own custom game resources 
+    whose creation and modification may not be covered currently in the Halo PC 
+    Editing Reference.</font></p>
+    <p><font size="2" face="Arial">For now, the completed or provided example resources will 
+    be used for the following examples for the sake of simplicity.</font></p>
+    <p><font face="Arial" size="2">c) Click on <b>Open</b>.</font></p>
+    <p><font face="Arial" size="2">The fourth image further 
+    explains the above procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">To return to the previous options in the <b>
+    Material Editor</b> window<b> </b>click on the <b>Go to Parent</b> button.</font></p>
+    <p><font face="Arial" size="2">11) In the <b>Material Editor</b>, enable the 
+    display of the material by clicking on the <b>Show Map in Viewport</b> 
+    button.</font></p>
+    <p><font face="Arial" size="2">12) The Sub-Material should be displayed on 
+    the Material Sample.</font></p>
+    <p><font face="Arial" size="2">13) To return to the <b>Multi/Sub-Object 
+    Basic Parameters </b>click on the <b>Go to Parent</b> button.</font></p>
+    <p><font face="Arial" size="2">14) Close the Material Editor window.</font></p>
+    <p><font face="Arial" size="2">The fifth image or last image further 
+    explains the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/player_clipping_01_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_01_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_02_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_02_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_03_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_03_small.gif" width="250" height="192"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_04_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_04_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_05_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_05_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber40" height="83">
+  <tr>
+    <td width="100%" height="42" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">With the &quot;player clipping&quot; material created some 
+    simple player clipping geometry will be created.&nbsp; The geometry created 
+    to block the player must not have any open edges and must form a sealed 
+    volume.&nbsp; The player clipping geometry follows the Sealed World Rules.</font><p>
+    <font face="Arial" size="2">The player clipping geometry is going to be kept 
+    as a separate object so that it can be better organized with its special 
+    material and so that it can be hidden or handled more easily in 3ds Max.</font></p>
+    <p><font face="Arial" size="2">The following procedures will demonstrate the 
+    implementation of player containment or player clipping.</font></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber41" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">Creating player clipping or player collision 
+    geometry.</font></p>
+    <p>
+    <font face="Arial" size="2">To keep players from waiting or 
+    &quot;camping&quot; in the recessed portions of the teleporter gateways a &quot;clip&quot; plane 
+    is going to be created over the front faces of the teleporter gateways.</font></p>
+    <p>
+    <font size="2" face="Arial">1) Select the blue base and hide the teleporter 
+    shield polygons or faces.</font></p>
+    <p>
+    <font size="2" face="Arial">2) Create 2 faces that cover the front of the 
+    teleporter gate.</font></p>
+    <p>
+    <font size="2" face="Arial">3) Under <b>Edit Geometry</b> click on <b>Detach</b>.&nbsp; 
+    The <b>Detach</b> dialog window appears.</font></p>
+    <p>
+    <font size="2" face="Arial">4) Enter &quot;player_clip&quot; in the <b>Detach as:</b> 
+    field.</font></p>
+    <p>
+    <font size="2" face="Arial">5) Click on <b>OK</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further 
+    explains the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">6) Apply the player clip material to the object 
+    and assign the Sub-Material to the faces.</font></p>
+    <p>
+    <font face="Arial" size="2">a) Select the newly created player_clip object 
+    and apply the player clip <b>Multi\Sub-Object</b> material group.&nbsp;
+    </font></p>
+    <p>
+    <font face="Arial" size="2">b) Select the faces and clear any <b>Smoothing 
+    Groups</b> and apply <b>Material ID </b>1 to the faces. </font></p>
+    <p>
+    <font face="Arial" size="2">Perform Steps 1-6 on the red base to create the 
+    same player clipping plane for the teleporter gate on the red base.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">Both player clipping pieces of geometry should 
+    be attached together to form a single &quot;player_clip&quot; object.</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further 
+    explains the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">The final set of player containment or player 
+    clipping geometry that will be created is a border around the edge of the 
+    surrounding hills.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">This barrier will prevent the player from 
+    getting on top of the hills and seeing past the edge of the world where 
+    there is no geometry since only the sky box is drawn past this border.</font></p>
+    <p>
+    <font face="Arial" size="2">7) Select the level object.</font></p>
+    <p>
+    <font face="Arial" size="2">8) Select the 2 faces that form the top of the 
+    sky.&nbsp; Delete these faces.</font></p>
+    <p>
+    <font face="Arial" size="2">The third image further 
+    explains the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">9) Select <b>Edge</b> mode.</font></p>
+    <p>
+    <font face="Arial" size="2">10) Select all the edges that comprise the front 
+    edges of the surrounding hills.</font></p>
+    <p>
+    <font face="Arial" size="2">The fourth image further 
+    explains the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">11) While still in <b>Edge</b> mode, extrude 
+    these edges up to create new faces by holding down Shift while moving up in 
+    the Z-Axis.</font></p>
+    <p>
+    <font face="Arial" size="2">The fifth image further 
+    explains the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">12) Make the new vertices and edges even with 
+    the sky box vertices and edges.&nbsp; Follow the below procedures:</font></p>
+    <p>
+    <font face="Arial" size="2">a)&nbsp;Select <b>Vertex</b> mode and select 
+    the top most vertices of the newly created polygons.</font></p>
+    <p>
+    <font face="Arial" size="2">b) Click on the <b>Top</b> view.&nbsp; Under <b>
+    Edit Geometry</b> click on <b>View Align</b>, this will make the vertices 
+    even in the XY plane.</font></p>
+    <p>
+    <font face="Arial" size="2">c) Now move the vertices to be even with the 
+    vertices at the top of the sky box.</font></p>
+    <p>
+    <font face="Arial" size="2">The sixth image further explains the above 
+    procedures and shows the final results of the above operations.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">13) Remove any extra faces that may have resulted 
+    from extruding the edges.&nbsp; Once this is complete, create polygons 
+    (using the existing vertices) to seal the top of the world again so that it 
+    satisfies the Sealed World Rules.&nbsp; All of these faces should be made 
+    the +sky material by setting their <b>Material ID</b> to 1.</font></p>
+    <p>
+    <font face="Arial" size="2">This technique may seem cumbersome or wasteful 
+    but for the type of level that the tutorial level represents it is necessary 
+    in order to get the clipping planes to work properly, the level to export 
+    and compile properly, and to satisfy the Sealed World Rules. </font></p>
+    <p>
+    <font face="Arial" size="2">Remember that the number of faces used to 
+    construct the sky does not matter since the sky model gets rendered to these 
+    faces and the triangle count from the sky model is what will count in this 
+    instance. </font></p>
+    <p>
+    <font face="Arial" size="2">There are many ways to construct a game 
+    environment and its surrounding terrain and sky box surfaces.&nbsp; It is 
+    quite common for all the sky box faces to have their top vertices pulled to 
+    a single vertex in the center of the level at a very high distance in the 
+    Z-Axis.&nbsp; Sometimes, the sky faces are not set back as they are in the 
+    tutorial level, instead the sky box faces are used as the boundaries for the 
+    level and serve to keep the player from accessing any areas where the 
+    player's presence is not desired.</font></p>
+    <p>
+    <font face="Arial" size="2">It is recommended that for outdoor levels that 
+    have vehicles that there be quite a bit of space left in the Z-Axis.&nbsp; 
+    This allows weapons that have a long range and that can fire in an arc (such 
+    as the Fuel Rod Gun) to have room to fire without colliding with the ceiling 
+    or sky.&nbsp; It is also nice to allow the Halo physics to have room to work 
+    so that when vehicles get hit with explosions they have room to do flips and 
+    other spectacular vehicular acrobatics.</font></p>
+    <p>
+    <font face="Arial" size="2">The seventh image further explains the above 
+    procedures and shows the final results of the above operations.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">14)&nbsp;Hide the newly created top faces of 
+    the level.&nbsp; Now, select all the faces that will compose the player 
+    clipping surfaces.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">15) Under Edit Geometry, click on <b>Detach</b>.&nbsp; 
+    The <b>Detach</b> dialog window will appear.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">16) Enter the name &quot;player_clip_01&quot; in the <b>
+    Detach as:</b> field. </font></p>
+    <p>
+    <font face="Arial" size="2">17) Click on <b>OK</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">The eighth image further explains the above 
+    procedures and shows the final results of the above operations.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">18) Apply the player clip material to the object 
+    and assign the Sub-Material to the faces.</font></p>
+    <p>
+    <font face="Arial" size="2">a) Select the newly created player_clip_01 object 
+    and apply the player clip <b>Multi\Sub-Object</b> material group.&nbsp;
+    </font></p>
+    <p>
+    <font face="Arial" size="2">b) Select the faces and clear any <b>Smoothing 
+    Groups</b> and apply <b>Material ID </b>1 to the faces. </font></p>
+    <p>
+    <font face="Arial" size="2">In the example picture the faces also had a 
+    simple box map projection applied to them (<b>UVW Map</b>), but this is not 
+    necessary, it just makes the faces easier to work with visually.</font></p>
+    <p>
+    <font face="Arial" size="2">The player_clip object was then attached to 
+    the player_clip_01 object to keep all the player_clip surfaces under one 
+    object.</font></p>
+    <p>
+    <font face="Arial" size="2">The player_clip object was then linked to the 
+    reference frame (frame object).</font></p>
+    <p>
+    <font face="Arial" size="2">The ninth image or final image further explains the above 
+    procedures and shows the final results of the above operations.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/player_clipping_06_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_06_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_06_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_07_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_07_small.gif" width="250" height="199"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_07_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_08_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_08_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_08_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_09_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_09_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_09_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_10_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_10_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_10_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_11_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_11_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_11_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_12_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_12_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_12_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_13_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_13_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_13_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/player_clipping_14_large.gif" target="_blank">
+    <img border="0" src="images/player_clipping_14_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/player_clipping_14_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Placement of Portals</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber42" height="83">
+  <tr>
+    <td width="100%" height="42" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The final step to completing the core geometry 
+    for the level is the addition of surfaces or planes that define portals.&nbsp; 
+    These portals are used by the engine for several purposes.</font><p>
+    <font face="Arial" size="2">The primary function of these portals are as 
+    &quot;visibility portals&quot;, portals that the Halo game engine uses to try and cull 
+    out objects that cannot be seen to improve performance by not rendering such 
+    objects.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The portals in general help break up the 
+    level so that it can be handled in parts to help performance in general.&nbsp; 
+    Attributes can also be set for portals, such as ambient sounds to play in 
+    the portal as well as environmental audio effects.&nbsp; Portals can also be 
+    used to define weather volumes and fog volumes.</font></p>
+    <p><font face="Arial" size="2">There are 2 kinds of portals that are 
+    defined, &quot;portals&quot; and &quot;exact portals&quot;.&nbsp; The following are descriptions 
+    for each:</font></p>
+    <p><font face="Arial" size="2">1) <b>Exact Portals</b>:&nbsp; These are 
+    portals defined by surfaces or planes with the +exactportal material applied 
+    to them.&nbsp; Exact portals are created such that the faces (edges and 
+    vertices) match the surrounding geometry (edges and vertices).&nbsp; These 
+    faces in effect create a &quot;seal&quot;.&nbsp; The volume that is between these 
+    surfaces or planes is an exact portal.&nbsp; The direction of the normals of 
+    the faces helps determine how the portal is defined.</font></p>
+    <p><font face="Arial" size="2">2) <b>Portals</b>: These are portals defined 
+    by surfaces or planes with the +portal material applied to them.&nbsp; These 
+    portals are created by faces or planes that are used to divide the game 
+    environment.&nbsp; These planes must create a seal with the level, but do 
+    not have to match vertices and the associated edges with the surrounding 
+    geometry.&nbsp; These planes are much more loosely defined and placed in the 
+    level and are used to break or divide the level up into sections.&nbsp; The 
+    direction of the normals for the faces helps determine how the portal is 
+    defined.</font></p>
+    <p><font face="Arial" size="2">A volume defined as an Exact portal CAN have 
+    standard Portal areas defined within it and vice versa as long as the above 
+    rules outlined in their definitions are satisfied.&nbsp; However, an open 
+    ended or non-enclosed Portal cannot intersect an Exact portal, a &quot;vis error&quot; 
+    or rendering anomaly will occur.&nbsp; In other words, be careful to not let 
+    a Portal plane improperly divide or bisect an Exact portal volume.</font></p>
+    <p><font face="Arial" size="2">Portals can be used to help portal 
+    horizontally (looking left and right in the XY plane) AND vertically 
+    (looking up and over objects or geometry that vary in the Z-Axis).</font></p>
+    <p><font face="Arial" size="2">The tutorials below will demonstrate the 
+    creation and placement of planes that will define Portal volumes and Exact 
+    portal volumes.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber43" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">The creation of the portal <b>Multi/Sub-Object</b> 
+    material group:</font></p>
+    <p>
+    <font face="Arial" size="2">The first step is to create the portal 
+    materials.</font></p>
+    <p>
+    <font face="Arial" size="2">1) As demonstrated before, a new <b>
+    Multi/Sub-Object</b> is created.&nbsp; Open the<b> Material Editor</b> 
+    and select an empty <b>Multi/Sub-Object</b> material group.&nbsp; This Material Group is currently set to a <b>Standard</b> Material.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Click on the <b>Standard</b> button to 
+    bring up the <b>Material/Map Browser</b>.</font></p>
+    <p><font face="Arial" size="2">3) In the <b>Material/Map Browser</b> click 
+    on <b>Multi/Sub-Object</b>.</font></p>
+    <p><font face="Arial" size="2">4) Click on <b>OK</b>.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">5) This <b>Multi\Sub-Object</b> is going to 
+    be called &quot;portal materials&quot;.&nbsp; Type this name into the <b>
+    Multi\Sub-Object </b>description window.&nbsp; </font></p>
+    <p><font face="Arial" size="2">6) Just for organization, the extra <b>
+    Sub-Materials</b> were deleted by selecting the <b>Sub-Materia</b>l to 
+    delete and clicking on <b>Delete</b> until the desired number of <b>
+    Sub-Materials</b> remained, in this case, 2 <b>Sub-Materials</b>.</font></p>
+    <p><font face="Arial" size="2">7) Enter the names &quot;+portal&quot; into the name or 
+    label field for <b>Sub-Material</b> 1 and &quot;+exactportal&quot; into the name or label 
+    field for <b>Sub-Material</b> 2.</font></p>
+    <p><font face="Arial" size="2">These are <b>Special Material</b> names, more 
+    information on these materials as well as all Special Materials can be found 
+    in the Special Materials section in the </font>
+    <font face="Arial"><b>
+    <a href="../../general/materials_overview.html">
+<font size="2" color="#3FA2FF">Materials Overview</font></a><font size="2" color="#3FA2FF"> </font></b></font>
+    <font face="Arial" size="2">reference section.</font></p>
+    <p><font face="Arial" size="2">The <b>Diffuse</b> colors for these materials were 
+    set and for each <b>Sub-Material</b> the <b>Show Map in Viewport</b> option was 
+    toggled on.</font></p>
+    <p><font face="Arial" size="2">The second image or last image further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/portalling_01_large.gif" target="_blank">
+    <img border="0" src="images/portalling_01_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/portalling_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/portalling_02_large.gif" target="_blank">
+    <img border="0" src="images/portalling_02_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/portalling_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber44" height="43">
+  <tr>
+    <td width="100%" height="2" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p><font face="Arial" size="2">The procedures below will demonstrate the 
+    creation and placement of planes that will define Portal volumes and Exact 
+    portal volumes.</font></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber45" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">The creation and placement of portals:</font></p>
+    <p>
+    <font face="Arial" size="2">The hallways for the 2 base structures (blue 
+    base and red base) will be made Exact portal volumes.</font></p>
+    <p>
+    <font face="Arial" size="2">Later, when the level is running in the game, 
+    use rasterizer_wireframe 1 to view the level and exit and enter the hallways 
+    to see how the level geometry and objects are not drawn from the player view 
+    as this portal volume is entered and exited.</font></p>
+    <p>
+    <font face="Arial" size="2">1) Select the blue base. In Face mode, create 2 
+    polygons that exactly fit the doorways of the hallways.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Make sure the normals for the faces point 
+    outwards, this will help define the volume between the faces. the normals 
+    can be viewed by clicking on the <b>Show Normals</b> check box under <b>
+    Selection</b>.&nbsp; If the normals are not easily visible, the lengths of 
+    the visual representations of the normals can be increased using the <b>
+    Scale</b> value.</font></p>
+    <p>
+    <font face="Arial" size="2">3) Detach the faces for the Exact portals by 
+    clicking on <b>Detach</b> under <b>Edit Geometry</b>.&nbsp; The <b>Detach</b> 
+    dialog window will appear.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">4) In the <b>Detach as:</b> field enter the name 
+    &quot;base portals&quot;.</font></p>
+    <p>
+    <font face="Arial" size="2">5) Click on <b>OK</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">Repeat the above procedures 1-5 for the red base 
+    and combine the 8 faces that compose the portals into 1 object called &quot;base 
+    portals&quot;.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">6) Now select the &quot;base portals&quot; object and 
+    apply the &quot;portal materials&quot; <b>Multi/Sub-Object</b>.</font></p>
+    <p><font face="Arial" size="2">Once this is complete, assign the +exactportal 
+    material to the faces by selecting all the faces and setting the Material ID 
+    to 2 for the faces.</font></p>
+    <p><font face="Arial" size="2">Once this is complete, the &quot;base portals&quot; 
+    object should be linked to the &quot;frame&quot;.</font></p>
+    <p><font face="Arial" size="2">Note that the portal materials are at 80% 
+    opacity, this is just a setting in the Sub-Material and has no effect in 
+    game, it is just used as a visual aid in 3ds Max.</font></p>
+    <p><font face="Arial" size="2">The two hallways have now been defined as 
+    Exact Portal volumes.</font></p>
+    <p><font face="Arial" size="2">The second image further explains the above 
+    procedures and shows the final results of the listed operations.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">The level will now be divided using standard 
+    Portals.</font></p>
+    <p><font face="Arial" size="2">7) Deselect all objects.&nbsp; Under <b>Create</b> 
+    click on <b>Plane</b>.</font></p>
+    <p><font face="Arial" size="2">8) Enter the following values in the listed 
+    fields, <b>Length Segs:</b> 1 and <b>Width Segs:</b> 5</font></p>
+    <p><font face="Arial" size="2">9) In the <b>Right</b> view, create the plane such 
+    that the edges extreme edges extend past the extents of the level.</font></p>
+    <p><font face="Arial" size="2">Take this plane and create 3 more planes for 
+    a total of 4 planes that run lengthwise &quot;North&quot; to &quot;South&quot;.</font></p>
+    <p><font face="Arial" size="2">The third image further explains the above 
+    procedures and shows the final results of the listed operations.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">10) Convert all the planes into an <b>
+    Editable Mesh </b>(<b>Edit Mesh</b>) and <b>Attach</b> all the planes into 1 object 
+    called &quot;terrain portals&quot;.</font></p>
+    <p><font face="Arial" size="2">11) The planes and faces were all aligned to 
+    try and divide the level evenly.&nbsp; Vertices and the associated edges and 
+    faces were aligned along major edge boundaries in the level.</font></p>
+    <p>
+    <font face="Arial" size="2">The fourth image further explains the above 
+    procedures and shows the final results the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">12) To further subdivide the level into more 
+    portals, faces running &quot;West&quot; to &quot;East&quot; were created using the existing 
+    vertices and edges for the planes.&nbsp; Only the middle 4 edges and 
+    associated vertices were used. In addition, the edges were extended past the 
+    level boundaries.</font></p>
+    <p>
+    <font face="Arial" size="2">Make sure that the normals are consistent for 
+    all the faces, this will determine how the portal volumes are created.</font></p>
+    <p>
+    <font face="Arial" size="2">In the example, the faces running &quot;East&quot; to 
+    &quot;West&quot; have their normals pointing North, while the faces running &quot;North&quot; to 
+    &quot;South&quot; have their normals facing &quot;East&quot;.</font></p>
+    <p>
+    <font face="Arial" size="2">13) Select all the faces and <b>Clear All</b> the 
+    <b>Smoothing Groups</b> and apply <b>Material ID</b> 1 to all the faces to assign the 
+    +portal material.</font></p>
+    <p>
+    <font face="Arial" size="2">Once the above procedures are completed, link 
+    the &quot;terrain portals&quot; object to the reference frame &quot;frame&quot; object.</font></p>
+    <p>
+    <font face="Arial" size="2">The level has now been portalled.</font></p>
+    <p>
+    <font face="Arial" size="2">The fifth image or last image further explains 
+    the above procedures and shows the final results the above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/portalling_03_large.gif" target="_blank">
+    <img border="0" src="images/portalling_03_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/portalling_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/portalling_04_large.gif" target="_blank">
+    <img border="0" src="images/portalling_04_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/portalling_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/portalling_05_large.gif" target="_blank">
+    <img border="0" src="images/portalling_05_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/portalling_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/portalling_06_large.gif" target="_blank">
+    <img border="0" src="images/portalling_06_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/portalling_06_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/portalling_07_large.gif" target="_blank">
+    <img border="0" src="images/portalling_07_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/portalling_07_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Saving the Level</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber11" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">At this point, the level should be saved. To 
+    save the level do the following:</font><p><font face="Arial" size="2">1) Go 
+    to <b>File</b>.</font></p>
+    <p><font face="Arial" size="2">2) Click on <b>Save As</b>.</font></p>
+    <p><font face="Arial" size="2">3) In the <b>Save File As</b> dialog window 
+    go to the Halo\data\levels\test\tutorial\models directory (this directory 
+    was created in the above section <b>Creating a Level Directory</b>) and save 
+    the file as &quot;tutorial.max&quot; by entering this name in the <b>File name:</b> 
+    field.&nbsp; </font></p>
+    <p><font face="Arial" size="2">4) Click on <b>Save</b>.</font></p>
+    <p><font face="Arial" size="2">The level is now saved.&nbsp; This level will 
+    be used in the tutorial and example areas of the next sections.&nbsp; It may 
+    also be a good idea to make a backup of this file.</font></p>
+    <p>&nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="714"> <span class="body"><b>
+<font face="Arial">Conclusion of Level Creation - Part 2</font></b></span></td>
+		<td width="118"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber11" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The level geometry is now &quot;complete&quot; and can be 
+    successfully exported and compiled and is ready to go through the steps that 
+    will get it running in Halo. </font>
+    <p><font face="Arial" size="2">As previously mentioned, a completed version 
+    or example version of the level created in the tutorial sections can be 
+    found under the &quot;Halo\data\levels\test\tutorial_examples&quot; directory.&nbsp; 
+    The source and related materials have been provided as a reference to aid in 
+    the learning process.</font></p>
+    <p><font face="Arial" size="2">Once the user has successfully completed the 
+    tutorials in </font>
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <font size="2"><a href="mp_ld_level_creation_part_01.html">Level Creation - 
+    Part 1</a></font></b></font><font face="Arial" size="2"> and </font>
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <font size="2">
+    <a href="mp_ld_level_creation_part_02.html">Level Creation - Part 2</a> </font></b></font><font face="Arial" size="2">
+    they can proceed to the next section <b>
+    <a href="mp_ld_level_exporting.html">Level Exporting</a></b>.</font></p>
+    <p><font face="Arial" size="2">Please note that the section </font>
+    <font color="#3FA2FF" face="Arial" size="2">
+    <b>
+    <a href="mp_ld_level_exporting.html">Level Exporting</a> </b></font>
+    <font face="Arial" size="2">and the subsequent sections will assume that the end user has completed 
+    all of the examples and tutorials up to and including those in
+    </font>
+    <font color="#3FA2FF" face="Arial">
+    <a href="mp_ld_level_creation_part_02.html">
+    <b>
+    <font size="2">Level Creation - Part 2</font></b></a></font><font face="Arial" size="2">.</font><font size="2" color="#3FA2FF" face="Arial">
+    </font><font face="Arial" size="2">The 
+    remaining sections in Multiplayer Level Design will use the completed &quot;tutorial.max&quot; 
+    file from these sections.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<ul>
+  <li>
+
+<p style="margin-top: 0; margin-bottom: 0; line-height:200%" align="left">
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <a href="mp_ld_level_exporting.html">
+    <u>Continue to the Next Section - Level Exporting</u></a></b></font></p>
+
+  </li>
+  <li>
+  <p style="line-height: 200%; margin-top: 0; margin-bottom: 0"><font face="Arial"><b><a href="../../../main/main.html">Return to Main Page</a></b></font></li>
+</ul>
+
+</body>
+
+</html>

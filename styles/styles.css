@@ -109,26 +109,22 @@ h1 {
 
 /* What is  */
 
-/* .flex-container p,
+/* .text-section p,
 h1 {
   margin: 0;
   padding: 0;
 } */
 
-.flex-container {
+.text-section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-image: url(../images/techdensecircuits.jpg);
-  background-color: var(--dark);
-  /* background-image: url(../images/portent-1.jpg); */
-  background-position: center;
   border-radius: 10px;
   padding: 40px;
   box-shadow: var(--box-shadow);
 }
 
-.flex-container p {
+.text-section p {
   font-size: 1.3em;
   text-shadow: var(--font-shadow);
 }
@@ -136,7 +132,7 @@ h1 {
 .title {
   width: 100%;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .title h1 {
@@ -149,7 +145,6 @@ h1 {
 }
 
 .link {
-  /* color: var(--primary); */
   border-bottom: 2px solid var(--primary);
 }
 
@@ -158,19 +153,13 @@ h1 {
   color: var(--primary);
 }
 
-.spv3 {
-  background-image: url(../images/spv3_5_full.jpg);
-  background-position: center;
-  background-attachment: fixed;
-}
-
 .card-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
   padding: 50px;
-
-  /* background-image: url(../images/portent-1.jpg); */
 }
 .card {
   background-color: var(--light);
@@ -189,6 +178,11 @@ h1 {
   width: 100%;
 }
 
+.card a {
+  margin: 0;
+  padding: 0;
+}
+
 .card p {
   text-shadow: 0px 0px 0px #fff;
   text-align: center;
@@ -201,12 +195,22 @@ h1 {
   text-align: center;
 }
 
+.card a {
+  color: #000;
+}
+
 .title-text {
   margin: 0;
   padding: 0;
   padding-top: 55px;
   text-align: center;
   font-size: 3em;
+}
+
+footer {
+  background: var(--primary);
+  padding: 1px;
+  text-align: center;
 }
 
 /* .test-b p {
@@ -229,3 +233,82 @@ h1 {
   box-shadow: var(--box-shadow);
   border-radius: 20px;
 } */
+
+/* Backgrounds */
+
+/* Maps */
+.spv3 {
+  background-image: url(../images/spv3_5_full.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
+}
+.sp {
+  background-image: url(../images/lumoria.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.firefight {
+  background-image: url(../images/portent-2.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.arrival {
+  background-image: url(../images/arrival-1.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.addons {
+  background-image: url(../images/tsce-4.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.community {
+  background-image: url(../images/tsce1_full.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Textures */
+
+.circuits {
+  background-image: url(../images/techdensecircuits.jpg);
+  background-position: center;
+}
+.rocks {
+  background-image: url(../images/detailcliffrocksmooth.jpg);
+  background-position: center;
+}
+.snow {
+  background-image: url(../images/b40cliffsnowbump.jpg);
+  background-position: center;
+}
+.grass {
+  background-image: url(../images/detailgrass.jpg);
+  background-position: center;
+}
+.panel {
+  background-image: url(../images/techrackplate.jpg);
+  background-position: center;
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
+}
+.covie {
+  background-image: url(../images/covenantmetalgeneric.jpg);
+  background-position: center;
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
+}
+.cliffs {
+  background-image: url(../images/cliffs.jpg);
+  background-position: center;
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
+}

@@ -1,0 +1,291 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Multiplayer Level Design Level Exporting</title>
+<base target="_self">
+</head>
+
+<body background="file:///D:/GameDev/HaloDev/Halo%20End%20User%20Editing%20Kit/Halo%20PC%20Editing%20Reference/images/background.gif" bgcolor="#000000" text="#C0C0C0" link="#3FA2FF" vlink="#0066CC" alink="#FFFFFF">
+
+<table cellpadding="0" cellspacing="0" border="0" width="869">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <font face="Arial" size="2">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></font></td>
+		<td bgcolor="black" width="748"> <b><font face="Arial" color="#3FA2FF">
+        Level Exporting</font></b></td>
+		<td width="101"><font face="Arial" size="2">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></font></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber1" height="50">
+  <tr>
+    <td width="100%" height="23">
+    <p align="left" style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following section provides information and a 
+    tutorial on the export process from 3ds Max to the .jms format which is 
+    used to compile a Halo game level.</font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="725"> <b><font face="Arial" size="2">
+        Exporting The Level</font></b></td>
+		<td width="107"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber47" height="97">
+  <tr>
+    <td width="100%" height="60" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images 
+    demonstrate using the Blitzkrieg plug-in in 3ds Max to export the .jms file 
+    for the level.&nbsp; The .jms file is used by Tool to compile the level 
+    data into the .scenario and .scenario_structure_bsp data tags.</font><p>
+    <font face="Arial" size="2">It is these data tags will be manipulated to 
+    create a working multiplayer level that will then be compiled into a .map 
+    cache file and run in Halo.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber48" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Exporting the level using Blitzkrieg:</font><p>
+    <font face="Arial" size="2">In 3ds Max open the tutorial.max file that was 
+    created in the previous tutorials.</font></p>
+    <p><font face="Arial" size="2">1) To export the level using the Blitzkrieg 
+    exporter plug-in follow the procedures below:</font></p>
+    <p><font face="Arial" size="2">a) Click on <b>File</b> and select <b>Export</b>.&nbsp; 
+    The <b>Select File to Export</b> window will appear.</font></p>
+    <p><font face="Arial" size="2">b) Select the same directory in which the tutorial.max file exists 
+    (Halo Custom Edition\data\levels\test\tutorial\models), this is the directory created in the section
+    </font><span class="body">
+    <font face="Arial" size="2"><b>
+    Creation of a Level Directory </b>under the <b>Creating a Level</b> section 
+    in </font></span>
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <font size="2"><a href="mp_ld_level_creation_part_01.html">Level Creation - 
+    Part 1</a></font></b></font><font face="Arial" size="2">.</font></p>
+    <p><font face="Arial" size="2">c) In the Save as type: pull down select 
+    Blitzkrieg Model Exporter (*.JMS,*.JMP).</font></p>
+    <p><font face="Arial" size="2">d) In the <b>File name:</b> field enter the 
+    name tutorial.jms.</font></p>
+    <p><font face="Arial" size="2">e) Click on <b>Save</b>.</font></p>
+    <p><font face="Arial" size="2">The level should have exported successfully.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/level_exporting_01_large.gif" target="_blank">
+    <img border="0" src="images/level_exporting_01_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/level_exporting_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <p style="margin-top: 0; margin-bottom: 0">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="725"> 
+        <p style="margin-top: 0; margin-bottom: 0"><b>
+        <font face="Arial" size="2">Troubleshooting the Export Process</font></b></td>
+		<td width="107">
+        <p style="margin-top: 0; margin-bottom: 0">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber47" height="51">
+  <tr>
+    <td width="100%" height="51" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following table outlines some common 
+    problems or errors that may occur when exporting the .jms for the level and 
+    provides suggestions or solutions that should help in the successful export 
+    of the level using the Blitzkrieg exporter plug-in.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="60%" id="AutoNumber49" bordercolor="#C0C0C0" height="661">
+  <tr>
+    <td width="50%" align="center" height="32"><b><font face="Arial">Problem or 
+    Error</font></b></td>
+    <td width="50%" align="center" height="32"><b><font face="Arial">Suggestions or Solution</font></b></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="32">&nbsp;</td>
+    <td width="50%" align="center" height="32">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="47"><font face="Arial" size="2">When 
+    exporting using Blitzkrieg an error 
+    dialog appears that says &quot;There was no geometry to export&quot;.&nbsp;
+    </font></td>
+    <td width="50%" align="center" height="47"><font face="Arial" size="2">Make 
+    sure that the level has a reference frame.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="60"><font face="Arial" size="2">When 
+    exporting using Blitzkrieg an error 
+    dialog appears that says &quot;There was no geometry to export&quot;.&nbsp;
+    </font></td>
+    <td width="50%" align="center" height="60"><font face="Arial" size="2">If 
+    the level has a reference frame, make sure that there is valid geometry 
+    present and that the geometry is attached to the reference frame.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="45"><font face="Arial" size="2">When 
+    exporting using Blitzkrieg the .jms file does not appear to have exported 
+    and been saved.</font></td>
+    <td width="50%" align="center" height="45"><font face="Arial" size="2">Make 
+    sure that the .jms file is being saved to the correct directory.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="65"><font face="Arial" size="2">When 
+    exporting with Blitzkrieg using an existing .jms file name, the .jms file 
+    does not appear to have saved or updated the existing file.</font></td>
+    <td width="50%" align="center" height="65"><font size="2" face="Arial">Make 
+    sure that the existing .jms file is not set to Read-only.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="471"><font face="Arial" size="2">When 
+    exporting using Blitzkrieg 3ds Max crashes.</font></td>
+    <td width="50%" align="center" height="471">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">This is 
+    usually related to some strange geometry construction error or illegal 
+    material assignment.&nbsp; </font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Try the 
+    following steps below to track down the error.</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">1) 
+    Systematically unlink objects from the reference frame and try to export 
+    until the level exports successfully. This can help determine which object 
+    and related geometry are causing export problems.</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">2) If an 
+    object has a Multi/Sub-Object applied to it, make sure that it is applied to 
+    the entire object.</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">3) Make 
+    sure that all faces have a Multi/Sub-Object Sub-Material or Standard 
+    material applied to them.</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">4) Make 
+    sure that the mesh geometry does not have isolated (unused) vertices.</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">5) Make 
+    sure that there are no double faces or polygons (faces or polygons that 
+    occupy the exact same space and share the same vertices).</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">6) Check 
+    for double edges or illegal faces or polygons.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="714"> <b><font face="Arial">Conclusion to 
+        Level Exporting</font></b></td>
+		<td width="118"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber11" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The level geometry has now been 
+    successfully exported and is ready to be compiled in preparation for it to go through the 
+    processes that 
+    will get it running in Halo. </font>
+    <p><font face="Arial" size="2">As previously mentioned, a completed version 
+    or example version of the level created in the tutorial sections can be 
+    found under the &quot;Halo\data\levels\test\tutorial_examples&quot; directory.&nbsp; 
+    The source and related materials have been provided as a reference to aid in 
+    the learning process.&nbsp; The successfully exported tutorial.jms file for 
+    the example level has also been made available.</font></p>
+    <p><font face="Arial" size="2">Once the user has successfully completed the 
+    export process<font color="#3FA2FF"><b> </b></font>they can proceed to the next section <b>
+    <a href="mp_ld_level_compilation.html">Level Compilation</a></b>.</font></p>
+    <p>&nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<ul>
+  <li>
+
+<p style="margin-top: 0; margin-bottom: 0; line-height:200%" align="left">
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <a href="mp_ld_level_compilation.html">
+    <u>Continue to the Next Section - Level Compilation</u></a></b></font></p>
+
+  </li>
+  <li>
+  <p style="line-height: 200%; margin-top: 0; margin-bottom: 0"><font face="Arial"><b><a href="../../../main/main.html">Return to Main Page</a></b></font></li>
+</ul>
+
+</body>
+
+</html>
