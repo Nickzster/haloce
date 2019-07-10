@@ -2,14 +2,23 @@
 Styles - Main Website
 */
 
+/* Core */
 :root {
-  --primary: #0055ff;
+  --primary: #0084ff;
   --primary-transparency: rgba(0, 85, 255, 0.8);
   --dark: #303030;
   --dark-trans: rgba(48, 48, 48, 0.4);
   --light: #fff;
   --background: #e8e8e8;
-  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --box-shadow: 0 1px 20px rgba(43, 43, 43, 0.8);
+  --font-shadow: 0 1px 5px rgba(34, 34, 34, 0.8);
+  --borderradius: 10px;
+  /* shadow: horizontal vertical blur color */
+}
+
+h1,
+p {
+  text-shadow: var(--font-shadow);
 }
 
 html {
@@ -36,16 +45,6 @@ header {
   display: flex;
   justify-content: space-between;
 }
-/* Temp h1 */
-.welcome h1 {
-  color: var(--light);
-  font-size: 3em;
-  padding: 20px;
-  background-color: var(--dark-trans);
-  border-radius: 10px;
-  text-align: center;
-  margin: 40px 500px;
-}
 
 ul {
   list-style: none;
@@ -59,6 +58,18 @@ a {
   color: var(--light);
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.container p,
+h1 {
+  padding: 0px;
+  margin: 0px;
+  margin: 40px 300px;
+}
+/* Nav Bar */
+.icon {
+  width: 60%;
+  margin-left: 30px;
 }
 
 .nav-bar {
@@ -76,11 +87,145 @@ a {
   border-bottom: 2px solid var(--primary);
 }
 
-.container {
-  margin: 50px 200px;
+/* Intro / Welcome */
+
+.welcome h1 {
+  color: var(--light);
+  font-size: 3em;
+  padding: 20px;
+  /* background-color: var(--dark-trans); */
+  border-radius: 10px;
+  text-align: center;
+  margin: 250px 500px;
+  margin-bottom: 500px;
 }
 
-.icon {
-  width: 60%;
-  margin-left: 30px;
+.legendary {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
 }
+
+/* What is  */
+
+/* .flex-container p,
+h1 {
+  margin: 0;
+  padding: 0;
+} */
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url(../images/techdensecircuits.jpg);
+  background-color: var(--dark);
+  /* background-image: url(../images/portent-1.jpg); */
+  background-position: center;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: var(--box-shadow);
+}
+
+.flex-container p {
+  font-size: 1.3em;
+  text-shadow: var(--font-shadow);
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+}
+
+.title h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.text p {
+  text-align: center;
+}
+
+.link {
+  /* color: var(--primary); */
+  border-bottom: 2px solid var(--primary);
+}
+
+.link:hover {
+  border-bottom: none;
+  color: var(--primary);
+}
+
+.spv3 {
+  background-image: url(../images/spv3_5_full.jpg);
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 50px;
+
+  /* background-image: url(../images/portent-1.jpg); */
+}
+.card {
+  background-color: var(--light);
+  padding-bottom: 200px;
+  width: 350px;
+  height: 160px;
+  border-radius: var(--borderradius);
+  box-shadow: var(--box-shadow);
+  color: var(--dark);
+  margin: 40px;
+  overflow: hidden;
+}
+.card img {
+  border-top-left-radius: var(--borderradius);
+  border-top-right-radius: var(--borderradius);
+  width: 100%;
+}
+
+.card p {
+  text-shadow: 0px 0px 0px #fff;
+  text-align: center;
+  margin: 0;
+  margin-top: 15px;
+  padding: 0px 20px;
+}
+
+.card h3 {
+  text-align: center;
+}
+
+.title-text {
+  margin: 0;
+  padding: 0;
+  padding-top: 55px;
+  text-align: center;
+  font-size: 3em;
+}
+
+/* .test-b p {
+  text-shadow: var(--font-shadow);
+  font-size: 4em;
+} */
+
+/* .test {
+  background-image: url(../images/spv3_5_full.jpg);
+  background-color: var(--dark);
+  background-image: url(../images/portent-1.jpg); 
+  background-position: center;
+  background-attachment: fixed;
+  padding: 500px;
+}
+
+.test-b {
+  background-color: var(--dark);
+  padding: 100px;
+  box-shadow: var(--box-shadow);
+  border-radius: 20px;
+} */
