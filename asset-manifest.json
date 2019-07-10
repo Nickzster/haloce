@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/haloce/static/css/main.e88581c5.chunk.css",
+    "main.js": "/haloce/static/js/main.9c26da5b.chunk.js",
+    "main.js.map": "/haloce/static/js/main.9c26da5b.chunk.js.map",
+    "runtime~main.js": "/haloce/static/js/runtime~main.4ef978ab.js",
+    "runtime~main.js.map": "/haloce/static/js/runtime~main.4ef978ab.js.map",
+    "static/js/2.006dcbed.chunk.js": "/haloce/static/js/2.006dcbed.chunk.js",
+    "static/js/2.006dcbed.chunk.js.map": "/haloce/static/js/2.006dcbed.chunk.js.map",
+    "index.html": "/haloce/index.html",
+    "precache-manifest.e7a637d68134c9c1d8dc3f6e4d503350.js": "/haloce/precache-manifest.e7a637d68134c9c1d8dc3f6e4d503350.js",
+    "service-worker.js": "/haloce/service-worker.js",
+    "static/css/main.e88581c5.chunk.css.map": "/haloce/static/css/main.e88581c5.chunk.css.map",
+    "static/media/10screenshot00.jpg": "/haloce/static/media/10screenshot00.7d61502c.jpg",
+    "static/media/1_full.jpg": "/haloce/static/media/1_full.ba97b807.jpg",
+    "static/media/Lumoria_01.jpg": "/haloce/static/media/Lumoria_01.03904c61.jpg",
+    "static/media/landingpage.css": "/haloce/static/media/tsce1_full.5ea8e0c4.jpg",
+    "static/media/arrival-2.jpg": "/haloce/static/media/arrival-2.1b05b437.jpg",
+    "static/media/bigass-b.jpg": "/haloce/static/media/bigass-b.c69d90e9.jpg",
+    "static/media/descent-1.jpg": "/haloce/static/media/descent-1.feff8bad.jpg",
+    "static/media/ff-portent.jpg": "/haloce/static/media/ff-portent.3cf32cc6.jpg",
+    "static/media/intensity.jpg": "/haloce/static/media/intensity.e28bb8c6.jpg",
+    "static/media/legendary.png": "/haloce/static/media/legendary.39067263.png",
+    "static/media/maxresdefault.jpg": "/haloce/static/media/maxresdefault.107ccf9f.jpg",
+    "static/media/nuclear-b.png": "/haloce/static/media/nuclear-b.b33d13d4.png",
+    "static/media/oni.jpg": "/haloce/static/media/oni.6df8edcf.jpg",
+    "static/media/precipice.png": "/haloce/static/media/precipice.f6288556.png",
+    "static/media/spv3_6_full.jpg": "/haloce/static/media/spv3_6_full.bcd469e6.jpg",
+    "static/media/tsce-grunt.jpg": "/haloce/static/media/tsce-grunt.dd90271d.jpg"
+  }
+}
