@@ -354,9 +354,7 @@ footer {
   }
 
   .icon {
-    width: 10%;
-    height: auto;
-    margin-left: 30px;
+    visibility: hidden;
   }
 }
 
@@ -388,9 +386,7 @@ footer {
   .nav-bar {
     visibility: hidden;
   }
-  .icon {
-    visibility: hidden;
-  }
+
   .title-text {
     font-size: 2em;
   }
