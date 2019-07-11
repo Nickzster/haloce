@@ -1,0 +1,618 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Multiplayer Level Design Radiosity</title>
+<base target="_self">
+</head>
+
+<body background="file:///D:/GameDev/HaloDev/Halo%20End%20User%20Editing%20Kit/Halo%20PC%20Editing%20Reference/images/background.gif" bgcolor="#000000" text="#C0C0C0" link="#3FA2FF" vlink="#0066CC" alink="#FFFFFF">
+
+<table cellpadding="0" cellspacing="0" border="0" width="869">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <font face="Arial" size="2">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></font></td>
+		<td bgcolor="black" width="748"> <b><font face="Arial" color="#3FA2FF">
+        Radiosity (Lighting)</font></b></td>
+		<td width="101"><font face="Arial" size="2">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></font></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="79%" id="AutoNumber1" height="70">
+  <tr>
+    <td width="100%" height="43">
+    <p align="left" style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following section gives a quick overview of 
+    the radiosity lighting solution used in 
+    Halo.&nbsp; Topics and tutorials include running the radiosity process on 
+    the level as well as information on the settings and options for radiosity, 
+    the creation of a lightmap for the level (.bitmap) and troubleshooting 
+    common problems encountered with lighting in Halo.</font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="869">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="671"> <b><font face="Arial" size="2">
+        Radiosity Overview</font></b></td>
+		<td width="178"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="71%" id="AutoNumber1" height="64">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p><font face="Arial" size="2">Halo has both static and dynamic lighting.&nbsp; 
+    The static lighting is created by running a radiosity process on the level 
+    geometry that then saves the results to a light map file that is just a 
+    special kind of .bitmap data tag.</font></p>
+    <p><font face="Arial" size="2">The light used by the radiosity 
+    process can come from many sources.&nbsp; The sky box or .sky data tag has 
+    numerous lighting settings and attributes that can be set.&nbsp; Materials 
+    have radiosity properties that can be set to emit light that can be used in 
+    the radiosity process.&nbsp; These materials can be applied to surfaces in 
+    the level environment.&nbsp; Models can be setup to emit light using .light 
+    data tags as well.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The effect of the radiosity process can be 
+    controlled for almost every face or surface in the game.&nbsp; In the 
+    material or shader settings there is a value called &quot;detail level&quot; which 
+    exists under the &quot;radiosity properties&quot; area when the tag file is viewed in 
+    Guerilla.&nbsp; This detail level setting affects the amount of tessellation 
+    or how much the surface is subdivided for the lightmap.&nbsp; The higher the 
+    setting, the higher the resolution of the lightmap on the surface and the 
+    longer the radiosity process takes.&nbsp; In addition, higher settings 
+    increase the amount of lightmap data (the .bitmap gets much larger) and thus 
+    affects the amount of memory used.</font></p>
+    <p><font face="Arial" size="2">On a related note, just as there is static 
+    and dynamic lighting, there are also static and dynamic shadows.&nbsp; 
+    Dynamic shadows are cast from objects such as vehicles and characters.&nbsp; 
+    Static shadows of course are a result of the radiosity process.&nbsp; Static 
+    models such as those used for .scenery objects can be setup to cast shadows 
+    or block light during the radiosity process.</font></p>
+    <p><font face="Arial" size="2">The radiosity process can be run using Tool 
+    or in Sapien.&nbsp; Sapien has a developer console which can execute many of 
+    the commands that can be run in the Halo game console.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The following examples and tutorials will 
+    discuss the radiosity command options and demonstrate running the radiosity 
+    process on the tutorial level using Sapien.</font></p>
+    <p></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="868">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="673"> <b><font face="Arial" size="2">Running 
+        Radiosity on a Level</font></b></td>
+		<td width="175"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="71%" id="AutoNumber3" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The following examples and tutorials will 
+    discuss the radiosity command options and demonstrate running the radiosity 
+    process and saving the lightmap data to a .bitmap on the tutorial level 
+    using Sapien.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="712" id="AutoNumber3" height="24">
+  <tr>
+    <td width="386" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="left">
+    <font face="Arial" size="2">Lighting the tutorial level (running radiosity 
+    on the tutorial level):</font></p>
+    <p align="left">
+    <font face="Arial" size="2">Go to the main Halo 
+    directory.&nbsp; In the root directory is where all the Halo tools exist, 
+    there should be a program file called sapien.exe.</font></p>
+    <p align="left">
+    <font face="Arial" size="2">1) Run Sapien.&nbsp; When Sapien loads, an <b>
+    Open</b> dialog window will appear.&nbsp; Use this dialog to load the tutorial.scenario 
+    tag. </font></p>
+    <p align="left">
+    <font face="Arial" size="2">Sapien will now load.&nbsp; Sapien runs many of 
+    the same systems as the game so give it time to load, especially for larger 
+    levels.</font></p>
+    <p align="left"><font face="Arial" size="2">The first image further explains the 
+    above procedures.</font></p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><font face="Arial" size="2">Maximize or make Sapien go fullscreen.&nbsp; 
+    Roughly organize the windows so that there is easy access to the Game 
+    Window.&nbsp; The Game Window is the 3D window which renders many of the 
+    Halo game objects exactly as they will appear in game.&nbsp; The 3D window 
+    runs the same rendering engine as Halo itself.</font></p>
+    <p align="left"><font face="Arial" size="2">Sapien will be covered in more detail in the 
+    section
+    <font color="#3FA2FF">
+    <b>
+    <a href="mp_ld_level_population.html">Population</a></b></font>.&nbsp; For 
+    now, all that matters is the large 3D window.</font></p>
+    <p align="left"><font face="Arial" size="2">2) Use the mouse pointer to click on the Game 
+    Window.&nbsp; In the game window, bring up the developer console by hitting 
+    the ~ key.</font></p>
+    <p align="left"><font face="Arial" size="2">When the game console is visible, the game 
+    and input controls for the camera are paused.</font></p>
+    <p align="left"><font face="Arial" size="2">There are 3 console commands that will be 
+    used to run and complete the radiosity process.</font></p>
+    <p align="left"><font face="Arial" size="2">radiosity_quality &lt;0 or 1&gt; - Sets the quality of the radiosity 
+    to be performed.&nbsp; </font></p>
+    <p align="left"><font face="Arial" size="2">A setting of 0 runs what is called a quick or 
+    &quot;fast radiosity&quot;.&nbsp; The number of &quot;light bounces&quot; or &quot;radiosity bounces&quot; 
+    that are run is fewer and the process ignores light occlusion or blocking 
+    caused by models. As a result the radiosity process does not take as long 
+    and is less accurate and the resulting lightmap .bitmap is smaller.</font></p>
+    <p align="left"><font face="Arial" size="2">A setting of 1 runs what is called a &quot;full 
+    radiosity&quot;.&nbsp;&nbsp; This is the process that should be run for the final 
+    or &quot;release&quot; version of the level.&nbsp; A full radiosity runs the radiosity 
+    process at its full settings.&nbsp; As a result the radiosity process takes 
+    much longer and is much more accurate. The resulting lightmap .bitmap is 
+    much larger.</font></p>
+    <p align="left"><font face="Arial" size="2">radiosity_start - Starts the radiosity lighting 
+    process on the level using the 
+    current radiosity settings.</font></p>
+    <p align="left"><font face="Arial" size="2">radiosity_save - Saves the current radiosity lighting to a 
+    .bitmap lightmap file for the selected level (.scenario_structure_bsp). This 
+    command can be used at anytime after the radiosity_start command is used.&nbsp; 
+    It will stop or interrupt the process and save the current progress to the 
+    lightmap .bitmap file.&nbsp; As a result, any radiosity process (even a fast 
+    or quick radiosity process) that takes a long time can be cut short, saving 
+    time.&nbsp; If this command is used upon the completion of the radiosity 
+    process, it behaves as normal and saves the lightmap .bitmap file out.</font></p>
+    <p align="left">
+        <span class="body">  
+    <font face="Arial" size="2">For more information on the console commands 
+    that will be used as well as console commands in general, see the<b> Console 
+        Commands </b>table in the </font></span><font face="Arial"><b>
+    <a href="../../general/console_commands.html">
+<font size="2" color="#3FA2FF">Console Command List</font></a></b></font><span class="body"><font face="Arial" size="2"> section under <b>
+    General Reference</b>.</font></span></p>
+    <p align="left"><font face="Arial" size="2">Since the tutorial level is small 
+    and radiosity will not take a long time to run, a &quot;full radiosity&quot; will be 
+    used.</font></p>
+    <p align="left"><font face="Arial" size="2">Type the following into the console and hit 
+    Enter:</font></p>
+    <p align="left"><font face="Arial" size="2">radiosity_quality 1</font></p>
+    <p align="left"><font face="Arial" size="2">Note that at anytime the values for the 
+    radiosity settings can be checked by typing in the console command without 
+    any setting or value and hitting Enter.&nbsp; This will return the current 
+    value or setting.</font></p>
+    <p align="left"><font face="Arial" size="2">The second image further explains the 
+    above procedures.</font></p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><font face="Arial" size="2">3) Now type the following into the console and 
+    hit Enter:</font></p>
+    <p align="left"><font face="Arial" size="2">radiosity_start</font></p>
+    <p align="left"><font face="Arial" size="2">When this command is executed 3 numbers should 
+    appear in the Game Window.&nbsp; These numbers represent the RGB values for 
+    the lighting.&nbsp; These numbers will countdown as the process continues, 
+    when all 3 numbers reach 0.0, the radiosity process is complete.</font></p>
+    <p align="left"><font face="Arial" size="2">The third image further explains the 
+    above procedures.</font></p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><font face="Arial" size="2">4) When the 3 displayed velues reach 0.0 type 
+    the following in the console and hit Enter.</font></p>
+    <p align="left"><font face="Arial" size="2">radiosity_save</font></p>
+    <p align="left"><font face="Arial" size="2">The fourth image further explains the 
+    above procedures.</font></p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><font face="Arial" size="2">The level should now be visible.&nbsp; If it is not, move the camera 
+    around in the Game Window until the level is visible.&nbsp; The camera can 
+    be moved and rotated by holding down the Middle Mouse button and using the 
+    following keys to move around the level:</font></p>
+    <p align="left"><font face="Arial" size="2">The mouse controls the pitch (up and down) and yaw (left and right) 
+    movement of the camera.</font></p>
+    <p align="left"><font face="Arial" size="2">Shift - Cycles through the camera speed, making it move faster.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0" align="left"><font face="Arial" size="2">W - Moves the camera forward</font></p>
+    <p style="margin-top: 0; margin-bottom: 0" align="left"><font face="Arial" size="2">A -&nbsp; Moves the camera 
+    backwards</font></p>
+    <p style="margin-top: 0; margin-bottom: 0" align="left"><font face="Arial" size="2">S -&nbsp; Pans the camera left</font></p>
+    <p style="margin-top: 0; margin-bottom: 0" align="left"><font face="Arial" size="2">D -&nbsp; Pans the camera right</font></p>
+    <p style="margin-top: 0; margin-bottom: 0" align="left">
+    <font face="Arial" size="2">R - Moves the camera along the Z-Axis in the 
+    positive direction (up).</font></p>
+    <p style="margin-top: 0; margin-bottom: 0" align="left">
+    <font face="Arial" size="2">F - Moves the camera along the Z-Axis in the 
+    negative direction (down).</font></p>
+    <p align="left"><font face="Arial" size="2">The fifth image or last image further 
+    explains the above procedures and shows the results of the radiosity 
+    process.&nbsp; The level should now be fully visible.</font></p>
+    <p>&nbsp;</td>
+    <td width="386" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center" style="margin-top: 0; margin-bottom: 0"><a href="images/radiosity_01_large.gif" target="_blank">
+    <img border="0" src="images/radiosity_01_small.gif" width="225" height="177"></a></p>
+    <blockquote>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      <a target="_blank" href="images/radiosity_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+    <p align="center" style="margin-top: 0; margin-bottom: 0"><a href="images/radiosity_02_large.gif" target="_blank">
+    <img border="0" src="images/radiosity_02_small.gif" width="225" height="176"></a></p>
+    <p align="center" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      <a target="_blank" href="images/radiosity_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+    <blockquote>
+    <p align="center" style="margin-top: 0; margin-bottom: 0"><a href="images/radiosity_03_large.gif" target="_blank">
+    <img border="0" src="images/radiosity_03_small.gif" width="225" height="176"></a></p>
+    </blockquote>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      <a target="_blank" href="images/radiosity_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+    <blockquote>
+    <p align="center" style="margin-top: 0; margin-bottom: 0"><a href="images/radiosity_04_large.gif" target="_blank">
+    <img border="0" src="images/radiosity_04_small.gif" width="225" height="176"></a></p>
+    <p align="center" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    </blockquote>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      <a target="_blank" href="images/radiosity_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      &nbsp;</p>
+    <blockquote>
+    <p align="center" style="margin-top: 0; margin-bottom: 0"><a href="images/radiosity_05_large.gif" target="_blank">
+    <img border="0" src="images/radiosity_05_small.gif" width="225" height="176"></a></p>
+    <p align="center" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    </blockquote>
+      <p align="center" style="margin-top: 0; margin-bottom: 0">
+      <a target="_blank" href="images/radiosity_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <p style="margin-top: 0; margin-bottom: 0">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="671"> 
+        <p style="margin-top: 0; margin-bottom: 0"><b>
+        <font face="Arial" size="2">Troubleshooting Errors in Radiosity</font></b></td>
+		<td width="161">
+        <p style="margin-top: 0; margin-bottom: 0">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="71%" id="AutoNumber50" height="51">
+  <tr>
+    <td width="100%" height="51" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following table outlines some common 
+    problems or errors that may occur as a result of or in relation to the 
+    radiosity process and offers suggestions and solutions to these problems.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="71%" id="AutoNumber51" bordercolor="#C0C0C0" height="470">
+  <tr>
+    <td width="50%" align="center" height="32"><b><font face="Arial">Problem or 
+    Error</font></b></td>
+    <td width="50%" align="center" height="32"><b><font face="Arial">Suggestions 
+    or Solution</font></b></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="32">&nbsp;</td>
+    <td width="50%" align="center" height="32">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="47"><font face="Arial" size="2">When 
+    the level is viewed in Sapien or in Halo it is completely dark.</font></td>
+    <td width="50%" align="left" height="47">
+    <p style="margin-left: 4"><font face="Arial" size="2">Make 
+    sure that the level has lights and that radiosity has successfully completed 
+    and created a lightmap .bitmap. </font>
+    </p>
+    <p style="margin-left: 4"><font face="Arial" size="2">Remember that to save the radiosity solution 
+    the lightmap must be manually saved using the radiosity_save command.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="58"><font face="Arial" size="2">The 
+    lighting in the level is very dark or darker than expected.</font></td>
+    <td width="50%" align="left" height="58">
+    <p style="margin-left: 4"><font face="Arial" size="2">There 
+    are several problems that can cause this, try the following solutions:</font></p>
+    <p style="margin-left: 4">
+    <font face="Arial" size="2">If the radiosity process was stopped 
+    prematurely, try running the radiosity process longer.</font></p>
+    <p style="margin-left: 4"><font face="Arial" size="2">Run a full radiosity (radiosity_quality 1).&nbsp; 
+    A full radiosity bounces the light more, therefore the level is lit better.</font></p>
+    <p style="margin-left: 4"><font face="Arial" size="2">Check the light value settings and attributes 
+    in the appropriate tag files.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="45"><font face="Arial" size="2">The 
+    lighting on certain surfaces is very low resolution (its &quot;blocky&quot; or 
+    &quot;splotchy&quot;)</font></td>
+    <td width="50%" align="left" height="45">
+    <p style="margin-left: 4"><font size="2" face="Arial">There 
+    are several problems that can cause this, try the following solutions.</font></p>
+    <p style="margin-left: 4">
+    <font size="2" face="Arial">Use Guerilla to check the &quot;detail level&quot; setting 
+    in the &quot;radiosity properties&quot; area in the shader tag. If the value is set to 
+    low or &quot;turd&quot; try setting it to medium or high to see if this smooths the 
+    lighting on the surface.</font></p>
+    <p style="margin-left: 4"><font face="Arial" size="2">Check the Smoothing Group settings in 3ds Max 
+    for the faces or surfaces.</font></p>
+    <p style="margin-left: 4"><font face="Arial" size="2">Try increasing the amount of light that is 
+    falling on the surface.&nbsp; Either increase the light values or add 
+    additional lighting that further illuminates the problematic surfaces.</font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="142"><font face="Arial" size="2">
+    There are black lines or patches on surfaces in the level.</font></td>
+    <td width="50%" align="center" height="142">
+    <p align="left" style="margin-left: 4"><font size="2" face="Arial">There are several problems that 
+    can cause this, try the following solutions.</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Check the Smoothing Group 
+    settings in 3ds Max for the faces or surfaces.</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Make sure that there are no 
+    duplicate Smoothing Groups being applied to multiple faces or objects.
+    </font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Make sure that the Smoothing 
+    Groups are not applied to faces that are separated or exist far apart from 
+    each other.</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Try increasing the amount of 
+    light that is falling on the surface.&nbsp; Either increase the light values 
+    for the surrounding lights or add additional lighting that further illuminates the 
+    problematic surfaces.</font></p>
+    <p align="left" style="margin-left: 4"><font size="2" face="Arial">Make sure there are no errors or 
+    warnings being reported by Tool during the compilation process.&nbsp; Some 
+    of these errors can cause lighting anomalies.</font></p>
+    <p align="left" style="margin-left: 4"><font size="2" face="Arial">Increase the amount of faces, 
+    subdivide the surfaces.&nbsp; Increasing the density of the mesh may help 
+    smooth the lighting, this is especially true of very large faces or 
+    polygons.</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Modify or adjust the geometry to 
+    see if it fixes the errors.&nbsp; </font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="205"><font face="Arial" size="2">The 
+    surfaces are extremely bright or fullbright.&nbsp; The surface appears to be 
+    completely saturated with light.</font></td>
+    <td width="50%" align="center" height="205">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">There are several problems that 
+    can cause this, try the following solutions:</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Check the light value settings 
+    and attributes in the appropriate tag files.&nbsp; Make sure these values 
+    are not set too high.</font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Check the self-illumination 
+    properties and settings in the appropriate tag files.&nbsp; If 
+    self-illumination was not intended, set the associated values to 0.</font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="671"> <b><font face="Arial">Conclusion to 
+        Radiosity</font></b></td>
+		<td width="161"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="71%" id="AutoNumber49" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The level has now had the radiosity process 
+    successfully completed.&nbsp; The level is now ready for object placement 
+    and editing using Sapien</font><p><font face="Arial" size="2">Completed versions or example versions of the 
+    level tags that are created in the tutorial sections can be found under the 
+    &quot;Halo\tags\levels\test\tutorial_examples&quot; directory.&nbsp; The compiled tags 
+    have been provided as a reference to aid in the learning process.</font></p>
+    <p><font face="Arial" size="2">Once the user has successfully completed the 
+    procedures above to successfully light the level they can proceed to the 
+    next section
+    <font color="#3FA2FF">
+    <b>
+    <a href="mp_ld_level_population.html">Population</a></b></font>.</font></p>
+    <p>&nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<ul>
+  <li>
+
+<p style="margin-top: 0; margin-bottom: 0; line-height:200%" align="left">
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <a href="mp_ld_level_population.html">
+    <u>Continue to the Next Section - Population</u></a></b></font></p>
+
+  </li>
+  <li>
+  <p style="line-height: 200%; margin-top: 0; margin-bottom: 0"><font face="Arial"><b><a href="../../../main/main.html">Return to Main Page</a></b></font></li>
+</ul>
+
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Multiplayer Level Design Running a Game Level in Halo</title>
+<base target="_self">
+</head>
+
+<body background="file:///D:/GameDev/HaloDev/Halo%20End%20User%20Editing%20Kit/Halo%20PC%20Editing%20Reference/images/background.gif" bgcolor="#000000" text="#C0C0C0" link="#3FA2FF" vlink="#0066CC" alink="#FFFFFF">
+
+<table cellpadding="0" cellspacing="0" border="0" width="869">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <font face="Arial" size="2">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></font></td>
+		<td bgcolor="black" width="748"> <b><font face="Arial" color="#3FA2FF">
+        Running a Game Level in Halo</font></b></td>
+		<td width="101"><font face="Arial" size="2">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></font></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber1" height="51">
+  <tr>
+    <td width="100%" height="24">
+    <p align="left" style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following section provides information and a tutorial on preparing a level to 
+    run in a Halo multiplayer game.&nbsp; The information and tutorial covers 
+    the creation of a .map cache file that contains the level and all tag 
+    resources needed to run the level in the game.</font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="868">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="698"> <b><font face="Arial" size="2">Cache 
+        File Creation</font></b></td>
+		<td width="150"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber47" height="61">
+  <tr>
+    <td width="100%" height="24" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">A .map cache file contains all the data tag 
+    resources need to run the level.&nbsp; Because of this, the level is 
+    completely self contained and can be distributed very easily.&nbsp; All that 
+    needs to be distributed is the .map cache file and other users have 
+    everything needed to play the level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber47" height="33">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following procedures and example images 
+    demonstrate the creation of a .map cache file using Tool.</font></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber48" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Creating the tutorial.map cache file using Tool:</font><p>
+    <font face="Arial" size="2">In Windows, open a Command Prompt. The Command 
+    Prompt can be found by going to <b>Start -&gt; Accessories -&gt; Programs -&gt; 
+    Command Prompt</b></font></p>
+    <p>
+    <font face="Arial" size="2">In the Command Prompt go to the main Halo 
+    directory.&nbsp; In the root directory is where all the Halo tools exist, 
+    there should be a program file called tool.exe.</font></p>
+    <p>
+    <font face="Arial" size="2">Typing just tool.exe at the Command Prompt and 
+    hitting Enter will show all the available command line parameters as well as 
+    the usage and syntax options.</font></p>
+    <p>
+    <font face="Arial" size="2">The command line that will be used in the 
+    following example is &quot;build-cache-file&quot; 
+    and it has the following syntax:</font></p>
+    <p>
+    <b>
+    <font face="Arial" size="2">build-cache-file &lt;scenario-name&gt;</font></b></p>
+    <p>
+    <font face="Arial" size="2">The syntax parts are described below:</font></p>
+    <p>
+    <font face="Arial" size="2"><b>scenario-name</b> - The scenario name 
+    includes the name of 
+    the directory where the level directory structure is located, as well as the 
+    name of the .scenario tag file.&nbsp; The directory structure that was set 
+    up for Halo editing is very specific.&nbsp; The full directory structure name is  not needed because of 
+    this.&nbsp; The file extension name is also NOT necessary.</font></p>
+    <p>
+    <font face="Arial" size="2">1) At the <b>Command Prompt</b> type the following and 
+    hit Enter:</font></p>
+    <p>
+    <font face="Arial" size="2">tool.exe build-cache-file levels\test\tutorial\tutorial</font></p>
+    <p>
+    <font face="Arial" size="2">There should be quite a bit of output indicating 
+    the processes being performed during the creation of the .map cache file.&nbsp;
+    </font></p>
+    <p>
+    <font face="Arial" size="2">The output will also indicated any errors that 
+    occur.&nbsp; These errors typically take the form of missing data tag files.&nbsp; 
+    Depending on the severity of the error, the .map cache file may not get 
+    created.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The tutorial.map cache file should have been 
+    successfully created.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures and shows the output of Tool.exe in the command window.</font></p>
+    <p><font face="Arial" size="2">The tutorial.map cache file should now appear 
+    in the Halo\maps directory.&nbsp; All cache files for the game are located 
+    in this directory.</font></p>
+    <p>&nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/cache_file_01_large.gif" target="_blank">
+    <img border="0" src="images/cache_file_01_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/cache_file_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="700"> <b><font face="Arial" size="2">Running 
+        the Level in a Halo Multiplayer Game</font></b></td>
+		<td width="132"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber49" height="57">
+  <tr>
+    <td width="100%" height="20" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">Halo has 2 different modes that it can run in, 
+    one mode for playing the game normally in both single player and 
+    multiplayer, and one mode that is a development mode which is extremely 
+    useful when creating and debugging a multiplayer level.&nbsp; The 2 
+    different modes are described in more detail below.</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The first mode is the Normal Mode or default 
+    mode that is run when just Halo.exe is executed.&nbsp;&nbsp; This mode has 
+    limited console commands available as well as fully functional multiplayer.&nbsp; 
+    This is a &quot;safe&quot; or &quot;secure&quot; mode which is why developer or debug 
+    functionality is limited.&nbsp; This helps prevent cheating or other 
+    exploits.&nbsp; For more information on the console and -console command 
+    line parameter refer to the </font>
+        <span class="body">  
+    <font face="Arial" size="2"><b>Console 
+        Commands </b></font>
+ </span> 						
+	<font face="Arial" size="2">section located in the </font><font face="Arial"><b>
+    <a href="../../general/console_commands.html">
+<font size="2" color="#3FA2FF">Console Command List</font></a><font size="2" color="#3FA2FF"> </font></b></font>
+    <font face="Arial" size="2">section under <b>General Reference</b> category.</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The second mode is a Developer Mode.&nbsp; 
+    Developer Mode is enabled by adding the Command Line Swith &quot;-devmode&quot; in the 
+    command line after halo.exe (i.e. halo.exe -devmode).&nbsp; The Halo 
+    developer mode enables a wide variety of console commands or cheats that are 
+    extremely useful when creating new Halo content.&nbsp; The developer mode 
+    also makes several changes to how Multiplayer games work.&nbsp; When in 
+    Developer Mode, only a LAN server can be created and the maximum number of 
+    players allowed is 1 (just the end user). This allows the level to be tested 
+    to see if it operates properly and allows the developer console commands to 
+    be used to help debug the level. Also, when in Developer Mode, the end user 
+    cannot connect to any servers, either LAN or Internet servers.&nbsp; In 
+    order to properly test the level with other players, just run Halo normally.&nbsp; 
+    For more information on the console and console commands refer to the </font>
+        <span class="body">  
+    <font face="Arial" size="2"><b>Command 
+        Line Switches </b></font>
+ </span> 						
+	<font face="Arial" size="2">section located in the </font><font face="Arial"><b>
+    <a href="../../general/console_commands.html">
+<font size="2" color="#3FA2FF">Console Command List</font></a><font size="2" color="#3FA2FF"> </font></b></font>
+    <font face="Arial" size="2">section under <b>General Reference</b> category.</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber50" height="33">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following procedures and example images 
+    demonstrate accessing end user created multiplayer levels in Halo.</font></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber51" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Accessing an end user created multiplayer level 
+    in Halo.</font><p><font face="Arial" size="2">The following procedures apply 
+    to loading Halo in either Normal Mode or Developer Mode.</font></p>
+    <p><font face="Arial" size="2">The procedures below will demonstrate how to 
+    load the tutorial level that was created in the tutorial sections for </font>
+        <span class="body">  
+		<font face="Arial" size="2">
+    <b>Multiplayer Level Design </b>under<b> Level Design</b>.</font></span></p>
+    <p><font face="Arial" size="2">1) Load Halo.</font></p>
+    <p><font face="Arial" size="2">2) Select <b>Multiplayer</b> from the main 
+    menu.</font></p>
+    <p><font face="Arial" size="2">3) In the <b>Multiplayer</b> options screen, 
+    choose <b>LAN</b> under <b>Create Game</b>.</font></p>
+    <p><font face="Arial" size="2">4) In the <b>Select Map</b> screen, scroll 
+    down until the level is found.&nbsp; In this case find the &quot;tutorial&quot; level 
+    and click on it.</font></p>
+    <p><font face="Arial" size="2">5) Select <b>OK</b>.</font></p>
+    <p><font face="Arial" size="2">6) Now select any game type in the <b>Game 
+    Type</b> screen and select <b>OK</b>.</font></p>
+    <p><font face="Arial" size="2">7) Set the server options in the <b>Server 
+    Setup</b> and select <b>Start Game</b>.</font></p>
+    <p><font face="Arial" size="2">8) The tutorial level should now load.</font></p>
+    <p><font face="Arial" size="2">The image to the right shows the <b>Select 
+    Map</b> screen and the tutorial level being displayed.</font></p>
+    <p><font face="Arial" size="2">User created levels do not have a map 
+    description and image that display for the level when it is selected.</font></p>
+    <p>&nbsp;</td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/cache_file_02_large.gif" target="_blank">
+    <img border="0" src="images/cache_file_02_small.gif" width="250" height="186"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/cache_file_01_large.gif">Click to Open 
+    Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<ul>
+  <li><font face="Arial"><b><a href="../../../main/main.html">Return to Main Page</a></b></font></li>
+</ul>
+
+</body>
+
+</html>

@@ -1,0 +1,3974 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Multiplayer Level Design Population</title>
+<base target="_self">
+</head>
+
+<body background="file:///D:/GameDev/HaloDev/Halo%20End%20User%20Editing%20Kit/Halo%20PC%20Editing%20Reference/images/background.gif" bgcolor="#000000" text="#C0C0C0" link="#3FA2FF" vlink="#0066CC" alink="#FFFFFF">
+
+<table cellpadding="0" cellspacing="0" border="0" width="869">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <font face="Arial" size="2">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></font></td>
+		<td bgcolor="black" width="748"> <b><font face="Arial" color="#3FA2FF">
+        Population</font></b></td>
+		<td width="101"><font face="Arial" size="2">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></font></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber1" height="70">
+  <tr>
+    <td width="100%" height="43">
+    <p align="left" style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following section covers the population or 
+    placement of objects in the level using Sapien.&nbsp; Tutorials and 
+    information cover an overview of the Sapien tool, player spawn point 
+    placement and information, scenery object implementation and placement, 
+    vehicle and weapon implementation and placement, netgame flags information 
+    and placement, and the manipulation and setting of BSP portal data including 
+    fog, sounds and weather effects.</font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="644"> 
+        <span class="body">  
+        <b><font face="Arial" size="2">Sapien 
+        Overview</font></b></span></td>
+		<td width="188">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber49" height="64">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">
+    Sapien is used to place objects in the level.&nbsp; The placement of objects 
+    in a level is sometimes referred to as &quot;population&quot;.&nbsp; The objects that 
+    are placed in the level include objects for aesthetics and game play 
+    (scenery objects such as trees, rocks, bushes, etc...) as well as objects 
+    that are required for the level to run and operate properly in the game (netgame 
+    flags, netgame equipment, spawn points, etc..).</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 10.0pt">
+    <font face="Arial">Sapien has a graphical interface that contains a 3D 
+    window (the Game Window) that renders the game including the level bsp, models, and vehicles.&nbsp; 
+    The Game Window also runs other game systems 
+    as well and plays sounds and runs physics.&nbsp; &nbsp;</font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">
+    Sapien does not have any form of &quot;undo&quot; functionality.&nbsp; Therefore, it 
+    is HIGHLY recommended that the .scenario tag be saved and saved often.&nbsp; 
+    Saving off sequential versions of the file is also HIGHLY recommended (i.e. 
+    tutorial_01.scenario, tutorial_02.scenario, etc...)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">Halo 
+    has a lot of objects that can be used in a level.&nbsp; These objects all 
+    exist as a data tag.&nbsp; To help in the organization of objects or tags 
+    for placement in the game level using Sapien, a subset of objects or tags is 
+    created for certain object types or groups in the hierarchy.&nbsp; This 
+    specific set of tags is called a &quot;palette&quot;.&nbsp; Objects or tags are then 
+    selected from the palette for placement in the level.&nbsp; The palette can 
+    have items added or removed at any time.&nbsp; Removal of an item reference 
+    from the palette does NOT remove the item marker from the level, instead the 
+    item is set to NONE so that the item will no longer appear in the level.&nbsp; 
+    This empty item marker should be removed from the level.</font></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber49" height="29">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">The 
+    images and discussions below will explain the basics of the Sapien Graphical 
+    User Interface.</font></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber49" height="64" bordercolor="#C0C0C0">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">Overview of the Sapien Graphical User Interface:</font></p>
+    <p align="left">
+    <font face="Arial" size="2">Go to the main Halo 
+    directory.&nbsp; In the root directory is where all the Halo tools exist, 
+    there should be a program file called sapien.exe.</font></p>
+    <p align="left">
+    <font face="Arial" size="2">Run Sapien.&nbsp; When Sapien loads, an <b>
+    Open</b> dialog window will appear.&nbsp; Use this dialog to load the tutorial.scenario 
+    tag. </font></p>
+    <p align="left">
+    <font face="Arial" size="2">Sapien will now load.&nbsp; Sapien runs many of 
+    the same systems as the game so give it time to load, especially for larger 
+    levels.&nbsp; </font></p>
+    <p>
+    <font size="2" face="Arial">The tutorial level should now appear in the Game 
+    Window.</font></p>
+    <p>
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/sapien_overview_01_large.gif" target="_blank">
+    <img border="0" src="images/sapien_overview_01_small.gif" width="320" height="250"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/sapien_overview_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font size="2" face="Arial">The following descriptions will point out a 
+    particular section or feature of the user interface and then provide a 
+    description.&nbsp; The descriptions are numbered and appropriately labeled 
+    in the above image of Sapien.</font></p>
+    <p>
+    <font face="Arial" size="2">1) <b>Game Window</b> - The Game Window is the main 
+    interface when interacting with objects in the level.&nbsp; Objects can be 
+    chosen in this window as well as selected in the Hierarchy view.&nbsp; As 
+    stated before, the Game Window runs or uses many of the same systems that 
+    the full game does. </font></p>
+    <p>
+    <font face="Arial" size="2">2) <b>Output Window</b> - This is unused in the build 
+    of Sapien that will be used. </font></p>
+    <p>
+    <font face="Arial" size="2">3) <b>Tool Window</b> - This window contains properties 
+    that can be enabled or disabled to aid in the placement of certain objects.&nbsp;
+    </font></p>
+    <p>
+    <font face="Arial" size="2">The most commonly used settings, or options that 
+    are modified the most, are the options under the <b>Active marker handles</b> 
+    section and the <b>Don't draw center marker</b> option. </font></p>
+    <p>
+    <font face="Arial" size="2">4) <b>Hierarchy view</b> - The Hierarchy view displays 
+    all the objects currently placed in the game and organizes them by type.&nbsp; 
+    The left pane of the window shows the Hierarchy tree and currently selected 
+    type, and the right pane 
+    shows the objects of this selected group or type that are currently placed in the 
+    level.</font></p>
+    <p>
+    <font face="Arial" size="2">5)&nbsp; The following sub-objects exist under the main 
+    <b>Mission</b> object.</font></p>
+    <p>
+    <font face="Arial" size="2">a) <b>Objects</b> - The following are included 
+    under the Objects tree:</font></p>
+    <blockquote>
+    <p>
+    <font face="Arial" size="2"><b>Devices</b> (Machines, Controls, Light 
+    fixtures, and Device groups) - These are special objects that can be placed 
+    in the level.&nbsp; For multiplayer levels, the light fixtures are the most 
+    commonly used.&nbsp; Other things like Machines, Controls, and Device groups 
+    are for single player.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Items</b> (Equipment and weapons) - Items are 
+    game objects that can be placed in the level. The equipment and weapons in 
+    this group are for single player only.&nbsp; Multiplayer equipment and 
+    weapons are placed using Netgame equipment (see below under the Game Data 
+    group).</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Units</b> (Bipeds and Vehicles) -&nbsp; Units 
+    represent game objects that can be placed in the level. The Bipeds group is 
+    unused in multiplayer.&nbsp; Multiplayer vehicles are placed using the 
+    Vehicles palette created in this group.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2"><b>Scenery</b> - Model objects that can be 
+    placed in the level.&nbsp; Scenery objects (.scenery tags) are placed using 
+    the palette created for this group.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Sound scenery - </b>Sound scenery objects (.sound_scenery 
+    tags) are placed using the palette created for this group.&nbsp; Sound 
+    scenery are objects that can be placed in the level to add ambient sounds.</font></p>
+    </blockquote>
+    <p>
+    <font face="Arial" size="2">b)<b> Player starting points </b>- This group 
+    allows the placement of player spawn points for both single and multiplayer 
+    levels</font></p>
+    <p>
+    <font face="Arial" size="2">c) <b>AI </b>- This group only applies to single 
+    player and will not be discussed.</font></p>
+    <p>
+    <font face="Arial" size="2">d) <b>Comments</b> - Not 
+    relevant to multiplayer levels.</font></p>
+    <p>
+    <font face="Arial" size="2">e) <b>Game data</b> - The following are included 
+    under the Game data tree:</font></p>
+    <blockquote>
+    <p>
+    <font face="Arial" size="2"><b>Trigger volumes</b> - Not applicable to 
+    multiplayer.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Recorded animations</b> - Not applicable to 
+    multiplayer.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Flags</b> - Not applicable to multiplayer.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Camera points</b> - Not applicable to 
+    multiplayer.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Chapter titles</b> - Not applicable to 
+    multiplayer.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Netgame flags</b> - These are heavily used in 
+    the creation of a multiplayer level.&nbsp; The placement and definition of 
+    the type of netgame flag is used to create the multiplayer game objects and 
+    objectives such as the Oddball, Flag for CTF, etc...</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Netgame Equipment</b> - These are heavily 
+    used in the creation of a multiplayer level.&nbsp; The placement and 
+    definition of netgame equipment objects is used to place the weapons and 
+    power ups in the level as well as in what game types these weapons should 
+    spawn.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Starting profiles</b> - Not applicable to 
+    multiplayer, the player starting weapons and grenades are handled in the 
+    Starting Equipment section in the .scenario tag.&nbsp; (See the section  </font>
+        <span class="body">  
+		<b><font face="Arial" size="2">Setting Level Attributes Using Guerilla </font></b>
+ </span> 						
+    <font face="Arial" size="2">under&nbsp;
+    <font color="#3FA2FF">
+    <b>
+    <a href="mp_ld_level_guerilla.html">Level Data Manipulation in Guerilla</a> </b></font>
+    for setting the player starting profile for multiplayer and the multiplayer 
+    game types.)</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Detail objects</b> - Not used in multiplayer 
+    levels.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Decals </b>- Decals can be used in 
+    multiplayer levels, but it is recommended that non-solid faces or polygons 
+    be placed in the level to achieve the same result.&nbsp; Decals  can 
+    cause a performance hit in Halo.&nbsp; </font></p>
+    </blockquote>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">f) <b>Cluster properties</b> - Cluster 
+    properties refer to the settings or attributes that can be applied to a 
+    portal in the .scenario_structure_bsp.&nbsp; Cluster properties includes the 
+    following groups:</font></p>
+    <blockquote>
+    <p>
+    <font face="Arial" size="2"><b>Palettes</b> - The palette group includes the 
+    Fog palette, Background sound palette, Sound environment palette and Weather 
+    palette.&nbsp; Palettes are used to create a set of tags that are referenced 
+    for the level.&nbsp; It is these references that are used to assign certain 
+    attributes to portals or clusters.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Fog</b> - When the camera position is in 
+    a particular portal or cluster, the fog reference can be changed\applied or 
+    viewed here.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Background sound</b> - When the camera 
+    position is in a particular portal or cluster, the Background sound (ambient 
+    sounds) reference can be changed\applied or viewed here.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Sound environment</b> - When the camera 
+    position is in a particular portal or cluster, the sound environment 
+    (environmental audio effects) reference can be changed\applied or viewed 
+    here.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>Weather</b> - When the camera position is in 
+    a particular portal or cluster, the weather reference can be changed\applied 
+    or viewed here.</font></p>
+    </blockquote>
+    <p>
+    <font face="Arial" size="2">6) <b>Properties palette</b> - The Properties 
+    palette window displays the object properties for the currently selected 
+    object.&nbsp; The type of object can be changed or chosen in this display as 
+    well as various other properties such as the position and rotation of the 
+    object, and spawn flags that set various attributes for the object.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="644"> 
+        <span class="body">  
+        <b><font face="Arial" size="2">Sapien </font></b>
+ </span> 						
+	    <b><font face="Arial" size="2">Controls</font></b></td>
+		<td width="188">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber51" height="34">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The table below lists the basic controls and key 
+    commands used in Sapien.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="53%" id="AutoNumber52" bordercolor="#C0C0C0" height="285">
+  <tr>
+    <td width="50%" height="40" align="center">
+        <span class="body">  
+    <b><font face="Arial" size="2">Control\Keyboard Key</font></b></span></td>
+    <td width="50%" height="40" align="center"><span class="body"><b>
+    <font face="Arial" size="2">Action\Functionality</font></b></span></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center">&nbsp;</td>
+    <td width="50%" height="40" align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">Left 
+    Mouse Button</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">Selects objects in the 
+    Game Window.&nbsp; </font></p>
+    <p style="margin-left: 4"><font face="Arial" size="2">Holding down the Left 
+    Mouse Button over and object or object handle and dragging or moving the 
+    mouse will move the selected object.</font></p>
+    <p style="margin-left: 4"><font face="Arial" size="2">If an object is 
+    selected in the Hierarchy view, double clicking on the object in the right pane 
+    of the Hierarchy view or window will move the Game Window camera to this 
+    object.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">Right 
+    Mouse Button</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">Places a new instance 
+    of the selected object.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">
+    Middle Mouse Button</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">When the Middle Mouse 
+    Button is held while in the Game Window, the camera controls are able to be 
+    used.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center">&nbsp;</td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">Mouse 
+    Movement Left\Right</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">When used with the 
+    Middle Mouse Button held down, this rotates the camera yaw in the Game 
+    Window.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">Mouse 
+    Movement Up\Down</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">When used with the 
+    Middle Mouse Button held down, this rotates the camera pitch in the Game 
+    Window.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center">&nbsp;</td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">W</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">When used with the 
+    Middle Mouse Button held down, this moves the camera forward in the Game 
+    Window.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">A</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">When used with the 
+    Middle Mouse Button held down, this moves the camera backwards in the Game 
+    Window.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">S</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">When used with the 
+    Middle Mouse Button held down, this pans the camera left in the Game Window.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">D</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">When used with the 
+    Middle Mouse Button held down, this pans the camera right in the Game 
+    Window.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">R</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">When used with the 
+    Middle Mouse Button held down, this moves the camera along the Z-Axis in the 
+    positive direction (up) in the Game Window.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">F</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">When used with the 
+    Middle Mouse Button held down, this moves the camera along the Z-Axis in the 
+    negative direction (down) in the Game Window.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center">&nbsp;</td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">SHIFT</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">Tapping the SHIFT key 
+    changes the camera movement speed in the Game Window.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">
+    DELETE</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">Delete the selected 
+    the object.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="40" align="center"><font face="Arial" size="2">~</font></td>
+    <td width="50%" height="40" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">This opens the 
+    developer console in the Game Window.</font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="644"> 
+        <span class="body">  
+        <b><font face="Arial" size="2">Sapien </font></b>
+ </span> 						
+	    <b><font face="Arial" size="2">Setup and Configuration</font></b></td>
+		<td width="188">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber50" height="64">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Arrange the windows in Sapien in a useful 
+    configuration.&nbsp; The images shown in the examples and tutorials below 
+    show one window layout that is fairly efficient for multiplayer level 
+    design.</font><p><font face="Arial" size="2">The window layouts and 
+    configuration are saved in the Windows System Registry so that Sapien does 
+    not have to be configured every time it is loaded.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="644"> 
+        <b><font face="Arial" size="2">Object Placement in Sapien</font></b></td>
+		<td width="188">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber50" height="46">
+  <tr>
+    <td width="100%" height="3" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following sections contain tutorials and 
+    examples that will demonstrate the placement of various objects and object types 
+    in the level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Player Spawn Point Placement</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber50" height="35">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the placement of multiplayer spawns in the 
+    level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber48" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Placement of multiplayer spawns in the tutorial 
+    level:</font></p>
+    <p align="left">
+    <font face="Arial" size="2">Go to the main Halo 
+    directory.&nbsp; In the root directory is where all the Halo tools exist, 
+    there should be a program file called sapien.exe.</font></p>
+    <p align="left">
+    <font face="Arial" size="2">Run Sapien.&nbsp; When Sapien loads, an <b>
+    Open</b> dialog window will appear.&nbsp; Use this dialog to load the tutorial.scenario 
+    tag. </font></p>
+    <p align="left">
+    <font face="Arial" size="2">Sapien will now load.&nbsp; Sapien runs many of 
+    the same systems as the game so give it time to load, especially for larger 
+    levels.</font></p>
+    <p>
+    <font size="2" face="Arial">The tutorial level should now appear in the <b>Game 
+    Window</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">1) Position the camera in the <b>Game Window</b> so 
+    that the Blue Base is in view.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Select &quot;Player starting points&quot; in the 
+    <b>Hierarchy view </b>window.</font></p>
+    <p>
+    <font face="Arial" size="2">3) 8 player spawn points will now be placed for 
+    the Blue Team.</font></p>
+    <p>
+    <font face="Arial" size="2">In the <b>Game Window</b>, click the Right Mouse 
+    Button to place or create&nbsp; the spawn points.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">Click on the spawn point center markers and drag 
+    the points to move them around the level.&nbsp; Notice that the objects 
+    conform to the level geometry.</font></p>
+    <p>
+    <font face="Arial" size="2">See the </font>
+        <span class="body">  
+		<font face="Arial" size="2">
+    <b>Multiplayer Level Design Technical Rules and Guidelines </b>section in 
+    the </font>
+ </span> 						
+	<font face="Arial"><b>
+    <a href="../../general/general_ld_info.html">
+<font size="2" color="#3FA2FF">General Level Design Information</font></a><font size="2" color="#3FA2FF"> </font></b></font>
+        <span class="body">  
+		<font face="Arial" size="2">
+        section under <b>General Reference</b> for rules and suggestions on player 
+    spawn placement.</font></span></p>
+    <p>
+    <font face="Arial" size="2">4) Once the 8 player spawn points are placed, 
+    select each spawn point (this is more easily done using the right pane in 
+    the <b>Hierarchy view</b>) and go to the <b>Properties palette</b> window and enter a 
+    &quot;1&quot; in 
+    the &quot;team index&quot; field.&nbsp; A &quot;team index&quot; value of &quot;0&quot; designates a Red Team 
+    spawn point, and a value of &quot;1&quot; designates a Blue Team spawn point.</font></p>
+    <p>
+    <font face="Arial" size="2">5) These particular spawn points will be set up 
+    such that they can be used to spawn players for all game types.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">In the <b>Properties palette </b>window, use the pull 
+    down menu for the &quot;type 0&quot; field to select the setting &quot;all games&quot;.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">6) Follow procedures 1 - 5 to place spawns at 
+    the Red Base.</font></p>
+    <p>
+    <font face="Arial" size="2">7) Make sure the spawn points are set up for the 
+    Red Team.&nbsp;&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">A &quot;team index&quot; value of &quot;0&quot; designates a Red Team 
+    spawn point.</font></p>
+    <p>
+    <font face="Arial" size="2">8) Set the &quot;facing&quot; value to 180 degrees.&nbsp; 
+    This value can be found in the <b>Properties palette</b> for each spawn point.&nbsp; 
+    This makes the player spawn facing the center of the level.</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">Even though this level is only large enough for 
+    8 players total, there are now enough spawn points for a 16 
+    player multiplayer game of Halo for all the available game types.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">To add some variation to the places where the 
+    player can spawn, some additional spawn points are going to be added for 
+    certain game modes.</font></p>
+    <p>
+    <font face="Arial" size="2">9) 2 additional spawn points were added to each 
+    side of the level for a total of 4 new spawn points.&nbsp; 1 spawn point on 
+    each side was set to the Red Team and 1 spawn point on each side was set to 
+    the Blue Team.</font></p>
+    <p>
+    <font face="Arial" size="2">10 The angle that the player faces when spawning 
+    was adjusted to face in towards the center.&nbsp; This can be accomplished 2 
+    ways:</font></p>
+    <p>
+    <font face="Arial" size="2">a) by typing a &quot;facing&quot; value in <b>Properties palette</b> 
+    window</font></p>
+    <p>
+    <font face="Arial" size="2">b) by clicking on the rotation marker handle and 
+    using the mouse to rotate the angle for the spawn point.</font></p>
+    <p>
+    <font face="Arial" size="2">11) These spawn points will only spawn players 
+    when the Slayer and Oddball game modes are being played.</font></p>
+    <p>
+    <font face="Arial" size="2">The &quot;type 0&quot; field is set to &quot;slayer&quot; and the 
+    &quot;type 1&quot; field is set to &quot;oddball&quot;.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">As demonstrated, spawn points can be set up to 
+    work for any number of game modes or combination of game modes.</font></p>
+    <p>
+    <font face="Arial" size="2">The third image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/spawn_points_01_large.gif" target="_blank">
+    <img border="0" src="images/spawn_points_01_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/spawn_points_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/spawn_points_02_large.gif" target="_blank">
+    <img border="0" src="images/spawn_points_02_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/spawn_points_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/spawn_points_03_large.gif" target="_blank">
+    <img border="0" src="images/spawn_points_03_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/spawn_points_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Scenery Object Placement</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber55" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the creation of a scenery palette and 
+    placement of scenery objects in the level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber56" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Placement of scenery objects in the tutorial 
+    level:</font></p>
+    <p>
+    <font face="Arial" size="2">1) Go to the <b>Hierarchy view</b> window.&nbsp; In the 
+    Hierarchy tree expand the &quot;Objects&quot; branch and select the &quot;Scenery&quot; objects 
+    group.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Currently, the Scenery &quot;palette&quot; is empty.&nbsp; 
+    A scenery palette will be created that will contain the scenery objects that 
+    will be placed in the level.&nbsp; To create a scenery palette follow the 
+    procedures below.</font></p>
+    <p>
+    <font face="Arial" size="2">a) Click on <b>Edit Types</b> in the <b>Hierarchy view</b> 
+    window.&nbsp; The <b>Dialog</b> window will appear which shows the current 
+    scenery object palette, in this case it is empty.</font></p>
+    <p>
+    <font face="Arial" size="2">b) The current Object class is set to scenery 
+    since the <b>Dialog</b> window was accessed through the Scenery group in the 
+    Hierarchy tree.</font></p>
+    <p>
+    <font face="Arial" size="2">c) Click on the &quot;<b>Add...</b>&quot; button.&nbsp; An 
+    <b>Open</b> 
+    dialog window will appear.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">There are many scenery tags available for usage 
+    in a level.&nbsp; The majority of .scenery tags are located in the main 
+    scenery tags directory (i.e. Halo\tags\scenery).&nbsp; It is also quite 
+    common for individual level directories to contain their own custom scenery 
+    directories and associated .scenery tags.&nbsp; It is suggested that the 
+    user explore all the level directories to discover what .scenery tag 
+    resources are available.</font></p>
+    <p>
+    <font face="Arial" size="2">3) Some rocks are going to be added for use in 
+    the level and therefore must be added to the scenery palette.&nbsp; Follow 
+    the steps below to add the rock scenery tags to the level.</font></p>
+    <p>
+    <font face="Arial" size="2">In the <b>Open</b> dialog window, go to the scenery 
+    tags directory.</font></p>
+    <p>
+    <font face="Arial" size="2">a) In the scenery directory enter the &quot;rocks&quot; 
+    directory.&nbsp; In the rocks directory select the &quot;boulder_granite_medium&quot; 
+    directory.</font></p>
+    <p>
+    <font face="Arial" size="2">b) Select the &quot;boulder_granite_medium.scenery&quot; 
+    tag.</font></p>
+    <p>
+    <font face="Arial" size="2">c) Click on the <b>Add tag(s)</b> button.&nbsp;
+    </font></p>
+    <p>
+    <font face="Arial" size="2">d) The &quot;boulder_granite_medium&quot; object should now 
+    appear in the <b>Tag</b> listing at the bottom of the <b>Open</b> dialog.</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">4) The procedures listed in 3a through 3d were 
+    then used to add the &quot;boulder_granite_small.scenery&quot; tag.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">5) Once the &quot;boulder_granite_small.scenery&quot; tag is 
+    added, click the <b>Done</b> button</font></p>
+    <p>
+    <font face="Arial" size="2">The third image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">6)&nbsp; The <b>Dialog</b> window for scenery objects 
+    should now be visible again.&nbsp; The &quot;boulder_granite_medium&quot; and 
+    &quot;boulder_granite_small&quot; tags should appear in the <b>Tag</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">The fourth image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">7) The procedures above were followed to add the 
+    additional scenery objects for trees, beacons, and the flag stand scenery 
+    objects listed below:</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The following tree scenery tags are found under 
+    their respective subdirectories under the &quot;tree&quot; subdirectory under 
+    the tags 
+    main directory.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">tree_leafy</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">tree_leafy_medium</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">tree_leafy_sapling</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The &quot;flag_base&quot; scenery object is found under the 
+    &quot;flag_base&quot; scenery tag directory under the tags main directory.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">flag_base</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The blue landing beacon and red landing beacon 
+    (which is just labeled &quot;landing beacon&quot;) scenery tags are each found under 
+    their respective directories under the tags main directory.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">blue landing beacon</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">landing beacon</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">8) When all the listed scenery object tags have 
+    been added to the palette, click the <b>OK</b> button.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The fifth image further explains the above 
+    procedures and shows the final scenery palette as it appears in the <b>Dialog</b> 
+    window for scenery tag objects.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">With a scenery palette created, scenery can now 
+    be placed in the level. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">9) Make sure that the &quot;Scenery&quot; group in the 
+    Hierarchy tree is selected.&nbsp; In the <b>Game Window</b> press the Right Mouse 
+    Button to place a scenery object.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">10)&nbsp; The scenery object will most likely 
+    appear as just a marker, it must have a scenery object type set for it that 
+    corresponds to one of the scenery objects or tags in the scenery palette.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">In the <b>Properties palette</b> window use the pull 
+    down menu that is associated with the &quot;type&quot; field to select &quot;boulder_granite_medium&quot;.&nbsp; </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">11) The marker in the <b>Game Window</b> should now 
+    appear as the selected object, in this case the &quot;boulder_granite_medium&quot; scenery 
+    model or object.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">NOTE:&nbsp; Every subsequent Right Mouse Button 
+    click will create the currently selected object in the <b>Game Window</b> unless 
+    the &quot;type&quot; is changed or an object is selected in the right pane of the 
+    <b>Hierarchy view</b> window.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">IMPORTANT:&nbsp; As objects are added, if the 
+    model associated to the .scenery object has several different variations or 
+    permutations of the model, these different variations will be randomly 
+    selected as objects are placed.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">12)&nbsp; To move a placed object select the 
+    &quot;center marker&quot; by clicking on it with the Left Mouse Button, then while 
+    still holding down the Left Mouse Button move the object around the level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">13) To change the orientation of the object (the 
+    rotation angles for the object, Yaw, Pitch, and Roll) click on the &quot;rotation 
+    markers&quot;&nbsp; with the Left Mouse Button, then while still holding down the 
+    Left Mouse Button move the mouse to change the angle.&nbsp; </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">14) The rotation angle or orientation of the 
+    object can also be manually typed in by entering values into the y, p, and r 
+    fields that are found under the &quot;rotation&quot; section for the object in the 
+    <b>Properties palette</b>.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The sixth image further explains the above 
+    procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">15)&nbsp; Additional boulder_granite_medium 
+    scenery objects were placed and arranged in the level as well as 
+    boulder_granite_small, tree_leafy, tree_leafy_medium, and&nbsp; 
+    tree_leafy_sapling scenery objects.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The scenery objects and player spawn points were 
+    adjusted so as not to interfere with each other. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">In addition, since many of the scenery objects 
+    placed are set up to block light, the radiosity process was run again to 
+    make sure the lighting was correct.&nbsp; The lighting in the level should 
+    be updated anytime model objects are added or adjusted.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The seventh image further explains the above 
+    procedures and shows the placement positions and orientations of the scenery 
+    objects.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">16) The next scenery objects that were added 
+    were two flag bases (flag_base) and red beacons (landing beacon) and blue beacons 
+    (blue landing beacon) to help distinguish 
+    the bases.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The flag_base scenery object has nothing to do 
+    with the actual flag game code and behaviors.&nbsp; It is placed at the spot 
+    where the flag will be placed and serves as a visual indicator to the 
+    players where the flag should be taken to capture or complete an objective.&nbsp; 
+    The actual netgame flag for the CTF flag will handle the game code.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The eighth image further explains the above 
+    procedures and shows the placement positions and orientations of the flag 
+    and colored beacon scenery 
+    objects.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/scenery_01_large.gif" target="_blank">
+    <img border="0" src="images/scenery_01_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/scenery_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/scenery_02_large.gif" target="_blank">
+    <img border="0" src="images/scenery_02_small.gif" width="250" height="198"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/scenery_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/scenery_03_large.gif" target="_blank">
+    <img border="0" src="images/scenery_03_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/scenery_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/scenery_04_large.gif" target="_blank">
+    <img border="0" src="images/scenery_04_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/scenery_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/scenery_05_large.gif" target="_blank">
+    <img border="0" src="images/scenery_05_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/scenery_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/scenery_06_large.gif" target="_blank">
+    <img border="0" src="images/scenery_06_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/scenery_06_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/scenery_07_large.gif" target="_blank">
+    <img border="0" src="images/scenery_07_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/scenery_07_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/scenery_08_large.gif" target="_blank">
+    <img border="0" src="images/scenery_08_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/scenery_08_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Sound Scenery Object Placement</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber57" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Sound scenery are just objects that have a sound 
+    attached to them and are used to place ambient sounds in the level.&nbsp; 
+    Sound scenery objects do not render, they are merely points in the level 
+    from which sound originates.</font><p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the creation of a sound scenery palette and 
+    placement of sound scenery objects in the level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber58" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Placement of sound scenery objects in the tutorial 
+    level:</font></p>
+    <p>
+    <font face="Arial" size="2">1) Go to the <b>Hierarchy view</b> window.&nbsp; In the 
+    Hierarchy tree expand the &quot;Objects&quot; branch and select the &quot;Sound scenery&quot; objects 
+    group.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Currently, the &quot;Sound scenery&quot; &quot;palette&quot; is empty.&nbsp; 
+    A sound scenery palette will be created that will contain the sound scenery objects that 
+    will be placed in the level.&nbsp; To create a sound scenery palette follow the 
+    procedures below.</font></p>
+    <p>
+    <font face="Arial" size="2">a) Click on <b>Edit Types</b> in the <b>Hierarchy view</b> 
+    window.&nbsp; The <b>Dialog</b> window will appear which shows the current sound scenery object palette, in this case it is empty.</font></p>
+    <p>
+    <font face="Arial" size="2">b) The current Object class is set to sound_scenery 
+    since the <b>Dialog</b> window was accessed through the &quot;Sound scenery&quot; group in the 
+    Hierarchy tree.</font></p>
+    <p>
+    <font face="Arial" size="2">c) Click on the &quot;<b>Add...</b>&quot; button.&nbsp; An 
+    <b>Open</b> 
+    dialog window will appear.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">There are many sound scenery tags available for usage 
+    in a level.&nbsp; The majority of .sound_scenery tags are located in the 
+    subdirectories found under the&nbsp; Halo\tags\sound\sfx\ambience directory.&nbsp; 
+    It is also quite common for individual level directories to contain their 
+    own custom sound directories that contain .sound_scenery tags.&nbsp; It is 
+    suggested that the user explore all the level directories to discover what .sound_scenery 
+    tag resources are available.</font></p>
+    <p>
+    <font face="Arial" size="2">The sound of birds and the sounds for a running 
+    stream will be added to the level. Therefore, the appropriate .sound_scenery 
+    tags must be added to the sound scenery palette.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">3) Follow the steps below to add the 
+    &quot;birds1_detail.sound_scenery&quot;,&nbsp; &quot;teleporter_loop.sound_scenery&quot; and the &quot;stream.sound_scenery&quot; tags to the 
+    level.</font></p>
+    <p>
+    <font face="Arial" size="2">In the <b>Open</b> dialog window, go to the 
+    &quot;sound\sfx\ambience\&quot; tags directory located under the main tags directory.</font></p>
+    <p>
+    <font face="Arial" size="2">a) In the &quot;ambience&quot; directory enter the &quot;a30&quot; 
+    directory.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">b) Select the &quot;birds1_detail.sound_scenery&quot; 
+    tag.</font></p>
+    <p>
+    <font face="Arial" size="2">c) Click on the <b>Add tag(s)</b> button.&nbsp;
+    </font></p>
+    <p>
+    <font face="Arial" size="2">d) The &quot;birds1_detail&quot; object should now 
+    appear in the Tag listing at the bottom of the <b>Open</b> dialog.</font></p>
+    <p>
+    <font face="Arial" size="2">4) The procedures listed in 3a through 3d were 
+    then used to add the &quot;stream.sound_scenery&quot; tag and the &quot;teleporter_loop.sound_scenery&quot;</font></p>
+    <p>
+    <font face="Arial" size="2">The &quot;teleporter_loop.sound_scenery&quot; is located 
+    in the &quot;Halo\tags\sound\sfx\ui&quot; directory.</font></p>
+    <p>
+    <font face="Arial" size="2">5) Once the &quot;stream.sound_scenery&quot; and 
+    &quot;teleporter_loop.sound_scenery&quot; tags are 
+    added, click the <b>Done</b> button</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">6)&nbsp; The Dialog window for scenery objects 
+    should now be visible again.&nbsp; The &quot;stream.sound_scenery&quot;, 
+    &quot;birds1_detail.sound_scenery&quot; and &quot;teleporter_loop.sound_scenery&quot; tags should appear in the 
+    <b>Tag</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">Click the <b>OK</b> button.</font></p>
+    <p>
+    <font face="Arial" size="2">The third image further explains the 
+    above procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">With a sound scenery palette created, sound scenery can now 
+    be placed in the level. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">7) Make sure that the &quot;Sound scenery&quot; group in 
+    the Hierarchy tree is selected.&nbsp; In the <b>Game Window</b>, press the Right Mouse 
+    Button to place a sound scenery object on the stream geometry in the level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">8)&nbsp;The sound scenery object will 
+    appear as just a marker.&nbsp; The sound scenery object will also be set to 
+    NONE.&nbsp; It must have a sound scenery object type set for it that 
+    corresponds to one of the sound scenery objects or tags in the sound scenery palette.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">In the <b>Properties palette</b> window use the pull 
+    down menu that is associated with the &quot;type&quot; field to select 
+    &quot;stream&quot;.&nbsp; </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">9) Place a total of 5 stream.sound_scenery 
+    objects along the length of the stream geometry in the level. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">NOTE:&nbsp; Every subsequent Right Mouse Button 
+    click will create the currently selected object in the <b>Game Window</b> unless 
+    the &quot;type&quot; is changed or an object is selected in the right pane of the 
+    Hierarchy view window.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">10) The orientation of the sound scenery object 
+    does not matter.&nbsp; But the distance that the object is placed in the 
+    Z-axis can affect whether or not the player can hear the sound.&nbsp; The 5 stream.sound_scenery objects were moved in 
+    the Z-axis just above the surface of the stream.&nbsp; This was accomplished 
+    by manually entering a value in the &quot;z&quot; field under &quot;position&quot; in the 
+    <b>Properties palette</b> window.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The fourth image further explains the above 
+    procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">11) Next &quot;birds1_detail.sound_scenery&quot; tags were 
+    placed around the level around trees.&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">Two &quot;teleporter_loop.sound_scenery&quot; objects were 
+    placed in the level, one object at each teleporter gateway.&nbsp; The &quot;teleporter_loop.sound_scenery&quot; 
+    object was placed at the height of the players head.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">NOTE: If a sound scenery object is placed inside a 
+    standard scenery object the sound will not be blocked.&nbsp; </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">In order to hear the newly placed sound scenery 
+    objects, Sapien must be reloaded.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The fifth or final image further explains the 
+    above procedures and shows the placement of some of the 
+    &quot;birds1_detail.sound_scenery&quot; objects.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/sound_scenery_01_large.gif" target="_blank">
+    <img border="0" src="images/sound_scenery_01_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/sound_scenery_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/sound_scenery_02_large.gif" target="_blank">
+    <img border="0" src="images/sound_scenery_02_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/sound_scenery_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/sound_scenery_03_large.gif" target="_blank">
+    <img border="0" src="images/sound_scenery_03_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/sound_scenery_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/sound_scenery_04_large.gif" target="_blank">
+    <img border="0" src="images/sound_scenery_04_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/sound_scenery_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/sound_scenery_05_large.gif" target="_blank">
+    <img border="0" src="images/sound_scenery_05_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/sound_scenery_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Vehicle Object Placement</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber59" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The vehicles placed in multiplayer can actually 
+    be different than those that are placed or exist in single player.&nbsp; 
+    Many attributes may be changed for a .vehicle tag to balance it for 
+    multiplayer in terms of game play and performance.</font><p>
+    <font face="Arial" size="2">The multiplayer version of a vehicle should 
+    ALWAYS be used when placing vehicles in a multiplayer level.&nbsp; To see 
+    what the proper .vehicle tags are for use in multiplayer, see the <b>Vehicle</b> 
+    table in the </font>
+        <span class="body">  
+		<font face="Arial" size="2"> <b>Vehicles </b>section located under the </font>
+ </span> 						
+	<font face="Arial"><b>
+    <font size="2" color="#3FA2FF">
+    <a href="../../general/vehicles_and_turrets.html">
+    <font color="#3FA2FF">Vehicles and Stationary Gun List</font></a> </font> </b></font>
+    <font face="Arial" size="2">located under the <b>General Reference</b> 
+    sections.</font></p>
+    <p>
+    <font face="Arial" size="2">There are 3 variables that control the placement 
+    of a vehicle.&nbsp; The type of vehicle, the number of vehicles placed per 
+    game type, and the default vehicles for each game type.&nbsp; The vehicle 
+    setup was created this way so that different game modes can have a different 
+    number of vehicles per game type, as well as different spawn locations for 
+    the vehicles in each game mode.&nbsp; A good example of this would be the 
+    multiplayer level Danger Canyon.&nbsp; In  
+    game modes which have both team and non-team modes, Ghosts spawn all over the level, where as in the team game 
+    Capture the Flag, Ghosts can spawn only at the team bases.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">The system was also set up this way because the 
+    number and types of vehicles (if the level supports that particular vehicle) 
+    can be adjusted in the Multiplayer Options.&nbsp; Because of this 
+    customizability, default numbers and types of vehicle are set in the level.&nbsp; 
+    These settings reflect what the level designer feels is an optimal setup for 
+    the level for each game type.</font></p>
+    <p>
+    <font face="Arial" size="2">Vehicles are placed with the concept of &quot;sides&quot; 
+    or teams even though not all game modes are team based.&nbsp; This is done 
+    because of how the spawn code works for the vehicles.&nbsp; As with player 
+    spawns, vehicles are set to either the Red Team using index 0, or the Blue 
+    Team using index 1.&nbsp; Vehicles should be placed in pairs, for every Blue 
+    &quot;Side&quot; vehicle there should be a Red &quot;Side&quot; vehicle, even if the vehicles 
+    are not being placed at the team areas or bases.&nbsp; The reason for this 
+    is that when the vehicle type and number is customized in the Multiplayer 
+    Options, the game code tries to balance out the vehicles in the level for 
+    each side.&nbsp; It does this by alternating vehicle spawning back and forth 
+    between Red vehicles and Blue vehicles until the number that was set is 
+    reached.&nbsp; In the case of even numbers this works very well.&nbsp; In 
+    the case of odd numbers selected in the Multiplayer Options for the number 
+    of vehicles, the results are random with the odd vehicle possibly being on 
+    either the Red &quot;side&quot; or the Blue &quot;side&quot;.&nbsp; Therefore, it is important 
+    the vehicles be placed equally or in such a way as to balance the level with 
+    respect to game play.</font></p>
+    <p>
+    <font size="2" face="Arial">The maximum number of vehicles that can be 
+    placed is 8 for each type for each game mode.&nbsp; Any numbers of vehicles 
+    for the vehicle type above this for a given game type will never spawn.&nbsp; 
+    The number of default vehicles for each type and for each game mode can be 
+    up to the maximum number of 8.&nbsp; The default number of vehicles of any 
+    given type for a particular game mode should be equal for each side.&nbsp;
+    </font></p>
+    <p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the creation of a vehicle object palette and 
+    placement of vehicle objects in the level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber60" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Placement of vehicle objects in the tutorial 
+    level:</font></p>
+    <p>
+    <font face="Arial" size="2">1) Go to the <b>Hierarchy view</b> window.&nbsp; In the 
+    Hierarchy tree expand the &quot;Objects&quot; branch. Next, expand the &quot;Units&quot; branch and select the &quot;Vehicles&quot; objects 
+    group.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Currently, the vehicle &quot;palette&quot; is empty.&nbsp; 
+    A vehicle palette will be created that will contain the vehicles that will 
+    be placed in the level.&nbsp; To create a vehicle palette follow the 
+    procedures below.</font></p>
+    <p>
+    <font face="Arial" size="2">a) Click on <b>Edit Types</b> in the <b>Hierarchy view</b> 
+    window.&nbsp; The <b>Dialog</b> window will appear which shows the current 
+    vehicle object palette, in this case it is empty.</font></p>
+    <p>
+    <font face="Arial" size="2">b) The current <b>Object</b> class is set to vehicles 
+    since the <b>Dialog</b> window was accessed through the vehicle group in the 
+    Hierarchy tree.</font></p>
+    <p>
+    <font face="Arial" size="2">c) Click on the &quot;<b>Add...</b>&quot; button.&nbsp; An 
+    <b>Open</b> 
+    dialog window will appear.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">The vehicle tags are located in the 
+    subdirectories found under the&nbsp; Halo\tags\vehicles directory.&nbsp;</font></p>
+    <p>
+    <font face="Arial" size="2">A Warthog and a Ghost will be added to 
+    each side in the level, for a total of 2 Warthogs and 2 Ghosts in the entire 
+    level. Therefore, the appropriate vehicle tags must be 
+    added to the vehicle palette.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">3) Follow the steps below to add the 
+    &quot;mp_warthog.vehicle&quot; and the &quot;ghost_mp.vehicle&quot; tags to the 
+    level.</font></p>
+    <p>
+    <font face="Arial" size="2">In the <b>Open</b> dialog window, go to the 
+    &quot;vehicles&quot; tags directory located under the main tags directory.</font></p>
+    <p>
+    <font face="Arial" size="2">a) Go to the &quot;ghost&quot; subdirectory.</font></p>
+    <p>
+    <font face="Arial" size="2">b) Select the &quot;ghost_mp.vehicle&quot; 
+    tag.</font></p>
+    <p>
+    <font face="Arial" size="2">c) Click on the <b>Add tag(s)</b> button.&nbsp;
+    </font></p>
+    <p>
+    <font face="Arial" size="2">d) The &quot;ghost_mp.vehicle&quot; tag should now 
+    appear in the Tag listing at the bottom of the <b>Open</b> dialog.</font></p>
+    <p>
+    <font face="Arial" size="2">4) The procedures listed in 3a through 3d were 
+    then used to add the &quot;mp_warthog.vehicle&quot; tag.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">5) Once the &quot;mp_warthog.vehicle&quot; tag is 
+    added, click the <b>Done</b> button</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the above 
+    procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">6)&nbsp; The <b>Dialog</b> window for vehicle 
+    should now be visible again.&nbsp; The &quot;ghost_mp.vehicle&quot; and 
+    &quot;mp_warthog.vehicle&quot; tags should appear in the <b>Tag</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">Click the <b>OK</b> button.</font></p>
+    <p>
+    <font face="Arial" size="2">The third image further explains the 
+    above procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">With a vehicle palette created, vehicles can now 
+    be placed in the level. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">7) Make sure that the &quot;Vehicles&quot; group in 
+    the Hierarchy tree is selected.&nbsp; In the <b>Game Window</b>, press the Right Mouse 
+    Button to place a vehicle object in the level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">8)&nbsp; The vehicle object will most likely 
+    appear as just a marker, it must have a vehicle object type set for it that 
+    corresponds to one of the vehicle objects or tags in the vehicle palette.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">In the <b>Properties palette</b> window use the pull 
+    down menu that is associated with the &quot;type&quot; field to select 
+    &quot;ghost_mp&quot;.&nbsp; </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">9) The marker in the <b>Game Window</b> should now 
+    appear as the selected object, in this case the ghost_mp&nbsp;vehicle 
+    model or object.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">NOTE:&nbsp; Every subsequent Right Mouse Button 
+    click will create the currently selected object in the <b>Game Window</b> unless 
+    the &quot;type&quot; is changed or an object is selected in the right pane of the<b> 
+    Hierarchy view</b> window.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">10) Add a Ghost vehicle to each base area.&nbsp;
+    </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">11) Just as with adding the Ghost vehicles, add 
+    a Warthog to each base.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The position and orientation of the vehicles can 
+    be adjusted just as with other objects.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The fourth image further explains the above 
+    procedures and shows the placement of the vehicle objects.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">12)&nbsp; The vehicles will now be assigned to 
+    teams or &quot;sides&quot;.&nbsp; In the <b>Properties palette</b>, enter a value of 1 under 
+    the &quot;multiplayer team index&quot; field for the Ghost and Warthogs at the Blue 
+    Base.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">For the Ghost and Warthogs at the Red Base, 
+    enter a value of &quot;0&quot; in the &quot;multiplayer team index&quot; field.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">A &quot;multiplayer team index&quot; of &quot;0&quot; denotes the Red 
+    Team or Red &quot;Side&quot;</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">A &quot;multiplayer team index&quot; of &quot;1&quot; denotes the Blue 
+    Team or Blue &quot;Side&quot;</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The fifth image further explains the above 
+    procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The vehicles will now be set up to appear only 
+    in certain game modes.&nbsp; </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The vehicle setups will be that the Ghosts and 
+    Warthogs are allowed in all game modes.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">13) To set the vehicles up in this manner follow 
+    the procedures below:</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">a) Select the individual vehicle and go to the 
+    <b>Properties palette</b>.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">b) At the bottom of the <b>Properties palette</b> are a 
+    series of check boxes under the &quot;multiplayer spawn flags&quot; section.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">c) Enable the check boxes for the following:</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">slayer allowed</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">ctf allowed</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">king allowed</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">oddball allowed</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The selected vehicle can now appear in Slayer, 
+    CTF, King of the Hill and Oddball based game modes or game variants.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">NOTE:&nbsp; The Race game mode is not included 
+    in this list.&nbsp; The Race game mode and vehicle setup is handled 
+    completely different and will be covered in the Netgame flags section below.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">Apply these settings for all 4 vehicles in the 
+    level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The default vehicle configuration for the level 
+    will now be setup.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The vehicle defaults will be such that the 
+    Ghosts and Warthogs are present in all game modes but King of the Hill. The 
+    vehicles will NOT show up in King of the Hill by default, but can still be 
+    put in the level by the end user through the Multiplayer Options.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">14) To set the vehicle default configuration 
+    perform the following procedures.&nbsp; Select the individual vehicle and go 
+    to the <b>Properties palette</b>.&nbsp; </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">At the bottom of the <b>Properties palette</b> are a 
+    series of check boxes under the &quot;multiplayer spawn flags&quot; section.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">Enable the check boxes for the following:</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">slayer default</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">ctf default</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">oddball default</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The selected vehicles will now appear in Slayer, 
+    CTF and Oddball based game modes or game variants by default.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">Apply these settings for all 4 vehicles in the 
+    level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The sixth image or last image further explains the above 
+    procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/vehicles_01_large.gif" target="_blank">
+    <img border="0" src="images/vehicles_01_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/vehicles_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/vehicles_02_large.gif" target="_blank">
+    <img border="0" src="images/vehicles_02_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/vehicles_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/vehicles_03_large.gif" target="_blank">
+    <img border="0" src="images/vehicles_03_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/vehicles_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/vehicles_04_large.gif" target="_blank">
+    <img border="0" src="images/vehicles_04_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/vehicles_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/vehicles_05_large.gif" target="_blank">
+    <img border="0" src="images/vehicles_05_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/vehicles_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/vehicles_06_large.gif" target="_blank">
+    <img border="0" src="images/vehicles_06_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/vehicles_06_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Netgame Flags Placement</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber61" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">The objects that determine game rules and 
+    set objective points in the level are called Netgame Flags.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">These Netgame Flags are used to define the spot 
+    where a flag for CTF is located at, where the Oddballs in Oddball game modes 
+    spawn, the Race Points for Race Mode, the Race Vehicle spawn points, and the 
+    region or area for the control zone for King of the Hill.</font></p>
+    <p>
+    <font face="Arial" size="2">In addition, Netgame Flags are used to define 
+    the entry and exit points for teleporters.</font></p>
+    <p>
+    <font face="Arial" size="2">For more information on the rules for Netgame 
+    Flags see the </font>
+        <span class="body">  
+		<font face="Arial" size="2">
+    <b>Multiplayer Level Design Technical Rules and Guidelines </b>section under 
+    the </font>
+ </span> 						
+	<font face="Arial"><b>
+    <a href="../../general/general_ld_info.html">
+<font size="2" color="#3FA2FF">General Level Design Information</font></a><font size="2" color="#3FA2FF"> </font></b></font>
+        <span class="body">  
+		<font face="Arial" size="2">
+        section located in the General Reference Sections.</font></span></p>
+    <p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the placement of the Netgame Flags that are 
+    necessary for the proper operation of the level in a multiplayer game.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber63" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the placement of a the Netgame Flags that are 
+    necessary for the proper operation of the Capture the Flag (CTF) game mode 
+    in the level for a multiplayer game.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber62" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Placement of the netgame flags necessary for the 
+    Capture the Flag (CTF) game mode in the tutorial 
+    level:</font></p>
+    <p>
+    <font face="Arial" size="2">1) Go to the <b>Hierarchy view</b> window.&nbsp; In the 
+    Hierarchy tree expand the &quot;Game data&quot; branch. Next, select the &quot;Netgame 
+    flags&quot; branch/</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">2)&nbsp; The netgame flags that will be 
+    added are ctf - flag objects.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">In the <b>Properties palette</b> make sure the the 
+    &quot;type&quot; is set to &quot;ctf - flag&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">In the <b>Game Window</b>, press the Right Mouse Button 
+    to place a netgame flag object in the level on top of each base. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">Align the netgame flag so that it matches the 
+    position of the previously placed &quot;flag_stand.scenery&quot; object.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">3) In the <b>Properties palette</b> set the &quot;team 
+    index&quot; for each netgame flag.&nbsp; This will determine the team setting for 
+    the flag. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The &quot;team index&quot; follows the &quot;team index&quot; 
+    conventions covered previously.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The &quot;ctf - flag&quot; netgame flag for the Blue Base 
+    should have its &quot;team index&quot; set to &quot;1&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The &quot;ctf - flag&quot; netgame flag for the Red Base 
+    should have its &quot;team index&quot; set to &quot;0&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The ctf - flag netgame flag represents the 
+    location where the flag will appear in the game as well as the area where 
+    the opposing teams flag must be taken to in order to score.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The image to the right further explains the 
+    above procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/netgame_flags_01_large.gif" target="_blank">
+    <img border="0" src="images/netgame_flags_01_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_flags_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber65" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the placement of a the Netgame Flags that are 
+    necessary for the proper operation of the Oddball game mode in the level for a multiplayer game.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber62" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Placement of the netgame flags necessary for the 
+    Oddball game mode in the tutorial level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The next objects that will be placed are 
+    &quot;oddball - ball spawn&quot; netgame flags.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">These spawn points act as the spawn point for 
+    the Oddball in the Oddball game types and game variants.&nbsp; A level must 
+    have at least 1 Oddball spawn.&nbsp; </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The Multiplayer Game Options allow up to 16 
+    Oddballs to be added to the game.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">Levels can have multiple Oddball spawns up to 
+    and even past 16 Oddball spawn points. When more than 1 Oddball is set for a 
+    game type, the spawn locations are randomized.&nbsp; When the Oddball is 
+    left sitting for too long, these spawn points are also used to randomly 
+    spawn the Oddball at one of the spawn point locations.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">These different locations are denoted by an 
+    index.&nbsp; For the &quot;oddball - ball spawn&quot; netgame flag the &quot;team index&quot; 
+    field is used as this index.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">An index of &quot;0&quot; for the Oddball spawn denotes the 
+    primary or default Oddball spawn.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">1)&nbsp; In the <b>Properties palette</b> make sure the 
+    the &quot;type&quot; is set to &quot;oddball - ball spawn&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">In the <b>Game Window</b>, press the Right Mouse Button 
+    to place a netgame flag object on the small hill in the center of the level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">2) In the <b>Properties palette</b> set the &quot;team 
+    index&quot; for the netgame flag to &quot;0&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">3) Additional &quot;oddball - ball spawn&quot; netgame 
+    flags were added, 1 on top of each base, and 1 on each side of the level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">In the <b>Properties palette</b> set the &quot;team 
+    index&quot; for each netgame flag.&nbsp; Number these sequentially.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The  image to the right further explains the above 
+    procedures and shows the &quot;oddball - ball spawn&quot; netgame flag placement.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/netgame_flags_02_large.gif" target="_blank">
+    <img border="0" src="images/netgame_flags_02_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_flags_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber65" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the placement of a the Netgame Flags that are 
+    necessary for the proper operation of the Race game mode in the level for a multiplayer game.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber64" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Placement of the netgame flags necessary for the 
+    Race game mode in the tutorial level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The next objects that will be placed are 
+    &quot;race - track&quot; and &quot;race - vehicle&quot; netgame flags.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The &quot;race - track&quot; netgame flags mark the 
+    objective points to follow for Race game modes and game mode variants.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The &quot;race - track&quot; netgame flags use the &quot;team 
+    index&quot; to be set up in sequential order starting with &quot;0&quot;.&nbsp; When the 
+    last index is reached, the starting &quot;race - track&quot; netgame flag 
+    (team index 0)  is next, creating the &quot;race loop&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The &quot;race - vehicle&quot; netgame flags mark the 
+    spawn point for a vehicle to be used in Race mode.&nbsp; Vehicles spawn 
+    based on the Multiplayer Game Options that are set for the race modes as 
+    well as the initial spawn locations of the player.&nbsp; If a player spawns 
+    nearby one of these vehicle spawns at the start of a game, then the game uses the vehicle spawn point to 
+    spawn a vehicle near the player.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The number of&nbsp;player spawn points that are 
+    placed for Race mode and the number of &quot;race - vehicle&quot; netgame flags are 8 
+    per team or &quot;side&quot; for a total of 16.&nbsp; The netgame flags are set up 
+    like this in the event that all the players spawn on or near the same side.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">If a level is not designed for vehicles (such as 
+    an indoor level) then &quot;race - vehicle&quot; netgame flags are not added.&nbsp; 
+    The players will race around the level to the race points on foot, therefore 
+    the &quot;race - track&quot; netgame flags must still be added.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">1)&nbsp; In the <b>Properties palette</b> make sure 
+    that the &quot;type&quot; is set to &quot;race - track&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">In the <b>Game Window</b>, press the Right Mouse Button 
+    to place a netgame flag object on the small hill in the center of the level.&nbsp; 
+    The &quot;race - track&quot; netgame flag was actually placed on top of the &quot;oddball - 
+    ball spawn&quot; netgame flag, this is valid.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">Set the &quot;team index&quot; value for this netgame flag 
+    to &quot;0&quot;.&nbsp; This will be the first race point.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">NOTE: The &quot;race - track&quot; netgame flags have a 
+    trigger field that forms a detection radius around the netgame flag.&nbsp; 
+    Because of this, &quot;race - track&quot; netgame flags should NOT be placed at the 
+    exact same coordinates and instead should be staggered.&nbsp; If the &quot;race - 
+    track&quot; netgame flags are not detecting the player or vehicle when they enter 
+    the field or run over the race objective, make sure the &quot;race - track&quot; 
+    netgame flags are not too close together, possibly interfering with each other 
+    when trying to detect the player.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">2) The remaining &quot;race - track&quot; netgame flags 
+    were added at the following locations with the listed &quot;team index&quot; values:</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">Top of Red Base (team index 1)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">Opposite side from the stream (team index 2)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">Top of Blue Base (team index 3)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">Middle of the stream (team index 4)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">Since the level is so small, no &quot;race - vehicle&quot; netgame 
+    flags are placed.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The third image further explains the above 
+    procedures and shows the &quot;race - track&quot; and &quot;race - vehicle&quot; netgame 
+    flags.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/netgame_flags_03_large.gif" target="_blank">
+    <img border="0" src="images/netgame_flags_03_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_flags_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber66" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the placement of a the Netgame Flags that are 
+    necessary for the proper operation of the King of the Hill game mode in the level for a multiplayer game.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber67" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Placement of the netgame flags necessary for the 
+    King of the Hill game mode in the tutorial level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The next objects that will be placed are &quot;hill - 
+    flag&quot; netgame flags.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The &quot;hill - flag&quot; netgame flags are arranged 
+    such that they define a region that marks the control zone that the player 
+    must occupy in order to score in the King of the Hill game modes and game mode variants.&nbsp; 
+    This control zone area is also denoted visually in the level when in a King 
+    of the Hill game mode.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The game basically connects all &quot;hill - flag&quot; netgame flags 
+    with the same index and forms a boundary zone.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The &quot;hill - flag&quot; netgame flags use the &quot;team 
+    index&quot; field to &quot;group&quot; the netgame flags together.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">A &quot;team index&quot; of &quot;0&quot; indicates the main &quot;hill&quot;.&nbsp; 
+    This typically is the hill placed in the center of the level and is used for 
+    the King of the Hill game modes that do not move the hill location around.
+    </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">In order to support the &quot;moving hill&quot; modes of 
+    play in King of the Hill, more than one control zone must be implemented.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">1)&nbsp; In the <b>Properties palette</b> make sure 
+    that the &quot;type&quot; is set to &quot;hill - flag&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">Set the hill index or the &quot;team index&quot; located 
+    in the <b>Properties palette</b> window to &quot;0&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">2) In the <b>Game Window</b>, press the Right Mouse 
+    Button to place &quot;hill - flag&quot; netgame flag objects in the form or a circle on the small hill in the center of the level.&nbsp; </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The first image  further explains the above 
+    procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">3) Next, 2 more control zones were created to 
+    support King of the Hill games that use the &quot;moving hill option&quot;. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The control zone at the Blue Base has &quot;team 
+    index&quot; &quot;1&quot; and the control zone at the Red Base has &quot;team index&quot; 
+    &quot;2&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The second image or last image further explains 
+    the above procedures and shows the placement of the &quot;hill - flag&quot; netgame 
+    flags. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/netgame_flags_04_large.gif" target="_blank">
+    <img border="0" src="images/netgame_flags_04_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_flags_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/netgame_flags_05_large.gif" target="_blank">
+    <img border="0" src="images/netgame_flags_05_small.gif" width="250" height="192"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_flags_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber68" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Teleporters instantaneously moves a player from 
+    one point in the level to another.&nbsp; Teleporters only work for players 
+    and cannot teleport vehicles or other objects.</font><p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the placement of a the Netgame Flags that are 
+    necessary to create teleporters in the level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber69" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Placement of the netgame flags necessary for the 
+    creation of teleporters in the tutorial level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The next objects that will be placed are the &quot;teleport 
+    from&quot; and &quot;teleport to&quot; netgame flags.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">For a teleporter to work 1-way, 1 &quot;teleport 
+    from&quot; and 1 &quot;teleport to&quot; netgame flag are necessary.&nbsp; For a 2 -way 
+    teleporter an additional set of the netgame flags are necessary for a total 
+    of 4 netgame flags.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The &quot;teleport from&quot; and &quot;teleport to&quot; netgame flags use the &quot;team 
+    index&quot; field to &quot;group&quot; the netgame flags together.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">Each teleporter netgame flag pair (a &quot;teleport 
+    from&quot; and &quot;teleport to&quot;) index values must be unique.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">1)&nbsp; In the <b>Properties palette</b> make sure 
+    that the &quot;type&quot; is set to &quot;teleport from&quot;.&nbsp; This is 
+    the source or start point for the teleporter. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">2) In the <b>Game Window</b>, press the Right Mouse 
+    Button to place the &quot;teleport from&quot; netgame flag object at the teleporter 
+    gateway at the rear of the Blue Base.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The netgame flag is placed close to the 
+    teleporter shield geometry to give the illusion that the player is 
+    teleporting when the shield is touched or approached.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">3) Set the teleporter index or the &quot;team index&quot; located 
+    in the <b>Properties palette</b> window to &quot;0&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The first image  further explains the above 
+    procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The &quot;teleport from&quot; teleporter source or origin 
+    netgame flag needs a target point.&nbsp; The target point is the &quot;teleport 
+    to&quot; netgame flag.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">4)&nbsp; In the<b> Properties palette</b> make sure 
+    that the &quot;type&quot; is set to &quot;teleport to&quot;.&nbsp; This is 
+    the target or destination for the teleporter. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">5) In the <b>Game Window</b>, press the Right Mouse 
+    Button to place the &quot;teleport to&quot; netgame flag object at the teleporter 
+    gateway at the rear of the Red Base.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The netgame flag is placed a slight distance 
+    away from the teleporter shield geometry to give the illusion that the 
+    player has just exited the teleporter field.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">6) Set the teleporter index or the &quot;team index&quot; located 
+    in the <b>Properties palette</b> window to &quot;0&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The second image  further explains the above 
+    procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The teleporter will now work 1-way.&nbsp; 
+    Players can teleport from the Blue Base to the Red Base but not teleport 
+    back.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">To allow the player to teleport from the Red 
+    Base to the Blue another set of teleporter netgame flags must be added.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">7) The same procedures for steps 1-6 were 
+    followed to add a &quot;teleporter from&quot; netgame flag to the rear of the Red Base 
+    that targets a &quot;teleporter to&quot; net game flag at the rear of the Blue Base.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The &quot;team index&quot; for this set of teleporter 
+    netgame flags is &quot;1&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The third image or last image further explains 
+    the above procedures and shows the placement of the &quot;teleport from&quot; and 
+    &quot;teleport to&quot; netgame 
+    flags. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/netgame_flags_06_large.gif" target="_blank">
+    <img border="0" src="images/netgame_flags_06_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_flags_06_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/netgame_flags_07_large.gif" target="_blank">
+    <img border="0" src="images/netgame_flags_07_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_flags_07_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/netgame_flags_07_large.gif" target="_blank">
+    <img border="0" src="images/netgame_flags_07_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_flags_07_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Netgame Equipment Placement</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber70" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">The objects that determine the placement of 
+    weapons and items (such as power ups) in a mulitplayer&nbsp; level are called Netgame 
+    Equipment.</font></p>
+    <p>
+    <font face="Arial" size="2">Netgame Equipment objects are attached to an 
+    &quot;item collection&quot;.&nbsp; An item collection is a data tag which can include 
+    a single weapon or item or a group of weapons or items. </font></p>
+    <p>
+    <font face="Arial" size="2">Netgame Equipment objects can be customized per 
+    game mode.&nbsp; Therefore, weapons and items can be customized by weapon or 
+    item type per game mode.</font></p>
+    <p>
+    <font face="Arial" size="2">To see what single weapon and item, and weapon 
+    and item groups are available for placement, as well as what the .item_collection 
+    tag names are, refer to the tables located under the </font>
+        <font face="Arial"><b>
+    <a href="../../general/weps_ammo_items.html">
+<font size="2" color="#3FA2FF">Weapons\Ammo\Items List</font></a></b></font><font face="Arial" size="2"> 
+    section located<span class="body"> </span>under the <b>General Reference</b> 
+    sections.</font></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber71" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the placement of the Netgame Equipment 
+    objects in a multiplayer level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber72" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">Placement of Netgame Equipment objects in the tutorial 
+    level:</font></p>
+    <p>
+    <font face="Arial" size="2">Unlike previous objects placed in Sapien, the 
+    Netgame Equipment objects do not have a palette.&nbsp; The .item_collection 
+    data tags must be referenced for each item.</font></p>
+    <p>
+    <font face="Arial" size="2">It is common to create one of each type of 
+    desired weapon or item in the level and then use these items to quickly 
+    create and place more items of the particular type.&nbsp; This is similar to 
+    creating a palette but is a little more cumbersome.&nbsp; This is done as 
+    mentioned before, select the item in the right pane of the <b>Hierarchy view</b> 
+    and then Right Mouse Click.</font></p>
+    <p>
+    <font face="Arial" size="2">1) Go to the <b>Hierarchy view</b> window.&nbsp; In the 
+    Hierarchy tree expand the &quot;Game data&quot; branch. Next, select the &quot;Netgame 
+    Equipment&quot; branch.</font></p>
+    <p>
+    <font face="Arial" size="2">A health pack (which is considered a power up) 
+    will be placed in each base hallway for every game mode.</font></p>
+    <p>
+    <font face="Arial" size="2">2) In the <b>Game Window</b>, click the Right Mouse 
+    Button to create a Netgame Equipment object in the middle of the Blue Base 
+    hallway.</font></p>
+    <p>
+    <font face="Arial" size="2">3) In the <b>Properties palette</b>, click on the &quot;<b>...</b>&quot; 
+    button in the item collection field.&nbsp; An <b>Open</b> dialog window will 
+    appear.</font></p>
+    <p>
+    <font face="Arial" size="2">4) In the <b>Open</b> dialog window, go to the &quot;item 
+    collections&quot; tag directory under the main tag directory.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">Enter the &quot;powerups&quot; directory under the &quot;item 
+    collections&quot; directory.</font></p>
+    <p>
+    <font face="Arial" size="2">5) Select the &quot;powerup health&nbsp; 
+    pack.item_collection&quot; tag.</font></p>
+    <p>
+    <font face="Arial" size="2">6) Once this is selected, hit <b>Open</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">NOTE: Netgame Equipment objects always appear as 
+    a marker.&nbsp; The marker will never appear as the select weapon or item 
+    that is referenced from the .item_collection.</font></p>
+    <p>
+    <font face="Arial" size="2">7) This item collection tag  should now 
+    appear in the item collection field under the item collection area in the 
+    <b>Properties palette</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">8) The health packs will be available for all 
+    game types.</font></p>
+    <p>
+    <font face="Arial" size="2">In the &quot;type 0&quot; field select the &quot;all games&quot; 
+    option by using the pull down menu.</font></p>
+    <p>
+    <font face="Arial" size="2">Once the health pack is placed in the Blue Base 
+    hallway, add a health pack to the hallway in the Red Base.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The first image  further explains the above 
+    procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">&nbsp;</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The next item that will be placed is an 
+    invisibility power up or &quot;Active Camouflage&quot; power up.&nbsp; </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">This power up will appear in all game modes 
+    except for Race game modes.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">9) To place the invisibility power up follow the 
+    steps below.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">a)&nbsp; In the <b>Game Window</b> click the Right 
+    Mouse Button to put down a Netgame Equipment object on the side of the level 
+    opposite of the stream.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">b)&nbsp; In the<b> Properties palette</b>, click on the 
+    &quot;<b>...</b>&quot; button in the item collection field.&nbsp; An <b>Open</b> dialog window will 
+    appear.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">c) Select the &quot;powerup invisibility&nbsp; 
+    pack.item_collection&quot; tag in the Halo\tags\item collections\powerups&quot; 
+    directory.</font></p>
+    <p>
+    <font face="Arial" size="2">d) Once this is selected, hit <b>Open</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">10) This item collection tag  should now 
+    appear in the item collection field under the item collection area in the 
+    Properties palette.</font></p>
+    <p>
+    <font face="Arial" size="2">11) The health packs will be available for all 
+    game types except for Race mode.</font></p>
+    <p>
+    <font face="Arial" size="2">In the &quot;type 0&quot; field select the &quot;all except 
+    race_ctf&quot; option by using the pull down menu.</font></p>
+    <p>
+    <font face="Arial" size="2">In the &quot;type 1&quot; field select the &quot;ctf&quot; option by 
+    using the pull down menu.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The second image  further explains the above 
+    procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">Weapons will now be added to the level.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The following weapons will be added for all game 
+    modes:</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">assault rifle&nbsp;&nbsp;&nbsp;&nbsp; (assault 
+    rifle.item_collection)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">flame thrower&nbsp; (flame thrower 
+    rifle.item_collection)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">frag grenade&nbsp;&nbsp; (frag 
+    grenade.item_collection)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">pistol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    (pistol.item_collection)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">rocket launcher (rocket launcher.item_collection)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">shotgun&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    (shotgun.item_collection)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">sniper rifle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    (sniper rifle.item_collection)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">12)&nbsp; In the <b>Game Window</b>, click the Right 
+    Mouse Button to create a Netgame Equipment object behind the rock closest to 
+    the stream on the Blue Base side of the level.</font></p>
+    <p>
+    <font face="Arial" size="2">13) In the <b>Properties palette</b>, click on the 
+    &quot;<b>...</b>&quot; button in the item collection field.&nbsp; An <b>Open</b> dialog window will 
+    appear.</font></p>
+    <p>
+    <font face="Arial" size="2">14) In the <b>Open</b> dialog window, go to the &quot;item 
+    collections&quot; tag directory under the main tag directory.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">Enter the &quot;single weapons&quot; directory under the 
+    &quot;item collections&quot; directory.</font></p>
+    <p>
+    <font face="Arial" size="2">15) Select the &quot;pistol.item_collection&quot; tag.</font></p>
+    <p>
+    <font face="Arial" size="2">16) Once this is selected, hit <b>Open</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">17) This item collection tag  should now 
+    appear in the item collection field under the item collection area in the 
+    <b>Properties palette</b>.</font></p>
+    <p>
+    <font face="Arial" size="2">18) The pistol will be available for all game 
+    types.</font></p>
+    <p>
+    <font face="Arial" size="2">In the &quot;type 0&quot; field select the &quot;all games&quot; 
+    option by using the pull down menu.</font></p>
+    <p>
+    <font face="Arial" size="2">Once the pistol is placed on the Blue Base side, 
+    add a pistol to the Red Base side in  the same approximate location.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The third image  further explains the above 
+    procedures.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The procedures above for steps 12 - 18 were 
+    followed to place the following weapons at the following locations:</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">1 assault rifle (assault rifle.item_collection) 
+    was placed in the middle on each side of the mound behind the trees.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">1 flame thrower (flame thrower 
+    rifle.item_collection) was placed in the middle of the level in between the stream 
+    and surrounding hill.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">2 frag grenades (frag grenade.item_collection) 
+    were placed in the center of the level on the mound side which is opposite of the 
+    stream.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">1 rocket launcher (rocket 
+    launcher.item_collection) was placed in the center of the level on the mound 
+    side nearest the stream.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">1 shotgun (shotgun.item_collection) was placed 
+    on each side behind the base near the teleporter gates. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">1 sniper rifle (sniper rifle.item_collection) 
+    was placed on each side in the corners of the level behind the tree and rock 
+    formations.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The fourth image or last image further explains 
+    the above procedures and shows the final placement and orientation of the 
+    Netgame Equipment objects listed above.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/netgame_equipment_01_large.gif" target="_blank">
+    <img border="0" src="images/netgame_equipment_01_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_equipment_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/netgame_equipment_02_large.gif" target="_blank">
+    <img border="0" src="images/netgame_equipment_02_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_equipment_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/netgame_equipment_03_large.gif" target="_blank">
+    <img border="0" src="images/netgame_equipment_03_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_equipment_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/netgame_equipment_04_large.gif" target="_blank">
+    <img border="0" src="images/netgame_equipment_04_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/netgame_equipment_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="644"> 
+        <b><font face="Arial" size="2">Manipulation of Portals and BSP Elements</font></b></td>
+		<td width="188">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber54" height="64">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">In addition to adding scenery objects and game 
+    objects into the level, Sapien can be used to manipulate the properties of 
+    the portals or clusters that exist in the .scenario_structure_bsp.</font><p>
+    <font size="2" face="Arial">These properties include the 
+    fog, ambient sounds, environmental audio, and weather effects.</font></p>
+    <p>
+    <font face="Arial" size="2">For the tutorial level, the &quot;Background sound&quot; 
+    (ambient sound to play in the entire cluster or portal), the &quot;Sound 
+    environment&quot; (environmental audio effects to use for the portal or cluster), 
+    and the &quot;Weather&quot; (for this level, wind values) will all be set.</font></p>
+    <p>
+    <font face="Arial" size="2">Fog settings for the level will not be applied 
+    since there are no fog planes or fog volumes in the tutorial level. </font></p>
+    <p>
+    <font face="Arial" size="2">Atmospheric fog or &quot;haze&quot; has already been 
+    applied to the level due to the fact that these are set in the .sky data tag 
+    that is associated with the sky model or sky box for the level.</font></p>
+    <p>
+    <font face="Arial" size="2">During the creation of a level, the core 
+    geometry can often change as well as the creation and modification of the 
+    portal geometry.&nbsp; Any changes in the level mesh or portal geometry can 
+    cause the assignment of portal properties to be incorrect or reset to NONE.&nbsp; 
+    The assignment of portal properties should be one of the last procedures 
+    performed on a level or should at least not be performed until the core 
+    geometry of the level and portal placement has been completed.</font></p>
+    <p></p>
+    <p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the setup and modification of the portal or 
+    cluster data in the .scenario_structure_bsp for a multiplayer level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber71" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the application of Background Sounds to a 
+    portal or cluster.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber73" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">Setting &quot;Background sound&quot; attributes in the .scenario_structure_bsp 
+    portals or clusters.</font></p>
+    <p>
+    <font face="Arial" size="2">1) Go to the <b>Hierarchy view</b> window.&nbsp; In the 
+    Hierarchy tree expand the &quot;Cluster properties&quot; branch. Next, expand the 
+    &quot;Palettes&quot; branch and select the &quot;Background sound palette&quot; subtree object.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Currently, the &quot;Background sound palette&quot; is 
+    empty.&nbsp; To create a &quot;Background sound palette&quot; follow the 
+    procedures below.</font></p>
+    <p>
+    <font face="Arial" size="2">a) Click on <b>New Instance</b> button in the <b>Hierarchy view</b> 
+    window.&nbsp; A new instance of a background sound will appear in the right 
+    pane of the <b>Hierarchy view</b> window.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">b) Select this new instance.</font></p>
+    <p>
+    <font face="Arial" size="2">c) This background sound instance must have a 
+    background sound now set.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">Go to the <b>Properties palette</b> and click on the &quot;<b>...</b>&quot; 
+    button located in the &quot;background sound&quot; section.&nbsp; An 
+    <b>Open</b> 
+    dialog window will appear.</font></p>
+    <p>
+    <font face="Arial" size="2">There are many sound  tags available for use as a 
+    &quot;background sound&quot;.&nbsp; The majority of .sound_looping tags are located in the 
+    subdirectories found under the&nbsp; Halo\tags\sound\sfx\ambience directory.&nbsp; 
+    It is also quite common for individual level directories to contain their 
+    own custom sound directories that contain .sound_looping tags.&nbsp; It is 
+    suggested that the user explore all the level directories to discover what .sound_looping 
+    tag resources are available.</font></p>
+    <p>
+    <font face="Arial" size="2">3) Choose the a30 directory which is located 
+    under the Halo\tags\sound\sfx\ambience directory.</font></p>
+    <p>
+    <font face="Arial" size="2">4) Select the &quot;forest_day_wind.sound_looping&quot; 
+    tag.</font></p>
+    <p>
+    <font face="Arial" size="2">5) Click on the <b>Open</b> button.</font></p>
+    <p>
+    <font face="Arial" size="2">This tag reference should appear in the 
+    background sound section in the <b>Properties palette</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">6) This background sound reference must now be 
+    named. </font></p>
+    <p>
+    <font face="Arial" size="2">In the &quot;name&quot; field in the <b>Properties palette</b> 
+    window enter the name &quot;forest sounds&quot;.</font></p>
+    <p>
+    <font face="Arial" size="2">The name should update in the right pane of the 
+    <b>Hierarchy view</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">The name does not matter, it is just used for 
+    reference.&nbsp; The background sound can be changed underneath this name.&nbsp; 
+    This enables the generic &quot;forest sounds&quot; background sound instance to be 
+    applied to the portals or clusters in the level and then the actual 
+    background sound tag reference can be changed if needed to find the best 
+    background sound.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">The background sound will now be applied to all 
+    the portals or clusters in the level.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">7) Go to the <b>Hierarchy view</b> window.&nbsp; In the 
+    Hierarchy tree expand the &quot;Cluster properties&quot; branch. Next, expand the 
+    &quot;Palettes&quot; branch and select the &quot;Background sound&quot; subtree object.</font></p>
+    <p>
+    <font face="Arial" size="2">The portals or clusters should now appear in the 
+    <b>Game Window</b>.&nbsp; The volume for a portal or cluster is outlined.&nbsp; The 
+    currently applied &quot;Background sound&quot; is color coded for each portal.</font></p>
+    <p>
+    <font face="Arial" size="2">8)&nbsp; In the<b> Tool Window</b>, the &quot;Render planes&quot; 
+    and &quot;Render non painted clusters&quot;&nbsp; check boxes can be enabled or 
+    disabled to help view the portals better.</font></p>
+    <p>
+    <font face="Arial" size="2">Move the camera in the <b>Game Window</b> if it is not 
+    already clearly in a portal or cluster.</font></p>
+    <p>
+    <font face="Arial" size="2">9)&nbsp; The current background sound that is 
+    applied to the portal that the camera is in is displayed in the &quot;background 
+    sound&quot; pull down located in the <b>Properties palette</b> window.&nbsp; In this 
+    case, &quot;NONE&quot; appears since no background sounds have been applied.</font></p>
+    <p>
+    <font face="Arial" size="2">To apply the background sound to the portal, use 
+    the background sound pull down to select the &quot;forest sound&quot; background 
+    sound.&nbsp; The background sound for the portal has now been set.</font></p>
+    <p>
+    <font face="Arial" size="2">Move the camera to the next portal and repeat 
+    this procedure until all the portals in the level have the &quot;forest sound&quot; 
+    background sound set.</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/cluster_info_01_large.gif" target="_blank">
+    <img border="0" src="images/cluster_info_01_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/cluster_info_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/cluster_info_02_large.gif" target="_blank">
+    <img border="0" src="images/cluster_info_02_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/cluster_info_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber71" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the application of &quot;Sound environments&quot; to a 
+    portal or cluster.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber73" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">Setting &quot;Sound Environment&quot; attributes in the .scenario_structure_bsp 
+    portals or clusters.</font></p>
+    <p>
+    <font face="Arial" size="2">1) Go to the <b>Hierarchy view</b> window.&nbsp; In the 
+    Hierarchy tree expand the &quot;Cluster properties&quot; branch. Next, expand the 
+    &quot;Palettes&quot; branch and select the &quot;Sound environment palette&quot; subtree object.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Currently, the &quot;Sound environment palette&quot; is 
+    empty.&nbsp; To create a &quot;Sound environment palette&quot; follow the 
+    procedures below.</font></p>
+    <p>
+    <font face="Arial" size="2">a) Click on <b>New Instance</b> button in the <b>Hierarchy view</b> 
+    window.&nbsp; A new instance of a sound environment palette will appear in the right 
+    pane of the <b>Hierarchy view</b> window.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">b) Select this new instance.</font></p>
+    <p>
+    <font face="Arial" size="2">c) This sound environment palette instance must 
+    have a sound environment tag set for it.</font></p>
+    <p>
+    <font face="Arial" size="2">Go to the <b>Properties palette</b> and click on the &quot;<b>...</b>&quot; 
+    button located in the &quot;sound environment&quot; section.&nbsp; An 
+    <b>Open</b> 
+    dialog window will appear.</font></p>
+    <p>
+    <font face="Arial" size="2">There are many sound  environment tags available for 
+    use.&nbsp; The .sound_environment tags are located in the&nbsp; &quot;Halo\tags\sound\sound 
+    environments&quot; directory.</font></p>
+    <p>
+    <font face="Arial" size="2">3) Choose the &quot;sound environments&quot; directory which is located 
+    under the &quot;Halo\tags\sound&quot; directory.</font></p>
+    <p>
+    <font face="Arial" size="2">4) Select the &quot;forest.sound_environment&quot; 
+    tag.</font></p>
+    <p>
+    <font face="Arial" size="2">5) Click on the <b>Open</b> button.</font></p>
+    <p>
+    <font face="Arial" size="2">This tag reference should appear in the 
+    &quot;sound environment&quot; section in the <b>Properties palette</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">6) This sound environment reference must now be 
+    named. </font></p>
+    <p>
+    <font face="Arial" size="2">In the &quot;name&quot; field in the <b>Properties palette</b> 
+    window enter the name &quot;forest environment&quot;.</font></p>
+    <p>
+    <font face="Arial" size="2">The name should update in the right pane of the 
+    <b>Hierarchy view</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">The name does not matter, it is just used for 
+    reference.&nbsp; The sound environment can be changed underneath this name.&nbsp; 
+    This enables the generic &quot;forest environment&quot;  sound environment instance to be 
+    applied to the portals or clusters in the level and then the actual 
+    sound environment tag reference can be changed if needed to find the best 
+    sound environment.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">The sound environment will now be applied to all 
+    the portals or clusters in the level.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">7) Go to the <b>Hierarchy view</b> window.&nbsp; In the 
+    Hierarchy tree expand the &quot;Cluster properties&quot; branch. Next, expand the 
+    &quot;Palettes&quot; branch and select the &quot;Sound environment&quot; subtree 
+    object</font></p>
+    <p>
+    <font face="Arial" size="2">The portals or clusters should now appear in the 
+    <b>Game Window</b>.&nbsp; The volume for a portal or cluster is outlined.&nbsp; The 
+    currently applied &quot;Sound environment&quot; is color coded for each portal.</font></p>
+    <p>
+    <font face="Arial" size="2">8)&nbsp; In the <b>Tool Window</b>, the &quot;Render planes&quot; 
+    and &quot;Render non painted clusters&quot;&nbsp; check boxes can be enabled or 
+    disabled to help view the portals better.</font></p>
+    <p>
+    <font face="Arial" size="2">Move the camera in the <b>Game Window</b> if it is not 
+    already clearly in a portal or cluster.</font></p>
+    <p>
+    <font face="Arial" size="2">9)&nbsp; The current sound environment that is 
+    applied to the portal that the camera is in is displayed in the &quot;sound 
+    environment&quot; pull down menu located in the <b>Properties palette</b> window.&nbsp; In this 
+    case, &quot;NONE&quot; appears since no sound environments have been applied.</font></p>
+    <p>
+    <font face="Arial" size="2">To apply the sound environment to the portal, use 
+    the sound environment pull down menu to select the &quot;forest environment&quot; 
+    sound environment.&nbsp; The sound environment for the portal has now been set.</font></p>
+    <p>
+    <font face="Arial" size="2">Move the camera to the next portal and repeat 
+    this procedure until all the portals for the outside areas of the level have 
+    have the &quot;forest environment&quot; 
+    sound environment set.</font></p>
+    <p>
+    <font face="Arial" size="2">10) A second sound environment is added to the 
+    &quot;Sound environment&quot; palette following the procedures above.</font></p>
+    <p>
+    <font face="Arial" size="2">This sound environment is called &quot;hallway 
+    environment&quot; and uses the tag &quot;hallway.sound_environment&quot;</font></p>
+    <p>
+    <font face="Arial" size="2">11) The &quot;hallway environment&quot; sound environment 
+    is set for the hallway portals in each base.</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/cluster_info_03_large.gif" target="_blank">
+    <img border="0" src="images/cluster_info_03_small.gif" width="250" height="198"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/cluster_info_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/cluster_info_04_large.gif" target="_blank">
+    <img border="0" src="images/cluster_info_04_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/cluster_info_04_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber74" height="40">
+  <tr>
+    <td width="100%" height="6" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font size="2" face="Arial">The following section contains tutorials and 
+    examples that will demonstrate the application of &quot;Weather&quot; 
+    settings to a 
+    portal or cluster.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber75" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p>
+    <font face="Arial" size="2">Setting &quot;Weather&quot; attributes in the .scenario_structure_bsp 
+    portals or clusters.</font></p>
+    <p>
+    <font face="Arial" size="2">For the tutorial level, the weather effect that 
+    will be added is wind.&nbsp; Wind affects certain objects, such as the 
+    contrail on the sniper rifle bullet as it travels and the waving of the flag used in Capture the 
+    Flag.</font></p>
+    <p>
+    <font face="Arial" size="2">1) Go to the <b>Hierarchy view</b> window.&nbsp; In the 
+    Hierarchy tree expand the &quot;Cluster properties&quot; branch. Next, expand the 
+    &quot;Palettes&quot; branch and select the &quot;weather palette&quot; subtree object.</font></p>
+    <p>
+    <font face="Arial" size="2">2) Currently, the &quot;weather palette&quot; is 
+    empty.&nbsp; To create a &quot;weather palette&quot; follow the 
+    procedures below.</font></p>
+    <p>
+    <font face="Arial" size="2">a) Click on <b>New Instance</b> button in the <b>Hierarchy view</b> 
+    window.&nbsp; A new instance of a weather palette will appear in the right 
+    pane of the <b>Hierarchy view</b> window.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">b) Select this new instance.</font></p>
+    <p>
+    <font face="Arial" size="2">c) This weather palette instance must 
+    have a weather (.wind) tag set for it.</font></p>
+    <p>
+    <font face="Arial" size="2">Go to the <b>Properties palette</b> and click on the &quot;<b>...</b>&quot; 
+    button located in the &quot;wind&quot; section.&nbsp; An 
+    <b>Open</b> 
+    dialog window will appear.</font></p>
+    <p>
+    <font face="Arial" size="2">Most multiplayer levels have their own 
+    multiplayer.wind tag file that exists in the root directory for the specific 
+    level.</font></p>
+    <p>
+    <font face="Arial" size="2">For the tutorial, the multiplayer.wind file that 
+    will be used is an example .wind file that is included in the &quot;tutorial_examples&quot; 
+    level directory.</font></p>
+    <p>
+    <font face="Arial" size="2">3) Go to the tutorial_examples level directory 
+    located under the &quot;levels&quot; tags directory. </font></p>
+    <p>
+    <font face="Arial" size="2">4) Select the &quot;multiplayer.wind&quot; 
+    tag.</font></p>
+    <p>
+    <font face="Arial" size="2">5) Click on the <b>Open</b> button.</font></p>
+    <p>
+    <font face="Arial" size="2">This tag reference should appear in the 
+    &quot;wind&quot; section in the <b>Properties palette</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">6) This weather reference must now be 
+    named. </font></p>
+    <p>
+    <font face="Arial" size="2">In the &quot;name&quot; field in the <b>Properties palette</b> 
+    window enter the name &quot;forest wind&quot;.</font></p>
+    <p>
+    <font face="Arial" size="2">The name should update in the right pane of the 
+    <b>Hierarchy view</b> window.</font></p>
+    <p>
+    <font face="Arial" size="2">The name does not matter, it is just used for 
+    reference.&nbsp; The weather can be changed underneath this name.&nbsp; 
+    This enables the generic &quot;forest wind&quot;  weather instance to be 
+    applied to the portals or clusters in the level and then the actual 
+    wind tag reference can be changed if needed to adjust or select the 
+    appropriate wind and weather effects.</font></p>
+    <p>
+    <font face="Arial" size="2">7) The wind direction and magnitude must now be 
+    set.&nbsp; Follow the procedures below to enter these settings</font></p>
+    <p>
+    <font face="Arial" size="2">a) In the &quot;wind direction&quot; settings enter a 
+    &quot;3&quot; in 
+    the &quot;i&quot; field.&nbsp; The i, j, and k fields represent a vector.</font></p>
+    <p>
+    <font face="Arial" size="2">b) In the &quot;wind magnitude&quot; field enter a value 
+    of &quot;2&quot;.&nbsp; This will be the strength of the wind in the direction indicated 
+    in the &quot;wind direction&quot; fields.</font></p>
+    <p>
+    <font face="Arial" size="2">8) Notice that there is also a &quot;particle system&quot; 
+    section in the <b>Properties palette</b> window for the weather palette object.&nbsp;
+    </font></p>
+    <p>
+    <font face="Arial" size="2">If rain or some other weather effect was needed 
+    in the level, this is the field where a particle system and associated tags 
+    would be referenced.</font></p>
+    <p>
+    <font face="Arial" size="2">The particle system would be affected by the 
+    wind values set.</font></p>
+    <p>
+    <font face="Arial" size="2">The first image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    <p>
+    <font face="Arial" size="2">The weather will now be applied to all 
+    the portals or clusters in the level.&nbsp; </font></p>
+    <p>
+    <font face="Arial" size="2">8) Go to the <b>Hierarchy view </b>window.&nbsp; In the 
+    Hierarchy tree expand the &quot;Cluster properties&quot; branch. Next, expand the 
+    &quot;Palettes&quot; branch and select the &quot;weather&quot; subtree 
+    object</font></p>
+    <p>
+    <font face="Arial" size="2">The portals or clusters should now appear in the 
+    <b>Game Window</b>.&nbsp; The volume for a portal or cluster is outlined.&nbsp; The 
+    currently applied weather is color coded for each portal.</font></p>
+    <p>
+    <font face="Arial" size="2">9)&nbsp; In the <b>Tool Window</b>, the &quot;Render planes&quot; 
+    and &quot;Render non painted clusters&quot;&nbsp; check boxes can be enabled or 
+    disabled to help view the portals better.</font></p>
+    <p>
+    <font face="Arial" size="2">Move the camera in the <b>Game Window</b> if it is not 
+    already clearly in a portal or cluster.</font></p>
+    <p>
+    <font face="Arial" size="2">10) The current weather that is 
+    applied to the portal that the camera is in is displayed in the &quot;weather&quot; pull down menu located in the 
+    <b>Properties palette</b> window.&nbsp; In this 
+    case, &quot;NONE&quot; appears since no &quot;weather&quot; have been applied.</font></p>
+    <p>
+    <font face="Arial" size="2">To apply &quot;weather&quot; to the portal, use 
+    the weather pull down menu to select the &quot;forest wind&quot; 
+    weather system.&nbsp; The weather for the portal has now been set.</font></p>
+    <p>
+    <font face="Arial" size="2">Move the camera to the next portal and repeat 
+    this procedure until all the portals for the level have 
+     
+    the &quot;forest wind&quot; 
+    sound environment set.</font></p>
+    <p>
+    <font face="Arial" size="2">The second image further explains the 
+    above procedures.</font></p>
+    <p>
+    &nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/cluster_info_05_large.gif" target="_blank">
+    <img border="0" src="images/cluster_info_05_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/cluster_info_05_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/cluster_info_06_large.gif" target="_blank">
+    <img border="0" src="images/cluster_info_06_small.gif" width="320" height="250"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/cluster_info_06_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Saving the Level</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber11" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">At this point, the level should be saved. </font>
+    <p><font face="Arial" size="2">Anytime the objects in the level are touched, 
+    the .scenario tag should be saved.&nbsp; The .scenario_structure_bsp data 
+    tag only needs to be saved when the data for the portals are modified.</font></p>
+    <p><font face="Arial" size="2">In the tutorials and examples above, all 
+    aspects of the level were modified, therefore both the .scenario and the .scenario_structure_bsp 
+    must be saved.</font></p>
+    <p>
+    <font face="Arial" size="2">To save the level .scenario do the following:</font></p>
+    <p><font face="Arial" size="2">1) Make sure that none of the portal or 
+    cluster groups are selected in the <b>Hierarchy view</b> under the Cluster 
+    properties group.&nbsp; The option to save the .scenario tag will not appear 
+    if any of these groups are selected.</font></p>
+    <p><font face="Arial" size="2">2) Go to <b>File</b>.</font></p>
+    <p><font face="Arial" size="2">3) Click on <b>Save .scenario</b></font></p>
+    <p><font face="Arial" size="2">4) A message indicating the successful saving 
+    of the .scenario should appear in the <b>Game Window</b>.</font></p>
+    <p>&nbsp;</p>
+    <p>
+    <font face="Arial" size="2">To save the level .scenario_structure_bsp do the 
+    following:</font></p>
+    <p><font face="Arial" size="2">1) Go to the <b>Hierarchy view</b> and select the 
+    Cluster properties group and expand the group tree.&nbsp; </font></p>
+    <p><font face="Arial" size="2">2) Select any of the portal or cluster 
+    groups.</font></p>
+    <p><font face="Arial" size="2">3) Go to <b>File</b>.</font></p>
+    <p><font face="Arial" size="2">4) Click on <b>Save .scenario_structure_bsp</b></font></p>
+    <p><font face="Arial" size="2">5) A message indicating the successful saving 
+    of the .scenario_structure_bsp should appear in the <b>Game Window</b>.</font></p>
+    <p><font face="Arial" size="2">The level data tags are now saved.</font></p>
+    <p>&nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="643"> <b><font face="Arial">Conclusion to 
+        Population</font></b></td>
+		<td width="189">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber53" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The level has now has the necessary game objects 
+    in it and cluster settings that will allow it to run properly in Halo as a multiplayer level.</font><p><font face="Arial" size="2">Completed versions or example versions of the 
+    level tags that are created in the tutorial sections can be found under the 
+    &quot;Halo\tags\levels\test\tutorial_examples&quot; directory.&nbsp; The 
+    completed tags 
+    have been provided as a reference to aid in the learning process.</font></p>
+    <p><font face="Arial" size="2">Once the user has successfully completed the 
+    procedures above they can proceed to the 
+    next section </font>
+    <b>
+    <a href="mp_ld_level_running_in_game.html">
+    <font face="Arial" size="2" color="#3FA2FF">Running a Game Level in Halo</font></a></b><font face="Arial" size="2">.</font></p>
+    <p>&nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<ul>
+  <li>
+
+<p style="margin-top: 0; margin-bottom: 0; line-height:200%" align="left">
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <a href="mp_ld_level_running_in_game.html">
+    <u>Continue to the Next Section - Running a Game Level in Halo</u></a></b></font></p>
+
+  </li>
+  <li>
+  <p style="line-height: 200%; margin-top: 0; margin-bottom: 0"><font face="Arial"><b><a href="../../../main/main.html">Return to Main Page</a></b></font></li>
+</ul>
+
+</body>
+
+</html>

@@ -1,0 +1,1312 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Multiplayer Level Design Level Creation</title>
+<base target="_self">
+</head>
+
+<body bgcolor="#000000" text="#C0C0C0" link="#3FA2FF" vlink="#0066CC" alink="#FFFFFF" background="file:///D:/GameDev/HaloDev/Halo%20End%20User%20Editing%20Kit/Halo%20PC%20Editing%20Reference/images/background.gif">
+
+<table cellpadding="0" cellspacing="0" border="0" width="869">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <font face="Arial" size="2">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></font></td>
+		<td bgcolor="black" width="748"> <b><font face="Arial" color="#3FA2FF">
+        Level Creation - Part 1</font></b></td>
+		<td width="101"><font face="Arial" size="2">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></font></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber1" height="70">
+  <tr>
+    <td width="100%" height="43">
+    <p align="left" style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following section provides more detailed 
+    information on creating Multiplayer levels and environments and includes 
+    tutorials and examples.&nbsp; Topics covered in the tutorials include the 
+    creation of a level directory, creation of a reference frame, sealed world 
+    rules and explanation, the creation of a simple level, the creation of material and shader 
+    groups, the usage and application of materials and shaders, material and 
+    shader naming conventions, texture mapping, and miscellaneous and general tips 
+    and suggestions.</font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="868">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="718"> <b><font face="Arial" size="2">Getting 
+        Started</font></b></td>
+		<td width="130"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber1" height="64">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Before editing or creating content for Halo 
+    please make sure to follow the set up and update information found in the 
+    section
+    <font color="#3FA2FF">
+    <b><a href="../../general/creating_a_dev_environment.html">
+    <font color="#3FA2FF">Creating a Development Environment</font></a></b></font>.&nbsp;
+    </font>
+    <p><font face="Arial" size="2">It is also recommended that the end user read 
+    through all the information found in the associated <b>Reference Sections</b> under 
+    <b>General</b>.</font></p>
+    <p><font face="Arial" size="2">A completed version or example version of the 
+    level created in the following tutorial sections can be found under the 
+    &quot;Halo\data\levels\test\tutorial_examples&quot; directory.&nbsp; The source and 
+    related materials have been provided as a reference to aid in the learning 
+    process.</font></p>
+    <p></p>
+    <p></p>
+    <p></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="868">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="682"> <b><font face="Arial" size="2">Setting 
+        Up 3ds Max</font></b></td>
+		<td width="166"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="57%" id="AutoNumber2" height="64">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <span class="body"><font face="Arial" size="2">Make sure that the Blitzkrieg 
+    exporter plug-in for 3ds Max is installed, for more information see the<b>
+    </b></font><font face="Arial" size="2"><b>Halo Editing Kit Installation </b>
+    topic under the </font></span>
+    <font color="#3FA2FF" face="Arial" size="2">
+    <b><a href="../../general/creating_a_dev_environment.html">
+    <font color="#3FA2FF">Creating a Development Environment</font></a> </b></font>
+    <span class="body"><font face="Arial" size="2">section.</font></span><p>
+    <span class="body"><font face="Arial" size="2">Each individual has their own 
+    style and settings that they prefer for 3ds Max the following are some 
+    suggestions and guidelines that may help with Halo editing.&nbsp; For 
+    additional information, please see the documentation that came with 3ds Max 
+    (associated manuals and in program User Reference under Help).</font></span></p>
+    <p><span class="body"><font face="Arial" size="2">The following are some 
+    tips and pointers for setting up 3ds Max for Halo content editing, 
+    specifically game environment creation.</font></span></p>
+    <p><span class="body"><font face="Arial" size="2">NOTE:&nbsp; All the setup 
+    suggestions were done using 3ds Max 5.1.</font></span></p>
+    <p>&nbsp;</p>
+    <p><span class="body"><b><font face="Arial">Auto Backup</font></b></span></p>
+    <p><span class="body"><font face="Arial" size="2">It is HIGHLY recommended 
+    to enable the auto file backup features inherent in 3ds Max.&nbsp; This can 
+    save a lot of headaches and wasted time in lost work.&nbsp; To access the 
+    auto file backup features do the following:</font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">1) Click on <b>Customize</b> and select <b>
+    Preferences</b></font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">2) Click on the <b>Files</b> tab</font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">3) On the bottom left click on the Enable check 
+    box under Auto Backup</font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">4) Set the number of backup files and time 
+    intervals for the files to be backed up.</font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">5) Hit <b>OK</b></font></span></p>
+    <p><span class="body"><font face="Arial" size="2">It is also highly 
+    recommended that work be saved and saved often and that alternative backups 
+    be made of all relevant content</font></span></p>
+    <p>&nbsp;</p>
+    <p><span class="body"><b><font face="Arial">Key Configuration</font></b></span></p>
+    <p><span class="body"><font face="Arial" size="2">Specific key 
+    configurations are not going to be listed here, but suffice it to say, if 
+    3ds Max is being used as a level design tool it would be most beneficial to 
+    bind commonly used commands and operations for quick access.&nbsp; Some of 
+    the more commonly used commands that may not be as easily accessible with 
+    the default key configuration include Move Mode, Rotate, Backface Cull 
+    Toggle, Maximize Viewport Toggle, Rotate View Mode, and Zoom Mode.</font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body"><b>
+    <font face="Arial">Configure Modifier Sets</font></b></span></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">Just as there are several commonly used commands 
+    and operations that are used when creating and editing Halo game levels, 
+    there are also very commonly used modifiers.&nbsp; These modifiers include 
+    Edit Mesh, UVW Map, Unwrap UVW, and STL Check (used for checking if the 
+    level is a sealed volume and\or for finding open edges).</font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body"><b>
+    <font face="Arial">Units Setup</font></b></span></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">1) Click on the menu option <b>Customize</b> and select 
+    <b>Units Setup</b></font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">2) Select Generic Units at the bottom</font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">3) Hit <b>OK</b></font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">The example levels, content, and other numerical 
+    information (measurements for various Halo related statistics such as player 
+    dimensions) were done using the Generic Units settings.</font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body"><b>
+    <font face="Arial">View Port Configuration</font></b></span></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">1) Click on the menu option <b>Customize</b> and select
+    </font></span><b><font size="2" face="Arial">View Port Configuration</font></b></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">2) Select the Layout Tab</font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">3) Select the layout that suits you best, the 
+    example levels and tutorials use a 3 window layout with a 3d Perspective 
+    View at the top (Smooth and Highlight and Edge Faces turned on), Top Down 
+    View on the lower left and a Right\Left\Front view for the lower right 
+    window depending on the configuration of the level.</font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span class="body">
+    <font face="Arial" size="2">4) Hit <b>OK</b></font></span></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="868">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="674"> <b><font face="Arial" size="2">Creating 
+        a Level</font></b></td>
+		<td width="174"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber3" height="42">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The following sections contain various 
+    information and examples that form one large tutorial that will go through 
+    the creation of a simple box level that will be used to 
+    demonstrate the construction of a Halo multiplayer level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+    <font face="Arial">Creation of a Level Directory</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber3" height="42">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The level directory will contain all the raw 
+    data or source files used in the creation of the level (.max, .tif, .psd, 
+    .jms, etc...).&nbsp; </font>
+    <p><font size="2" face="Arial">This level directory will have 
+    subdirectories. The main directory as well as the subdirectories are 
+    specifically used by the tools to compile the exported data formats into 
+    something that can be compiled into a .map cache file that is used to run 
+    the level in Halo.</font></p>
+    <p><font size="2" face="Arial">The name of the source directory must match 
+    the name of the exported .jms file (as will be explained later).&nbsp; The 
+    compiled data tags such as the .scenario and .scenario_structure_bsp tags 
+    that will exist in the tags directory will also share this name, as well as 
+    the .bitmap light map file once it is created by running the radiosity 
+    process on the level.</font></p>
+    <p><font face="Arial" size="2">The level directory name MUST BE UNIQUE, 
+    unless it exists under a totally different directory structure.</font></p>
+    <p><font face="Arial" size="2">As will be seen and demonstrated later, the 
+    level can pull shader tag information as well as other tag information from 
+    other tags that exist in other game level directories.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The first step is to create a level directory 
+    under the level directory structure tree under the data directory in Halo.&nbsp; 
+    This level will be called &quot;tutorial&quot;.&nbsp; Follow the  steps below:</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">1) 
+    Under the Halo game directory (e.g. c:\Halo) create a directory called 
+    &quot;data&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">2) 
+    Under the new &quot;data&quot; directory create a directory called &quot;levels&quot;.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">3) 
+    Under the &quot;levels&quot; directory create a directory called &quot;test&quot;.&nbsp; </font>
+    </p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">4) 
+    Finally, under the &quot;test&quot; directory create the level working directory 
+    called &quot;tutorial&quot;.</font></p>
+    <p><font face="Arial" size="2">The directory structure should now be as 
+    follows (if using the above example (e.g. c:\Halo)):&nbsp; 
+    c:\Halo\data\levels\test\tutorial</font></p>
+    <p><font face="Arial" size="2">Now that the level directory has been 
+    created, three subdirectories will need to be created that will contain the 
+    content source for the level.&nbsp; As mentioned previously, the tools 
+    recognize this directory structure during the compilation process of the 
+    level and of the .map cache file so it must be properly setup.</font></p>
+    <p><font face="Arial" size="2">Under the &quot;tutorial&quot; level directory add the 
+    following directories:</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">1) 
+    bitmaps (Using the previous example the directory structure would look like 
+    this: c:\Halo\data\levels\test\tutorial\bitmaps)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">2) 
+    models&nbsp; (Using the previous example the directory structure would look 
+    like this: c:\Halo\data\levels\test\tutorial\models)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">3) 
+    scenery (Using the previous example the directory structure would look like 
+    this: c:\Halo\data\levels\test\tutorial\scenery)</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">The 
+    bitmaps directory is where .tif image files will be placed that can be 
+    compiled into .bitmap data tag files.&nbsp; The .tif image files in this 
+    directory can also be used for the displaying of the image on a surface in a 
+    level in 3ds Max (the .tif gets set as a Diffuse Map in the Sub-Material of 
+    a Multi/Sub-Object).</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">The 
+    models directory is where the source files for the level mesh will be saved 
+    and where the .jms file used by tool to compile a level BSP data tag will be 
+    put.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">The 
+    scenery directory is where custom scenery model sub-directories and the 
+    associated resources will be placed. </font></p>
+    <p><font face="Arial" size="2">This is the level directory structure used by 
+    Bungie to develop Halo and is the directory structure that Gearbox adopted 
+    in order to keep the source tree consistent.&nbsp; It is also the directory 
+    structure that the tutorial and examples will use.</font></p>
+    <p><font face="Arial" size="2">NOTE: As will be seen later, when the data 
+    tags are created a directory and associated tags will be created or modified 
+    that mirrors the directory structure under data except this directory 
+    structure will be found under the &quot;tags&quot; directory under the root directory 
+    of Halo.&nbsp; In addition, when a .map cache file is created, the name of 
+    the cache file will be that of the main level directory structure used and will be 
+    found under the &quot;maps&quot; directory under the main or root Halo game directory.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+    <font face="Arial">Creation of a Reference Frame</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber3" height="42">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">A Halo level MUST have a reference frame.&nbsp; 
+    The reference frame is used as a reference point for the placement of 
+    objects in the level.&nbsp; Therefore, once the reference frame is placed 
+    and objects are placed in the level using Sapien, do not individually move 
+    the reference frame (or its associated polygons or vertices) or the objects 
+    will move or shift in the level.</font><p><font face="Arial" size="2">The 
+    reference frame is very useful during the construction of a Halo level.&nbsp; 
+    Any models or geometry that are not linked to the reference frame (the 
+    reference frame is considered the &quot;parent&quot;) do not get exported when 
+    exporting out the .jms file using the Blitzkrieg plug in.&nbsp; This can 
+    make testing and debugging the level very easy.&nbsp; It also means that 
+    reference models (such as for players or vehicles) can be placed in the 
+    level and they will never get accidentally exported.</font></p>
+    <p><font face="Arial" size="2">It is also important to note that there must also be valid geometry attached or linked to the reference frame or the 
+    Blitzkrieg exporter will not export the .jms file and will give an error 
+    dialog &quot;There was no geometry to export&quot;.&nbsp; </font></p>
+    <p><font face="Arial" size="2">Additional information on the Reference Frame 
+    and other technical rules or guidelines can be found under the</font><span class="body"><font face="Arial" size="2"><b>
+        Technical Rules </b>discussion topic under the</font></span><font face="Arial" size="2">&nbsp;
+    </font><b>
+    <a href="mp_ld_general_overview.html">
+    <font face="Arial" size="2" color="#3FA2FF">General Overview</font></a></b><font face="Arial"><b><font size="2" color="#3FA2FF"> </font></b></font>
+    <font face="Arial" size="2">section under </font>
+        <span class="body">  
+    <b><font face="Arial" size="2">
+        Multiplayer Level Design</font></b></span><font face="Arial" size="2">.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber3" height="42">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">A reference frame is very simple to create, the 
+    following steps and example images will demonstrate the creation of a 
+    reference frame.</font><p><font face="Arial" size="2">The reference frame is 
+    basically a box.&nbsp; It can be any size (larger is preferred to help with 
+    its selection and to make sure it does not get confused with other world 
+    geometry) and can even be a sphere, cone, cylinder or pyramid.&nbsp; As long 
+    as it is an object that is an enclosed volume.</font></p>
+    <p><font face="Arial" size="2">The reference frame should be created such 
+    that it does not interfere with editing and will not obscure parts of the 
+    level.&nbsp; For the example, the reference frame will be created such that 
+    it exists outside of the &quot;northern&quot; border of the example level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber3" height="24">
+  <tr>
+    <td width="49%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">To create a reference frame do the following:</font><p>
+    <font face="Arial" size="2">1) In 3ds Max select the <b>Create</b> tab and 
+    have <b>Standard Primitives</b> selected.</font></p>
+    <p><font face="Arial" size="2">2) Under <b>Object Type</b> click on the Box 
+    button.</font></p>
+    <p><font face="Arial" size="2">3) In any of the 3ds Max windows use the 
+    mouse to drag and create a Box.&nbsp; </font></p>
+    <p><font face="Arial" size="2">4) The dimensions for the Box can be manually 
+    set under <b>Parameters</b>.</font></p>
+    <p><font face="Arial" size="2">5) Under <b>Name and Color</b> type in the 
+    name &quot;frame&quot; and select a distinctive color for the Reference Frame.</font></p>
+    <p><font face="Arial" size="2">The Reference Frame can now be moved to its 
+    final position, in this case it was moved such that its coordinates are <b>X</b>: 
+    0.0 <b>Y</b>: 1800.0 <b>Z</b>: 0.0&nbsp;&nbsp; </font></p>
+    <p><font face="Arial" size="2">The image to the right further explains the 
+    above procedures.</font></p>
+    <p><font face="Arial" size="2">NOTE: The box or Reference Frame does not 
+    have to have a specific Material applied to it.&nbsp; The application of 
+    Materials and use of the Material editor in 3ds Max will be discussed later 
+    in this section.</font></p>
+    <p>&nbsp;</td>
+    <td width="54%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center"><a target="_blank" href="images/frame_creation_large.gif">
+    <img border="2" src="images/frame_creation_small.gif" width="244" height="193"></a></p>
+    <blockquote>
+      <p align="center">
+      <a target="_blank" href="images/frame_creation_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+    <font face="Arial">Creation of a Simple Level</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber3" height="42">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following steps and example images will 
+    demonstrate the creation of a box that will serve as the tutorial level and 
+    will be utilized for all the subsequent tutorials.</font><p><font face="Arial" size="2">
+    When creating or starting out a level try and keep the level centered at the 
+    origin.&nbsp; This can make the creation process much easier, such as when 
+    mirroring level geometry (such as team bases and other symmetric elements of 
+    the level).</font></p>
+    <p><font face="Arial" size="2">The level must be a sealed.&nbsp; The level 
+    must be a contiguous structure that forms a sealed volume, the following 
+    rules are referred to as the <b>Sealed World Rules</b>:</font></p>
+    <ul>
+      <li><font face="Arial" size="2">There must not be any open edges, the 
+      component parts or geometry of the level must match (edges and verts).&nbsp; 
+      There are some exceptions to the rule which will be covered in later 
+      tutorials and examples in <u>
+    <b><a href="mp_ld_level_creation_part_02.html">Level Creation - Part 2</a></b></u>, 
+      but basically, anything that is solid (has to have collision with the 
+      player and vehicles) cannot have any open edges.</font></li>
+    </ul>
+    <ul>
+      <li><font face="Arial" size="2">The normals of the faces used to create 
+      the level geometry must face towards the playable area of the level or 
+      section of the level.&nbsp; The normals of the faces or polygons determine 
+      not just the face that will be rendered or seen by the player but also the 
+      surface to be used for collision and physics.</font></li>
+    </ul>
+    <p><font face="Arial" size="2">Additional information on the Reference Frame 
+    and Sealed World Rules and other technical rules or guidelines can be found under the</font><span class="body"><font face="Arial" size="2"><b>
+        Technical Rules </b>discussion topic under the</font></span><font face="Arial" size="2">&nbsp;</font><b><a href="file:///D:/GameDev/HaloDev/Halo%20End%20User%20Editing%20Kit/Halo%20PC%20Editing%20Reference/references/level_design/mp_level_design/mp_ld_general_overview.html"><font face="Arial" size="2" color="#3FA2FF">General 
+    Overview</font></a></b><font face="Arial"><b><font size="2" color="#3FA2FF"> </font></b></font>
+    <font face="Arial" size="2">section under </font>
+        <span class="body">  
+    <b><font face="Arial" size="2">
+        Multiplayer Level Design</font></b></span><font face="Arial" size="2">.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber3" height="24">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Creation of a simple box room:</font><p>
+    <font face="Arial" size="2">1) In 3ds Max select the <b>Create</b> tab and 
+    have <b>Standard Primitives</b> selected.</font></p>
+    <p><font face="Arial" size="2">2) Under <b>Object Type</b> click on the Box 
+    button.</font></p>
+    <p><font face="Arial" size="2">3) In any of the 3ds Max windows use the 
+    mouse to drag and create a Box.&nbsp; </font></p>
+    <p><font face="Arial" size="2">4) The dimensions for the Box can be manually 
+    set under <b>Parameters</b>.&nbsp; The dimensions for the box that will be 
+    used are <b>Length</b>: 3200.0 <b>&nbsp;Width</b>: 2400.0 <b>&nbsp;Height</b>: 
+    1600.0&nbsp;&nbsp; </font></p>
+    <p><font face="Arial" size="2">5) Under <b>Name and Color</b> type in the 
+    name &quot;level&quot; and select a distinctive color for the box.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2" face="Arial">The following steps will make the box satisfy 
+    the Sealed World Rules and will link it to the frame, in effect making it a 
+    simple Halo level in terms of geometry.</font></p>
+    <p><font face="Arial" size="2">6) Move the box to the origin of the world,&nbsp; <b>X</b>: 
+    0.0 <b>Y</b>: 0.0 <b>Z</b>: 0.0.&nbsp;&nbsp; </font></p>
+    <p><font face="Arial" size="2">7) Turn the box into an Editable Mesh. There 
+    are several ways to do this including the following.&nbsp; Select the box, 
+    select the <b>Modify </b>tab and using the <b>Modifier List</b> pull-down 
+    menu select <b>
+    Edit Mesh</b>.<b> </b></font></p>
+    <p><font face="Arial" size="2">8) Flip all the normals for the box inwards, 
+    the interior of the box will be the playable area of the level.&nbsp; This 
+    can be done by doing the following:</font></p>
+    <p><font face="Arial" size="2">a) Click on <b>Edit Mesh</b> in the <b>
+    Modifier Stack</b>.&nbsp; </font></p>
+    <p><font face="Arial" size="2">b) In <b>Selection</b>, select <b>Face</b> 
+    mode.&nbsp; Select all the faces for the box. </font></p>
+    <p><font face="Arial" size="2">c) Under <b>Surface Properties</b>, click on
+    <b>Flip</b>.&nbsp; All the faces for the box should now have their normals 
+    facing inwards.</font></p>
+    <p><font face="Arial" size="2">The second image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">9) Link the box to the Reference Frame 
+    (frame).&nbsp; The following demonstrates one method of doing this.</font></p>
+    <p><font face="Arial" size="2">a) Select the <b>Create</b> tab.&nbsp; Select 
+    the box (level).&nbsp; </font></p>
+    <p><font face="Arial" size="2">b) Click on <b>Select and Link</b>.</font></p>
+    <p><font face="Arial" size="2">c) Click on <b>Select by Name</b>.&nbsp;
+    </font></p>
+    <p><font face="Arial" size="2">d) In the <b>Select Parent</b> window, select 
+    the reference frame (frame).</font></p>
+    <p><font face="Arial" size="2">e) Click on <b>Link</b>. </font></p>
+    <p><font face="Arial" size="2">The third image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">10) To see if &quot;level&quot; is now linked to the 
+    Reference Frame &quot;frame&quot; do the following:</font></p>
+    <p><font face="Arial" size="2">a) Click on <b>Select Object</b>. </font></p>
+    <p><font face="Arial" size="2">b) Click <b>Select by Name</b>.&nbsp; </font></p>
+    <p><font face="Arial" size="2">c) In the <b>Select Objects</b> window, make sure 
+    that the <b>Display Subtree</b> box is checked.</font></p>
+    <p><font face="Arial" size="2">d) &quot;level&quot; should now appear linked under 
+    &quot;frame&quot;.</font></p>
+    <p><font face="Arial" size="2">The bottom image or last image further 
+    explains the above procedures.</font></p>
+    <p>&nbsp;</td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a target="_blank" href="images/simple_room_creation_large.gif">
+    <img border="0" src="images/simple_room_creation_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/simple_room_creation_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a target="_blank" href="images/simple_room_flip_normals_large.gif">
+    <img border="0" src="images/simple_room_flip_normals_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/simple_room_flip_normals_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a target="_blank" href="images/simple_room_link_frame_large.gif">
+    <img border="0" src="images/simple_room_link_frame_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/simple_room_link_frame_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">&nbsp;<p align="center">
+    <a target="_blank" href="images/simple_room_frame_linked_large.gif">
+    <img border="0" src="images/simple_room_frame_linked_small.gif" width="250" height="196"></a><p align="center">
+    <a target="_blank" href="images/simple_room_frame_linked_large.gif">Click to 
+    Open Larger Image in New Window</a></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Application of Materials</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber8" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">Before discussing and demonstrating materials 
+    and the application of materials to surfaces in the level, it is HIGHLY 
+    recommended that the </font>
+    <font face="Arial"><b>
+    <a href="../../general/materials_overview.html">
+<font size="2" color="#3FA2FF">Materials Overview</font></a><font size="2" color="#3FA2FF"> </font></b></font>
+    <font face="Arial" size="2">section under the <b>General Reference</b> section be reviewed.&nbsp; 
+    The information contained in the <b>Material Naming Conventions and Rules</b> as 
+    well as the names of <b>Special Materials</b> and special <b>Shader Symbols</b> of this 
+    section will be referenced in the following examples. </font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber8" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will demonstrate 
+    the creation of a <b>Multi/Sub-Object</b> material group and the creation, setup, 
+    and naming of the <b>Sub-Materials</b> under the <b>Multi/Sub-Object</b> 
+    material groups.&nbsp; </font>
+    <p><font face="Arial" size="2">The set up examples for <b>Sub-Materials</b> 
+    will include the linking of images that will be displayed in 3ds Max on the 
+    faces for the assigned material.&nbsp; These images are not absolutely 
+    necessary and no information related to these images are exported to the .jms 
+    file which is used by Tool to compile the level data tags.&nbsp; As 
+    previously mentioned, the <b>Sub-Material</b> name is important and is part 
+    of the data exported to the .jms file.&nbsp; This is the name that Halo will 
+    reference when assigning a shader to a particular surface.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The referenced image in the <b>Sub-Material
+    </b>can be any image, but it is usually the base map or base image (in the 
+    form of a .bitmap) that is 
+    referenced by the shader data tag.&nbsp; It is common for images to be used 
+    that are helpful in certain creation processes, such as displaying a grid 
+    texture to aid in the UVW Mapping process.&nbsp; </font></p>
+    <p><font face="Arial" size="2"><b>Special Materials </b>typically do not 
+    have images associated with them since they are primarily utility materials.&nbsp; 
+    Typically, just a material color or Diffuse color is associated with these
+    <b>Special Materials</b>.</font></p>
+    <p>
+    <font size="2" face="Arial">Every face for the game level must have a 
+    material assigned to it (except for the Reference Frame as previously 
+    mentioned).</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber3" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Creation of a  Multi/Sub-Object material group:</font><p>
+    <font face="Arial" size="2">1) In 3ds Max select the level.&nbsp; Open the
+    <b>Material Editor</b>.</font></p>
+    <p><font face="Arial" size="2">2) Select the first <b>Material Group</b>.<b>&nbsp;
+    </b>This Material Group is currently set to a <b>Standard</b> Material.</font></p>
+    <p><font face="Arial" size="2">3) Click on the <b>Standard</b> button to 
+    bring up the <b>Material/Map Browser</b>.</font></p>
+    <p><font face="Arial" size="2">4) In the <b>Material/Map Browser</b> click 
+    on <b>Multi/Sub-Object</b>.</font></p>
+    <p><font face="Arial" size="2">5) Click on <b>OK</b>.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">6) This <b>Multi\Sub-Object</b> is going to 
+    be called &quot;tutorial terrain\sky&quot;.&nbsp; Type this name into the <b>
+    Multi\Sub-Object </b>description window.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The name does not matter since it is not 
+    exported, the<b> Multi\Sub-Objects </b>are being used to organize and apply 
+    like groups of materials to objects being created for the level.&nbsp; This 
+    will be demonstrated later in the tutorials and examples.</font></p>
+    <p><font face="Arial" size="2">7) Now apply the <b>Multi\Sub-Object</b> to 
+    the level.&nbsp; Since &quot;level&quot; is selected, click on <b>Assign Material to 
+    Selection</b>.&nbsp; This <b>Multi\Sub-Object </b>has now been assigned to 
+    &quot;level&quot;.&nbsp; The <b>Sub-Materials for this Multi\Sub-Object </b>can now be 
+    applied to the object using the materials associated <b>ID</b> numbers.</font></p>
+    <p><font face="Arial" size="2">8) Just for organization, the extra <b>
+    Sub-Materials</b> were deleted by selecting the <b>Sub-Materia</b>l to 
+    delete and clicking on <b>Delete</b> until the desired number of <b>
+    Sub-Materials</b> remained, in this case, 2 <b>Sub-Materials</b>.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">The 2 <b>Sub-Materials </b>are now going to 
+    be named the names of the shaders which will be applied to the surfaces and 
+    appear in the game.</font></p>
+    <p><font face="Arial" size="2">9) To name or label<b> Sub-Material ID 1 </b>
+    do the following:</font></p>
+    <p><font face="Arial" size="2">a) Click on the <b>Sub-Material</b> button to 
+    go from displaying the <b>Multi/Sub-Object Basic Parameters</b> window in 
+    the <b>Material Editor</b> to displaying the <b>Shader Basic Parameters</b>,
+    <b>Blinn Basic Parameters</b>, <b>Extended Parameters</b>, <b>SuperSampling</b>,
+    <b>Maps, Dynamic Properties</b> and <b>Viewport Manager</b>.</font></p>
+    <p><font face="Arial" size="2">The second image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">b) Enter the name &quot;+sky&quot; into the name or 
+    label field.</font></p>
+    <p><font face="Arial" size="2">c) Under <b>Blinn Basic Parameters</b>, 
+    double click on the <b>Diffuse</b> color setting.&nbsp; </font></p>
+    <p><font face="Arial" size="2">d) The <b>Color Selector: Diffuse Color</b> 
+    window will be available. Set a color to be displayed for this material.&nbsp; 
+    In this case a light blue was chosen.&nbsp; </font></p>
+    <p><font face="Arial" size="2">e) Click on <b>Close</b>.&nbsp; The color 
+    chosen should now appear as the <b>Diffuse</b> color setting.</font></p>
+    <p><font face="Arial" size="2">The third image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">10) In the <b>Material Editor</b>, enable the 
+    display of the material by clicking on the <b>Show Map in Viewport</b> 
+    button.</font></p>
+    <p><font face="Arial" size="2">11) To return to the <b>Multi/Sub-Object 
+    Basic Parameters </b>click on the <b>Go to Parent</b> button.</font></p>
+    <p><font face="Arial" size="2">The fourth image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">12) To name or label<b> Sub-Material ID 2 </b>
+    do the following:</font></p>
+    <p><font face="Arial" size="2">Click on the <b>Sub-Material</b> button to 
+    go from displaying the <b>Multi/Sub-Object Basic Parameters</b> window in 
+    the <b>Material Editor</b> to displaying the <b>Shader Basic Parameters</b>,
+    <b>Blinn Basic Parameters</b>, <b>Extended Parameters</b>, <b>SuperSampling</b>,
+    <b>Maps, Dynamic Properties</b> and <b>Viewport Manager</b>.</font></p>
+    <p><font face="Arial" size="2">Enter the name &quot;example_tutorial_ground&quot; into the 
+    name or label field.</font></p>
+    <p><font face="Arial" size="2">13)&nbsp; To display a texture or image for 
+    this material when applied to a surface do the following:</font></p>
+    <p><font face="Arial" size="2">a) Under <b>Blinn Basic Parameters</b>, click 
+    on the small box to the right of the <b>Diffuse</b> color setting.&nbsp; 
+    This will display the <b>Material/Map Browser</b>.</font></p>
+    <p><font face="Arial" size="2">b) Click on <b>Bitmap</b>.</font></p>
+    <p><font face="Arial" size="2">c) Click on <b>OK</b> and the <b>Select Bitmap Image File</b> window 
+    will now be displayed.</font></p>
+    <p><font face="Arial" size="2">The fifth image further 
+    explains the above procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">14) To select an image to display for the 
+    material do the following:</font></p>
+    <p><font face="Arial" size="2">a) In the <b>Select Bitmap Image File </b>go 
+    to the bitmaps directory under Halo\data\levels\test\tutorial_examples.</font></p>
+    <p><font face="Arial" size="2">This directory SHOULD exist if the Halo 
+    Editing Kit was installed and set up properly following the instructions 
+    under <b>Halo Editing Kit Installation</b> in the&nbsp;
+    <font color="#3FA2FF">
+    <b><a href="../../general/creating_a_dev_environment.html">
+    <font color="#3FA2FF">Creating a Development Environment</font></a> </b></font>section under <b>General Reference</b>.</font></p>
+    <p><font face="Arial" size="2">The files in the tutorial_examples level 
+    represent the final result of the tutorial and example process and is 
+    provided as a reference to aid in the learning process.</font></p>
+    <p><font face="Arial" size="2">b) Under the bitmaps directory there should 
+    be several .tif image files.&nbsp; Select the example_tutorial_ground.tif 
+    file.</font></p>
+    <p><font face="Arial" size="2">As was mentioned previously, the resources 
+    under the tutorial_examples directory represent the end result of all the 
+    examples and tutorials contained within the Halo PC Editing Reference.&nbsp; </font></p>
+    <p><font face="Arial" size="2">The Halo End User Editing Kit provides many 
+    resources including a wide range of tags as well as image resources (.tif 
+    files) that can be used in the creation of Halo multiplayer levels.&nbsp;
+    </font></p>
+    <p><font face="Arial" size="2">The files provided also exist as examples and 
+    learning aids for those wishing to create their own custom game resources 
+    whose creation and modification may not be covered currently in the Halo PC 
+    Editing Reference.</font></p>
+    <p><font size="2" face="Arial">For now, the completed or provided example resources will 
+    be used for the following examples for the sake of simplicity.</font></p>
+    <p><font face="Arial" size="2">c) Click on <b>Open</b>.</font></p>
+    <p><font face="Arial" size="2">The sixth image further 
+    explains the above procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">To return to the previous options in the <b>
+    Material Editor</b> window<b> </b>click on the <b>Go to Parent</b> button.</font></p>
+    <p><font face="Arial" size="2">15) In the <b>Material Editor</b>, enable the 
+    display of the material by clicking on the <b>Show Map in Viewport</b> 
+    button.</font></p>
+    <p><font face="Arial" size="2">16) To return to the <b>Multi/Sub-Object 
+    Basic Parameters </b>click on the <b>Go to Parent</b> button.</font></p>
+    <p><font face="Arial" size="2">The seventh image further 
+    explains the above procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">17) The Sub-Materials should be displayed on 
+    the Material Sample.</font></p>
+    <p><font face="Arial" size="2">18) Close the Material Editor window.</font></p>
+    <p><font face="Arial" size="2">The eighth image or last image further 
+    explains the above procedures.</font></p>
+    <p>&nbsp;</td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a target="_blank" href="images/material_multisub_01_large.gif">
+    <img border="0" src="images/material_multisub_01_small.gif" width="250" height="197"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/material_multisub_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a target="_blank" href="images/material_multisub_02_large.gif">
+    <img border="0" src="images/material_multisub_02_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/material_multisub_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a target="_blank" href="images/material_multisub_03_large.gif">
+    <img border="0" src="images/material_multisub_03_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/material_multisub_03_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">&nbsp;<p align="center">
+    <a target="_blank" href="images/material_multisub_04_large.gif">
+    <img border="0" src="images/material_multisub_04_small.gif" width="250" height="193"></a><p align="center">
+    <a target="_blank" href="images/material_multisub_04_large.gif">Click to 
+    Open Larger Image in New Window</a><p align="center">
+    &nbsp;<p align="center">
+    &nbsp;<p align="center">
+    &nbsp;<p align="center">
+    <a target="_blank" href="images/material_multisub_05_large.gif">
+    <img border="0" src="images/material_multisub_05_small.gif" width="250" height="194"></a><p align="center">
+    <a target="_blank" href="images/material_multisub_05_large.gif">Click to 
+    Open Larger Image in New Window</a><p align="center">
+    &nbsp;<p align="center">
+    &nbsp;<p align="center">
+    &nbsp;<p align="center">
+    <a target="_blank" href="images/material_multisub_06_large.gif">
+    <img border="0" src="images/material_multisub_06_small.gif" width="250" height="195"></a><p align="center">
+    <a target="_blank" href="images/material_multisub_06_large.gif">Click to 
+    Open Larger Image in New Window</a><p align="center">
+    &nbsp;<p align="center">
+    &nbsp;<p align="center">
+    &nbsp;<p align="center">
+    <a target="_blank" href="images/material_multisub_07_large.gif">
+    <img border="0" src="images/material_multisub_07_small.gif" width="250" height="195"></a><p align="center">
+    <a target="_blank" href="images/material_multisub_07_large.gif">Click to 
+    Open Larger Image in New Window</a><p align="center">
+    &nbsp;<p align="center">
+    &nbsp;<p align="center">
+    &nbsp;<p align="center">
+    <a target="_blank" href="images/material_multisub_08_large.gif">
+    <img border="0" src="images/material_multisub_08_small.gif" width="250" height="195"></a><p align="center">
+    <a target="_blank" href="images/material_multisub_08_large.gif">Click to 
+    Open Larger Image in New Window</a></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber7" height="17">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will demonstrate 
+    the application of Multi/Sub-Object Sub-Materials to surfaces in the level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber3" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Application of Multi/Sub-Object Sub-Materials to 
+    the surfaces that compose a game environment model:</font><p>
+    <font face="Arial" size="2">1) In 3ds Max select the level.&nbsp;  </font></p>
+    <p><font face="Arial" size="2">2) Select <b>Modify</b>. </font></p>
+    <p><font face="Arial" size="2">3) Under <b>Selection</b>, select <b>Face</b> 
+    mode.</font></p>
+    <p><font face="Arial" size="2">4) Select the 10 faces that compose the top 
+    and sides of the box which is currently the level.</font></p>
+    <p><font face="Arial" size="2">5) Make sure all the <b>Smoothing Groups</b> 
+    are cleared for the selected faces. Under <b>Smoothing Groups</b> click on
+    <b>Clear All</b>. The assigning of smoothing groups will be covered later in 
+    the tutorials under this section.</font></p>
+    <p><font face="Arial" size="2">6)&nbsp; The tutorial terrain\sky 
+    Multi/Sub-Object material is already applied to the object &quot;level&quot;.&nbsp; To 
+    make the selected 10 faces display a Halo sky in game apply Sub-Material ID 1 
+    which is +sky.</font></p>
+    <p><font face="Arial" size="2">There are many ways to apply a material to a 
+    face including the following:</font></p>
+    <p><font face="Arial" size="2">Apply the material by entering &quot;1&quot; in the <b>
+    Material ID </b>field<b> under Surface Properties</b>.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">The following procedures will apply the 
+    example_tutorial_ground to the remaining faces and map the material to these 
+    faces.</font></p>
+    <p><font face="Arial" size="2">7) Select the 2 faces that compose the bottom 
+    or floor of the box which is currently the level.</font></p>
+    <p><font face="Arial" size="2">8) Make sure all the <b>Smoothing Groups</b> 
+    are cleared for the selected faces. Under <b>Smoothing Groups</b> click on
+    <b>Clear All</b>. The assigning of smoothing groups will be covered later in 
+    the tutorials under this section.</font></p>
+    <p><font face="Arial" size="2">9) Apply the <b>Sub-Material</b> 
+    example_tutorial_ground to the selected 2 faces.</font></p>
+    <p><font face="Arial" size="2">There are many ways to apply a material to a 
+    face including the following:</font></p>
+    <p><font face="Arial" size="2">Apply the material by entering &quot;2&quot; in the <b>
+    Material ID </b>field<b> under Surface Properties</b>.</font></p>
+    <p><font face="Arial" size="2">The second image or last image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a target="_blank" href="images/material_application_01_large.gif">
+    <img border="0" src="images/material_application_01_small.gif" width="250" height="193"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/material_application_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/material_application_02_large.gif" target="_blank">
+    <img border="0" src="images/material_application_02_small.gif" width="250" height="195"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/material_application_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Texture Mapping</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber9" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">With materials having been created and assigned 
+    to the faces that compose the level, certain faces must have mapping 
+    coordinates created for them.&nbsp; These mapping coordinates or &quot;texture 
+    mapping&quot; will allow the base maps or textures that are in the form of a 
+    .bitmap and are referenced in the shader data 
+    tag to properly display for the specific faces.</font><p>
+    <font face="Arial" size="2">Currently for the tutorial level, the only faces that need 
+    mapping coordinates are the 2 faces that compose the floor of the level. The 
+    other faces have the +sky special material applied to them which will tell 
+    Halo to render a sky model, these faces therefore do not need mapping 
+    coordinates.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber8" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will demonstrate 
+    using UVW Mapping to apply texture or mapping coordinates to the 2 faces 
+    that compose the floor of the level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber3" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">Application of texture coordinates to the 
+    selected faces:</font><p>
+    <font face="Arial" size="2">1) In 3ds Max select the level.&nbsp;  </font></p>
+    <p><font face="Arial" size="2">2) Select <b>Modify</b>. </font></p>
+    <p><font face="Arial" size="2">3) Under <b>Selection</b>, select <b>Face</b> 
+    mode.</font></p>
+    <p><font face="Arial" size="2">4) Select the 2 faces that compose the bottom 
+    or floor of the box which is currently the level (its easier to select these 
+    faces when <b>Ignore Backfacing</b> is selected under <b>Selection</b>, 
+    see the 3ds Max User Reference under Help for more information).</font></p>
+    <p><font face="Arial" size="2">5) Using the <b>Modifier List</b> pull-down 
+    menu select <b>UVW Map</b>.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    <p><font face="Arial" size="2">The following procedure is just basic planar 
+    projection mapping.&nbsp; </font></p>
+    <p><font face="Arial" size="2">6) Select the <b>Top</b> view window.</font></p>
+    <p><font face="Arial" size="2">7) In the <b>Alignment </b>area under<b> Parameters, </b>click <b>View 
+    Align</b> (to use the currently selected Top view for alignment).</font></p>
+    <p><font face="Arial" size="2">8) In the <b>Alignment </b>area under<b> Parameters, </b>click <b>Fit</b> 
+    to stretch or fit the texture to the selected faces.</font></p>
+    <p><font face="Arial" size="2">The texture image associated with the 
+    example_tutorial_ground Sub-Material should now appear correctly mapped to 
+    the floor or ground of the level.&nbsp;&nbsp; </font></p>
+    <p><font face="Arial" size="2">The second image or last image further explains the above 
+    procedures.</font><p>&nbsp;</td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/material_texture_mapping_01_large.gif" target="_blank">
+    <img border="0" src="images/material_texture_mapping_01_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/material_texture_mapping_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a href="images/material_texture_mapping_02_large.gif" target="_blank">
+    <img border="0" src="images/material_texture_mapping_02_small.gif" width="250" height="196"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/material_texture_mapping_02_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Assigning Smoothing Groups</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber10" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Smoothing group information is another piece of 
+    data that is actually exported from 3ds Max to the .jms file that is used by 
+    Tool to create the level geometry so that it can be run in Halo. </font>
+    <p>
+    <font face="Arial" size="2">Smoothing groups do not have to be applied but 
+    can greatly help in smoothing out the lighting on faces in the level. A good 
+    example is a 6-sided half cylinder used to create a pipe in a level. Without 
+    a smoothing group applied to all the faces that compose the sides, the 
+    cylinder will look faceted. With a smoothing group applied across these 
+    faces, the pipe will look much smoother and look to be made with many more 
+    polygons than it actually is.&nbsp; </font></p>
+    <p>
+    <font size="2" face="Arial">Smoothing groups can also help fix certain lighting 
+    errors or anomalies that occur across faces.
+    </font></p>
+    <p><font face="Arial" size="2">It is important to note that the improper use 
+    of smoothing groups can cause as many visual effects and lighting anomalies 
+    on surfaces as it helps fix.&nbsp; Here are some simple guidelines for 
+    smoothing group usage:</font></p>
+    <p><font face="Arial" size="2">1) Be careful over how much surface area a 
+    smoothing group is applied to.&nbsp; If visual anomalies occur it may be 
+    beneficial to split up the portions of the large geometry pieces to use 
+    different smoothing groups.</font></p>
+    <p><font face="Arial" size="2">2) Try to keep smoothing groups unique.&nbsp; 
+    If there are several structures located throughout the level, each one 
+    should most likely have its own sets of smoothing groups applied to the 
+    faces that compose those structures.</font></p>
+    <p><font face="Arial" size="2">3) Experiment with the smoothing groups for 
+    the best effects.&nbsp; Every level or surface tends to be unique depending 
+    on the lighting and construction. </font></p>
+    <p>
+    <font face="Arial" size="2">Currently for the tutorial level, the only faces that need 
+    to have smoothing groups applied are the 2 faces that compose the floor of the level. The 
+    other faces have the +sky special material applied to them which will tell 
+    Halo to render a sky model, these faces therefore do not need to have a 
+    smoothing group applied.&nbsp; Applying a smoothing group to the faces with 
+    the +sky material in 3ds Max to make things more viewable will not cause any 
+    problems in Halo.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber11" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following procedures and example images will 
+    demonstrate the application of smoothing groups to the 2 faces 
+    that compose the floor of the level.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber12" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">Application of smoothing groups to the 
+    selected faces:</font><p>
+    <font face="Arial" size="2">1) In 3ds Max select the level.&nbsp;  </font></p>
+    <p><font face="Arial" size="2">2) Select <b>Modify</b>. </font></p>
+    <p><font face="Arial" size="2">3) The level object needs to be made an 
+    editable mesh again.&nbsp; Using the <b>Modifier List</b> pull-down 
+    menu select <b>Edit Mesh</b>. </font></p>
+    <p><font face="Arial" size="2">4) Highlight <b>Edit Mesh</b> in the <b>
+    Modifier Stack</b>.</font></p>
+    <p><font face="Arial" size="2">5) Under <b>Selection</b>, select <b>Face</b> 
+    mode </font></p>
+    <p><font face="Arial" size="2">6) Select the 2 faces that compose the bottom 
+    or floor of the box which is currently the level (its easier to select these 
+    faces when <b>Ignore Backfacing</b> is selected under <b>Selection</b>, 
+    see the 3ds Max User Reference under Help for more information).</font></p>
+    <p><font face="Arial" size="2">7) Click on the button marked &quot;2&quot; in the <b>
+    Smoothing Groups</b> section under <b>Surface Properties</b>. </font></p>
+    <p><font face="Arial" size="2">The ground for the level now has Smoothing 
+    Group 2 applied to it.</font></p>
+    <p><font face="Arial" size="2">The  image to the right further demonstrate the above 
+    procedures.</font></p>
+    <p>&nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    &nbsp;</p>
+    <p align="center">
+    <a target="_blank" href="images/material_smoothing_groups_01_large.gif">
+    <img border="0" src="images/material_smoothing_groups_01_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/material_smoothing_groups_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    <p align="center">
+    &nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Saving the Level</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber11" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">At this point, the level should be saved. To 
+    save the level do the following:</font><p><font face="Arial" size="2">1) Go 
+    to <b>File</b>.</font></p>
+    <p><font face="Arial" size="2">2) Click on <b>Save As</b>.</font></p>
+    <p><font face="Arial" size="2">3) In the <b>Save File As</b> dialog window 
+    go to the Halo\data\levels\test\tutorial\models directory (this directory 
+    was created in the above section <b>Creating a Level Directory</b>) and save 
+    the file as &quot;tutorial.max&quot; by entering this name in the <b>File name:</b> 
+    field.&nbsp; </font></p>
+    <p><font face="Arial" size="2">4) Click on <b>Save</b>.</font></p>
+    <p><font face="Arial" size="2">The level is now saved.&nbsp; This level will 
+    be used in the tutorial and example areas of the next sections.&nbsp; It may 
+    also be a good idea to make a backup of this file.</font></p>
+    <p>&nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="714"> <span class="body"><b>
+<font face="Arial">Conclusion of Level Creation - Part 1</font></b></span></td>
+		<td width="118"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber11" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">At this point, the level could be successfully 
+    exported and compiled for use in the game. However, there are many other 
+    things that will be demonstrated that are useful in the creation of a Halo 
+    level.&nbsp; </font>
+    <p><font face="Arial" size="2">The next section </font>
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <a href="mp_ld_level_creation_part_02.html"><font size="2">Level Creation - Part 2</font></a></b></font><font face="Arial" size="2"> 
+    will demonstrate some more aspects of Halo level design.&nbsp; If the user 
+    has successfully completed the above tutorials it is highly recommended that 
+    they proceed to the next section </font>
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <a href="mp_ld_level_creation_part_02.html"><font size="2">Level Creation - Part 2</font></a></b></font><font face="Arial" size="2">.</font></p>
+    <p><font face="Arial" size="2">For advanced users, or those that are curious 
+    or anxious to compile a level and get it running in Halo immediately, they 
+    may wish to skip ahead to the section </font>
+    <font color="#3FA2FF" face="Arial" size="2">
+    <b>
+    <a href="mp_ld_level_exporting.html">Level Exporting</a></b></font><font face="Arial" size="2"> 
+    followed by </font>
+    <font color="#3FA2FF" face="Arial" size="2">
+    <b>
+    <a href="mp_ld_level_compilation.html">Level Compilation</a></b></font><font face="Arial" size="2">.&nbsp; 
+    Please note that the section </font>
+    <font color="#3FA2FF" face="Arial" size="2">
+    <b>
+    <a href="mp_ld_level_exporting.html">Level Exporting</a> </b></font>
+    <font face="Arial" size="2">and the subsequent sections will assume that the end user has completed
+    </font>
+    <font color="#3FA2FF" face="Arial">
+    <a href="mp_ld_level_creation_part_02.html">
+    <b>
+    <font size="2">Level Creation - Part 2</font></b></a><font size="2">&nbsp;</font></font><font face="Arial" size="2">so the 
+    tutorials and example images will reflect the additions made to the 
+    &quot;tutorial.max&quot; file.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<ul>
+  <li>
+
+<p style="margin-top: 0; margin-bottom: 0; line-height:200%" align="left">
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <u><a href="mp_ld_level_creation_part_02.html">Continue to the Next Section 
+- </a></u><a href="mp_ld_level_creation_part_02.html">Level Creation - Part 2
+</a> </b></font></p>
+
+  </li>
+  <li>
+
+<p style="margin-top: 0; margin-bottom: 0; line-height:200%" align="left">
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <a href="mp_ld_level_exporting.html">Skip to the Section - Level Exporting
+    </a> </b></font></p>
+
+  </li>
+  <li>
+  <p style="line-height: 200%; margin-top: 0; margin-bottom: 0"><font face="Arial"><b><a href="../../../main/main.html">Return to Main Page</a></b></font></li>
+</ul>
+
+</body>
+
+</html>

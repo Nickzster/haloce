@@ -1,0 +1,601 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Multiplayer Level Design Level Compilation</title>
+</head>
+
+<body stylesrc="../../../main/main.html" background="file:///D:/GameDev/HaloDev/Halo%20End%20User%20Editing%20Kit/Halo%20PC%20Editing%20Reference/images/background.gif" bgcolor="#000000" text="#C0C0C0" link="#3FA2FF" vlink="#0066CC" alink="#FFFFFF">
+
+<table cellpadding="0" cellspacing="0" border="0" width="869">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <font face="Arial" size="2">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></font></td>
+		<td bgcolor="black" width="748"> <b><font face="Arial" color="#3FA2FF">
+        Level Compilation</font></b></td>
+		<td width="101"><font face="Arial" size="2">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></font></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber1" height="48">
+  <tr>
+    <td width="100%" height="21">
+    <p align="left" style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following section provides information and a 
+    tutorial on compiling an exported .jms file into a data tag format that can 
+    be manipulated by the Halo tools and eventually packaged to run in a Halo 
+    multiplayer game.</font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="520"> <b><font face="Arial" size="2">Using 
+        Tool.exe to Compile the Level</font></b></td>
+		<td width="312"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber47" height="97">
+  <tr>
+    <td width="100%" height="60" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following procedures and example images 
+    demonstrate the &quot;compiling&quot; or processing and converting of the tutorial.jms 
+    into the .scenario and .scenario_structure_bsp data tags using Tool.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">It is these data tags will be manipulated to 
+    create a working multiplayer level that will then be compiled into a .map 
+    cache file and run in Halo.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellspacing="1" width="60%" id="AutoNumber48" height="1">
+  <tr>
+    <td width="50%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Compiling the level using Tool:</font><p>
+    <font face="Arial" size="2">In Windows, open a Command Prompt. The Command 
+    Prompt can be found by going to <b>Start -&gt; Accessories -&gt; Programs -&gt; 
+    Command Prompt</b></font></p>
+    <p>
+    <font face="Arial" size="2">In the Command Prompt go to the main Halo 
+    directory.&nbsp; In the root directory is where all the Halo tools exist, 
+    there should be a program file called tool.exe.</font></p>
+    <p>
+    <font face="Arial" size="2">Typing just tool.exe at the Command Prompt and 
+    hitting Enter will show all the available command line parameters as well as 
+    the usage and syntax options.</font></p>
+    <p>
+    <font face="Arial" size="2">The command line that will be used in the 
+    following example is &quot;structure&quot; 
+    and it has the following syntax:</font></p>
+    <p>
+    <font face="Arial" size="2"><b>structure</b> <b>scenario-directory</b> <b>
+    bsp-name</b></font></p>
+    <p>
+    <font face="Arial" size="2">The syntax parts are described below:</font></p>
+    <p>
+    <font face="Arial" size="2"><b>scenario-directory</b> - This is the name of 
+    the directory where the level directory structure is located.&nbsp; The 
+    directory structure that was set up for Halo editing is very specific, 
+    because of this Tool automatically looks in the &quot;models&quot; directory for the .jms 
+    file.&nbsp; The full directory structure name is also not needed because of 
+    this.</font></p>
+    <p>
+    <font face="Arial" size="2"><b>bsp-name</b> - This is the name that will be 
+    used when the 
+    .scenario and .scenario_structure_bsp data tags are created. The file extension names 
+    are NOT necessary.</font></p>
+    <p>
+    <font face="Arial" size="2">1) At the <b>Command Prompt</b> type the following and 
+    hit Enter:</font></p>
+    <p>
+    <font face="Arial" size="2">tool.exe structure levels\test\tutorial tutorial</font></p>
+    <p><font face="Arial" size="2">The level should have compiled successfully.</font></p>
+    <p><font face="Arial" size="2">The first image further explains the above 
+    procedures and shows the output of Tool.exe in the command window.</font></p>
+    <p><font face="Arial" size="2">As a result of the compilation process, not 
+    only were the tutorial.scenario and tutorial.scenario_structure_bsp tags 
+    created, but the entire directory structure for the level should now exist 
+    (if it did not before) under the tags directory (i.e. 
+    Halo\tags\levels\test\tutorial).</font></p>
+    <p><font face="Arial" size="2">Subsequent compiling of the .jms file will 
+    only update the .scenario_structure_bsp and not the .scenario data tags.</font></p>
+    <p>&nbsp;</p>
+    </td>
+    <td width="53%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p align="center">
+    <a href="images/level_compiling_01_largel.gif" target="_blank">
+    <img border="0" src="images/level_compiling_01_small.gif" width="250" height="194"></a></p>
+    <p align="center">
+    <a target="_blank" href="images/level_compiling_01_large.gif">Click to Open 
+      Larger Image in New Window</a></p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <p style="margin-top: 0; margin-bottom: 0">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="520"> 
+        <p style="margin-top: 0; margin-bottom: 0"><b>
+        <font face="Arial" size="2">Troubleshooting the Compilation Process</font></b></td>
+		<td width="312">
+        <p style="margin-top: 0; margin-bottom: 0">
+        <img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Error Geometry .wrl File</font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber47" height="86">
+  <tr>
+    <td width="100%" height="86" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">During the compilation process, tool may display 
+    warning messages or error messages to indicate to the user that the level 
+    contains problems that may cause the level to not work properly in the game.&nbsp;&nbsp; 
+    Some errors are severe enough that the level will not compile successfully, 
+    while other minor errors may still allow the successful compilation of the 
+    level but the end user should still investigate the problem.</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">To help track down errors and investigate 
+    problems in the level geometry, Tool will export an Error Geometry File that 
+    takes the form of a .wrl file (this is actually a VRML format).&nbsp; The .wrl 
+    file is incredibly useful since it can be imported into 3ds Max and can 
+    provide a visual representation of the error as well as many other useful 
+    visual indicators such as outlining or bordering the geometry or region that 
+    has an error. </font>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">When the .wrl file is created, it will exist in 
+    the main Halo directory, which is also the location of tool.exe.&nbsp; The 
+    name of the file will be the same as the name of the level but with the .wrl 
+    file extension.&nbsp; For example, an error during the compilation of the 
+    above tutorial.jms would create a tutorial.wrl file.</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">To import the file into 3ds Max do the 
+    following:</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">1) Click on <b>File</b> and select <b>Import</b>.&nbsp; 
+    The <b>Select File to Import</b> window will appear.</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">2) Use the <b>Files of type:</b> pull down menu 
+    to help filter files by type, in this case select VRML (*.WRL,*.WRZ).</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">3) Select the Halo root or main directory.</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">4) Select the .wrl file for the level and click
+    <b>Open</b>.&nbsp; The <b>VRML Import</b> window will appear.</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">5) Uncheck all the check boxes under the <b>
+    Input Options </b>(Reset Scene, Turn to 3DS Coordinates and Create 
+    Primatives).</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">6) Click on <b>Ok</b>.&nbsp; </font>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The error geometry should now be in the level as 
+    separate objects.&nbsp; These objects can be selected as normal or can be 
+    viewed and selected by clicking on the <b>Select by Name</b> button to bring 
+    up a list of all the objects in the level.&nbsp; Note that none of the Error 
+    Geometry objects that are imported are attached to the frame. </font>
+    <p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left"><span class="body"><b>
+<font face="Arial">Common&nbsp; Errors and Solutions </font></b></span></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber50" height="51">
+  <tr>
+    <td width="100%" height="51" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following table outlines some common 
+    errors and warnings that may occur when compiling the .jms for the level and 
+    provides suggestions or solutions that should help in the successful 
+    compilation 
+    of the level using Tool.&nbsp; Note that the following list is not a 
+    comprehensive listing of all warning and error output messages from Tool in 
+    relation to the .jms compilation for a level.</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;<p style="margin-top: 0; margin-bottom: 0">
+    <font face="Arial" size="2">The error geometry .wrl file should be used in 
+    conjunction with the warning and error output messages provided by Tool.&nbsp; 
+    The warning and error messages will often contain a color code for the error 
+    geometry.&nbsp; When the .wrl file is imported into 3ds Max, it is this 
+    color coded error geometry that should be looked for in reference to the 
+    specific error message.</font><p style="margin-top: 0; margin-bottom: 0">
+    &nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="2" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="60%" id="AutoNumber51" bordercolor="#C0C0C0" height="2258">
+  <tr>
+    <td width="50%" align="center" height="32"><b><font face="Arial">Warning or 
+    Error Message</font></b></td>
+    <td width="50%" align="center" height="32"><b><font face="Arial">Suggestions 
+    or Solution</font></b></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="14"></td>
+    <td width="50%" align="center" height="14"></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="267"><font face="Arial" size="2">When 
+    compiling using Tool the following message with options appears:</font><p>
+    <font face="Arial" size="2">choose a type for the shader &lt;SHADER\MATERIAL 
+    NAME&gt;:<br>
+    1. shader_environment<br>
+    2. shader_model<br>
+    3. shader_transparent_generic<br>
+    4. shader_transparent_chicago<br>
+    5. shader_transparent_chicago_extended<br>
+    6. shader_transparent_water<br>
+    7. shader_transparent_glass<br>
+    8. shader_transparent_meter<br>
+    9. shader_transparent_plasma<br>
+    choice (1-9): </font></td>
+    <td width="50%" align="left" height="267">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">The 
+    material name or shader name is either incorrect (wrong name, too many 
+    characters in the material name, etc...) or the shader or material does not 
+    exist.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">To 
+    correct this problem and continue the compilation process, select one of the 
+    options from the list to automatically create the shader tag which can then 
+    be edited or replaced later.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">The 
+    other option is to break out of the compilation process (CTRL-Break) and 
+    create the shader and then run the compile process again.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="214"><font face="Arial" size="2">When 
+    compiling using Tool the following warning message appears:
+    </font>
+    <p><font face="Arial" size="2">### WARNING found nearly coplanar surfaces 
+    (red and green)</font></td>
+    <td width="50%" align="left" height="214">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">As 
+    the message indicates, there are faces or triangles that are coplanar.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    error is commonly caused by the creation of a surface (such as a wall) at an 
+    angle.&nbsp; This surface tends to have many surfaces or triangles in its 
+    construction that are side by side. </font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">Make 
+    the surfaces planar or adjust the faces (move vertices) such that there is 
+    more variation in the surface (the surface is no longer flat or planar or 
+    nearly flat or planar ).</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="134"><font face="Arial" size="2">When 
+    compiling using Tool the following warning message appears:
+    </font>
+    <p><font face="Arial" size="2">### WARNING: found duplicate triangle 
+    building connected geometry. YOU SHOULD FIX THIS. (see orange in error 
+    geometry)</font></td>
+    <td width="50%" align="left" height="134">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">There 
+    are duplicate triangles in the geometry.&nbsp; These are triangles that 
+    exist in the exact same space as another triangle (the vertices and edges of 
+    the triangle are identical to those of another triangle).</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">
+    Remove the duplicate triangles.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="199"><font face="Arial" size="2">When 
+    compiling using Tool the following warning message appears:
+    </font>
+    <p><font face="Arial" size="2">### WARNING found # degenerate triangles.</font></td>
+    <td width="50%" align="left" height="199">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">There 
+    is an error in the construction of the triangles that compose the level 
+    geometry.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">Check 
+    for triangles that have had edges turned or have been modified such that 2 
+    edges of the triangle now exist in the same space (share the same vertex 
+    coordinates). </font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">These 
+    will often appear in 3ds Max as a single edge when in fact it is just the 
+    collapsed or malformed edges of a triangle all occupying the same space.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="166"><font face="Arial" size="2">When 
+    compiling using Tool the following warning message appears:
+    </font>
+    <p><font face="Arial" size="2">### WARNING unearthed edge (magenta boxed 
+    lines)</font></td>
+    <td width="50%" align="left" height="166">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    is a problem caused by the implementation of the portal planes and geometry.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">As 
+    the warning message implies, the edges of a portal plane do not form a 
+    sealed volume that can be used to define a portal. </font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">Make 
+    sure that the edges of portal planes completely extend into the level 
+    geometry in order to form a &quot;seal&quot;.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="307"><font face="Arial" size="2">When 
+    compiling using Tool the following warning message appears:
+    </font>
+    <p><font face="Arial" size="2">### WARNING: a surface clipped to no leaves 
+    (see cyan in error geometry)</font></td>
+    <td width="50%" align="left" height="307">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    is a problem caused by the implementation of the portal planes and geometry.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font size="2" face="Arial">This 
+    can be caused by geometry that has a face which is coplanar with the faces 
+    of another piece of geometry.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font size="2" face="Arial">A 
+    good example would be a cube that has a face resting on the faces of another 
+    surface (such as a floor).&nbsp; In this case, an error may not have 
+    occurred before, but once portals are added or defined the portal 
+    calculations during the compilation process detects the error since it 
+    cannot properly create a portal between the two pieces of geometry.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font size="2" face="Arial">In 
+    the above example, there are two solutions.&nbsp; The cube can be moved such 
+    that it no longer has its bottom faces resting on the faces of the other 
+    surface.&nbsp; The other solution is that the cube should have its bottom 
+    faces removed and the remaining faces should be properly integrated with the 
+    surrounding faces.&nbsp; </font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="65">&nbsp;</td>
+    <td width="50%" align="left" height="65">
+    <p style="margin-left: 4; margin-right: 4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="272"><font face="Arial" size="2">When 
+    compiling using Tool the following error message appears:
+    </font>
+    <p><font face="Arial" size="2">### ERROR collision bsp is empty.</font></td>
+    <td width="50%" align="left" height="272">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    error can occur when a .jms file is exported that contains valid geometry 
+    that has no collision and is attached to the frame.&nbsp; </font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">Such 
+    geometry includes geometry with only faces that have a material assigned to 
+    them with the &quot;!&quot; Render Only Shader Symbol.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">The .jms 
+    file exports successfully because there is valid geometry attached to the 
+    frame, however Tool cannot build the necessary collision bsp without any 
+    geometry that has actual collision.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">Make 
+    sure that geometry with collision is attached to the frame.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="104"><font face="Arial" size="2">When 
+    compiling using Tool the following error message appears:
+    </font>
+    <p><font face="Arial" size="2">### ERROR found z buffered triangles (red).</font></td>
+    <td width="50%" align="left" height="104">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    problem is typically caused by the overlapping or interpenetration of 
+    geometry or faces. </font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">If 
+    not fixed, this error can lead to rendering or visual errors and anomalies 
+    for the offending faces.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="115"><font face="Arial" size="2">When 
+    compiling using Tool the following error message appears:
+    </font>
+    <p><font face="Arial" size="2">### ERROR edge # is open (red).</font></td>
+    <td width="50%" align="left" height="115">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">There 
+    is an open edge in the level.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">
+    Typically, there is a &quot;hole&quot; in the level that is preventing the level from 
+    satisfying the Sealed World Rules and therefore the level cannot compile 
+    successfully.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="196"><font face="Arial" size="2">When 
+    compiling using Tool the following error message appears:</font><p><font face="Arial" size="2">
+    ### ERROR couldn't update edge # (red).</font></td>
+    <td width="50%" align="left" height="196">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    is typically caused by faces or surfaces that are duplicated or shared 
+    between objects.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">The 
+    faces have shared vertices and\or faces.&nbsp; The objects should either be 
+    separated or merged.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">A 
+    good example would be 2 identical cubes that have been moved together such 
+    that they each share one side.&nbsp; The cubes should either be moved apart, 
+    or merged together which would include the removal of any duplicate or 
+    illegal faces.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="120"><font face="Arial" size="2">When 
+    compiling using Tool the following error message appears:
+    </font>
+    <p><font face="Arial" size="2">### ERROR couldn't build bsp because of 
+    overlapping surfaces (orange)</font></td>
+    <td width="50%" align="left" height="120">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    is typically caused by intersecting or interpenetrating objects or object 
+    volumes.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">A 
+    good example would be where there are 2 cubes and one of the cubes has been 
+    placed intersecting the other.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="113"><font face="Arial" size="2">When 
+    compiling using Tool the following error message appears:
+    </font>
+    <p><font face="Arial" size="2">### ERROR: portal does not define two closed 
+    spaces. (see yellow in error geometry)</font></td>
+    <td width="50%" align="left" height="113">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    is a problem caused by the implementation of the portal planes and geometry.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">
+    Typically, this error is caused by a standard Portal or Portal volume 
+    intersecting an Exact Portal plane or volume.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="118"><font face="Arial" size="2">When 
+    compiling using Tool the following error message appears:
+    </font>
+    <p><font face="Arial" size="2">### ERROR couldn't build bsp2d.</font></td>
+    <td width="50%" align="left" height="118">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    error is typically the result of other errors, resulting in the failure to 
+    create the bsp structure.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">See 
+    the above errors.&nbsp; The resolution of the errors above will most likely 
+    correct this problem and result in the successful compilation of the .scenario_structure_bsp.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="105"><font face="Arial" size="2">When 
+    compiling using Tool the following error message appears:
+    </font>
+    <p><font face="Arial" size="2">### ERROR couldn't build leaf.</font></td>
+    <td width="50%" align="left" height="105">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    error is typically the result of other errors and causes an error in the 
+    creation of the bsp structure.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">See 
+    the above errors.&nbsp; The resolution of the errors above will most likely 
+    correct this problem and result in the successful compilation of the .scenario_structure_bsp.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="114"><font face="Arial" size="2">When 
+    compiling using Tool the following error message appears:
+    </font>
+    <p><font face="Arial" size="2">### ERROR failed to build collision geometry.</font></td>
+    <td width="50%" align="left" height="114">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    error is typically the result of other errors, resulting in the failure to 
+    build the collision geometry or hull.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">See 
+    the above errors.&nbsp; The resolution of the errors above will most likely 
+    correct this problem and result in the successful compilation of the .scenario_structure_bsp.</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" height="136"><font face="Arial" size="2">When 
+    compiling using Tool the following error message appears:
+    </font>
+    <p><font face="Arial" size="2">### ERROR failed to import collision bsp.</font></td>
+    <td width="50%" align="left" height="136">
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">This 
+    error is typically the result of other errors, resulting in the failure to 
+    create the collision geometry or hull.</font></p>
+    <p style="margin-left: 4; margin-right: 4"><font face="Arial" size="2">See 
+    the above errors.&nbsp; The resolution of the errors above will most likely 
+    correct this problem and result in the successful compilation of the .scenario_structure_bsp.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="520"> <b><font face="Arial">Conclusion to 
+        Level Compilation</font></b></td>
+		<td width="312"><img src="../../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber49" height="50">
+  <tr>
+    <td width="100%" height="9" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The level geometry has now been successfully 
+    exported and is ready to be compiled in preparation for it to go through the 
+    processes that will get it running in Halo. </font>
+    <p><font face="Arial" size="2">Completed versions or example versions of the 
+    level tags that are created in the tutorial sections can be found under the 
+    &quot;Halo\tags\levels\test\tutorial_examples&quot; directory.&nbsp; The compiled tags 
+    have been provided as a reference to aid in the learning process.</font></p>
+    <p><font face="Arial" size="2">Once the user has successfully completed the 
+    export process<font color="#3FA2FF"><b> </b></font>they can proceed to the 
+    next section
+    <font color="#3FA2FF">
+    <b>
+    <a href="mp_ld_level_guerilla.html">Level Data Manipulation in Guerilla</a></b></font>.</font></p>
+    <p>&nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<ul>
+  <li>
+
+<p style="margin-top: 0; margin-bottom: 0; line-height:200%" align="left">
+    <font color="#3FA2FF" face="Arial">
+    <b>
+    <a href="../references/level_design/mp_level_design/mp_ld_level_guerilla.html">
+    <u>Continue to the Next Section - Level Data Manipulation in Guerilla</u></a></b></font></p>
+
+  </li>
+  <li>
+  <p style="line-height: 200%; margin-top: 0; margin-bottom: 0"><font face="Arial"><b><a href="../../../main/main.html">Return to Main Page</a></b></font></li>
+</ul>
+
+</body>
+
+</html>

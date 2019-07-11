@@ -1,0 +1,503 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Materials Overview</title>
+</head>
+
+<body stylesrc="../../main/main.html" background="file:///D:/GameDev/HaloDev/Halo%20End%20User%20Editing%20Kit/Halo%20PC%20Editing%20Reference/images/background.gif" bgcolor="#000000" text="#C0C0C0" link="#3FA2FF" vlink="#0066CC" alink="#FFFFFF">
+
+<table cellpadding="0" cellspacing="0" border="0" width="869">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <font face="Arial" size="2">
+        <img src="../../images/bar_left.gif" width="20" height="26"></font></td>
+		<td bgcolor="black" width="748"> <b><font face="Arial" color="#3FA2FF">
+        Materials Overview</font></b></td>
+		<td width="101"><font face="Arial" size="2">
+        <img src="../../images/bar_right.gif" width="101" height="27"></font></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="68%" id="AutoNumber1" height="70">
+  <tr>
+    <td width="100%" height="43">
+    <p align="left" style="margin-top: 0; margin-bottom: 0">
+    <font size="2" face="Arial">The following section discusses the materials 
+    system used in Halo.&nbsp; The materials or shaders are used to define the 
+    properties of the surfaces for which they are applied to as well as the 
+    rendering properties for the surface.&nbsp; This section includes m</font><span class="body"><font face="Arial" size="2">aterial 
+    naming conventions and rules, special material names, and special shader 
+    symbols or flags.</font></span></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="520"> <span class="body"><b>
+        <font face="Arial" size="2">Overview</font></b></span></td>
+		<td width="312"><img src="../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber4" height="17">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">Materials define the properties of a surface in 
+    Halo.&nbsp; These properties not only include the basic texture image to 
+    render on the surface, but includes any special rendering effects as well as 
+    other data such as the type of material it is in regards to physics and 
+    projectile impact particle effects.&nbsp; Materials are often referred to as 
+    shaders.</font><p><font face="Arial" size="2">As with most data in Halo, 
+    shaders are defined in a data file called a tag.&nbsp; The shader tag 
+    contains many properties, flags, and fields for linking to other data tags, 
+    such as image data tags known as .bitmap tags.&nbsp; The .bitmap tag 
+    contains image data, such as an image and its associated mips, as well as 
+    other settings.&nbsp; The most basic shader typically contains just some 
+    simple default settings and a reference to a .bitmap for its base map.</font></p>
+    <p><font face="Arial" size="2">There are many different shader types denoted 
+    by their file extension.&nbsp; The file extensions are fairly self 
+    explanatory, but there are 3 shader types that are commonly used for the 
+    creation of level geometry, these are listed and explained in the table 
+    below.</font></p>
+    <p>&nbsp;</td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber6" height="511" bordercolor="#C0C0C0">
+  <tr>
+    <td width="34%" height="136">
+    <p style="margin-top: 0; margin-bottom: 0; margin-left:4">
+    <font face="Arial" size="2">.shader_environment</font></td>
+    <td width="66%" height="136" align="left">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Basic 
+    shader applied to the surfaces of a level environment.&nbsp; This shader is 
+    used for opaque surfaces.&nbsp; This is the most common type of shader used 
+    or applied to surfaces in environments.&nbsp; </font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">This 
+    shader contains the basic properties, such as radiosity properties, physics 
+    properties, environment shader properties, environment shader type, lens 
+    flare, diffuse properties (includes base map, primary and secondary detail 
+    maps for texture or material blending, and micro detail map properties), 
+    bump properties, texture scrolling animation, self illumination properties, 
+    specular properties, and reflection properties (includes cube map 
+    properties).</font></td>
+  </tr>
+  <tr>
+    <td width="34%" height="129">
+    <p style="margin-left: 4"><font face="Arial" size="2">.shader_transparent_chicago</font></td>
+    <td width="66%" height="129" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">Shader applied to 
+    surfaces of a level environment that are to have transparent elements. This 
+    shader can be used when only 1 or 2 maps are required to construct or define 
+    the shader.&nbsp; Maps refer to a .bitmap tag reference.</font></p>
+    <p style="margin-left: 4"><font face="Arial" size="2">This shader contains 
+    properties such as radiosity properties, physics properties, chicago shader 
+    properties, lens flare, map information (includes the maps to use to create 
+    the shader, the color functions, alpha functions, and the map u-scale and 
+    v-scale), 2D texture animation, as well as additional flags to define the 
+    shader properties.</font></td>
+  </tr>
+  <tr>
+    <td width="34%" height="123">
+    <p style="margin-left: 4"><font face="Arial" size="2">.shader_transparent_chicago_extended</font></td>
+    <td width="66%" height="123" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">A more complicated 
+    version of the .shader_transparent_chicago.&nbsp; This shader is used in 
+    place of the .shader_transparent_chicago when the shader requires 3 or 4 
+    maps to define it.&nbsp; Maps refer to a .bitmap tag reference.</font></p>
+    <p style="margin-left: 4"><font face="Arial" size="2">In addition to the 
+    properties listed for the .shader_transparent_chicago, this shader has two 
+    sections that are used to define a 4 Stage Maps for video hardware that 
+    supports this kind of rendering and 2 Stage Maps section that is used to 
+    define the shader on video hardware that cannot handle 3 or 4 maps in a 
+    shader definition.</font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="520"> <span class="body"><b>
+        <font face="Arial" size="2">Material Naming Conventions and Rules</font></b></span></td>
+		<td width="312"><img src="../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber4" height="17">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font face="Arial" size="2">The following are some VERY important rules 
+    concerning materials used in Halo.</font><p>
+    <font face="Arial" size="2">Materials have specific names and are applied to 
+    the surfaces (polygons, faces, etc...) of objects.&nbsp; It is these 
+    material names that reference a shader (in the form of a shader data tag).&nbsp; 
+    The shader is then used by Halo to apply the appropriate properties to the 
+    surface for that shader, including the rendering effects that should be 
+    applied as defined in the shader tag file.</font></p>
+    <p><font face="Arial" size="2">The material name on the surface corresponds 
+    to the name of the shader tag.&nbsp; For example, a material is applied to 
+    the surface of a wall (the wall is made up of 2 polygons and the material is 
+    applied to these polygons).&nbsp; The name of the material as it appears in 
+    3ds Max is &quot;metal_wall&quot;.&nbsp; A shader will exist for this material, in 
+    this case the associated shader data tag would be named &quot;metal_wall.shader_environment&quot;.</font></p>
+    <p><font face="Arial" size="2">The shader data tags referenced for levels 
+    exist in subdirectories under the main level directories for that particular 
+    level.&nbsp; The subdirectory is called &quot;shaders&quot; (similarly, 
+    .bitmap files used by the shader files are contained in a directory called 
+    &quot;bitmaps&quot; ).&nbsp; These shader data 
+    tags contained in these shader directories are accessible to any level.&nbsp; 
+    Levels can reference their own shaders, shaders from other levels, the 
+    shaders can reference .bitmaps from other levels, etc...</font></p>
+    <p><font face="Arial" size="2">When the .map cache file is created that 
+    contains the level assets, the associated resources (such as the shader data 
+    tags) are pulled into the .map cache file.&nbsp; Because of how the .map 
+    cache file is created and how the tools work the following rules must be 
+    followed:</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">1) Every material name (shader 
+    name) MUST BE UNIQUE.&nbsp; For example, you cannot have two or more shader 
+    files named &quot;grass.shader_enviroment&quot; that are used in a level(s) that are 
+    placed in multiple level's &quot;shader&quot; directories.&nbsp; </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">It is 
+    common practice that if custom shaders (new shader or a variation of an 
+    existing shader) are need for a specific level, the shader name is prefixed 
+    by the name of the level. </font></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">Using 
+    the example above, if you have a level called &quot;mylevel&quot; and wanted a new 
+    shader or to make changes to a shader that already existed called &quot;grass.shader_environment&quot; 
+    then you would call the shader &quot;mylevel_grass.shader_environment&quot; and place 
+    it in the &quot;shader&quot; sub-directory under the level directory, in this case the 
+    &quot;mylevel&quot; game level directory.</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">2) 
+    Material names (shader names) must be 32 characters or less (excluding the 
+    file extension name).</font></p>
+    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    </td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="520"> <span class="body"><b>
+        <font face="Arial" size="2">Special Materials</font></b></span></td>
+		<td width="312"><img src="../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber4" height="42">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following table shows the list of special 
+    material names in Halo.&nbsp; These material names are hard-coded in the 
+    tools and game to be recognized as having specific or unique functionality.</font><p>
+    <font face="Arial" size="2">These texture names should NOT be used or 
+    applied unless it is for the specific function for which they are designed.&nbsp; 
+    No data tags (.bitmap, .shader_environment, etc...) should use the name of a 
+    Special Material.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber7" height="490" bordercolor="#C0C0C0">
+  <tr>
+    <td width="21%" height="30">
+    <p style="margin-top: 0; margin-bottom: 0; margin-left:4">
+    <font face="Arial" size="2">+sky</font></td>
+    <td width="79%" height="30" align="center">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Applied 
+    to surfaces to render the skybox or sky model.</font></td>
+  </tr>
+  <tr>
+    <td width="21%" height="71">
+    <p style="margin-left: 4"><font face="Arial" size="2">+seamsealer</font></td>
+    <td width="79%" height="71" align="center">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Applied 
+    to temporary surfaces or geometry to &quot;seal&quot; the level.&nbsp; Most commonly 
+    used to seal holes or other open edged areas of the level during 
+    construction and testing.&nbsp; For multiplayer levels, +seamsealer should 
+    never be applied to a face in the final build of the level.</font></td>
+  </tr>
+  <tr>
+    <td width="21%" height="23">
+    <p style="margin-left: 4">&nbsp;</td>
+    <td width="79%" height="23" align="center">
+    <p style="margin-left: 4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="21%" height="51">
+    <p style="margin-top: 0; margin-bottom: 0; margin-left:4">
+    <font face="Arial" size="2">+portal</font></td>
+    <td width="79%" height="51" align="center">
+    <p align="left" style="margin-left: 4"><font size="2" face="Arial">Applied 
+    to faces that are used to define general portals used in the visibility 
+    solution or rendering occlusion for the level.</font></td>
+  </tr>
+  <tr>
+    <td width="21%" height="72">
+    <p style="margin-left: 4"><font face="Arial" size="2">+exactportal</font></td>
+    <td width="79%" height="72" align="center">
+    <p align="left" style="margin-left: 4"><font size="2" face="Arial">Applied 
+    to faces that are used to define an exact volume or portal.&nbsp; Such faces 
+    typically cover exactly the opening of a doorway, passage, or hallway to 
+    define a very distinct volume that can be used to occlude the rendering of 
+    other areas of the level.</font></td>
+  </tr>
+  <tr>
+    <td width="21%" height="25">
+    <p style="margin-left: 4">&nbsp;</td>
+    <td width="79%" height="25" align="center">
+    <p style="margin-left: 4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="21%" height="49">
+    <p style="margin-left: 4"><font face="Arial" size="2">+weatherpoly</font></td>
+    <td width="79%" height="49" align="center">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Applied 
+    to faces that are used to define a portal or portals to use as a volume for 
+    setting weather effects.</font></td>
+  </tr>
+  <tr>
+    <td width="21%" height="29">
+    <p style="margin-left: 4"><font face="Arial" size="2">+sound</font></td>
+    <td width="79%" height="29" align="center">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Applied 
+    to faces that are used to define volumes for sound.</font></td>
+  </tr>
+  <tr>
+    <td width="21%" height="29">
+    <p style="margin-left: 4">&nbsp;</td>
+    <td width="79%" height="29" align="center">
+    <p style="margin-left: 4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="21%" height="43">
+    <p style="margin-left: 4"><font face="Arial" size="2">+unused</font></td>
+    <td width="79%" height="43" align="center">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Reserved 
+    special material that has many uses and can be used in conjunction with the 
+    special shader symbols to define its use and behavior.&nbsp; </font></p>
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">For 
+    example, it can be used with the &quot;$&quot; Fog Plane Shader Symbol to make 
+    +unused$, which can be applied to faces to construct a fog plane that is 
+    used to define a volumetric fog region.</font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0" border="0" width="852">
+	<tr>
+        <span class="body">  
+		<td rowspan="2" valign="bottom" width="20">
+        <img src="../../images/bar_left.gif" width="20" height="26"></td>
+		<td bgcolor="black" width="520"> <span class="body"><b>
+        <font face="Arial" size="2">Shader Symbols</font></b></span></td>
+		<td width="312"><img src="../../images/bar_right.gif" width="101" height="27"></td>
+ </span> 						
+	</tr>
+	</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber5" height="42">
+  <tr>
+    <td width="100%" height="1" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0">
+    <font size="2" face="Arial">The following table shows the list of special 
+    material or shader symbols used to assign certain attributes or behaviors to 
+    a particular surface in the level.&nbsp; </font>
+    <p>
+    <font size="2" face="Arial">These shader symbols are hard-coded in the tools 
+    and game to be recognized as applying their associated attribute when added 
+    to the end of a material name.</font></p>
+    <p><font face="Arial" size="2">These shader symbols should NOT be used or 
+    added to the name of a material unless it is for the specific function for 
+    which it is designed.&nbsp; These symbols should not appear anywhere in the 
+    normal name for a material nor should these special symbols appear in the 
+    name of a data tag (.bitmap, .shader_environment, etc...).&nbsp; </font></p>
+    <p><font face="Arial" size="2">The shader symbols are taken into account 
+    during the compilation of the .jms and affect the surfaces at this time.&nbsp;
+    </font></p>
+    <p><font face="Arial" size="2">For example, if a ladder is created using 2 
+    polygons and has the material &quot;ladder&quot; (without the quotes) assigned to it.&nbsp; 
+    This ladder is able to be viewed from both sides. To make the ladder a true 
+    ladder with respect to the Halo engine AND to make it able to be viewed or 
+    rendered from both sides the &quot;%&quot; would be added as well as the &quot;^&quot;.&nbsp; 
+    The resulting material name viewed in 3ds Max for the Sub-Material under the 
+    Multi/Sub-Object would be &quot;ladder%^&quot; (without the quotes).&nbsp; The data 
+    tag name would still be ladder.shader_environment.</font></td>
+  </tr>
+  </table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="59%" id="AutoNumber6" height="609" bordercolor="#C0C0C0">
+  <tr>
+    <td width="14%" height="54" align="center">
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">%</font></td>
+    <td width="86%" height="54" align="left">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Two sided 
+    property.&nbsp; This flag or shader symbol when applied to a material that 
+    is applied to a face or surface renders both sides of the surface instead of 
+    just the side that the normal is facing.</font></td>
+  </tr>
+  <tr>
+    <td width="14%" height="54" align="center">
+    <font face="Arial" size="2">#</font></td>
+    <td width="86%" height="54" align="left">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">
+    Transparent property.&nbsp; This flag or shader symbol when applied to a 
+    material that is applied to a face or surface allows the surface up to be 
+    rendered with transparency.</font></td>
+  </tr>
+  <tr>
+    <td width="14%" height="69" align="center">
+    <p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">!</font></td>
+    <td width="86%" height="69" align="left">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Render 
+    only property.&nbsp; This flag or shader symbol when applied to a material 
+    that is applied to a face or surface makes the surface only render the face, 
+    the face or surface will not have any collision.</font></td>
+  </tr>
+  <tr>
+    <td width="14%" height="50" align="center">
+    <font face="Arial" size="2">*</font></td>
+    <td width="86%" height="50" align="left">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Large 
+    collideable property.&nbsp; This flag or shader symbol when applied to a 
+    material that is applied to a face or surface sets the surface up to not be 
+    rendered and only have collision.</font></td>
+  </tr>
+  <tr>
+    <td width="14%" height="68" align="center">
+    <font face="Arial" size="2">$</font></td>
+    <td width="86%" height="68" align="left">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Fog plane 
+    property.&nbsp; This flag or shader symbol when applied to a material that 
+    is applied to a face or surface makes the surface not be rendered.&nbsp; The 
+    faces acts as a fog plane that can be used to define a volumetric fog 
+    region.</font></td>
+  </tr>
+  <tr>
+    <td width="14%" height="77" align="center">
+    <font face="Arial" size="2">^</font></td>
+    <td width="86%" height="77" align="left">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Ladder 
+    property.&nbsp; This flag or shader symbol when applied to a material that 
+    is applied to a face or surface sets the surface up to act as a ladder for 
+    the player.&nbsp; The surfaces is climbable.</font></td>
+  </tr>
+  <tr>
+    <td width="14%" height="46" align="center">
+    <font face="Arial" size="2">-</font></td>
+    <td width="86%" height="46" align="left">
+    <p align="left" style="margin-left: 4"><font face="Arial" size="2">Breakable 
+    property.&nbsp; This flag or shader symbol when applied to a material that 
+    is applied to a face or surface allows the surface to be able to be 
+    destroyed or broken.&nbsp; (e.g. glass)</font></td>
+  </tr>
+  <tr>
+    <td width="14%" height="66" align="center">
+    <font face="Arial" size="2">&amp;</font></td>
+    <td width="86%" height="66" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">AI deafening property.&nbsp; 
+    This property does not apply to multiplayer levels.&nbsp;&nbsp; This flag or 
+    shader symbol when applied to a material that is applied to a face or 
+    surface allows that surface to inhibit AI functions.</font></td>
+  </tr>
+  <tr>
+    <td width="14%" height="51" align="center">
+    <font face="Arial" size="2">@</font></td>
+    <td width="86%" height="51" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">Collision only 
+    property.&nbsp; This flag or shader symbol when applied to a material that 
+    is applied to a face or surface sets the surface up to not be rendered and 
+    only have collision.</font></td>
+  </tr>
+  <tr>
+    <td width="14%" height="51" align="center">
+    <font face="Arial" size="2">.</font></td>
+    <td width="86%" height="51" align="left">
+    <p style="margin-left: 4"><font face="Arial" size="2">Exact Portal property.&nbsp; 
+    This flag or shader symbol when applied to a material that is applied to a 
+    face or surface makes the surface able to be used to define an exact portal.&nbsp;
+    </font></td>
+  </tr>
+</table>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0" align="left">&nbsp;</p>
+
+<ul>
+  <li>
+  <p style="margin-top: 0; margin-bottom: 0" align="left"><font face="Arial"><b>
+  <a href="../../main/main.html">Return to Main Page</a></b></font></li>
+</ul>
+
+</body>
+
+</html>
