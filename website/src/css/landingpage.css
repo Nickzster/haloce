@@ -365,9 +365,9 @@ footer {
     margin: 0px;
     margin: 40px 40px;
   }
-  :root {
-    --background-size-images: auto;
-  }
+  /* :root {
+    --background-size-images: cover;
+  } */
 }
 
 @media (max-width: 320px) {
