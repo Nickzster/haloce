@@ -379,20 +379,40 @@ const LandingPage = () => {
             <h1>Halo CE Addons</h1>
           </div>
           <div className='text'>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-              commodi neque ex exercitationem dignissimos est qui! Perspiciatis,
-              id temporibus tempore aut explicabo corrupti, doloribus nesciunt,
-              tenetur obcaecati possimus voluptatibus iusto. Reiciendis aliquam
-              magni consequuntur facere fuga, ipsa repudiandae alias quis,
-              nostrum sequi enim. Esse dolor quas, nostrum repellat accusantium,
-              porro perferendis ratione quasi animi velit facere, illum maxime.
-              Vel maiores facere fugiat quasi non natus velit. Delectus modi
-              distinctio consequuntur sequi reprehenderit aut, illum totam ea ad
-              porro! Dolor neque ipsum adipisci odio quas dolores veritatis
-              molestiae voluptatibus id accusamus illo rem libero, cumque, at
-              eum dicta delectus! Atque, ad.
-            </p>
+            
+			<table>
+			  <tr>
+				<th>Addon</th>
+				<th>Download</th>
+				<th>Mirror</th>
+				<th>Tutorial</th>
+			  </tr>
+			  <tr>
+				<td>Halo Anticheat 2 (HAC2)</td>
+				<td><a href="http://client.haloanticheat.com/release.zip">v2.2.0.6</a></td>
+				<td>Placeholder</td>
+				<td><a href="https://www.youtube.com/watch?v=hTMsmLAdNXE">YT</a></td>
+			  </tr>
+			  <tr>
+				<td>Chimera</td>
+				<td><a href="https://opencarnage.net/index.php?/topic/6916-chimera-build-49/">Build 49</a></td>
+				<td>Placeholder</td>
+				<td><a href="https://www.youtube.com/watch?v=gdMBT7Pt68U">YT</a></td>
+			  </tr>
+			  <tr>
+				<td>OpenSauce</td>
+				<td><a href="https://bitbucket.org/KornnerStudios/opensauce-release/downloads/">v4.0</a></td>
+				<td>Placeholder</td>
+				<td><a href="https://www.youtube.com/watch?v=r_EEWD3aEws">YT</a></td>
+			  </tr>
+			  <tr>
+				<td>Halo Editing Kit (HEK)</td>
+				<td><a href="http://hce.halomaps.org/index.cfm?fid=411">Latest</a></td>
+				<td>Placeholder</td>
+				<td>Placeholder</td>
+			  </tr>
+			</table>
+			
           </div>
         </section>
       </div>
