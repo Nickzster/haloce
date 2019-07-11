@@ -80,6 +80,8 @@ This list is subject to change, as the website grows.
 
 When you've made some changes, and are ready to merge them in, please make a pull request. I will check it out and Merge it in if I like it.
 
+Please do not make any PR's to the gh-pages branch. They will be deleted.
+
 # Thank you
 
 Thank you for your contribution to Halo Custom Edition's website!
