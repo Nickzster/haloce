@@ -81,7 +81,14 @@ This list is subject to change, as the website grows.
 
 ## Making your changes
 
-You should be ready to make some changes. To start the dev server, simply navigate into `haloce/website`, and use `yarn start`. You can now make your changes and view them live in the browser!
+You should be ready to make some changes. To make the editing process as easy as possible, I have a workflow that I follow:
+
+1. Open my terminal
+2. `cd` into haloce
+3. Open Visual Studio Code [via the command line](https://code.visualstudio.com/docs/editor/command-line) : `code .`
+4. `cd` into website.
+5. use `yarn start` to start the development server
+6. Make my changes and watch as they appear on the development server!
 
 ## Pull Requests
 
