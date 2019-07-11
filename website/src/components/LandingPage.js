@@ -421,7 +421,7 @@ const LandingPage = () => {
               href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'
               target='_blank'
             >
-              <img src={require('../images/chimera-edit.jpg')} />
+              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
             </a>
             <h3><a href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'>Chimera</a></h3>
             <p>
