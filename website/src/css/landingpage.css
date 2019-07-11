@@ -13,6 +13,7 @@ Styles - Main Website
   --box-shadow: 0 1px 20px rgba(43, 43, 43, 0.8);
   --font-shadow: 0 1px 5px rgba(34, 34, 34, 0.8);
   --borderradius: 10px;
+  --background-size-images: cover;
   /* shadow: horizontal vertical blur color */
 }
 
@@ -35,7 +36,7 @@ body {
   padding: 0;
   border: 0;
   background-image: url(../images/tsce-2.jpg);
-  background-size: cover;
+  background-size: var(--background-size-images);
   background-position: center;
   background-attachment: fixed;
   line-height: 1.4;
@@ -246,7 +247,7 @@ footer {
   background-image: url(../images/spv3_5_full.jpg);
   background-position: center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: var(--background-size-images);
   /* filter: blur(8px);
   -webkit-filter: blur(8px); */
 }
@@ -254,31 +255,31 @@ footer {
   background-image: url(../images/lumoria.jpg);
   background-position: center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: var(--background-size-images);
 }
 .firefight {
   background-image: url(../images/portent-2.jpg);
   background-position: center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: var(--background-size-images);
 }
 .arrival {
   background-image: url(../images/arrival-1.jpg);
   background-position: center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: var(--background-size-images);
 }
 .addons {
   background-image: url(../images/tsce-4.jpg);
   background-position: center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: var(--background-size-images);
 }
 .community {
   background-image: url(../images/tsce1_full.jpg);
   background-position: center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: var(--background-size-images);
 }
 
 /* Textures */
@@ -357,6 +358,9 @@ footer {
     padding: 0px;
     margin: 0px;
     margin: 40px 40px;
+  }
+  :root {
+    --background-size-images: auto;
   }
 }
 
