@@ -85,7 +85,11 @@ You should be ready to make some changes. To start the dev server, simply naviga
 
 ## Pull Requests
 
-When you've made some changes, and are ready to merge them in, please make a pull request. I will check it out and Merge it in if I like it.
+When you've made some changes, and are ready to merge them in, please make a pull request. When making a pull request, please provide the following:
+
+- A screenshot of your changes reflected on the website
+
+I will check it out and Merge it in if I like it.
 
 Please do not make any PR's to the gh-pages branch. They will be deleted.
 
