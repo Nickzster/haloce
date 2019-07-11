@@ -81,7 +81,7 @@ This list is subject to change, as the website grows.
 
 ## Making your changes
 
-You should be ready to make some changes. To start the dev server 
+You should be ready to make some changes. To start the dev server, simply navigate into `haloce/website`, and use `yarn start`. You can now make your changes and view them live in the browser!
 
 ## Pull Requests
 
