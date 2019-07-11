@@ -9,7 +9,7 @@ Styles - Main Website
   --dark: #303030;
   --dark-trans: rgba(48, 48, 48, 0.4);
   --light: #fff;
-  --background: #e8e8e8;
+  --background: #c4c4c4;
   --box-shadow: 0 1px 20px rgba(43, 43, 43, 0.8);
   --font-shadow: 0 1px 5px rgba(34, 34, 34, 0.8);
   --borderradius: 10px;
@@ -37,6 +37,7 @@ body {
   border: 0;
   background-image: url(../images/tsce-2.jpg);
   background-size: var(--background-size-images);
+  background-color: var(--background);
   background-position: center;
   background-attachment: fixed;
   line-height: 1.4;
@@ -81,6 +82,7 @@ h1 {
 /* Nav Bar */
 .icon {
   width: 5%;
+  height: auto;
   margin-left: 30px;
 }
 
@@ -254,6 +256,7 @@ footer {
   background-position: center;
   background-attachment: fixed;
   background-size: var(--background-size-images);
+  background-color: var(--background);
   /* filter: blur(8px);
   -webkit-filter: blur(8px); */
 }
@@ -262,30 +265,35 @@ footer {
   background-position: center;
   background-attachment: fixed;
   background-size: var(--background-size-images);
+  background-color: var(--background);
 }
 .firefight {
   background-image: url(../images/portent-2.jpg);
   background-position: center;
   background-attachment: fixed;
   background-size: var(--background-size-images);
+  background-color: var(--background);
 }
 .arrival {
   background-image: url(../images/arrival-1.jpg);
   background-position: center;
   background-attachment: fixed;
   background-size: var(--background-size-images);
+  background-color: var(--background);
 }
 .addons {
   background-image: url(../images/tsce-4.jpg);
   background-position: center;
   background-attachment: fixed;
   background-size: var(--background-size-images);
+  background-color: var(--background);
 }
 .community {
   background-image: url(../images/tsce1_full.jpg);
   background-position: center;
   background-attachment: fixed;
   background-size: var(--background-size-images);
+  background-color: var(--background);
 }
 
 /* Textures */
@@ -293,34 +301,41 @@ footer {
 .circuits {
   background-image: url(../images/techdensecircuits.jpg);
   background-position: center;
+  background-color: var(--background);
 }
 .rocks {
   background-image: url(../images/detailcliffrocksmooth.jpg);
   background-position: center;
+  background-color: var(--background);
 }
 .snow {
   background-image: url(../images/b40cliffsnowbump.jpg);
   background-position: center;
+  background-color: var(--background);
 }
 .grass {
   background-image: url(../images/detailgrass.jpg);
   background-position: center;
+  background-color: var(--background);
 }
 .panel {
   background-image: url(../images/techrackplate.jpg);
   background-position: center;
+  background-color: var(--background);
   /* background-attachment: fixed; */
   /* background-size: cover; */
 }
 .covie {
   background-image: url(../images/covenantmetalgeneric.jpg);
   background-position: center;
+  background-color: var(--background);
   /* background-attachment: fixed; */
   /* background-size: cover; */
 }
 .cliffs {
   background-image: url(../images/cliffs.jpg);
   background-position: center;
+  background-color: var(--background);
   /* background-attachment: fixed; */
   /* background-size: cover; */
 }
@@ -340,6 +355,7 @@ footer {
 
   .icon {
     width: 10%;
+    height: auto;
     margin-left: 30px;
   }
 }
@@ -368,31 +384,24 @@ footer {
 
   .spv3 {
     background-image: none;
-    background-color: var(--dark);
   }
   .arrival {
     background-image: none;
-    background-color: var(--dark);
   }
   .sp {
     background-image: none;
-    background-color: var(--dark);
   }
   .firefight {
     background-image: none;
-    background-color: var(--dark);
   }
   .addons {
     background-image: none;
-    background-color: var(--dark);
   }
   .community {
     background-image: none;
-    background-color: var(--dark);
   }
   body {
     background-image: none;
-    background-color: var(--dark);
   }
 }
 
