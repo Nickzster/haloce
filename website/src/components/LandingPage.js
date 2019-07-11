@@ -160,7 +160,7 @@ const LandingPage = () => {
             <h3>Halo Editing Kit</h3>
             <p>
               To get started with creating custom content for the Halo Custom
-              Edition game, Read the
+              Edition game, Read the{' '}
               <a
                 className='link'
                 target='_blank'
