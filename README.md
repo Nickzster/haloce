@@ -45,7 +45,18 @@ After everything is installed, you can run
 npm i -g yarn
 ```
 
-to install Yarn. You should be ready to go now.
+to install Yarn.
+
+When you enter VSCode, please install the recommended extensions:
+
+- Prettier
+
+Some other extensions I like that help me read code easier:
+
+- Bracket Pair Colorizer
+- Indent Colorizer
+
+You should be ready to go now.
 
 ## Set up your environment: Project Setup
 
