@@ -9,7 +9,7 @@ Styles - Main Website
   --dark: #303030;
   --dark-trans: rgba(48, 48, 48, 0.4);
   --light: #fff;
-  --background: #c4c4c4;
+  --background: #5a5a5a;
   --box-shadow: 0 1px 20px rgba(43, 43, 43, 0.8);
   --font-shadow: 0 1px 5px rgba(34, 34, 34, 0.8);
   --borderradius: 10px;
@@ -356,9 +356,6 @@ footer {
   .icon {
     visibility: hidden;
   }
-}
-
-@media (max-width: 1000px) {
   .spv3 {
     background-image: none;
   }
