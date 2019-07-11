@@ -365,9 +365,35 @@ footer {
     margin: 0px;
     margin: 40px 40px;
   }
-  /* :root {
-    --background-size-images: cover;
-  } */
+
+  .spv3 {
+    background-image: none;
+    background-color: var(--dark);
+  }
+  .arrival {
+    background-image: none;
+    background-color: var(--dark);
+  }
+  .sp {
+    background-image: none;
+    background-color: var(--dark);
+  }
+  .firefight {
+    background-image: none;
+    background-color: var(--dark);
+  }
+  .addons {
+    background-image: none;
+    background-color: var(--dark);
+  }
+  .community {
+    background-image: none;
+    background-color: var(--dark);
+  }
+  body {
+    background-image: none;
+    background-color: var(--dark);
+  }
 }
 
 @media (max-width: 320px) {
