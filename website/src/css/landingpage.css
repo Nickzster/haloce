@@ -360,28 +360,7 @@ footer {
   }
 }
 
-@media (max-width: 900px) {
-  .nav-bar {
-    visibility: hidden;
-  }
-  .icon {
-    visibility: hidden;
-  }
-  .title-text {
-    font-size: 2em;
-  }
-
-  .text-section p,
-  h1 {
-    font-size: 1em;
-  }
-  .container p,
-  h1 {
-    padding: 0px;
-    margin: 0px;
-    margin: 40px 40px;
-  }
-
+@media (max-width: 1000px) {
   .spv3 {
     background-image: none;
   }
@@ -402,6 +381,29 @@ footer {
   }
   body {
     background-image: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-bar {
+    visibility: hidden;
+  }
+  .icon {
+    visibility: hidden;
+  }
+  .title-text {
+    font-size: 2em;
+  }
+
+  .text-section p,
+  h1 {
+    font-size: 1em;
+  }
+  .container p,
+  h1 {
+    padding: 0px;
+    margin: 0px;
+    margin: 40px 40px;
   }
 }
 
