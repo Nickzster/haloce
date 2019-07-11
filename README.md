@@ -72,6 +72,7 @@ To help navigate your way around the codebase, it will be easier if you are fami
 
 - [Javascript](https://www.w3schools.com/js/default.asp) - Primary Development Language
 - [React](https://reactjs.org/) - Primary Front End Framework
+- [React Hooks](https://reactjs.org/hooks)
 - Basic [HTML](https://www.w3schools.com/html/default.asp) / [CSS](https://www.w3schools.com/css/default.asp)
 
 This list is subject to change, as the website grows.
