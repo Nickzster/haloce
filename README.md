@@ -56,7 +56,7 @@ When you enter VSCode, please install the recommended extensions:
 Some other extensions I like that help me read code easier:
 
 - Bracket Pair Colorizer
-- Indent Colorizer
+- Indent-Rainbow
 
 You should be ready to go now.
 
