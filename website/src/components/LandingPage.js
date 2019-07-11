@@ -380,19 +380,22 @@ const LandingPage = () => {
           </div>
           <div className='text'>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-              commodi neque ex exercitationem dignissimos est qui! Perspiciatis,
-              id temporibus tempore aut explicabo corrupti, doloribus nesciunt,
-              tenetur obcaecati possimus voluptatibus iusto. Reiciendis aliquam
-              magni consequuntur facere fuga, ipsa repudiandae alias quis,
-              nostrum sequi enim. Esse dolor quas, nostrum repellat accusantium,
-              porro perferendis ratione quasi animi velit facere, illum maxime.
-              Vel maiores facere fugiat quasi non natus velit. Delectus modi
-              distinctio consequuntur sequi reprehenderit aut, illum totam ea ad
-              porro! Dolor neque ipsum adipisci odio quas dolores veritatis
-              molestiae voluptatibus id accusamus illo rem libero, cumque, at
-              eum dicta delectus! Atque, ad.
+
+              Halo: Custom Edition has many addons which add different functionality
+              to the game. Many changes can be made to improve your game and tailor the experience
+              to each invidivdual.  <br /> <br />
+
+              <b>Client Addons:</b> Client addons change the players experience in the game. Changes
+              such as graphics enhancement, field of view, fps increasing, and more are avaliable
+              with various addons. <br /> <br />
+
+              <b>Server Addons:</b> Server addons will allow modification of the usually limiting 
+              server software. Functionality such as no leading, lua scripting, and more are
+              avaliable through the server addons.
+
             </p>
+
+
           </div>
         </section>
       </div>
@@ -418,9 +421,9 @@ const LandingPage = () => {
               href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'
               target='_blank'
             >
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src={require('../images/chimera-edit.jpg')} />
             </a>
-            <h3>Chimera</h3>
+            <h3><a href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'>Chimera</a></h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Temporibus et incidunt repellat.
