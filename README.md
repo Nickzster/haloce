@@ -9,6 +9,8 @@ Some possible additions include:
 - User Profiles
 - User engagement (Comments, Likes, etc.)
 
+If you don't want to contribute with code, please consider making a contribution in [our discord server](https://discord.gg/73zHwAz)!
+
 If you want to contribute, please read the following sections:
 
 # Lisence
@@ -76,6 +78,10 @@ To help navigate your way around the codebase, it will be easier if you are fami
 - Basic [HTML](https://www.w3schools.com/html/default.asp) / [CSS](https://www.w3schools.com/css/default.asp)
 
 This list is subject to change, as the website grows.
+
+## Making your changes
+
+You should be ready to make some changes. To start the dev server 
 
 ## Pull Requests
 
