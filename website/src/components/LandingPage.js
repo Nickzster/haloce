@@ -402,6 +402,19 @@ const LandingPage = () => {
         <section className='card-list'>
           <div className='card'>
             <a
+              href='http://client.haloanticheat.com/release.zip'
+              target='_blank'
+            >
+              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+            </a>
+            <h3>Halo Anticheat 2 (HAC2)</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Temporibus et incidunt repellat.
+            </p>
+          </div>
+          <div className='card'>
+            <a
               href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'
               target='_blank'
             >

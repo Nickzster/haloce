@@ -66,6 +66,11 @@ h1 {
   margin: 0px;
   margin: 40px 300px;
 }
+
+.container table {
+  margin: 40px 300px;
+  border: 1px solid #000;
+}
 /* Nav Bar */
 .icon {
   width: 5%;
