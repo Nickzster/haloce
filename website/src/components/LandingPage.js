@@ -380,22 +380,19 @@ const LandingPage = () => {
           </div>
           <div className='text'>
             <p>
-
-              Halo: Custom Edition has many addons which add different functionality
-              to the game. Many changes can be made to improve your game and tailor the experience
-              to each invidivdual.  <br /> <br />
-
-              <b>Client Addons:</b> Client addons change the players experience in the game. Changes
-              such as graphics enhancement, field of view, fps increasing, and more are avaliable
-              with various addons. <br /> <br />
-
-              <b>Server Addons:</b> Server addons will allow modification of the usually limiting 
-              server software. Functionality such as no leading, lua scripting, and more are
-              avaliable through the server addons.
-
+              Halo: Custom Edition has many addons which add different
+              functionality to the game. Many changes can be made to improve
+              your game and tailor the experience to each invidivdual. <br />{' '}
+              <br />
+              <b>Client Addons:</b> Client addons change the players experience
+              in the game. Changes such as graphics enhancement, field of view,
+              fps increasing, and more are avaliable with various addons. <br />{' '}
+              <br />
+              <b>Server Addons:</b> Server addons will allow modification of the
+              usually limiting server software. Functionality such as no
+              leading, lua scripting, and more are avaliable through the server
+              addons.
             </p>
-
-
           </div>
         </section>
       </div>
@@ -421,9 +418,13 @@ const LandingPage = () => {
               href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'
               target='_blank'
             >
-              <img src={require('../images/chimera-edit.jpg')} />
+              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
             </a>
-            <h3><a href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'>Chimera</a></h3>
+            <h3>
+              <a href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'>
+                Chimera
+              </a>
+            </h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Temporibus et incidunt repellat.
@@ -462,13 +463,14 @@ const LandingPage = () => {
           </div>
           <div className='text'>
             <p>
-              The community is one of the best parts of H:CE. Over a decade ago the community began
-              and it is still strong to this day. All of the updates, addons, servers, and more are
-              developed by the community. Great projects and maps have made the game a unique experience
+              The community is one of the best parts of H:CE. Over a decade ago
+              the community began and it is still strong to this day. All of the
+              updates, addons, servers, and more are developed by the community.
+              Great projects and maps have made the game a unique experience
               unlike any other game. <br /> <br />
-
-              New content is being released every single day! Below you can find some of our picks of
-              forums, creations, youtube channels, and more. Check it out!
+              New content is being released every single day! Below you can find
+              some of our picks of forums, creations, youtube channels, and
+              more. Check it out!
             </p>
           </div>
         </section>
