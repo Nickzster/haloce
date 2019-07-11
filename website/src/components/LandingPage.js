@@ -462,18 +462,13 @@ const LandingPage = () => {
           </div>
           <div className='text'>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-              commodi neque ex exercitationem dignissimos est qui! Perspiciatis,
-              id temporibus tempore aut explicabo corrupti, doloribus nesciunt,
-              tenetur obcaecati possimus voluptatibus iusto. Reiciendis aliquam
-              magni consequuntur facere fuga, ipsa repudiandae alias quis,
-              nostrum sequi enim. Esse dolor quas, nostrum repellat accusantium,
-              porro perferendis ratione quasi animi velit facere, illum maxime.
-              Vel maiores facere fugiat quasi non natus velit. Delectus modi
-              distinctio consequuntur sequi reprehenderit aut, illum totam ea ad
-              porro! Dolor neque ipsum adipisci odio quas dolores veritatis
-              molestiae voluptatibus id accusamus illo rem libero, cumque, at
-              eum dicta delectus! Atque, ad.
+              The community is one of the best parts of H:CE. Over a decade ago the community began
+              and it is still strong to this day. All of the updates, addons, servers, and more are
+              developed by the community. Great projects and maps have made the game a unique experience
+              unlike any other game. <br /> <br />
+
+              New content is being released every single day! Below you can find some of our picks of
+              forums, creations, youtube channels, and more. Check it out!
             </p>
           </div>
         </section>
