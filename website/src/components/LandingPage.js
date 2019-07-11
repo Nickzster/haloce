@@ -10,7 +10,7 @@ const scrolling = {
 
 const LandingPage = () => {
   return (
-    <React.Fragment>
+    <div class='page'>
       <header className='nav-bar'>
         <img className='icon' src={require('../images/legendary.png')} />
         <ul className='nav-bar'>
@@ -463,11 +463,11 @@ const LandingPage = () => {
           </div>
           <div className='text'>
             <p>
-              The community is one of the best parts of H:CE. Over a decade ago
-              the community began and it is still strong to this day. All of the
-              updates, addons, servers, and more are developed by the community.
-              Great projects and maps have made the game a unique experience
-              unlike any other game. <br /> <br />
+              The community is one of the best parts of Halo Custom Edition.
+              Over a decade ago the community began and it is still strong to
+              this day. All of the updates, addons, servers, and more are
+              developed by the community. Great projects and maps have made the
+              game a unique experience unlike any other game. <br /> <br />
               New content is being released every single day! Below you can find
               some of our picks of forums, creations, youtube channels, and
               more. Check it out!
@@ -532,7 +532,7 @@ const LandingPage = () => {
         </h5>
         <h5>Website Design &copy; 2019, Nickster5000</h5>
       </footer>
-    </React.Fragment>
+    </div>
   );
 };
 
