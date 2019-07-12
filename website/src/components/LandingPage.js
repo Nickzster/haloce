@@ -143,32 +143,30 @@ const LandingPage = () => {
             <img src={require('../images/descent-1.jpg')} />
             <h3>Firefight</h3>
             <p>
-            Firefight is a single or cooperative campaign mode brought to
-            Halo: Custom Edition where the player goes up against waves of
-            enemy attackers.
+              Firefight is a take on Halo 3: ODST's game mode, allowing players
+              to go up against waves of enemy attackers.
             </p>
           </div>
           <div className='card'>
             <img src={require('../images/precipice.png')} />
             <h3>Multiplayer</h3>
             <p>
-              Multiplayer is the online player vs. player component of Halo: Custom Edition.
-              You can play on many maps and gamemodes on a wide variety of dedicated servers.
+              Multiplayer is the allows you to fight other players on a wide
+              variety of dedicated servers.
             </p>
           </div>
           <div className='card'>
             <img src={require('../images/nuclear-b.png')} />
             <h3>Halo Editing Kit</h3>
             <p>
-              HEK is a kit of tools allowing you to develop custom content for
-              Halo: Custom Edition.
-              To get started, read the{' '}
+              HEK is the tool that allows you to create custom content for Halo:
+              Custom Edition.{' '}
               <a
                 className='link'
                 target='_blank'
                 href='HEK_Tutorial/index.html'
               >
-                Official HEK Tutorial
+                Get started here.
               </a>
             </p>
           </div>
@@ -182,12 +180,11 @@ const LandingPage = () => {
           </div>
           <div className='text'>
             <p>
-              Single player mode has a wide variety of offerings in Halo: Custom Edition.
-              You can play the standard Halo: Combat Evolved campaign missions, custom missions,
-              and even a fully revamped campaign known as CMT SPV3. <br /> <br />
-
-              The single player mode offers hours of entertainment with new missions and modes
-              coming out regularly.
+              In Halo Custom Edition Single Player missions, you can fight
+              against challenging enemies in a variety of missions. You can play
+              the original Halo Combat Evolved Campaign, custom campaigns, and
+              custom missions created by various members of the community. The
+              single player mode offers hours of entertainment!
             </p>
           </div>
         </section>
@@ -202,9 +199,8 @@ const LandingPage = () => {
             </a>
             <h3>CMT SPV3</h3>
             <p>
-            SPV3 is a total overhaul of the Halo 1 campaign for the PC. The mod
-            includes new weapons, enemies, vehicles, areas, custom soundtracks, and
-            easter eggs.
+              SPV3 is a total overhaul of the Halo Combat Evolved. The mod
+              includes a variety of new custom content.
             </p>
           </div>
           <div className='card'>
@@ -213,8 +209,8 @@ const LandingPage = () => {
             </a>
             <h3>Project Lumoria</h3>
             <p>
-              Lumoria is a custom two part episodic experience for Halo: Custom Edition. The SPv3 team released
-              a modified version of Lumoria with new content.
+              Lumoria is an immersive two-part custom campaign that features
+              custom environments.
             </p>
           </div>
           <div className='card'>
@@ -223,8 +219,8 @@ const LandingPage = () => {
             </a>
             <h3>The Silent Cartographer Evolved</h3>
             <p>
-            The Silent Cartographer: Evolved, also referred as TSC:E, is a re-imagining of the Silent Cartographer.
-            It was included in Halo SPv3.
+              The Silent Cartographer: Evolved (TSC:E) is a re-imagining of Halo
+              Combat Evolved's Silent Cartographer
             </p>
           </div>
         </section>
@@ -237,10 +233,10 @@ const LandingPage = () => {
           </div>
           <div className='text'>
             <p>
-            This mode allows them to battle in multiple environments based on campaign maps,
-            on foot or in vehicles, and against increasingly difficult waves of enemy attackers. <br /> <br />
-
-            Many modes, maps, and varieties are avaliable to enhance the firefight experience.
+              This is the exact game mode that was introduced in Halo 3: ODST.
+              Firefight allows players to battle against increasingly difficult
+              waves of enemies in unique environments. In Halo Custom Edition,
+              users have added their own spin on the concept of firefight.
             </p>
           </div>
         </section>
@@ -258,8 +254,8 @@ const LandingPage = () => {
             </a>
             <h3>Descent</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Defend your forerunner base from covenant enemies that descend
+              down the gravity lift.
             </p>
           </div>
           <div className='card'>
@@ -271,8 +267,8 @@ const LandingPage = () => {
             </a>
             <h3>Portent</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Eliminate covenant enemies to earn credits. Players can use
+              credits to buy weapons and upgrades!
             </p>
           </div>
           <div className='card'>
@@ -293,10 +289,11 @@ const LandingPage = () => {
           </div>
           <div className='text'>
             <p>
-              Multiplayer is a competitive player versus player mode allowing you to connect and play with people from across the world.
-              Many dedicated servers exist to offer a wide variety of experiences. From vanilla slayer on bloodgulch to custom space battle
-              experiences you will always have something to do. <br /> <br />
-              
+              Halo Custom Edition was built for Multiplayer. There are a variety
+              of gamemodes including Slayer, Caputre the Flag, Race, King of the
+              Hill, and Oddball. You can expect to play with players all around
+              the world on fun dedicated servers hosting a variety of maps and
+              game modes.
             </p>
           </div>
         </section>
@@ -314,8 +311,8 @@ const LandingPage = () => {
             </a>
             <h3>Bigass</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Fight your friends on a large, expansive map. Includes a Battle
+              Royale game mode.
             </p>
           </div>
           <div className='card'>
@@ -327,8 +324,8 @@ const LandingPage = () => {
             </a>
             <h3>Intensity Beta 1.6</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Fight your friends on a remarkable forerunner structure. Inspired
+              by the original Intensity by CMT.
             </p>
           </div>
           <div className='card'>
@@ -337,8 +334,8 @@ const LandingPage = () => {
             </a>
             <h3>Arrival</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Fight your friends in the middle of a lush, gorgeous forerunner
+              forest.
             </p>
           </div>
           <div className='card'>
@@ -347,8 +344,8 @@ const LandingPage = () => {
             </a>
             <h3>ONI</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Fight your friends in a large human structure built by ONI.
+              Inspired from Halo Reach.
             </p>
           </div>
         </section>
@@ -362,17 +359,15 @@ const LandingPage = () => {
           <div className='text'>
             <p>
               Halo: Custom Edition has many addons which add different
-              functionality to the game. Many changes can be made to improve
-              your game and tailor the experience to each invidivdual. <br />{' '}
-              <br />
-              <b>Client Addons:</b> Client addons change the players experience
-              in the game. Changes such as graphics enhancement, field of view,
-              fps increasing, and more are avaliable with various addons. <br />{' '}
-              <br />
-              <b>Server Addons:</b> Server addons will allow modification of the
-              usually limiting server software. Functionality such as no
-              leading, lua scripting, and more are avaliable through the server
-              addons.
+              functionality to the game. Addons serve to improve your game and
+              tailor the experience to each invidivdual. There are two types of
+              addons in Halo Custom Edition. <strong>Client addons</strong>{' '}
+              change the players experience in the game. Some enhancements
+              include post processing, graphics, field of view, FPS increases,
+              and much more with various addons. <strong>Server addons</strong>{' '}
+              allow modification of Halo's multiplayer server software. Server
+              admins can add complex functionality to their servers such as no
+              leading, lua scripting, and much more with various addons.
             </p>
           </div>
         </section>
@@ -448,10 +443,10 @@ const LandingPage = () => {
               Over a decade ago the community began and it is still strong to
               this day. All of the updates, addons, servers, and more are
               developed by the community. Great projects and maps have made the
-              game a unique experience unlike any other game. <br /> <br />
-              New content is being released every single day! Below you can find
-              some of our picks of forums, creations, youtube channels, and
-              more. Check it out!
+              game a unique experience unlike any other game. New content is
+              being released every single day! Below you can find some of our
+              picks of forums, creations, youtube channels, and more. Check it
+              out!
             </p>
           </div>
         </section>
