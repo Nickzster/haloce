@@ -143,24 +143,26 @@ const LandingPage = () => {
             <img src={require('../images/descent-1.jpg')} />
             <h3>Firefight</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+            Firefight is a single or cooperative campaign mode brought to
+            Halo: Custom Edition where the player goes up against waves of
+            enemy attackers.
             </p>
           </div>
           <div className='card'>
             <img src={require('../images/precipice.png')} />
             <h3>Multiplayer</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Multiplayer is the online player vs. player component of Halo: Custom Edition.
+              You can play on many maps and gamemodes on a wide variety of dedicated servers.
             </p>
           </div>
           <div className='card'>
             <img src={require('../images/nuclear-b.png')} />
             <h3>Halo Editing Kit</h3>
             <p>
-              To get started with creating custom content for the Halo Custom
-              Edition game, Read the{' '}
+              HEK is a kit of tools allowing you to develop custom content for
+              Halo: Custom Edition.
+              To get started, read the{' '}
               <a
                 className='link'
                 target='_blank'
@@ -180,18 +182,12 @@ const LandingPage = () => {
           </div>
           <div className='text'>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-              commodi neque ex exercitationem dignissimos est qui! Perspiciatis,
-              id temporibus tempore aut explicabo corrupti, doloribus nesciunt,
-              tenetur obcaecati possimus voluptatibus iusto. Reiciendis aliquam
-              magni consequuntur facere fuga, ipsa repudiandae alias quis,
-              nostrum sequi enim. Esse dolor quas, nostrum repellat accusantium,
-              porro perferendis ratione quasi animi velit facere, illum maxime.
-              Vel maiores facere fugiat quasi non natus velit. Delectus modi
-              distinctio consequuntur sequi reprehenderit aut, illum totam ea ad
-              porro! Dolor neque ipsum adipisci odio quas dolores veritatis
-              molestiae voluptatibus id accusamus illo rem libero, cumque, at
-              eum dicta delectus! Atque, ad.
+              Single player mode has a wide variety of offerings in Halo: Custom Edition.
+              You can play the standard Halo: Combat Evolved campaign missions, custom missions,
+              and even a fully revamped campaign known as CMT SPV3. <br /> <br />
+
+              The single player mode offers hours of entertainment with new missions and modes
+              coming out regularly.
             </p>
           </div>
         </section>
@@ -206,8 +202,9 @@ const LandingPage = () => {
             </a>
             <h3>CMT SPV3</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+            SPV3 is a total overhaul of the Halo 1 campaign for the PC. The mod
+            includes new weapons, enemies, vehicles, areas, custom soundtracks, and
+            easter eggs.
             </p>
           </div>
           <div className='card'>
@@ -216,8 +213,8 @@ const LandingPage = () => {
             </a>
             <h3>Project Lumoria</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Lumoria is a custom two part episodic experience for Halo: Custom Edition. The SPv3 team released
+              a modified version of Lumoria with new content.
             </p>
           </div>
           <div className='card'>
@@ -226,8 +223,8 @@ const LandingPage = () => {
             </a>
             <h3>The Silent Cartographer Evolved</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+            The Silent Cartographer: Evolved, also referred as TSC:E, is a re-imagining of the Silent Cartographer.
+            It was included in Halo SPv3.
             </p>
           </div>
         </section>
@@ -240,18 +237,10 @@ const LandingPage = () => {
           </div>
           <div className='text'>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-              commodi neque ex exercitationem dignissimos est qui! Perspiciatis,
-              id temporibus tempore aut explicabo corrupti, doloribus nesciunt,
-              tenetur obcaecati possimus voluptatibus iusto. Reiciendis aliquam
-              magni consequuntur facere fuga, ipsa repudiandae alias quis,
-              nostrum sequi enim. Esse dolor quas, nostrum repellat accusantium,
-              porro perferendis ratione quasi animi velit facere, illum maxime.
-              Vel maiores facere fugiat quasi non natus velit. Delectus modi
-              distinctio consequuntur sequi reprehenderit aut, illum totam ea ad
-              porro! Dolor neque ipsum adipisci odio quas dolores veritatis
-              molestiae voluptatibus id accusamus illo rem libero, cumque, at
-              eum dicta delectus! Atque, ad.
+            This mode allows them to battle in multiple environments based on campaign maps,
+            on foot or in vehicles, and against increasingly difficult waves of enemy attackers. <br /> <br />
+
+            Many modes, maps, and varieties are avaliable to enhance the firefight experience.
             </p>
           </div>
         </section>
@@ -304,18 +293,10 @@ const LandingPage = () => {
           </div>
           <div className='text'>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-              commodi neque ex exercitationem dignissimos est qui! Perspiciatis,
-              id temporibus tempore aut explicabo corrupti, doloribus nesciunt,
-              tenetur obcaecati possimus voluptatibus iusto. Reiciendis aliquam
-              magni consequuntur facere fuga, ipsa repudiandae alias quis,
-              nostrum sequi enim. Esse dolor quas, nostrum repellat accusantium,
-              porro perferendis ratione quasi animi velit facere, illum maxime.
-              Vel maiores facere fugiat quasi non natus velit. Delectus modi
-              distinctio consequuntur sequi reprehenderit aut, illum totam ea ad
-              porro! Dolor neque ipsum adipisci odio quas dolores veritatis
-              molestiae voluptatibus id accusamus illo rem libero, cumque, at
-              eum dicta delectus! Atque, ad.
+              Multiplayer is a competitive player versus player mode allowing you to connect and play with people from across the world.
+              Many dedicated servers exist to offer a wide variety of experiences. From vanilla slayer on bloodgulch to custom space battle
+              experiences you will always have something to do. <br /> <br />
+              
             </p>
           </div>
         </section>
