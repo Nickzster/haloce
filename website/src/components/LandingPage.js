@@ -132,7 +132,10 @@ const LandingPage = () => {
         </h1>
         <section className='card-list'>
           <div className='card'>
-            <img src={require('../images/1_full.jpg')} />
+            <Link to='single-player' smooth={scrolling.smooth} offset={scrolling.offset} duration={scrolling.duration} className='nav-btn' href='#'>
+              <img src={require('../images/1_full.jpg')} />
+            </Link>
+            
             <h3>Single Player</h3>
             <p>
               Fully featured single player missions that offer unique campaign
@@ -140,7 +143,9 @@ const LandingPage = () => {
             </p>
           </div>
           <div className='card'>
-            <img src={require('../images/descent-1.jpg')} />
+            <Link to='firefight' smooth={scrolling.smooth} offset={scrolling.offset} duration={scrolling.duration} className='nav-btn' href='#'>
+              <img src={require('../images/descent-1.jpg')} />
+            </Link>
             <h3>Firefight</h3>
             <p>
               Firefight is a take on Halo 3: ODST's game mode, allowing players
@@ -148,11 +153,22 @@ const LandingPage = () => {
             </p>
           </div>
           <div className='card'>
-            <img src={require('../images/precipice.png')} />
+            <Link to='multiplayer' smooth={scrolling.smooth} offset={scrolling.offset} duration={scrolling.duration} className='nav-btn' href='#'>
+              <img src={require('../images/precipice.png')} />
+            </Link>
             <h3>Multiplayer</h3>
             <p>
               Multiplayer is the allows you to fight other players on a wide
               variety of dedicated servers.
+            </p>
+          </div>
+          <div className='card'>
+            <Link to='addons' smooth={scrolling.smooth} offset={scrolling.offset} duration={scrolling.duration} className='nav-btn' href='#'>
+              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+            </Link>
+            <h3>Addons</h3>
+            <p>
+              Placeholder. Lorem ipsum goofy boo boo text text temporary.
             </p>
           </div>
           <div className='card'>
@@ -374,7 +390,7 @@ const LandingPage = () => {
       </div>
       {/* <!--Featured Addons --> */}
       <div className='addons'>
-        <h1 className='title-text'>MUST HAVE Halo CE Addons</h1>
+        <h1 className='title-text'>Recommended Halo: CE Addons</h1>
         <section className='card-list'>
           <div className='card'>
             <a
