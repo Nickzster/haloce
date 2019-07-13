@@ -132,10 +132,16 @@ const LandingPage = () => {
         </h1>
         <section className='card-list'>
           <div className='card'>
-            <Link to='single-player' smooth={scrolling.smooth} offset={scrolling.offset} duration={scrolling.duration} className='nav-btn' href='#'>
+            <Link
+              to='single-player'
+              smooth={scrolling.smooth}
+              offset={scrolling.offset}
+              duration={scrolling.duration}
+              href='#'
+            >
               <img src={require('../images/1_full.jpg')} />
             </Link>
-            
+
             <h3>Single Player</h3>
             <p>
               Fully featured single player missions that offer unique campaign
@@ -143,7 +149,13 @@ const LandingPage = () => {
             </p>
           </div>
           <div className='card'>
-            <Link to='firefight' smooth={scrolling.smooth} offset={scrolling.offset} duration={scrolling.duration} className='nav-btn' href='#'>
+            <Link
+              to='firefight'
+              smooth={scrolling.smooth}
+              offset={scrolling.offset}
+              duration={scrolling.duration}
+              href='#'
+            >
               <img src={require('../images/descent-1.jpg')} />
             </Link>
             <h3>Firefight</h3>
@@ -153,7 +165,13 @@ const LandingPage = () => {
             </p>
           </div>
           <div className='card'>
-            <Link to='multiplayer' smooth={scrolling.smooth} offset={scrolling.offset} duration={scrolling.duration} className='nav-btn' href='#'>
+            <Link
+              to='multiplayer'
+              smooth={scrolling.smooth}
+              offset={scrolling.offset}
+              duration={scrolling.duration}
+              href='#'
+            >
               <img src={require('../images/precipice.png')} />
             </Link>
             <h3>Multiplayer</h3>
@@ -163,12 +181,19 @@ const LandingPage = () => {
             </p>
           </div>
           <div className='card'>
-            <Link to='addons' smooth={scrolling.smooth} offset={scrolling.offset} duration={scrolling.duration} className='nav-btn' href='#'>
+            <Link
+              to='addons'
+              smooth={scrolling.smooth}
+              offset={scrolling.offset}
+              duration={scrolling.duration}
+              href='#'
+            >
               <img src='https://dummyimage.com/1900x1080/fff/000.png' />
             </Link>
             <h3>Addons</h3>
             <p>
-              Placeholder. Lorem ipsum goofy boo boo text text temporary.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla,
+              reprehenderit!
             </p>
           </div>
           <div className='card'>
