@@ -53,6 +53,11 @@ When you enter VSCode, please install the recommended extensions:
 
 - Prettier
 
+Once prettier is installed, there are two things you need to do:
+
+1. Make sure that quotes are set to single. (These can be configured by opening your settings (`ctrl + ,`) and typing `quotes` )
+2. Make sure that your editor is set to format on save. (This can be configured by opening your settings and typing in `format on save`)
+
 Some other extensions I like that help me read code easier:
 
 - Bracket Pair Colorizer
