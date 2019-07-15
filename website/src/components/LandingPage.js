@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';
-import '../css/landingpage.css';
+import React from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
+import "../css/landingpage.css";
 
 const scrolling = {
   duration: 800,
@@ -10,78 +10,78 @@ const scrolling = {
 
 const LandingPage = () => {
   return (
-    <div class='page'>
-      <header className='nav-bar'>
-        <img className='icon' src={require('../images/legendary.png')} />
-        <ul className='nav-bar'>
+    <div class="page">
+      <header className="nav-bar">
+        <img className="icon" src={require("../images/legendary.png")} />
+        <ul className="nav-bar">
           <li>
             <Link
-              to='what-is-halo-ce'
+              to="what-is-halo-ce"
               smooth={scrolling.smooth}
               offset={scrolling.offset}
               duration={scrolling.duration}
-              className='nav-btn'
-              href='#'
+              className="nav-btn"
+              href="#"
             >
               Setup Halo CE
             </Link>
           </li>
           <li>
             <Link
-              to='single-player'
+              to="single-player"
               smooth={scrolling.smooth}
               offset={scrolling.offset}
               duration={scrolling.duration}
-              className='nav-btn'
-              href='#'
+              className="nav-btn"
+              href="#"
             >
               Single Player
             </Link>
           </li>
           <li>
             <Link
-              to='firefight'
+              to="firefight"
               smooth={scrolling.smooth}
               offset={scrolling.offset}
               duration={scrolling.duration}
-              className='nav-btn'
-              href='#'
+              className="nav-btn"
+              href="#"
             >
               Firefight
             </Link>
           </li>
           <li>
             <Link
-              to='multiplayer'
+              to="multiplayer"
               smooth={scrolling.smooth}
               offset={scrolling.offset}
               duration={scrolling.duration}
-              className='nav-btn'
-              href='#'
+              className="nav-btn"
+              href="#"
             >
               Multiplayer
             </Link>
           </li>
           <li>
             <Link
-              to='addons'
+              to="addons"
               smooth={scrolling.smooth}
               offset={scrolling.offset}
               duration={scrolling.duration}
-              className='nav-btn'
-              href='#'
+              className="nav-btn"
+              href="#"
             >
               Addons
             </Link>
           </li>
           <li>
             <Link
-              to='community'
+              to="community"
               smooth={scrolling.smooth}
               offset={scrolling.offset}
               duration={scrolling.duration}
-              className='nav-btn'
-              href='#'
+              className="nav-btn"
+              href="#"
             >
               Community
             </Link>
@@ -89,34 +89,34 @@ const LandingPage = () => {
         </ul>
       </header>
       {/*Landing*/}
-      <div className='welcome'>
+      <div className="welcome">
         <h1>Welcome to Halo Custom Edition!</h1>
       </div>
       {/* <!--What-Is-Halo-Custom-Edition--> */}
-      <div className='container'>
-        <section className='text-section circuits' id='what-is-halo-ce'>
-          <div className='title'>
+      <div className="container">
+        <section className="text-section circuits" id="what-is-halo-ce">
+          <div className="title">
             <h1>What is Halo Custom Edition?</h1>
           </div>
-          <div className='text'>
+          <div className="text">
             <p>
               Halo Custom Edition is an expansion of the Windows version of Halo
               Combat Evolved. It supports user-created maps, and it is freely
               available to anyone who purchased the retail game.
             </p>
           </div>
-          <div className='title'>
+          <div className="title">
             <h1>How do I download Halo Custom Edition?</h1>
           </div>
-          <div className='text setup'>
+          <div className="text setup">
             <p>
               In order to install Halo Custom Edition, you need to own Halo:
               Combat Evolved for the PC. Using the CD Key you got with Halo:
               Combat Evolved, Follow
               <a
-                className='link'
-                href='https://www.youtube.com/watch?v=nREnJyzRAiY&ab_channel=Arm%27sTutorials'
-                target='_blank'
+                className="link"
+                href="https://www.youtube.com/watch?v=nREnJyzRAiY&ab_channel=Arm%27sTutorials"
+                target="_blank"
               >
                 this guide
               </a>
@@ -126,20 +126,20 @@ const LandingPage = () => {
         </section>
       </div>
       {/* <!--What-Does-Halo-Custom-Edition-Have-To-Offer--> */}
-      <div className='spv3'>
-        <h1 className='title-text'>
+      <div className="spv3">
+        <h1 className="title-text">
           What does Halo Custom Edition have to offer?
         </h1>
-        <section className='card-list'>
-          <div className='card'>
+        <section className="card-list">
+          <div className="card">
             <Link
-              to='single-player'
+              to="single-player"
               smooth={scrolling.smooth}
               offset={scrolling.offset}
               duration={scrolling.duration}
-              href='#'
+              href="#"
             >
-              <img src={require('../images/1_full.jpg')} />
+              <img src={require("../images/1_full.jpg")} />
             </Link>
 
             <h3>Single Player</h3>
@@ -148,15 +148,15 @@ const LandingPage = () => {
               stories and fun enemies to fight!
             </p>
           </div>
-          <div className='card'>
+          <div className="card">
             <Link
-              to='firefight'
+              to="firefight"
               smooth={scrolling.smooth}
               offset={scrolling.offset}
               duration={scrolling.duration}
-              href='#'
+              href="#"
             >
-              <img src={require('../images/descent-1.jpg')} />
+              <img src={require("../images/descent-1.jpg")} />
             </Link>
             <h3>Firefight</h3>
             <p>
@@ -164,15 +164,15 @@ const LandingPage = () => {
               to go up against waves of enemy attackers.
             </p>
           </div>
-          <div className='card'>
+          <div className="card">
             <Link
-              to='multiplayer'
+              to="multiplayer"
               smooth={scrolling.smooth}
               offset={scrolling.offset}
               duration={scrolling.duration}
-              href='#'
+              href="#"
             >
-              <img src={require('../images/precipice.png')} />
+              <img src={require("../images/precipice.png")} />
             </Link>
             <h3>Multiplayer</h3>
             <p>
@@ -180,15 +180,15 @@ const LandingPage = () => {
               variety of dedicated servers.
             </p>
           </div>
-          <div className='card'>
+          <div className="card">
             <Link
-              to='addons'
+              to="addons"
               smooth={scrolling.smooth}
               offset={scrolling.offset}
               duration={scrolling.duration}
-              href='#'
+              href="#"
             >
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src="https://dummyimage.com/1900x1080/fff/000.png" />
             </Link>
             <h3>Addons</h3>
             <p>
@@ -196,16 +196,16 @@ const LandingPage = () => {
               reprehenderit!
             </p>
           </div>
-          <div className='card'>
-            <img src={require('../images/nuclear-b.png')} />
+          <div className="card">
+            <img src={require("../images/nuclear-b.png")} />
             <h3>Halo Editing Kit</h3>
             <p>
               HEK is the tool that allows you to create custom content for Halo:
-              Custom Edition.{' '}
+              Custom Edition.{" "}
               <a
-                className='link'
-                target='_blank'
-                href='HEK_Tutorial/index.html'
+                className="link"
+                target="_blank"
+                href="HEK_Tutorial/index.html"
               >
                 Get started here.
               </a>
@@ -214,12 +214,12 @@ const LandingPage = () => {
         </section>
       </div>
       {/* <!--Singleplayer Text Section--> */}
-      <div className='container'>
-        <section className='text-section panel' id='single-player'>
-          <div className='title'>
+      <div className="container">
+        <section className="text-section panel" id="single-player">
+          <div className="title">
             <h1>Single Player</h1>
           </div>
-          <div className='text'>
+          <div className="text">
             <p>
               In Halo Custom Edition Single Player missions, you can fight
               against challenging enemies in a variety of missions. You can play
@@ -231,12 +231,12 @@ const LandingPage = () => {
         </section>
       </div>
       {/* <!--Featured Single Player Projects--> */}
-      <div className='sp'>
-        <h1 className='title-text'>Featured Single Player Projects</h1>
-        <section className='card-list'>
-          <div className='card'>
-            <a href='https://www.reddit.com/r/halospv3/' target='_blank'>
-              <img src={require('../images/spv3_6_full.jpg')} />
+      <div className="sp">
+        <h1 className="title-text">Featured Single Player Projects</h1>
+        <section className="card-list">
+          <div className="card">
+            <a href="https://www.reddit.com/r/halospv3/" target="_blank">
+              <img src={require("../images/spv3_6_full.jpg")} />
             </a>
             <h3>CMT SPV3</h3>
             <p>
@@ -244,9 +244,9 @@ const LandingPage = () => {
               includes a variety of new custom content.
             </p>
           </div>
-          <div className='card'>
-            <a href='https://www.lumoriace.com' target='_blank'>
-              <img src={require('../images/Lumoria_01.jpg')} />
+          <div className="card">
+            <a href="https://www.lumoriace.com" target="_blank">
+              <img src={require("../images/Lumoria_01.jpg")} />
             </a>
             <h3>Project Lumoria</h3>
             <p>
@@ -254,9 +254,9 @@ const LandingPage = () => {
               custom environments.
             </p>
           </div>
-          <div className='card'>
-            <a href='http://www.halomods.com/ips/index.php?/topic/850-cmts-the-silent-cartographer-evolved-release-beyond/'>
-              <img src={require('../images/tsce-grunt.jpg')} />
+          <div className="card">
+            <a href="http://www.halomods.com/ips/index.php?/topic/850-cmts-the-silent-cartographer-evolved-release-beyond/">
+              <img src={require("../images/tsce-grunt.jpg")} />
             </a>
             <h3>The Silent Cartographer Evolved</h3>
             <p>
@@ -267,12 +267,12 @@ const LandingPage = () => {
         </section>
       </div>
       {/* <!--Firefight Text Section--> */}
-      <div className='container'>
-        <section className='text-section rocks' id='firefight'>
-          <div className='title'>
+      <div className="container">
+        <section className="text-section rocks" id="firefight">
+          <div className="title">
             <h1>Firefight</h1>
           </div>
-          <div className='text'>
+          <div className="text">
             <p>
               This is the exact game mode that was introduced in Halo 3: ODST.
               Firefight allows players to battle against increasingly difficult
@@ -283,15 +283,15 @@ const LandingPage = () => {
         </section>
       </div>
       {/* <!--Featured Single Player Projects--> */}
-      <div className='firefight'>
-        <h1 className='title-text'>Featured Firefight Projects</h1>
-        <section className='card-list'>
-          <div className='card'>
+      <div className="firefight">
+        <h1 className="title-text">Featured Firefight Projects</h1>
+        <section className="card-list">
+          <div className="card">
             <a
-              href='http://hce.halomaps.org/index.cfm?fid=6463'
-              target='_blank'
+              href="http://hce.halomaps.org/index.cfm?fid=6463"
+              target="_blank"
             >
-              <img src={require('../images/descent-1.jpg')} />
+              <img src={require("../images/descent-1.jpg")} />
             </a>
             <h3>Descent</h3>
             <p>
@@ -299,12 +299,12 @@ const LandingPage = () => {
               down the gravity lift.
             </p>
           </div>
-          <div className='card'>
+          <div className="card">
             <a
-              href='http://hce.halomaps.org/index.cfm?fid=5336'
-              target='_blank'
+              href="http://hce.halomaps.org/index.cfm?fid=5336"
+              target="_blank"
             >
-              <img src={require('../images/ff-portent.jpg')} />
+              <img src={require("../images/ff-portent.jpg")} />
             </a>
             <h3>Portent</h3>
             <p>
@@ -312,9 +312,9 @@ const LandingPage = () => {
               credits to buy weapons and upgrades!
             </p>
           </div>
-          <div className='card'>
-            <a href='https://haloce3.com/downloads/singleplayer/original-singleplayer/firefight-sector-09/'>
-              <img src={require('../images/sector09/10screenshot00.jpg')} />
+          <div className="card">
+            <a href="https://haloce3.com/downloads/singleplayer/original-singleplayer/firefight-sector-09/">
+              <img src={require("../images/sector09/10screenshot00.jpg")} />
             </a>
             <h3>Sector 09</h3>
             <p>Fight the covenant as an ODST in the city of Mombassa!</p>
@@ -323,12 +323,12 @@ const LandingPage = () => {
       </div>
 
       {/* <!--Multiplayer Text Section--> */}
-      <div className='container'>
-        <section className='text-section grass' id='multiplayer'>
-          <div className='title'>
+      <div className="container">
+        <section className="text-section grass" id="multiplayer">
+          <div className="title">
             <h1>Multiplayer</h1>
           </div>
-          <div className='text'>
+          <div className="text">
             <p>
               Halo Custom Edition was built for Multiplayer. There are a variety
               of gamemodes including Slayer, Caputre the Flag, Race, King of the
@@ -340,15 +340,15 @@ const LandingPage = () => {
         </section>
       </div>
       {/* <!--Featured MultiPlayer Projects--> */}
-      <div className='arrival'>
-        <h1 className='title-text'>Featured Multiplayer Projects</h1>
-        <section className='card-list'>
-          <div className='card'>
+      <div className="arrival">
+        <h1 className="title-text">Featured Multiplayer Projects</h1>
+        <section className="card-list">
+          <div className="card">
             <a
-              href='https://opencarnage.net/index.php?/topic/5838-bigassv3/'
-              target='_blank'
+              href="https://opencarnage.net/index.php?/topic/5838-bigassv3/"
+              target="_blank"
             >
-              <img src={require('../images/bigass-b.jpg')} />
+              <img src={require("../images/bigass-b.jpg")} />
             </a>
             <h3>Bigass</h3>
             <p>
@@ -356,12 +356,12 @@ const LandingPage = () => {
               Royale game mode.
             </p>
           </div>
-          <div className='card'>
+          <div className="card">
             <a
-              href='https://haloce3.com/downloads/multiplayer/original-multiplayer/intensity-beta-1-6/'
-              target='_blank'
+              href="https://haloce3.com/downloads/multiplayer/original-multiplayer/intensity-beta-1-6/"
+              target="_blank"
             >
-              <img src={require('../images/intensity.jpg')} />
+              <img src={require("../images/intensity.jpg")} />
             </a>
             <h3>Intensity Beta 1.6</h3>
             <p>
@@ -369,9 +369,9 @@ const LandingPage = () => {
               by the original Intensity by CMT.
             </p>
           </div>
-          <div className='card'>
-            <a href='https://haloce3.com/downloads/multiplayer/original-multiplayer/arrival'>
-              <img src={require('../images/arrival-2.jpg')} />
+          <div className="card">
+            <a href="https://haloce3.com/downloads/multiplayer/original-multiplayer/arrival">
+              <img src={require("../images/arrival-2.jpg")} />
             </a>
             <h3>Arrival</h3>
             <p>
@@ -379,9 +379,9 @@ const LandingPage = () => {
               forest.
             </p>
           </div>
-          <div className='card'>
-            <a href='https://haloce3.com/downloads/multiplayer/original-multiplayer/oni/'>
-              <img src={require('../images/oni.jpg')} />
+          <div className="card">
+            <a href="https://haloce3.com/downloads/multiplayer/original-multiplayer/oni/">
+              <img src={require("../images/oni.jpg")} />
             </a>
             <h3>ONI</h3>
             <p>
@@ -392,20 +392,20 @@ const LandingPage = () => {
         </section>
       </div>
       {/* <!--HaloCE Addons Text Section--> */}
-      <div className='container'>
-        <section className='text-section snow' id='addons'>
-          <div className='title'>
+      <div className="container">
+        <section className="text-section snow" id="addons">
+          <div className="title">
             <h1>Halo CE Addons</h1>
           </div>
-          <div className='text'>
+          <div className="text">
             <p>
               Halo: Custom Edition has many addons which add different
               functionality to the game. Addons serve to improve your game and
               tailor the experience to each invidivdual. There are two types of
-              addons in Halo Custom Edition. <strong>Client addons</strong>{' '}
+              addons in Halo Custom Edition. <strong>Client addons</strong>{" "}
               change the players experience in the game. Some enhancements
               include post processing, graphics, field of view, FPS increases,
-              and much more with various addons. <strong>Server addons</strong>{' '}
+              and much more with various addons. <strong>Server addons</strong>{" "}
               allow modification of Halo's multiplayer server software. Server
               admins can add complex functionality to their servers such as no
               leading, lua scripting, and much more with various addons.
@@ -414,71 +414,85 @@ const LandingPage = () => {
         </section>
       </div>
       {/* <!--Featured Addons --> */}
-      <div className='addons'>
-        <h1 className='title-text'>Recommended Halo: CE Addons</h1>
-        <section className='card-list'>
-          <div className='card'>
+      <div className="addons">
+        <h1 className="title-text">Recommended Halo: CE Addons</h1>
+        <section className="card-list">
+          <div className="card">
             <a
-              href='http://client.haloanticheat.com/release.zip'
-              target='_blank'
+              href="http://client.haloanticheat.com/release.zip"
+              target="_blank"
             >
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
-            </a>
-            <h3>Halo Anticheat 2 (HAC2)</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
-            </p>
-          </div>
-          <div className='card'>
-            <a
-              href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'
-              target='_blank'
-            >
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src="https://dummyimage.com/1900x1080/fff/000.png" />
             </a>
             <h3>
-              <a href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'>
+              <a href="http://client.haloanticheat.com/release.zip">
+                Halo Anticheat 2 (HAC2)
+              </a>
+            </h3>
+            <p>
+              A mod that adds things like the ability to change fov, save server
+              bookmarks, cache maps for a quicker gameload, halo reach style
+              medals, custom chat and more.
+            </p>
+          </div>
+          <div className="card">
+            <a
+              href="https://opencarnage.net/index.php?/topic/6916-chimera-build-49/"
+              target="_blank"
+            >
+              <img src="https://dummyimage.com/1900x1080/fff/000.png" />
+            </a>
+            <h3>
+              <a href="https://opencarnage.net/index.php?/topic/6916-chimera-build-49/">
                 Chimera
               </a>
             </h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              This mod adds interpolation to the game so that animations look
+              smooth on framerates higher than 30. Other, mainly graphical,
+              features are available.
             </p>
           </div>
-          <div className='card'>
+          <div className="card">
             <a
-              href='https://bitbucket.org/KornnerStudios/opensauce-release/wiki/Halo1/Doc_Halo1_Home'
-              target='_blank'
+              href="https://bitbucket.org/KornnerStudios/opensauce-release/wiki/Halo1/Doc_Halo1_Home"
+              target="_blank"
             >
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src="https://dummyimage.com/1900x1080/fff/000.png" />
             </a>
-            <h3>Open Sauce</h3>
+            <h3>
+              <a href="https://bitbucket.org/KornnerStudios/opensauce-release/wiki/Halo1/Doc_Halo1_Home">
+                Open Sauce
+              </a>
+            </h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              A mod that adds extended graphical capability, memory
+              enchancements, scripting addons, and much more new functionality
+              to the game.
             </p>
           </div>
-          <div className='card'>
-            <a href='http://halo.isimaginary.com/'>
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+          <div className="card">
+            <a href="http://halo.isimaginary.com/">
+              <img src="https://dummyimage.com/1900x1080/fff/000.png" />
             </a>
-            <h3>Server App (SAPP)</h3>
+            <h3>
+              <a href="http://halo.isimaginary.com/">Server App (SAPP)</a>
+            </h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Addon for dedicated servers containing server management tools,
+              event scripting, lua scripting, removes cd-key check and makes
+              life a lot easier.
             </p>
           </div>
         </section>
       </div>
       {/* <!--Community Text Section--> */}
-      <div className='container'>
-        <section className='text-section cliffs' id='community'>
-          <div className='title'>
+      <div className="container">
+        <section className="text-section cliffs" id="community">
+          <div className="title">
             <h1>Community</h1>
           </div>
-          <div className='text'>
+          <div className="text">
             <p>
               The community is one of the best parts of Halo Custom Edition.
               Over a decade ago the community began and it is still strong to
@@ -493,15 +507,15 @@ const LandingPage = () => {
         </section>
       </div>
       {/* <!--Featured Community --> */}
-      <div className='community'>
-        <h1 className='title-text'>Halo CE Community</h1>
-        <section className='card-list'>
-          <div className='card'>
+      <div className="community">
+        <h1 className="title-text">Halo CE Community</h1>
+        <section className="card-list">
+          <div className="card">
             <a
-              href='https://www.youtube.com/user/StormUndBlackbird?&ab_channel=StormUndBlackbird'
-              target='_blank'
+              href="https://www.youtube.com/user/StormUndBlackbird?&ab_channel=StormUndBlackbird"
+              target="_blank"
             >
-              <img src={require('../images/maxresdefault.jpg')} />
+              <img src={require("../images/maxresdefault.jpg")} />
             </a>
             <h3>Storm & Blackbird</h3>
             <p>
@@ -509,9 +523,9 @@ const LandingPage = () => {
               Temporibus et incidunt repellat.
             </p>
           </div>
-          <div className='card'>
-            <a href='https://haloce3.com/' target='_blank'>
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+          <div className="card">
+            <a href="https://haloce3.com/" target="_blank">
+              <img src="https://dummyimage.com/1900x1080/fff/000.png" />
             </a>
             <h3>CE3</h3>
             <p>
@@ -519,9 +533,9 @@ const LandingPage = () => {
               Temporibus et incidunt repellat.
             </p>
           </div>
-          <div className='card'>
-            <a href='http://www.halomaps.org/' target='_blank'>
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+          <div className="card">
+            <a href="http://www.halomaps.org/" target="_blank">
+              <img src="https://dummyimage.com/1900x1080/fff/000.png" />
             </a>
             <h3>Halo Maps</h3>
             <p>
@@ -529,9 +543,9 @@ const LandingPage = () => {
               Temporibus et incidunt repellat.
             </p>
           </div>
-          <div className='card'>
-            <a href='https://opencarnage.net/'>
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+          <div className="card">
+            <a href="https://opencarnage.net/">
+              <img src="https://dummyimage.com/1900x1080/fff/000.png" />
             </a>
             <h3>Open Carnage</h3>
             <p>
