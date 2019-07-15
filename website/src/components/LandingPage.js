@@ -313,8 +313,8 @@ const LandingPage = () => {
             </p>
           </div>
           <div className='card'>
-            <a href='https://haloce3.com/downloads/singleplayer/original-singleplayer/firefight-sector-09/'>
-              <img src={require('../images/sector09/10screenshot00.jpg')} />
+            <a href='sector09/sector09.html'>
+              <img src={require('../images/sector09/sector09v2-4.jpg')} />
             </a>
             <h3>Sector 09</h3>
             <p>Fight the covenant as an ODST in the city of Mombassa!</p>
