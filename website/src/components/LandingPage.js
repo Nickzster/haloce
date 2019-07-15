@@ -313,7 +313,7 @@ const LandingPage = () => {
             </p>
           </div>
           <div className='card'>
-            <a href='sector09/sector09.html'>
+            <a href='sector09/index.html'>
               <img src={require('../images/sector09/sector09v2-4.jpg')} />
             </a>
             <h3>Sector 09</h3>
