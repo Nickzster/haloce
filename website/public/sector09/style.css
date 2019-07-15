@@ -1,0 +1,168 @@
+:root {
+  --primary: #e05f02;
+  --primary-transparency: rgba(224, 95, 2, 0.8);
+  --dark: #303030;
+  --dark-trans: rgba(48, 48, 48, 0.8);
+  --light: #fff;
+  --background: #e8e8e8;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+/* Core */
+
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--light);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* background-image: url(img/0screenshot00.jpg); */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-image: url(./sector09v2-4.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  line-height: 1.4;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  text-align: center;
+  margin: 30px 0px;
+}
+
+.logo {
+  width: 80px;
+  padding-left: 25px;
+}
+
+.container {
+  margin: 10px 150px;
+}
+
+/* Header */
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-right: 25px;
+}
+
+.nav-btn {
+  padding: 10px;
+}
+
+.nav-btn:hover {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+/* Intro */
+
+.intro {
+  text-align: center;
+  margin: 220px 0px;
+  /* background-color: var(--primary-transparency); 
+   box-shadow: var(--shadow); */
+}
+
+.intro h1 {
+  font-size: 4em;
+}
+
+.scroll {
+  color: var(--light);
+  display: block;
+  margin: 0px auto;
+  margin-bottom: 250px;
+  width: 5%;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+/* History */
+.history {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.history p {
+  text-align: left;
+}
+
+.background {
+  background-color: var(--primary);
+  margin: 0;
+  padding: 0;
+  padding-top: 1px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-image: url(img/s9_up_3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-size: 1.5em;
+  padding: 25px;
+  background-color: var(--dark);
+  box-shadow: var(--shadow);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--dark);
+}
+
+.links li {
+  margin: 10px 0px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin: 10px 20px;
+  }
+
+  .intro h1 {
+    font-size: 2em;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .scroll {
+    width: 10%;
+  }
+}
