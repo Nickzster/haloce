@@ -176,8 +176,8 @@ const LandingPage = () => {
             </Link>
             <h3>Multiplayer</h3>
             <p>
-              Multiplayer is the allows you to fight other players on a wide
-              variety of dedicated servers.
+              Multiplayer allows you to fight friends and other players on a
+              wide variety of dedicated servers.
             </p>
           </div>
           <div className='card'>
