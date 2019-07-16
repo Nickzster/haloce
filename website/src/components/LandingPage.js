@@ -188,7 +188,7 @@ const LandingPage = () => {
               duration={scrolling.duration}
               href='#'
             >
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src={require('../images/halo.jpg')} />
             </Link>
             <h3>Addons</h3>
             <p>
@@ -198,10 +198,10 @@ const LandingPage = () => {
           </div>
           <div className='card'>
             <img src={require('../images/nuclear-b.png')} />
-            <h3>Halo Editing Kit</h3>
+            <h3>Create your own maps!</h3>
             <p>
-              HEK is the tool that allows you to create custom content for Halo:
-              Custom Edition.{' '}
+              Halo Editing Kit (HEK) is the tool that allows you to create
+              custom content for Halo: Custom Edition.{' '}
               <a
                 className='link'
                 target='_blank'
@@ -422,7 +422,7 @@ const LandingPage = () => {
               href='http://client.haloanticheat.com/release.zip'
               target='_blank'
             >
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src={require('../images/halo.jpg')} />
             </a>
             <h3>Halo Anticheat 2 (HAC2)</h3>
             <p>
@@ -435,7 +435,7 @@ const LandingPage = () => {
               href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'
               target='_blank'
             >
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src={require('../images/halo.jpg')} />
             </a>
             <h3>
               <a href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'>
@@ -452,7 +452,7 @@ const LandingPage = () => {
               href='https://bitbucket.org/KornnerStudios/opensauce-release/wiki/Halo1/Doc_Halo1_Home'
               target='_blank'
             >
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src={require('../images/halo.jpg')} />
             </a>
             <h3>Open Sauce</h3>
             <p>
@@ -462,7 +462,7 @@ const LandingPage = () => {
           </div>
           <div className='card'>
             <a href='http://halo.isimaginary.com/'>
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src={require('../images/halo.jpg')} />
             </a>
             <h3>Server App (SAPP)</h3>
             <p>
@@ -511,7 +511,7 @@ const LandingPage = () => {
           </div>
           <div className='card'>
             <a href='https://haloce3.com/' target='_blank'>
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src={require('../images/ce3.jpg')} />
             </a>
             <h3>CE3</h3>
             <p>
@@ -521,7 +521,7 @@ const LandingPage = () => {
           </div>
           <div className='card'>
             <a href='http://www.halomaps.org/' target='_blank'>
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src={require('../images/halo.jpg')} />
             </a>
             <h3>Halo Maps</h3>
             <p>
@@ -531,7 +531,7 @@ const LandingPage = () => {
           </div>
           <div className='card'>
             <a href='https://opencarnage.net/'>
-              <img src='https://dummyimage.com/1900x1080/fff/000.png' />
+              <img src={require('../images/halo.jpg')} />
             </a>
             <h3>Open Carnage</h3>
             <p>
