@@ -192,8 +192,7 @@ const LandingPage = () => {
             </Link>
             <h3>Addons</h3>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla,
-              reprehenderit!
+              Addons will add new features that will change or enhance your gameplay.
             </p>
           </div>
           <div className='card'>
@@ -426,8 +425,9 @@ const LandingPage = () => {
             </a>
             <h3>Halo Anticheat 2 (HAC2)</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              A mod that adds things like the ability to change fov, save server
+              bookmarks, cache maps for a quicker gameload, halo reach style
+              medals, custom chat and more.
             </p>
           </div>
           <div className='card'>
@@ -443,8 +443,9 @@ const LandingPage = () => {
               </a>
             </h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              This mod adds interpolation to the game so that animations look
+              smooth on framerates higher than 30. Other, mainly graphical,
+              features are available.
             </p>
           </div>
           <div className='card'>
@@ -456,8 +457,9 @@ const LandingPage = () => {
             </a>
             <h3>Open Sauce</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              A mod that adds extended graphical capability, memory
+              enchancements, scripting addons, and much more new functionality
+              to the game.
             </p>
           </div>
           <div className='card'>
@@ -466,8 +468,9 @@ const LandingPage = () => {
             </a>
             <h3>Server App (SAPP)</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Addon for dedicated servers containing server management tools,
+              event scripting, lua scripting, removes cd-key check and makes
+              life a lot easier.
             </p>
           </div>
         </section>
@@ -505,8 +508,7 @@ const LandingPage = () => {
             </a>
             <h3>Storm & Blackbird</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Popular Halo CE youtube channel known for playing custom maps.
             </p>
           </div>
           <div className='card'>
@@ -515,8 +517,7 @@ const LandingPage = () => {
             </a>
             <h3>CE3</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Website designed to archive maps and files relating to Halo CE.
             </p>
           </div>
           <div className='card'>
@@ -525,8 +526,8 @@ const LandingPage = () => {
             </a>
             <h3>Halo Maps</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              One of the largest and oldest repositories of Halo CE maps, tools, and more.
+              Many resources can be found here as well as a forum.
             </p>
           </div>
           <div className='card'>
@@ -535,8 +536,8 @@ const LandingPage = () => {
             </a>
             <h3>Open Carnage</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus et incidunt repellat.
+              Halo forum housing a very active community. Developers, mappers, and players can come together
+              here to discuss the game.
             </p>
           </div>
         </section>
