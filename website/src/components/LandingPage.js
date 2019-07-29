@@ -141,7 +141,6 @@ const LandingPage = () => {
             >
               <img src={require('../images/1_full.jpg')} />
             </Link>
-
             <h3>Single Player</h3>
             <p>
               Fully featured single player missions that offer unique campaign
