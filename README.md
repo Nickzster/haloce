@@ -13,7 +13,7 @@ If you don't want to contribute with code, please consider making a contribution
 
 If you want to contribute, please read the following sections:
 
-# Lisence
+# Licence
 
 Since Halo is owned and lisenced by Microsoft, this repository will have a Microsoft Public License.
 
