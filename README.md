@@ -60,7 +60,7 @@ Once prettier is installed, there are two things you need to do:
 
 Some other extensions I like that help me read code easier:
 
-- Bracket Pair Colorizer
+- Bracket Pair Colorizer 1 OR Bracket Pair Colorizer 2 (faster parsing)
 - Indent-Rainbow
 
 You should be ready to go now.
