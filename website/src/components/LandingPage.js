@@ -191,7 +191,8 @@ const LandingPage = () => {
             </Link>
             <h3>Addons</h3>
             <p>
-              Addons will add new features that will change or enhance your gameplay.
+              Addons will add new features that will change or enhance your
+              gameplay.
             </p>
           </div>
           <div className='card'>
@@ -253,7 +254,10 @@ const LandingPage = () => {
             </p>
           </div>
           <div className='card'>
-            <a href='http://www.halomods.com/ips/index.php?/topic/850-cmts-the-silent-cartographer-evolved-release-beyond/'>
+            <a
+              href='http://www.halomods.com/ips/index.php?/topic/850-cmts-the-silent-cartographer-evolved-release-beyond/'
+              target='_blank'
+            >
               <img src={require('../images/tsce-grunt.jpg')} />
             </a>
             <h3>The Silent Cartographer Evolved</h3>
@@ -368,7 +372,10 @@ const LandingPage = () => {
             </p>
           </div>
           <div className='card'>
-            <a href='https://haloce3.com/downloads/multiplayer/original-multiplayer/arrival'>
+            <a
+              href='https://haloce3.com/downloads/multiplayer/original-multiplayer/arrival'
+              target='_blank'
+            >
               <img src={require('../images/arrival-2.jpg')} />
             </a>
             <h3>Arrival</h3>
@@ -378,7 +385,10 @@ const LandingPage = () => {
             </p>
           </div>
           <div className='card'>
-            <a href='https://haloce3.com/downloads/multiplayer/original-multiplayer/oni/'>
+            <a
+              href='https://haloce3.com/downloads/multiplayer/original-multiplayer/oni/'
+              target='_blank'
+            >
               <img src={require('../images/oni.jpg')} />
             </a>
             <h3>ONI</h3>
@@ -437,7 +447,10 @@ const LandingPage = () => {
               <img src={require('../images/halo.jpg')} />
             </a>
             <h3>
-              <a href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'>
+              <a
+                href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'
+                target='_blank'
+              >
                 Chimera
               </a>
             </h3>
@@ -462,7 +475,7 @@ const LandingPage = () => {
             </p>
           </div>
           <div className='card'>
-            <a href='http://halo.isimaginary.com/'>
+            <a href='http://halo.isimaginary.com/' target='_blank'>
               <img src={require('../images/halo.jpg')} />
             </a>
             <h3>Server App (SAPP)</h3>
@@ -525,18 +538,18 @@ const LandingPage = () => {
             </a>
             <h3>Halo Maps</h3>
             <p>
-              One of the largest and oldest repositories of Halo CE maps, tools, and more.
-              Many resources can be found here as well as a forum.
+              One of the largest and oldest repositories of Halo CE maps, tools,
+              and more. Many resources can be found here as well as a forum.
             </p>
           </div>
           <div className='card'>
-            <a href='https://opencarnage.net/'>
+            <a href='https://opencarnage.net/' target='_blank'>
               <img src={require('../images/halo.jpg')} />
             </a>
             <h3>Open Carnage</h3>
             <p>
-              Halo forum housing a very active community. Developers, mappers, and players can come together
-              here to discuss the game.
+              Halo forum housing a very active community. Developers, mappers,
+              and players can come together here to discuss the game.
             </p>
           </div>
         </section>
