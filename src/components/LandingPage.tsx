@@ -8,9 +8,9 @@ const scrolling = {
   smooth: true
 };
 
-const LandingPage = () => {
+const LandingPage: React.FunctionComponent = () => {
   return (
-    <div class='page'>
+    <div className='page'>
       <header className='nav-bar'>
         <img className='icon' src={require('../images/legendary.png')} />
         <ul className='nav-bar'>

@@ -5,20 +5,24 @@
   "author": "Nickster5000",
   "homepage": "https://www.haloce.org",
   "dependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-scroll": "^1.5.4",
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "react-scroll": "^1.7.12"
+    "react-scroll": "^1.7.12",
+    "typescript": "^3.7.2"
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build && websync build/ s3://halo-ce"
   },
   "eslintConfig": {
     "extends": "react-app"
