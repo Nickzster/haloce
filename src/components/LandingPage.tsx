@@ -432,7 +432,7 @@ const LandingPage: React.FunctionComponent = () => {
             >
               <img src={require('../images/halo.jpg')} />
             </a>
-            <h3>Halo Anticheat 2 (HAC2)</h3>
+            <h3>Halo Anticheat 2 (HAC2) <a href='https://youtu.be/hTMsmLAdNXE'>(GUIDE)</a></h3>
             <p>
               A mod that adds things like the ability to change fov, save server
               bookmarks, cache maps for a quicker gameload, halo reach style
@@ -441,17 +441,17 @@ const LandingPage: React.FunctionComponent = () => {
           </div>
           <div className='card'>
             <a
-              href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'
+              href='https://chimera.opencarnage.net/'
               target='_blank'
             >
               <img src={require('../images/halo.jpg')} />
             </a>
             <h3>
               <a
-                href='https://opencarnage.net/index.php?/topic/6916-chimera-build-49/'
+                href='https://chimera.opencarnage.net/'
                 target='_blank'
               >
-                Chimera
+                Chimera <a href='https://www.youtube.com/watch?v=lOOKHIIK5gA'>(GUIDE)</a>
               </a>
             </h3>
             <p>
@@ -467,7 +467,7 @@ const LandingPage: React.FunctionComponent = () => {
             >
               <img src={require('../images/halo.jpg')} />
             </a>
-            <h3>Open Sauce</h3>
+            <h3>Open Sauce <a href='https://youtu.be/r_EEWD3aEws'>(GUIDE)</a></h3>
             <p>
               A mod that adds extended graphical capability, memory
               enchancements, scripting addons, and much more new functionality
@@ -478,7 +478,7 @@ const LandingPage: React.FunctionComponent = () => {
             <a href='http://halo.isimaginary.com/' target='_blank'>
               <img src={require('../images/halo.jpg')} />
             </a>
-            <h3>Server App (SAPP)</h3>
+            <h3>Server App (SAPP) <a href='https://youtu.be/eV-YkhlzkyY'>(GUIDE)</a></h3>
             <p>
               Addon for dedicated servers containing server management tools,
               event scripting, lua scripting, removes cd-key check and makes
